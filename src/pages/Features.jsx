@@ -1,5 +1,10 @@
-import { motion } from 'framer-motion';
+import HeroSimple from '../components/sections/HeroSimple';
+import ContentSection from '../components/sections/ContentSection';
+import SectionHeader from '../components/ui/SectionHeader';
+import FeatureCard from '../components/ui/FeatureCard';
+import CTASection from '../components/sections/CTASection';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import { motion } from 'framer-motion';
 
 const Features = () => {
   const [ref1, isVisible1] = useScrollAnimation();
@@ -127,137 +132,87 @@ const Features = () => {
     },
   ];
 
-  const FeatureCard = ({ feature, delay = 0 }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay }}
-      className="glass-effect p-6 rounded-xl hover:scale-105 transition-transform duration-300"
-    >
-      <h3 className="text-xl font-semibold text-dark-accent-primary mb-3">
-        {feature.title}
-      </h3>
-      <p className="text-dark-text-secondary leading-relaxed">
-        {feature.content}
-      </p>
-    </motion.div>
-  );
-
   return (
     <div className="min-h-screen pt-20 pb-12">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-gradient">Features</span>
-          </h1>
-          <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto">
-            Tunnels provides a comprehensive suite of networking and security features designed for individuals and enterprises alike.
-          </p>
-        </motion.div>
-      </section>
+      <HeroSimple
+        title="Features"
+        description="Tunnels provides a comprehensive suite of networking and security features designed for individuals and enterprises alike."
+        showWaves={true}
+      />
 
       {/* Basic Features */}
-      <section ref={ref1} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible1 ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-            <span className="text-gradient">Basic Features</span>
-          </h2>
-          <p className="text-center text-dark-text-secondary mb-12 max-w-2xl mx-auto">
-            Core features available to all users, focusing on privacy, security, and ease of use.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {basicFeatures.map((feature, index) => (
-              <FeatureCard key={index} feature={feature} delay={index * 0.05} />
-            ))}
-          </div>
-        </motion.div>
-      </section>
+      <ContentSection>
+        <div ref={ref1}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isVisible1 ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            <SectionHeader
+              title="Basic Features"
+              subtitle="Core features available to all users, focusing on privacy, security, and ease of use."
+            />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {basicFeatures.map((feature, index) => (
+                <FeatureCard key={index} {...feature} delay={index * 0.05} />
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </ContentSection>
 
       {/* Advanced Features */}
-      <section ref={ref2} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible2 ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-            <span className="text-gradient">Advanced Features</span>
-          </h2>
-          <p className="text-center text-dark-text-secondary mb-12 max-w-2xl mx-auto">
-            Advanced capabilities for power users and technical professionals.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {advancedFeatures.map((feature, index) => (
-              <FeatureCard key={index} feature={feature} delay={index * 0.05} />
-            ))}
-          </div>
-        </motion.div>
-      </section>
+      <ContentSection background="dark-surface">
+        <div ref={ref2}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isVisible2 ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            <SectionHeader
+              title="Advanced Features"
+              subtitle="Advanced capabilities for power users and technical professionals."
+            />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {advancedFeatures.map((feature, index) => (
+                <FeatureCard key={index} {...feature} delay={index * 0.05} />
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </ContentSection>
 
       {/* Enterprise Features */}
-      <section ref={ref3} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible3 ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-            <span className="text-gradient">Enterprise Features</span>
-          </h2>
-          <p className="text-center text-dark-text-secondary mb-12 max-w-2xl mx-auto">
-            Enterprise-grade features for organizations requiring scale, support, and security compliance.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {enterpriseFeatures.map((feature, index) => (
-              <FeatureCard key={index} feature={feature} delay={index * 0.05} />
-            ))}
-          </div>
-        </motion.div>
-      </section>
+      <ContentSection>
+        <div ref={ref3}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isVisible3 ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            <SectionHeader
+              title="Enterprise Features"
+              subtitle="Enterprise-grade features for organizations requiring scale, support, and security compliance."
+            />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {enterpriseFeatures.map((feature, index) => (
+                <FeatureCard key={index} {...feature} delay={index * 0.05} />
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </ContentSection>
 
       {/* CTA Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="glass-effect p-12 rounded-2xl text-center"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to get started?
-          </h2>
-          <p className="text-xl text-dark-text-secondary mb-8 max-w-2xl mx-auto">
-            Download Tunnels today and experience secure, private networking.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.a
-              href="/download"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-dark-accent-primary text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all"
-            >
-              Download Now
-            </motion.a>
-            <motion.a
-              href="/pricing"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 glass-effect rounded-lg font-semibold hover:bg-dark-elevated transition-all"
-            >
-              View Pricing
-            </motion.a>
-          </div>
-        </motion.div>
-      </section>
+      <CTASection
+        title="Ready to get started?"
+        description="Download Tunnels today and experience secure, private networking."
+        buttons={[
+          { text: "Download Now", href: "/download", primary: true },
+          { text: "View Pricing", href: "/pricing", primary: false }
+        ]}
+      />
     </div>
   );
 };
