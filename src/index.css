@@ -9,7 +9,7 @@
   --color-dark-text-secondary: #a0a0a0;
   --color-dark-text-muted: #666666;
   --color-dark-accent-primary: #3b82f6;
-  --color-dark-accent-secondary: #8b5cf6;
+  --color-dark-accent-secondary: #60a5fa;
   --color-dark-accent-tertiary: #06b6d4;
 
   --animate-fade-in: fade-in 0.6s ease-out;
@@ -66,7 +66,7 @@ html {
 }
 
 .text-gradient {
-  background: linear-gradient(to right, var(--color-dark-accent-primary), var(--color-dark-accent-secondary), var(--color-dark-accent-tertiary));
+  background: linear-gradient(to right, #d0d0d0, var(--color-dark-accent-primary));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

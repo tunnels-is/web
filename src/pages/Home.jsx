@@ -41,7 +41,7 @@ const Home = () => {
         description="A modern networking solution that connects you to multiple networks at once, with built-in security and privacy features"
         buttons={[
           { text: "Download Now", href: "/download", primary: true },
-          { text: "Explore Features", href: "/features", primary: false }
+          { text: "Explore Features", href: "/features", teal: true }
         ]}
         showNetworkLines={true}
         showScrollIndicator={true}

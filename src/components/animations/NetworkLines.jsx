@@ -24,18 +24,18 @@ const NetworkLines = ({ opacity = 0.08 }) => {
             <stop offset="100%" stopColor="#3b82f6" stopOpacity="0" />
           </linearGradient>
 
-          {/* Gradient for secondary lines (cyan) */}
+          {/* Gradient for secondary lines (teal/cyan) */}
           <linearGradient id="line-gradient-secondary" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#06b6d4" stopOpacity="0" />
             <stop offset="50%" stopColor="#06b6d4" stopOpacity={opacity * 4} />
             <stop offset="100%" stopColor="#06b6d4" stopOpacity="0" />
           </linearGradient>
 
-          {/* Gradient for accent lines (purple) */}
+          {/* Gradient for accent lines (light blue) */}
           <linearGradient id="line-gradient-accent" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0" />
-            <stop offset="50%" stopColor="#8b5cf6" stopOpacity={opacity * 4} />
-            <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0" />
+            <stop offset="0%" stopColor="#60a5fa" stopOpacity="0" />
+            <stop offset="50%" stopColor="#60a5fa" stopOpacity={opacity * 4} />
+            <stop offset="100%" stopColor="#60a5fa" stopOpacity="0" />
           </linearGradient>
         </defs>
 
@@ -60,7 +60,7 @@ const NetworkLines = ({ opacity = 0.08 }) => {
             }}
           />
 
-          {/* Line 2: Bottom diagonal (cyan) */}
+          {/* Line 2: Bottom diagonal (teal) */}
           <motion.line
             x1="25%" y1="75%"
             x2="75%" y2="80%"
@@ -80,7 +80,7 @@ const NetworkLines = ({ opacity = 0.08 }) => {
             }}
           />
 
-          {/* Line 3: Vertical left (purple) */}
+          {/* Line 3: Vertical left (light blue) */}
           <motion.line
             x1="15%" y1="20%"
             x2="25%" y2="75%"

@@ -86,6 +86,8 @@ const HeroSimple = ({
                 className={
                   button.primary
                     ? "px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white font-semibold rounded-lg transition-colors shadow-lg shadow-dark-accent-primary/20"
+                    : button.teal
+                    ? "px-8 py-4 bg-dark-accent-tertiary hover:bg-dark-accent-tertiary/90 text-white font-semibold rounded-lg transition-colors shadow-lg shadow-dark-accent-tertiary/20"
                     : "px-8 py-4 glass-effect hover:bg-dark-elevated text-dark-text-primary font-semibold rounded-lg transition-colors"
                 }
               >

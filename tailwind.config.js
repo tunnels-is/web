@@ -19,9 +19,9 @@ export default {
             muted: '#666666',
           },
           accent: {
-            primary: '#3b82f6',
-            secondary: '#8b5cf6',
-            tertiary: '#06b6d4',
+            primary: '#3b82f6',      // Blue
+            secondary: '#60a5fa',    // Light Blue
+            tertiary: '#06b6d4',     // Teal/Cyan
           }
         }
       },
