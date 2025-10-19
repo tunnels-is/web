@@ -43,9 +43,9 @@ const HeroSimple = ({
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="text-gradient">{title}</span>
@@ -60,9 +60,9 @@ const HeroSimple = ({
 
         {description && (
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="text-xl md:text-2xl text-dark-text-secondary mb-12 max-w-3xl mx-auto"
           >
             {description}
@@ -72,21 +72,21 @@ const HeroSimple = ({
         {/* Buttons */}
         {buttons.length > 0 && (
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             {buttons.map((button, index) => (
               <motion.a
                 key={index}
                 href={button.href}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ y: -2, transition: { duration: 0.2 } }}
+                whileTap={{ scale: 0.98 }}
                 className={
                   button.primary
                     ? "px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white font-semibold rounded-lg transition-colors shadow-lg shadow-dark-accent-primary/20"
-                    : "px-8 py-4 glass-effect hover:bg-dark-elevated text-dark-text-primary font-semibold rounded-lg transition-all"
+                    : "px-8 py-4 glass-effect hover:bg-dark-elevated text-dark-text-primary font-semibold rounded-lg transition-colors"
                 }
               >
                 {button.text}

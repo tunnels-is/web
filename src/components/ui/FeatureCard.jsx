@@ -40,9 +40,9 @@ const FeatureCard = ({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay }}
-      whileHover={hoverEffect ? { scale: 1.05 } : {}}
-      className={`p-6 rounded-xl transition-all duration-300 ${getVariantClasses()}`}
+      transition={{ delay, duration: 0.4, ease: "easeOut" }}
+      whileHover={hoverEffect ? { y: -4, transition: { duration: 0.2 } } : {}}
+      className={`p-6 rounded-xl transition-colors duration-200 ${getVariantClasses()}`}
     >
       {icon && (
         <div className="text-4xl mb-4">{icon}</div>

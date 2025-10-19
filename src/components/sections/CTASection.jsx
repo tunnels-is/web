@@ -34,9 +34,9 @@ const CTASection = ({
       <section ref={ref} className={`py-24 ${className}`}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className={`${backgroundClass} p-12 rounded-2xl`}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
@@ -52,12 +52,12 @@ const CTASection = ({
                 <motion.a
                   key={index}
                   href={button.href}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={{ y: -2, transition: { duration: 0.2 } }}
+                  whileTap={{ scale: 0.98 }}
                   className={
                     button.primary
-                      ? "inline-block px-8 py-4 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
-                      : "inline-block px-8 py-4 glass-effect text-dark-text-primary font-semibold rounded-lg hover:bg-dark-elevated transition-all"
+                      ? "inline-block px-8 py-4 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+                      : "inline-block px-8 py-4 glass-effect text-dark-text-primary font-semibold rounded-lg hover:bg-dark-elevated transition-colors"
                   }
                 >
                   {button.text}
@@ -79,9 +79,9 @@ const CTASection = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {title && (
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-16"
             >
               <h2 className="text-5xl md:text-6xl font-bold mb-6">
@@ -99,11 +99,11 @@ const CTASection = ({
             {cards.map((card, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 + index * 0.2 }}
-                whileHover={{ scale: 1.03 }}
-                className={`${backgroundClass} p-10 rounded-3xl hover:bg-dark-elevated transition-all duration-300 border-2 ${
+                initial={{ opacity: 0, y: 20 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className={`${backgroundClass} p-10 rounded-3xl hover:bg-dark-elevated transition-colors duration-200 border-2 ${
                   card.highlighted
                     ? 'border-dark-accent-primary'
                     : 'border-dark-accent-secondary'
@@ -135,12 +135,12 @@ const CTASection = ({
                 {card.button && (
                   <motion.a
                     href={card.button.href}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ y: -2, transition: { duration: 0.2 } }}
+                    whileTap={{ scale: 0.98 }}
                     className={
                       card.button.primary
-                        ? "block w-full py-5 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white text-center text-xl font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all"
-                        : "block w-full py-5 glass-effect text-dark-text-primary text-center text-xl font-bold rounded-xl hover:bg-dark-bg transition-all border-2 border-dark-accent-secondary"
+                        ? "block w-full py-5 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white text-center text-xl font-bold rounded-xl shadow-xl hover:shadow-2xl transition-shadow"
+                        : "block w-full py-5 glass-effect text-dark-text-primary text-center text-xl font-bold rounded-xl hover:bg-dark-bg transition-colors border-2 border-dark-accent-secondary"
                     }
                   >
                     {card.button.text}

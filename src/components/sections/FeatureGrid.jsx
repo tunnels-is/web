@@ -54,12 +54,12 @@ const FeatureGrid = ({
       {features.map((feature, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{
-            duration: 0.5,
-            delay: index * 0.08,
-            ease: [0.25, 0.46, 0.45, 0.94]
+            duration: 0.4,
+            delay: index * 0.05,
+            ease: "easeOut"
           }}
           className={getCardClasses(feature, index)}
         >

@@ -33,9 +33,9 @@ const HeroWithWaves = ({
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           {badge && (
             <div className="inline-flex items-center gap-2 px-6 py-3 glass-effect rounded-full mb-8">
@@ -63,26 +63,26 @@ const HeroWithWaves = ({
         {/* Buttons */}
         {buttons.length > 0 && (
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
             {buttons.map((button, index) => (
               <motion.a
                 key={index}
                 href={button.href}
-                whileHover={{ scale: 1.05, boxShadow: button.primary ? "0 20px 40px rgba(59, 130, 246, 0.3)" : undefined }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ y: -2, transition: { duration: 0.2 } }}
+                whileTap={{ scale: 0.98 }}
                 className={
                   button.primary
-                    ? "group px-10 py-5 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white text-lg font-semibold rounded-xl shadow-lg transition-all relative overflow-hidden"
-                    : "px-10 py-5 glass-effect hover:bg-dark-elevated text-dark-text-primary text-lg font-semibold rounded-xl transition-all"
+                    ? "group px-10 py-5 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden"
+                    : "px-10 py-5 glass-effect hover:bg-dark-elevated text-dark-text-primary text-lg font-semibold rounded-xl transition-colors"
                 }
               >
                 <span className="relative z-10">{button.text}</span>
                 {button.primary && (
-                  <motion.div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity" />
+                  <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity" />
                 )}
               </motion.a>
             ))}
@@ -94,15 +94,15 @@ const HeroWithWaves = ({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
             className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
           >
             {quickStats.map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.4 + index * 0.05, ease: "easeOut" }}
                 className="glass-effect p-6 rounded-xl"
               >
                 <div className="text-4xl font-bold text-gradient mb-2">{stat.value}</div>
