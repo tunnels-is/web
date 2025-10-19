@@ -102,10 +102,25 @@ h1, h2, h3, h4, h5, h6 {
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
 }
 
-/* Extra smoothing for large text */
+/* Main headings stay with Inter */
 h1, h2 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
   -webkit-text-stroke: 0.5px transparent;
   text-shadow: 0 0 0.01px rgba(255, 255, 255, 0.15);
+}
+
+/* H3 with Space Grotesk for feature/card titles */
+h3 {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+/* H4-H6 stay with Inter */
+h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.005em;
 }
 
 /* Button and interactive text smoothing */
@@ -113,6 +128,32 @@ button, a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+/* Buttons with slightly heavier weight for better readability */
+button, .btn, [class*="px-"][class*="py-"] {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Description and secondary text with lighter weight */
+p {
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  line-height: 1.65;
+}
+
+/* Small text and captions */
+.text-sm, small {
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+/* Feature/Card specific styling - Space Grotesk for sub-item titles */
+.feature-title, .card-title, [class*="feature"] h3, [class*="card"] h3 {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 .glass-effect {
