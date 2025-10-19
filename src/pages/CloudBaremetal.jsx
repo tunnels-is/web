@@ -113,7 +113,7 @@ const CloudBaremetal = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 pb-12">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
@@ -283,7 +283,7 @@ const CloudBaremetal = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={isVisible2 ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="glass-effect p-8 rounded-xl"
+              className="p-8"
             >
               <div className="space-y-6">
                 <div className="bg-gradient-to-br from-dark-accent-primary/20 to-dark-accent-secondary/20 p-6 rounded-lg">
@@ -537,7 +537,7 @@ const CloudBaremetal = () => {
       </section>
 
       {/* Getting Started */}
-      <section ref={ref7} className="py-24 bg-dark-surface">
+      <section ref={ref7} className="py-24 bg-dark-bg">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
