@@ -1,55 +1,28 @@
 import { motion } from 'framer-motion';
-import FloatingOrbs from '../animations/FloatingOrbs';
 import WaveAnimation from '../animations/WaveAnimation';
 import NetworkLines from '../animations/NetworkLines';
 
 /**
- * HeroSimple - Simple hero section with optional orbs and waves
+ * HeroSimple - Simple hero section with optional animations
  * Used for: Home, Features, DNS pages
  *
  * @param {string} title - Main heading
  * @param {string} subtitle - Subtitle below title
  * @param {string} description - Description text
  * @param {Array} buttons - Array of button configurations
- * @param {boolean} showOrbs - Show floating orbs (default: true)
  * @param {boolean} showWaves - Show wave animation (default: false)
  * @param {boolean} showNetworkLines - Show network connection lines (default: false)
  * @param {boolean} showScrollIndicator - Show scroll indicator (default: false)
- * @param {Array} orbs - Custom orb configurations (optional)
  */
 const HeroSimple = ({
   title,
   subtitle,
   description,
   buttons = [],
-  showOrbs = true,
   showWaves = false,
   showNetworkLines = false,
   showScrollIndicator = false,
-  orbs
 }) => {
-  const defaultOrbs = [
-    {
-      position: "top-1/4 -left-20",
-      size: "w-96 h-96",
-      color: "bg-dark-accent-primary/10",
-      duration: 20,
-      delay: 0,
-      yRange: [0, 0, 0],
-      scaleRange: [1, 1.2, 1],
-      opacityRange: [0.1, 0.1, 0.1]
-    },
-    {
-      position: "bottom-1/4 -right-20",
-      size: "w-96 h-96",
-      color: "bg-dark-accent-secondary/10",
-      duration: 25,
-      delay: 0,
-      yRange: [0, 0, 0],
-      scaleRange: [1.2, 1, 1.2],
-      opacityRange: [0.1, 0.1, 0.1]
-    }
-  ];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -57,13 +30,6 @@ const HeroSimple = ({
       {showNetworkLines && (
         <div className="absolute inset-0">
           <NetworkLines opacity={0.08} />
-        </div>
-      )}
-
-      {/* Animated Background Elements */}
-      {showOrbs && (
-        <div className="absolute inset-0 overflow-hidden">
-          <FloatingOrbs orbs={orbs || defaultOrbs} />
         </div>
       )}
 
