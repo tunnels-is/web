@@ -4,7 +4,9 @@
 
 - **Website Status**: Live and running on `localhost:5173`
 - **Dev Server**: Vite dev server (accessible on 0.0.0.0:5173)
-- **Puppeteer**: Available for browser automation, screenshots, and testing
+- **Puppeteer**: Available for browser automation, screenshots,
+- **Puppeteer**: scripts should be placed in ./scripts
+- **Puppeteer Screenshots**: screenshots should be placed in ./screenshots
 - **Node Version**: 18+
 - **Package Manager**: npm
 
