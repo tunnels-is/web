@@ -829,7 +829,7 @@ export const featuresContent = {
 
   advancedFeatures: {
     title: "Advanced Features",
-    subtitle: "Advanced capabilities for power users and technical professionals.",
+    subtitle: "Advanced capabilities for power users, technical professionals, and organizations requiring scale and support.",
     features: [
       {
         title: "Source Available",
@@ -849,26 +849,15 @@ export const featuresContent = {
       },
       {
         title: "User Management",
-        content: "Manage users, groups and devices in the application UI",
+        content: "Manage users, groups and devices in the application UI with group-based access control",
       },
       {
         title: "Invite Friends",
         content: "Invite friends to join your tunnels server with simple user/password registration",
       },
-    ]
-  },
-
-  enterpriseFeatures: {
-    title: "Enterprise Features",
-    subtitle: "Enterprise-grade features for organizations requiring scale, support, and security compliance.",
-    features: [
       {
         title: "Custom Integrations",
         content: "We are always open to creating custom integration when the need arises",
-      },
-      {
-        title: "User Management",
-        content: "Group based user management is built into the platform",
       },
       {
         title: "24/7 Support",

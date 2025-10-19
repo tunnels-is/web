@@ -10,13 +10,11 @@ import { featuresContent } from '../content/siteContent';
 const Features = () => {
   const [ref1, isVisible1] = useScrollAnimation();
   const [ref2, isVisible2] = useScrollAnimation();
-  const [ref3, isVisible3] = useScrollAnimation();
 
-  const { hero, basicFeatures, advancedFeatures, enterpriseFeatures, cta } = featuresContent;
+  const { hero, basicFeatures, advancedFeatures, cta } = featuresContent;
 
   const basicFeaturesData = basicFeatures.features;
   const advancedFeaturesData = advancedFeatures.features;
-  const enterpriseFeaturesData = enterpriseFeatures.features;
 
   return (
     <div className="min-h-screen">
@@ -51,7 +49,7 @@ const Features = () => {
         </div>
       </ContentSection>
 
-      {/* Advanced Features */}
+      {/* Advanced & Enterprise Features */}
       <ContentSection background="dark-surface">
         <div ref={ref2}>
           <motion.div
@@ -65,27 +63,6 @@ const Features = () => {
             />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {advancedFeaturesData.map((feature, index) => (
-                <FeatureCard key={index} {...feature} delay={index * 0.05} />
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </ContentSection>
-
-      {/* Enterprise Features */}
-      <ContentSection>
-        <div ref={ref3}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible3 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            <SectionHeader
-              title={enterpriseFeatures.title}
-              subtitle={enterpriseFeatures.subtitle}
-            />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {enterpriseFeaturesData.map((feature, index) => (
                 <FeatureCard key={index} {...feature} delay={index * 0.05} />
               ))}
             </div>
