@@ -1,13 +1,13 @@
-import { motion } from 'framer-motion';
+import { GitHubIcon, DiscordIcon, TwitterIcon, RedditIcon } from './SocialIcons';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/tunnels-is', icon: 'GH' },
-    { name: 'Discord', url: 'https://discord.com/invite/7Ts3PCnCd9', icon: 'DC' },
-    { name: 'Twitter', url: 'https://x.com/tunnels_is', icon: 'X' },
-    { name: 'Reddit', url: 'https://www.reddit.com/r/tunnels_is/', icon: 'RD' },
+    { name: 'GitHub', url: 'https://github.com/tunnels-is', icon: GitHubIcon },
+    { name: 'Discord', url: 'https://discord.com/invite/7Ts3PCnCd9', icon: DiscordIcon },
+    { name: 'Twitter', url: 'https://x.com/tunnels_is', icon: TwitterIcon },
+    { name: 'Reddit', url: 'https://www.reddit.com/r/tunnels_is/', icon: RedditIcon },
   ];
 
   return (
@@ -54,18 +54,21 @@ const Footer = () => {
               Connect
             </h4>
             <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <motion.a
-                  key={social.name}
-                  href={social.url}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-lg bg-dark-elevated hover:bg-dark-accent-primary transition-colors flex items-center justify-center text-dark-text-secondary hover:text-white"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </motion.a>
-              ))}
+              {socialLinks.map((social) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-lg bg-dark-elevated flex items-center justify-center text-dark-text-secondary hover:text-dark-accent-primary transition-colors"
+                    aria-label={social.name}
+                  >
+                    <IconComponent />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import WaveAnimation from '../animations/WaveAnimation';
-import FloatingOrbs from '../animations/FloatingOrbs';
 
 /**
  * HeroWithWaves - Hero section with animated wave background
@@ -13,7 +12,6 @@ import FloatingOrbs from '../animations/FloatingOrbs';
  * @param {Array} buttons - Array of button configurations
  * @param {Array} quickStats - Array of stat objects { value, label }
  * @param {boolean} showScrollIndicator - Show scroll indicator (default: true)
- * @param {Array} orbs - Custom orb configurations (optional)
  */
 const HeroWithWaves = ({
   badge,
@@ -23,7 +21,6 @@ const HeroWithWaves = ({
   buttons = [],
   quickStats = [],
   showScrollIndicator = true,
-  orbs
 }) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -32,9 +29,6 @@ const HeroWithWaves = ({
         <div className="absolute inset-0 bg-gradient-to-br from-dark-bg via-dark-surface to-dark-bg"></div>
         <WaveAnimation />
       </div>
-
-      {/* Floating Orbs */}
-      <FloatingOrbs orbs={orbs} />
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">

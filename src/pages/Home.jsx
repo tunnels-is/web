@@ -71,12 +71,19 @@ const Home = () => {
               <motion.a
                 key={topic.path}
                 href={topic.path}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={topicsVisible ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                whileHover={{ scale: 1.05, backgroundColor: 'rgba(59, 130, 246, 0.2)' }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 glass-effect rounded-lg font-semibold text-dark-text-primary hover:text-dark-accent-primary transition-all border border-dark-accent-primary/30"
+                initial={{ opacity: 0, y: 20 }}
+                animate={topicsVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.03,
+                  ease: "easeOut"
+                }}
+                whileHover={{
+                  y: -4,
+                  transition: { duration: 0.2, ease: "easeOut" }
+                }}
+                whileTap={{ scale: 0.98 }}
+                className="px-6 py-3 glass-effect rounded-lg font-semibold text-dark-text-primary hover:text-dark-accent-primary transition-colors duration-200 border border-dark-accent-primary/30 hover:border-dark-accent-primary/60 hover:shadow-lg hover:shadow-dark-accent-primary/20"
               >
                 {topic.label}
               </motion.a>
