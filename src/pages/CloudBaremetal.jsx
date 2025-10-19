@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { cloudBaremetalContent } from '../content/siteContent';
+import { GlobeIcon, ServerIcon, BoltIcon, CodeIcon } from '../components/ui/Icons';
 
 const CloudBaremetal = () => {
   const [ref1, isVisible1] = useScrollAnimation();
@@ -305,7 +306,7 @@ const CloudBaremetal = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible3 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-gradient">Real-World Deployments</span>
@@ -315,29 +316,51 @@ const CloudBaremetal = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {useCases.map((useCase, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                animate={isVisible3 ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="bg-dark-elevated p-8 rounded-xl hover:bg-dark-bg hover:scale-105 transition-all duration-300"
-              >
-                <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
-                  {useCase.title}
-                </h3>
-                <p className="text-lg text-dark-text-secondary mb-4 leading-snug">
-                  {useCase.description}
-                </p>
-                <div className="bg-dark-bg p-4 rounded-lg">
-                  <p className="text-sm text-dark-text-muted mb-1 font-semibold uppercase tracking-wide">Example Setup</p>
-                  <p className="text-dark-text-secondary text-sm leading-snug">
-                    {useCase.scenario}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16">
+            {useCases.map((useCase, index) => {
+              const icons = [
+                <GlobeIcon />,      // Global Enterprise
+                <ServerIcon />,     // Cloud + On-Premise
+                <BoltIcon />,       // High-Traffic
+                <CodeIcon />        // Development
+              ];
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isVisible3 ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  className="relative group"
+                >
+                  {/* Icon badge */}
+                  <div className="absolute -left-2 top-0 w-14 h-14 text-dark-accent-primary flex items-center justify-center">
+                    {icons[index]}
+                  </div>
+
+                <div className="pl-16">
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-dark-accent-primary transition-colors">
+                    {useCase.title}
+                  </h3>
+                  <p className="text-base text-dark-text-secondary mb-6 leading-relaxed">
+                    {useCase.description}
                   </p>
+
+                  {/* Scenario card with different styling */}
+                  <div className="bg-dark-bg/50 backdrop-blur-sm p-5 rounded-lg border-t border-dark-accent-primary/20">
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-dark-accent-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p className="text-sm text-dark-text-secondary leading-relaxed">
+                        {useCase.scenario}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
