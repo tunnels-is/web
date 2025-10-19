@@ -37,7 +37,7 @@ export const homeContent = {
     subtitle: "Discover how Tunnels can solve your networking challenges across different environments",
     topics: [
       { label: 'Free & Open Source', path: '/free-and-opensource' },
-      { label: 'Security', path: '/security' },
+      { label: 'Security', path: 'https://docs.tunnels.is/docs/topics/security', external: true },
       { label: 'Public VPN', path: '/public' },
       { label: 'Homelab', path: '/homelab' },
       { label: 'Cloud & Baremetal', path: '/cloud' },

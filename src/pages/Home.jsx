@@ -36,6 +36,8 @@ const Home = () => {
               <motion.a
                 key={topic.path}
                 href={topic.path}
+                target={topic.external ? "_blank" : undefined}
+                rel={topic.external ? "noopener noreferrer" : undefined}
                 initial={{ opacity: 0, y: 20 }}
                 animate={topicsVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{
