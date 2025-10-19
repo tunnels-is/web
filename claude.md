@@ -4,9 +4,9 @@
 
 - **Website Status**: Live and running on `localhost:5173`
 - **Dev Server**: Vite dev server (accessible on 0.0.0.0:5173)
-- **Puppeteer**: Available for browser automation, screenshots,
-- **Puppeteer**: scripts should be placed in ./scripts
-- **Puppeteer Screenshots**: screenshots should be placed in ./screenshots
+- **Puppeteer**: Available for browser automation and screenshots
+  - Scripts are placed in `./scripts/`
+  - Screenshots are saved to `./screenshots/`
 - **Node Version**: 18+
 - **Package Manager**: npm
 
@@ -31,9 +31,10 @@ src/
 │   ├── Layout.jsx              # Main layout wrapper
 │   ├── TopBar.jsx              # Navigation bar
 │   ├── Footer.jsx              # Footer component
+│   ├── SocialIcons.jsx         # Social media icons component
 │   ├── animations/             # Animation components
-│   │   ├── FloatingOrbs.jsx    # Floating orb animations
-│   │   └── WaveAnimation.jsx   # Wave background animation
+│   │   ├── WaveAnimation.jsx   # Wave background animation
+│   │   └── NetworkLines.jsx    # Network lines animation
 │   ├── sections/               # Reusable section components
 │   │   ├── HeroWithWaves.jsx
 │   │   ├── HeroWithGradients.jsx
@@ -50,7 +51,8 @@ src/
 │   │   └── PricingHighlight.jsx
 │   └── ui/                     # UI components
 │       ├── FeatureCard.jsx
-│       └── SectionHeader.jsx
+│       ├── SectionHeader.jsx
+│       └── Icons.jsx           # Icon components
 ├── pages/                      # Page components
 │   ├── Home.jsx
 │   ├── Features.jsx
@@ -86,8 +88,8 @@ The project follows a component-driven architecture with reusable section compon
 - **SectionHeader**: Consistent section headers with titles and subtitles
 
 ### Animations
-- **FloatingOrbs**: Animated background orbs
-- **WaveAnimation**: Smooth wave animations
+- **WaveAnimation**: Smooth wave animations for hero sections
+- **NetworkLines**: Animated network line connections
 - **Scroll Animations**: Custom hook for scroll-triggered animations
 
 ## Available NPM Scripts
@@ -132,16 +134,17 @@ The site uses a custom dark theme defined in `src/index.css`:
 
 Routes are defined in `App.jsx` using React Router:
 - `/` - Home
-- `/features` - Features overview
-- `/technical` - Technical details
+- `/features` - Features overview (also `/public`)
+- `/technical` - Technical details (also `/security`, `/iot`, `/office`, `/lan-over-wan`)
 - `/enterprise` - Enterprise offerings
 - `/pricing` - Pricing page
 - `/dns` - DNS services
 - `/personal-vpn` - Personal VPN
 - `/homelab` - Homelab solutions
-- `/cloud-baremetal` - Cloud/Baremetal
-- `/free-open-source` - FOSS page
+- `/cloud` - Cloud/Baremetal page
+- `/free-and-opensource` - FOSS page
 - `/download` - Download page
+- `*` - Fallback to Home
 
 ## Puppeteer Integration
 
@@ -236,11 +239,26 @@ npm run screenshot:quick http://localhost:5173/your-page
 
 ## Notes for Claude
 
-- **Always test changes on localhost:5173** - The dev server is running
-- **Use Puppeteer for visual verification** - Screenshots available via npm scripts
+### Available Tools & Resources
+- **Dev Server**: ALWAYS running on `http://localhost:5173` - Use curl or browser checks to verify changes
+- **Puppeteer**: Available for browser automation, visual testing, and screenshots
+  - Create scripts in `./scripts/` directory
+  - Save screenshots to `./screenshots/` directory
+  - Use for visual verification after making UI changes
+  - Examples: `node scripts/take-screenshot.js http://localhost:5173/page-name`
+
+### Development Guidelines
+- **Always test changes on localhost:5173** - The dev server is running and accessible
+- **Use Puppeteer proactively** - Take screenshots to verify visual changes
 - **Maintain component structure** - Keep sections modular and reusable
 - **Follow existing patterns** - Animations, styling, component composition
 - **Dark theme only** - No light mode currently
 - **Responsive design** - Test across viewports (mobile, tablet, desktop)
 - **Use Framer Motion** - For all animations and transitions
 - **Tailwind utilities preferred** - Over custom CSS
+
+### Testing Workflow
+1. Make code changes
+2. Verify dev server is accessible: `curl -s http://localhost:5173`
+3. Use Puppeteer to take screenshots for visual verification
+4. Check responsive behavior across viewports
