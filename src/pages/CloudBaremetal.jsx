@@ -339,7 +339,7 @@ const CloudBaremetal = () => {
                   </div>
 
                 <div className="pl-16">
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-dark-accent-primary transition-colors">
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-dark-accent-primary transition-colors leading-tight pt-3">
                     {useCase.title}
                   </h3>
                   <p className="text-base text-dark-text-secondary mb-6 leading-relaxed">
