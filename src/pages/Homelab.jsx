@@ -14,12 +14,20 @@ const Homelab = () => {
 
   // Destructure content from centralized content file
   const {
+    hero,
+    benefitsSection,
     benefits,
+    setupSection,
     setupSteps,
+    useCasesSection,
     useCases,
+    dnsSection,
     dnsFeatures,
+    technicalSection,
     technicalHighlights,
+    hardwareSection,
     hardwareOptions,
+    ctaSection,
     ctaCards
   } = homelabContent;
 
@@ -27,26 +35,19 @@ const Homelab = () => {
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <HeroWithGradients
-        badge="Perfect for Self-Hosters"
-        title="Homelab VPN"
-        subtitle="Self-Hosted VPN for Your Home Network"
-        description="Deploy a single server and securely access your homelab from anywhere. Built-in DNS management, ad blocking, and zero-configuration setup."
-        buttons={[
-          { text: "Download Free", href: "/download", primary: true },
-          { text: "View Documentation", href: "/technical", primary: false }
-        ]}
-        quickStats={[
-          { label: "Setup Time", value: "5 min" },
-          { label: "Cost", value: "$0" },
-          { label: "Complexity", value: "Low" }
-        ]}
+        badge={hero.badge}
+        title={hero.title}
+        subtitle={hero.subtitle}
+        description={hero.description}
+        buttons={hero.buttons}
+        quickStats={hero.quickStats}
       />
 
       {/* Benefits Section */}
       <ContentSection background="dark-surface">
         <SectionHeader
-          title="Why Choose Tunnels for Your Homelab"
-          subtitle="Everything you need to securely access and manage your home network from anywhere"
+          title={benefitsSection.title}
+          subtitle={benefitsSection.subtitle}
         />
         <FeatureGrid
           features={benefits}
@@ -58,8 +59,8 @@ const Homelab = () => {
       {/* Setup Steps */}
       <ContentSection>
         <SectionHeader
-          title="Quick Setup Guide"
-          subtitle="Get your homelab VPN running in four simple steps"
+          title={setupSection.title}
+          subtitle={setupSection.subtitle}
         />
         <div className="max-w-6xl mx-auto">
           <FeatureTimeline steps={setupSteps} />
@@ -69,8 +70,8 @@ const Homelab = () => {
       {/* Use Cases */}
       <ContentSection background="dark-surface">
         <SectionHeader
-          title="Perfect For Your Setup"
-          subtitle="Whatever you're running in your homelab, Tunnels makes it accessible"
+          title={useCasesSection.title}
+          subtitle={useCasesSection.subtitle}
         />
         <FeatureGrid
           features={useCases}
@@ -82,8 +83,8 @@ const Homelab = () => {
       {/* DNS Features */}
       <ContentSection>
         <SectionHeader
-          title="Powerful DNS Management"
-          subtitle="Built-in DNS server with custom records, blocking, and advanced routing"
+          title={dnsSection.title}
+          subtitle={dnsSection.subtitle}
         />
         <FeatureGrid
           features={dnsFeatures}
@@ -105,12 +106,10 @@ const Homelab = () => {
             </div>
             <div>
               <h4 className="text-xl font-semibold text-dark-accent-primary mb-2 leading-tight">
-                Network-Wide Protection
+                {dnsSection.infoBox.title}
               </h4>
               <p className="text-dark-text-secondary leading-snug">
-                All devices connected through your Tunnels homelab server automatically benefit from
-                DNS blocking and custom DNS records - no per-device configuration needed. Your phone,
-                laptop, and tablet all get ad-blocking anywhere in the world.
+                {dnsSection.infoBox.description}
               </p>
             </div>
           </div>
@@ -120,8 +119,8 @@ const Homelab = () => {
       {/* Technical Highlights */}
       <ContentSection background="dark-surface">
         <SectionHeader
-          title="Technical Highlights"
-          subtitle="Modern technology stack designed for simplicity and security"
+          title={technicalSection.title}
+          subtitle={technicalSection.subtitle}
         />
         <FeatureGrid
           features={technicalHighlights}
@@ -133,8 +132,8 @@ const Homelab = () => {
       {/* Hardware Requirements */}
       <ContentSection>
         <SectionHeader
-          title="Hardware Requirements"
-          subtitle="Run on almost any hardware you have available"
+          title={hardwareSection.title}
+          subtitle={hardwareSection.subtitle}
         />
         <FeatureGrid
           features={hardwareOptions}
@@ -144,16 +143,16 @@ const Homelab = () => {
         <div className="mt-12 text-center bg-dark-surface p-6 rounded-xl">
           <p className="text-dark-text-secondary text-lg">
             <span className="text-dark-accent-primary font-semibold">Pro Tip:</span>
-            {" "}Start with what you have - Tunnels is incredibly lightweight and runs efficiently on minimal hardware.
+            {" "}{hardwareSection.proTip}
           </p>
         </div>
       </ContentSection>
 
       {/* CTA */}
       <CTASection
-        title="Get Started Today"
-        description="Join thousands of homelabbers using Tunnels for secure remote access"
-        layout="split"
+        title={ctaSection.title}
+        description={ctaSection.description}
+        layout={ctaSection.layout}
         cards={ctaCards}
       />
     </div>

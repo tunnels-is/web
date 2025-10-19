@@ -91,6 +91,27 @@ export const homeContent = {
 // ============================================================================
 
 export const homelabContent = {
+  hero: {
+    badge: "Perfect for Self-Hosters",
+    title: "Homelab VPN",
+    subtitle: "Self-Hosted VPN for Your Home Network",
+    description: "Deploy a single server and securely access your homelab from anywhere. Built-in DNS management, ad blocking, and zero-configuration setup.",
+    buttons: [
+      { text: "Download Free", href: "/download", primary: true },
+      { text: "View Documentation", href: "/technical", primary: false }
+    ],
+    quickStats: [
+      { label: "Setup Time", value: "5 min" },
+      { label: "Cost", value: "$0" },
+      { label: "Complexity", value: "Low" }
+    ]
+  },
+
+  benefitsSection: {
+    title: "Why Choose Tunnels for Your Homelab",
+    subtitle: "Everything you need to securely access and manage your home network from anywhere"
+  },
+
   benefits: [
     {
       title: "Self-Hosted Privacy",
@@ -124,6 +145,11 @@ export const homelabContent = {
     }
   ],
 
+  setupSection: {
+    title: "Quick Setup Guide",
+    subtitle: "Get your homelab VPN running in four simple steps"
+  },
+
   setupSteps: [
     {
       step: "1",
@@ -154,6 +180,11 @@ export const homelabContent = {
       details: "Default credentials: admin/admin (change immediately!)"
     }
   ],
+
+  useCasesSection: {
+    title: "Perfect For Your Setup",
+    subtitle: "Whatever you're running in your homelab, Tunnels makes it accessible"
+  },
 
   useCases: [
     {
@@ -188,6 +219,15 @@ export const homelabContent = {
     }
   ],
 
+  dnsSection: {
+    title: "Powerful DNS Management",
+    subtitle: "Built-in DNS server with custom records, blocking, and advanced routing",
+    infoBox: {
+      title: "Network-Wide Protection",
+      description: "All devices connected through your Tunnels homelab server automatically benefit from DNS blocking and custom DNS records - no per-device configuration needed. Your phone, laptop, and tablet all get ad-blocking anywhere in the world."
+    }
+  },
+
   dnsFeatures: [
     {
       title: "Custom DNS Records",
@@ -210,6 +250,11 @@ export const homelabContent = {
       icon: <LockShieldIcon />
     }
   ],
+
+  technicalSection: {
+    title: "Technical Highlights",
+    subtitle: "Modern technology stack designed for simplicity and security"
+  },
 
   technicalHighlights: [
     {
@@ -234,6 +279,12 @@ export const homelabContent = {
     }
   ],
 
+  hardwareSection: {
+    title: "Hardware Requirements",
+    subtitle: "Run on almost any hardware you have available",
+    proTip: "Start with what you have - Tunnels is incredibly lightweight and runs efficiently on minimal hardware."
+  },
+
   hardwareOptions: [
     {
       title: "Raspberry Pi",
@@ -251,6 +302,12 @@ export const homelabContent = {
       icon: <ContainerIcon />
     }
   ],
+
+  ctaSection: {
+    title: "Get Started Today",
+    description: "Join thousands of homelabbers using Tunnels for secure remote access",
+    layout: "split"
+  },
 
   ctaCards: [
     {
