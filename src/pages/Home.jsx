@@ -204,7 +204,7 @@ const Home = () => {
                 animate={featuresVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="bg-dark-bg border-2 border-dark-accent-primary/30 p-6 rounded-xl hover:border-dark-accent-primary hover:shadow-xl hover:shadow-dark-accent-primary/20 transition-all"
+                className="bg-dark-elevated p-6 rounded-xl hover:bg-dark-bg hover:shadow-xl hover:shadow-dark-accent-primary/20 transition-all"
               >
                 <div className="text-4xl mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-semibold mb-2 text-dark-text-primary">
