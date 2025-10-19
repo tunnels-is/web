@@ -100,7 +100,7 @@ const Homelab = () => {
           className="mt-12 bg-gradient-to-r from-dark-accent-primary/10 via-dark-accent-secondary/10 to-dark-accent-tertiary/10 p-8 rounded-xl"
         >
           <div className="flex items-start gap-4">
-            <div className="w-14 h-14">
+            <div className="w-20 h-20">
               <LightbulbIcon />
             </div>
             <div>

@@ -198,7 +198,7 @@ const CloudBaremetal = () => {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="bg-dark-elevated p-8 rounded-xl hover:bg-dark-bg hover:shadow-xl hover:shadow-dark-accent-primary/20 transition-all"
               >
-                <div className="w-14 h-14 mb-4">{benefit.icon}</div>
+                <div className="w-20 h-20 mb-4">{benefit.icon}</div>
                 <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
                   {benefit.title}
                 </h3>

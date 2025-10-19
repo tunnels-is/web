@@ -119,7 +119,7 @@ const FreeAndOpenSource = () => {
                 whileTap={{ scale: 0.95 }}
                 className="glass-effect p-6 rounded-xl hover:bg-dark-elevated transition-all"
               >
-                <div className="w-14 h-14 mb-4">{social.icon}</div>
+                <div className="w-20 h-20 mb-4">{social.icon}</div>
                 <h3 className="text-xl font-semibold text-dark-accent-primary mb-2">{social.name}</h3>
                 <p className="text-dark-text-secondary text-sm">{social.desc}</p>
               </motion.a>

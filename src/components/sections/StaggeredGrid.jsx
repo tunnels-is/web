@@ -46,7 +46,7 @@ const StaggeredGrid = ({
           }`}
         >
           {item.icon && (
-            <div className="w-14 h-14 mb-4">{item.icon}</div>
+            <div className="w-20 h-20 mb-4">{item.icon}</div>
           )}
 
           <h3 className="text-2xl font-bold text-dark-accent-primary mb-2 leading-tight">
