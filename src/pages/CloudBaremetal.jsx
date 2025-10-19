@@ -344,46 +344,49 @@ const CloudBaremetal = () => {
 
       {/* Technical Capabilities */}
       <section ref={ref4} className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible4 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-gradient">Technical Architecture</span>
             </h2>
-            <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto">
+            <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto mb-8">
               Deep dive into the technical capabilities that power multi-server deployments
             </p>
+            <motion.a
+              href="https://docs.tunnels.is/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block px-6 py-3 bg-dark-accent-primary/10 hover:bg-dark-accent-primary/20 text-dark-accent-primary border border-dark-accent-primary/30 hover:border-dark-accent-primary/50 rounded-lg font-semibold transition-all"
+            >
+              View Documentation
+            </motion.a>
           </motion.div>
 
-          <div className="space-y-6">
+          <div className="space-y-16">
             {technicalCapabilities.map((capability, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isVisible4 ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-[rgba(18,18,18,0.5)] backdrop-blur-2xl p-6 rounded-xl hover:bg-dark-elevated transition-all"
+                className="border-l-2 border-dark-accent-primary/30 pl-8"
               >
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-semibold text-dark-accent-secondary mb-3">
-                      {capability.title}
-                    </h3>
-                    <p className="text-lg text-dark-text-secondary mb-4">
-                      {capability.description}
-                    </p>
-                  </div>
-                  <div className="flex-1 bg-dark-bg p-5 rounded-lg">
-                    <p className="text-sm text-dark-text-muted mb-2 font-mono uppercase tracking-wider">Technical Detail</p>
-                    <p className="text-dark-text-secondary font-mono text-sm leading-snug">
-                      {capability.technical}
-                    </p>
-                  </div>
-                </div>
+                <h3 className="text-2xl font-semibold text-white mb-3">
+                  {capability.title}
+                </h3>
+                <p className="text-lg text-dark-text-secondary mb-4 leading-relaxed">
+                  {capability.description}
+                </p>
+                <p className="text-sm text-dark-text-muted font-mono leading-relaxed">
+                  {capability.technical}
+                </p>
               </motion.div>
             ))}
           </div>
