@@ -366,7 +366,7 @@ const CloudBaremetal = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isVisible4 ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-effect p-6 rounded-xl hover:bg-dark-elevated transition-all"
+                className="bg-[rgba(18,18,18,0.5)] backdrop-blur-2xl p-6 rounded-xl hover:bg-dark-elevated transition-all"
               >
                 <div className="flex flex-col md:flex-row md:items-start gap-6">
                   <div className="flex-1">
@@ -377,7 +377,7 @@ const CloudBaremetal = () => {
                       {capability.description}
                     </p>
                   </div>
-                  <div className="flex-1 bg-dark-bg p-5 rounded-lg border border-dark-accent-secondary/30">
+                  <div className="flex-1 bg-dark-bg p-5 rounded-lg">
                     <p className="text-sm text-dark-text-muted mb-2 font-mono uppercase tracking-wider">Technical Detail</p>
                     <p className="text-dark-text-secondary font-mono text-sm leading-snug">
                       {capability.technical}
