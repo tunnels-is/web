@@ -98,7 +98,7 @@ export const homelabContent = {
     description: "Deploy a single server and securely access your homelab from anywhere. Built-in DNS management, ad blocking, and zero-configuration setup.",
     buttons: [
       { text: "Download Free", href: "/download", primary: true },
-      { text: "View Documentation", href: "/technical", primary: false }
+      { text: "View Documentation", href: "/", primary: false }
     ],
     quickStats: [
       { label: "Setup Time", value: "5 min" },
@@ -333,7 +333,7 @@ export const homelabContent = {
         "Linux system configuration",
         "Client setup and troubleshooting"
       ],
-      button: { text: "View Documentation", href: "/technical", primary: false },
+      button: { text: "View Documentation", href: "/", primary: false },
       highlighted: false
     }
   ]
@@ -739,7 +739,7 @@ export const personalVPNContent = {
         "DNS blocking setup",
         "Troubleshooting guide"
       ],
-      button: { text: "View Documentation", href: "/technical", primary: false },
+      button: { text: "View Documentation", href: "/", primary: false },
       highlighted: false
     }
   ]
@@ -1556,7 +1556,7 @@ export const cloudBaremetalContent = {
         "Troubleshooting & monitoring"
       ],
       buttonText: "View Documentation",
-      buttonUrl: "/technical"
+      buttonUrl: "/"
     },
     enterpriseSupport: {
       title: "Enterprise Support",

@@ -544,7 +544,7 @@ const CloudBaremetal = () => {
                 <li>• Troubleshooting & monitoring</li>
               </ul>
               <motion.a
-                href="/technical"
+                href="/"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-block px-6 py-3 bg-dark-accent-primary text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all"

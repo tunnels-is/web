@@ -32,7 +32,6 @@ const Footer = () => {
                 { label: 'Home', path: '/' },
                 { label: 'Features', path: '/features' },
                 { label: 'DNS Security', path: '/dns' },
-                { label: 'Technical', path: '/technical' },
                 { label: 'Download', path: '/download' },
                 { label: 'Pricing', path: '/pricing' },
               ].map((link) => (

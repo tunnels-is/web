@@ -24,7 +24,6 @@ const TopBar = () => {
     { path: '/features', label: 'Features' },
     { path: '/dns', label: 'DNS' },
     { path: '/enterprise', label: 'Enterprise' },
-    { path: '/technical', label: 'Technical' },
     { path: '/download', label: 'Download' },
     { path: '/pricing', label: 'Pricing' },
   ];
