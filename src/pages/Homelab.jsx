@@ -6,176 +6,22 @@ import SectionHeader from '../components/ui/SectionHeader';
 import CTASection from '../components/sections/CTASection';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
-import {
-  LockShieldIcon, NetworkGlobeIcon, ShieldCheckIcon, BoltIcon, DevicesIcon,
-  CoinsIcon, VideoIcon, HomeAutomationIcon, DatabaseIcon, SettingsIcon,
-  BlockIcon, GamepadIcon, DocumentIcon, SyncIcon, KeyIcon, RaspberryPiIcon,
-  ServerIcon, ContainerIcon, DownloadIcon, BookIcon, LightbulbIcon
-} from '../components/ui/Icons';
+import { LightbulbIcon } from '../components/ui/Icons';
+import { homelabContent } from '../content/siteContent';
 
 const Homelab = () => {
   const [ref4, isVisible4] = useScrollAnimation();
 
-  const benefits = [
-    {
-      title: "Self-Hosted Privacy",
-      description: "Your network, your data, your rules. No third-party services or privacy concerns.",
-      icon: <LockShieldIcon />
-    },
-    {
-      title: "Remote Access",
-      description: "Securely access your homelab from anywhere in the world with VPN connectivity.",
-      icon: <NetworkGlobeIcon />
-    },
-    {
-      title: "DNS Security & Blocking",
-      description: "Built-in DNS blocking for ads, trackers, and malware protection for your entire home.",
-      icon: <ShieldCheckIcon />
-    },
-    {
-      title: "Simple Installation",
-      description: "Single server setup with no complex configuration. Get running in minutes.",
-      icon: <BoltIcon />
-    },
-    {
-      title: "Multi-Device Support",
-      description: "Connect phones, laptops, tablets - all your devices with a single server.",
-      icon: <DevicesIcon />
-    },
-    {
-      title: "Cost Effective",
-      description: "Run on existing hardware - Raspberry Pi, old PC, or VM. No expensive infrastructure needed.",
-      icon: <CoinsIcon />
-    }
-  ];
-
-  const setupSteps = [
-    {
-      step: "1",
-      title: "Install the Server",
-      description: "Deploy Tunnels server on your homelab machine - supports any Linux system.",
-      command: "wget https://tunnels.is/install.sh && sudo bash install.sh",
-      details: "Works on Raspberry Pi, Ubuntu, Debian, or any Linux distribution"
-    },
-    {
-      step: "2",
-      title: "Configure Server Settings",
-      description: "Set up basic configuration for authentication and VPN access.",
-      command: "Edit /etc/tunnels/config.yaml",
-      details: "Configure APIIP, APIPort, and network settings"
-    },
-    {
-      step: "3",
-      title: "Install the Client",
-      description: "Download and install the Tunnels client on your devices.",
-      command: "Download from tunnels.is/download",
-      details: "Available for Windows, macOS, Linux, iOS, and Android"
-    },
-    {
-      step: "4",
-      title: "Connect & Configure",
-      description: "Add your server to the client and connect to your homelab network.",
-      command: "Click + to add server, enter your APIIP and APIPort",
-      details: "Default credentials: admin/admin (change immediately!)"
-    }
-  ];
-
-  const useCases = [
-    {
-      title: "Media Server Access",
-      description: "Stream your Plex, Jellyfin, or Emby content from anywhere without exposing ports to the internet.",
-      icon: <VideoIcon />
-    },
-    {
-      title: "Home Automation",
-      description: "Securely access Home Assistant, openHAB, or other smart home systems remotely.",
-      icon: <HomeAutomationIcon />
-    },
-    {
-      title: "NAS & File Access",
-      description: "Connect to your Synology, TrueNAS, or file server without complex VPN configurations.",
-      icon: <DatabaseIcon />
-    },
-    {
-      title: "Development Environment",
-      description: "Access your local dev servers, databases, and tools from anywhere you work.",
-      icon: <SettingsIcon />
-    },
-    {
-      title: "Network-Wide Ad Blocking",
-      description: "Deploy DNS-level ad and tracker blocking for all devices on your network.",
-      icon: <BlockIcon />
-    },
-    {
-      title: "Game Servers",
-      description: "Host Minecraft, Valheim, or other game servers accessible to friends anywhere.",
-      icon: <GamepadIcon />
-    }
-  ];
-
-  const dnsFeatures = [
-    {
-      title: "Custom DNS Records",
-      description: "Define internal DNS records for your homelab services with easy-to-remember names.",
-      icon: <DocumentIcon />
-    },
-    {
-      title: "DNS Blocking Lists",
-      description: "Automatic daily updates of malware, ad, and tracker domains to protect your network.",
-      icon: <ShieldCheckIcon />
-    },
-    {
-      title: "Split DNS",
-      description: "Route specific domains through your homelab DNS while using public DNS for everything else.",
-      icon: <SyncIcon />
-    },
-    {
-      title: "DNS Over VPN",
-      description: "All connected clients automatically use your homelab DNS with security and blocking.",
-      icon: <LockShieldIcon />
-    }
-  ];
-
-  const technicalHighlights = [
-    {
-      title: "Zero Configuration NAT Traversal",
-      description: "No need to configure port forwarding on your router",
-      icon: <SyncIcon />
-    },
-    {
-      title: "WireGuard Protocol",
-      description: "Modern, fast, and secure VPN protocol under the hood",
-      icon: <BoltIcon />
-    },
-    {
-      title: "IPv4 & IPv6 Support",
-      description: "Full dual-stack support for modern networks",
-      icon: <NetworkGlobeIcon />
-    },
-    {
-      title: "Automatic Certificate Management",
-      description: "Let's Encrypt integration for secure HTTPS connections",
-      icon: <KeyIcon />
-    }
-  ];
-
-  const hardwareOptions = [
-    {
-      title: "Raspberry Pi",
-      description: "Perfect for basic homelab VPN",
-      icon: <RaspberryPiIcon />
-    },
-    {
-      title: "Old PC / Thin Client",
-      description: "Great for growing homelabs",
-      icon: <ServerIcon />
-    },
-    {
-      title: "VM / Container",
-      description: "Integrate with existing infrastructure",
-      icon: <ContainerIcon />
-    }
-  ];
+  // Destructure content from centralized content file
+  const {
+    benefits,
+    setupSteps,
+    useCases,
+    dnsFeatures,
+    technicalHighlights,
+    hardwareOptions,
+    ctaCards
+  } = homelabContent;
 
   return (
     <div className="min-h-screen pt-20">
@@ -254,7 +100,9 @@ const Homelab = () => {
           className="mt-12 bg-gradient-to-r from-dark-accent-primary/10 via-dark-accent-secondary/10 to-dark-accent-tertiary/10 p-8 rounded-xl"
         >
           <div className="flex items-start gap-4">
-            <div className="text-4xl">💡</div>
+            <div className="w-12 h-12 text-dark-accent-secondary">
+              <LightbulbIcon />
+            </div>
             <div>
               <h4 className="text-xl font-semibold text-dark-accent-primary mb-2 leading-tight">
                 Network-Wide Protection
@@ -306,34 +154,7 @@ const Homelab = () => {
         title="Get Started Today"
         description="Join thousands of homelabbers using Tunnels for secure remote access"
         layout="split"
-        cards={[
-          {
-            icon: <DownloadIcon />,
-            title: "Download & Install",
-            description: "Get the Tunnels server and client applications. Free for 24 hours trial, then affordable pricing for continued use.",
-            features: [
-              "Server for Linux (all distributions)",
-              "Clients for Windows, macOS, Linux, iOS, Android",
-              "Installation guides and documentation",
-              "Community support"
-            ],
-            button: { text: "Download Free", href: "/download", primary: true },
-            highlighted: true
-          },
-          {
-            icon: <BookIcon />,
-            title: "Read Documentation",
-            description: "Comprehensive guides covering every aspect of setting up and managing your homelab VPN server.",
-            features: [
-              "Single server setup guide",
-              "DNS configuration and blocking",
-              "Linux system configuration",
-              "Client setup and troubleshooting"
-            ],
-            button: { text: "View Documentation", href: "/technical", primary: false },
-            highlighted: false
-          }
-        ]}
+        cards={ctaCards}
       />
     </div>
   );

@@ -1,46 +1,13 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
-import {
-  ChartIcon, LockShieldIcon, ClockIcon, BuildingIcon, UnlockIcon, WrenchIcon
-} from '../components/ui/Icons';
+import { enterpriseContent } from '../content/siteContent';
 
 const Enterprise = () => {
   const [ref1, isVisible1] = useScrollAnimation();
   const [ref2, isVisible2] = useScrollAnimation();
   const [ref3, isVisible3] = useScrollAnimation();
 
-  const benefits = [
-    {
-      title: "Flexibility & Scalability",
-      description: "From 100 to 1,000,000 users, Tunnels scales effortlessly with your organization's growth.",
-      icon: <ChartIcon />
-    },
-    {
-      title: "Reduced Attack Surface",
-      description: "Built with minimal dependencies and no third-party services, reducing vulnerabilities.",
-      icon: <LockShieldIcon />
-    },
-    {
-      title: "24/7 Support",
-      description: "Enterprise clients receive round-the-clock support via all support platforms.",
-      icon: <ClockIcon />
-    },
-    {
-      title: "On-Premise Deployment",
-      description: "Full on-premise installations for organizations requiring complete control and security compliance.",
-      icon: <BuildingIcon />
-    },
-    {
-      title: "No Vendor Lock",
-      description: "Deploy on any network without extensive configurations. Your infrastructure, your control.",
-      icon: <UnlockIcon />
-    },
-    {
-      title: "Custom Integrations",
-      description: "We work with you to create custom integrations that fit your specific needs.",
-      icon: <WrenchIcon />
-    },
-  ];
+  const { benefits } = enterpriseContent;
 
   return (
     <div className="min-h-screen pt-20 pb-12">
@@ -80,7 +47,7 @@ const Enterprise = () => {
                 transition={{ delay: index * 0.1 }}
                 className="glass-effect p-8 rounded-xl hover:scale-105 transition-transform duration-300"
               >
-                <div className="text-5xl mb-4">{benefit.icon}</div>
+                <div className="w-12 h-12 mb-4 text-dark-accent-primary">{benefit.icon}</div>
                 <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
                   {benefit.title}
                 </h3>

@@ -5,33 +5,11 @@ import FeatureGrid from '../components/sections/FeatureGrid';
 import CTASection from '../components/sections/CTASection';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { NetworkGlobeIcon, ShieldCheckIcon, LayersIcon, BuildingIcon } from '../components/ui/Icons';
+import { homeContent } from '../content/siteContent';
 
 const Home = () => {
   const [topicsRef, topicsVisible] = useScrollAnimation();
-
-  const features = [
-    {
-      title: 'VPN & LAN',
-      description: 'Connect to multiple networks simultaneously with advanced routing',
-      icon: <NetworkGlobeIcon />,
-    },
-    {
-      title: 'DNS Security',
-      description: 'Built-in DNS protection with daily threat list updates',
-      icon: <ShieldCheckIcon />,
-    },
-    {
-      title: 'No Installation',
-      description: 'Portable executable with no system changes required',
-      icon: <LayersIcon />,
-    },
-    {
-      title: 'Enterprise Ready',
-      description: 'Scales from individuals to millions of users',
-      icon: <BuildingIcon />,
-    },
-  ];
+  const { features } = homeContent;
 
   return (
     <div className="min-h-screen">

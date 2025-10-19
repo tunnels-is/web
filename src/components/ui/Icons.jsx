@@ -13,9 +13,9 @@ const Icon = ({ children, className = "w-12 h-12" }) => (
 export const LockShieldIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M32 8L12 18V30C12 42.5 20.5 54 32 56C43.5 54 52 42.5 52 30V18L32 8Z"
-          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.1"/>
+          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.2"/>
     <rect x="26" y="26" width="12" height="14" rx="2"
-          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.2"/>
+          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.35"/>
     <path d="M26 30V24C26 20.7 28.7 18 32 18C35.3 18 38 20.7 38 24V30"
           stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
   </svg>
@@ -23,7 +23,7 @@ export const LockShieldIcon = ({ className = "w-full h-full" }) => (
 
 export const NetworkGlobeIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="32" cy="32" r="22" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.05"/>
+    <circle cx="32" cy="32" r="22" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.15"/>
     <ellipse cx="32" cy="32" rx="10" ry="22" stroke="currentColor" strokeWidth="2.5"/>
     <path d="M10 32H54M32 10C26 18 26 46 32 54M32 10C38 18 38 46 32 54"
           stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
@@ -35,7 +35,7 @@ export const NetworkGlobeIcon = ({ className = "w-full h-full" }) => (
 export const ShieldCheckIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M32 8L12 18V30C12 42.5 20.5 54 32 56C43.5 54 52 42.5 52 30V18L32 8Z"
-          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.1"/>
+          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.2"/>
     <path d="M22 32L28 38L42 24" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
@@ -43,25 +43,25 @@ export const ShieldCheckIcon = ({ className = "w-full h-full" }) => (
 export const BoltIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M36 10L18 36H32L28 54L46 28H32L36 10Z"
-          stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" fill="currentColor" fillOpacity="0.15"/>
+          stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" fill="currentColor" fillOpacity="0.3"/>
   </svg>
 );
 
 export const DevicesIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="8" y="16" width="32" height="24" rx="2"
-          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.1"/>
+          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.2"/>
     <path d="M16 40V44H32V40" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
     <rect x="44" y="12" width="14" height="24" rx="2"
-          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.1"/>
+          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.25"/>
     <path d="M48 36H54" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
   </svg>
 );
 
 export const CoinsIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="26" cy="26" r="14" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.1"/>
-    <circle cx="38" cy="38" r="14" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.15"/>
+    <circle cx="26" cy="26" r="14" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.2"/>
+    <circle cx="38" cy="38" r="14" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.3"/>
     <path d="M26 20V32M20 26H32" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
   </svg>
 );
@@ -70,17 +70,17 @@ export const CoinsIcon = ({ className = "w-full h-full" }) => (
 export const VideoIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="8" y="16" width="48" height="32" rx="3"
-          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.1"/>
+          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.2"/>
     <path d="M26 26L38 32L26 38V26Z"
-          stroke="currentColor" strokeWidth="2" strokeLinejoin="round" fill="currentColor" fillOpacity="0.3"/>
+          stroke="currentColor" strokeWidth="2" strokeLinejoin="round" fill="currentColor" fillOpacity="0.4"/>
   </svg>
 );
 
 export const HomeAutomationIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 32L32 14L54 32V52C54 53.1 53.1 54 52 54H12C10.9 54 10 53.1 10 52V32Z"
-          stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" fill="currentColor" fillOpacity="0.1"/>
-    <circle cx="32" cy="36" r="6" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.2"/>
+          stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" fill="currentColor" fillOpacity="0.2"/>
+    <circle cx="32" cy="36" r="6" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.35"/>
     <path d="M32 30V36M26 36H32M38 36H32M32 42V36"
           stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
   </svg>
@@ -88,7 +88,7 @@ export const HomeAutomationIcon = ({ className = "w-full h-full" }) => (
 
 export const DatabaseIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="32" cy="18" rx="20" ry="8" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.1"/>
+    <ellipse cx="32" cy="18" rx="20" ry="8" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.25"/>
     <path d="M12 18V32C12 36.4 20.5 40 32 40C43.5 40 52 36.4 52 32V18"
           stroke="currentColor" strokeWidth="2.5"/>
     <path d="M12 32V46C12 50.4 20.5 54 32 54C43.5 54 52 50.4 52 46V32"
@@ -98,7 +98,7 @@ export const DatabaseIcon = ({ className = "w-full h-full" }) => (
 
 export const SettingsIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="32" cy="32" r="8" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.15"/>
+    <circle cx="32" cy="32" r="8" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.3"/>
     <path d="M32 8V16M32 48V56M56 32H48M16 32H8M47.7 16.3L42.3 21.7M21.7 42.3L16.3 47.7M47.7 47.7L42.3 42.3M21.7 21.7L16.3 16.3"
           stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
   </svg>

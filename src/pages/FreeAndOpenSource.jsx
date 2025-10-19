@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
-import { CodeIcon, ChatIcon, BirdIcon, PhoneIcon } from '../components/ui/Icons';
+import { freeOpenSourceContent } from '../content/siteContent';
 
 const FreeAndOpenSource = () => {
   const [ref1, isVisible1] = useScrollAnimation();
   const [ref2, isVisible2] = useScrollAnimation();
+
+  const { socialLinks } = freeOpenSourceContent;
 
   return (
     <div className="min-h-screen pt-20 pb-12">
@@ -107,12 +109,7 @@ const FreeAndOpenSource = () => {
             Join our community to contribute, follow our development, or just stay connected with other Tunnels users.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { name: 'GitHub', url: 'https://github.com/tunnels-is', icon: <CodeIcon />, desc: 'View code & contribute' },
-              { name: 'Discord', url: 'https://discord.com/invite/7Ts3PCnCd9', icon: <ChatIcon />, desc: 'Chat with the community' },
-              { name: 'Twitter', url: 'https://x.com/tunnels_is', icon: <BirdIcon />, desc: 'Follow for updates' },
-              { name: 'Reddit', url: 'https://www.reddit.com/r/tunnels_is/', icon: <PhoneIcon />, desc: 'Join discussions' },
-            ].map((social) => (
+            {socialLinks.map((social) => (
               <motion.a
                 key={social.name}
                 href={social.url}
@@ -122,7 +119,7 @@ const FreeAndOpenSource = () => {
                 whileTap={{ scale: 0.95 }}
                 className="glass-effect p-6 rounded-xl hover:bg-dark-elevated transition-all"
               >
-                <div className="text-5xl mb-4">{social.icon}</div>
+                <div className="w-12 h-12 mb-4 text-dark-accent-primary">{social.icon}</div>
                 <h3 className="text-xl font-semibold text-dark-accent-primary mb-2">{social.name}</h3>
                 <p className="text-dark-text-secondary text-sm">{social.desc}</p>
               </motion.a>

@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
-import {
-  GlobeIcon, BoltIcon, ChartIcon, TargetIcon, LinkIcon, WrenchIcon
-} from '../components/ui/Icons';
+import { cloudBaremetalContent } from '../content/siteContent';
 
 const CloudBaremetal = () => {
   const [ref1, isVisible1] = useScrollAnimation();
@@ -13,38 +11,7 @@ const CloudBaremetal = () => {
   const [ref6, isVisible6] = useScrollAnimation();
   const [ref7, isVisible7] = useScrollAnimation();
 
-  const benefits = [
-    {
-      title: "Geographic Distribution",
-      description: "Deploy VPN servers across multiple regions for optimal performance and low latency access worldwide.",
-      icon: <GlobeIcon />
-    },
-    {
-      title: "High Availability",
-      description: "Redundant server architecture ensures continuous service even if individual nodes experience issues.",
-      icon: <BoltIcon />
-    },
-    {
-      title: "Scalable Architecture",
-      description: "Separate authentication from VPN traffic handling. Add capacity by deploying additional VPN servers.",
-      icon: <ChartIcon />
-    },
-    {
-      title: "Centralized Management",
-      description: "Single control server manages users, permissions, and policies across all VPN endpoints.",
-      icon: <TargetIcon />
-    },
-    {
-      title: "Multi-Network Access",
-      description: "Connect users to multiple private networks simultaneously, each through its optimal VPN server.",
-      icon: <LinkIcon />
-    },
-    {
-      title: "Full Control",
-      description: "Deploy on your own infrastructure - cloud, baremetal, or hybrid. No vendor dependencies.",
-      icon: <WrenchIcon />
-    }
-  ];
+  const { benefits } = cloudBaremetalContent;
 
   const useCases = [
     {
@@ -231,7 +198,7 @@ const CloudBaremetal = () => {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="bg-dark-elevated p-8 rounded-xl hover:bg-dark-bg hover:shadow-xl hover:shadow-dark-accent-primary/20 transition-all"
               >
-                <div className="text-5xl mb-4">{benefit.icon}</div>
+                <div className="w-12 h-12 mb-4 text-dark-accent-primary">{benefit.icon}</div>
                 <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
                   {benefit.title}
                 </h3>

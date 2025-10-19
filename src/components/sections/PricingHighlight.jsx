@@ -46,7 +46,7 @@ const PricingHighlight = ({
           className="text-center text-white"
         >
           {icon && (
-            <div className="text-8xl mb-8">{icon}</div>
+            <div className="flex justify-center mb-8">{icon}</div>
           )}
 
           <h2 className="text-5xl md:text-7xl font-bold mb-8">

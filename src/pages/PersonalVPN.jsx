@@ -10,91 +10,13 @@ import FAQSection from '../components/sections/FAQSection';
 import CTASection from '../components/sections/CTASection';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
-import {
-  KeyIcon, ShieldCheckIcon, CoinsIcon, BoltIcon, EyeShieldIcon, DevicesIcon,
-  CoffeeIcon, SearchIcon, PlaneIcon, BriefcaseIcon, SignalIcon, UsersIcon,
-  LightbulbIcon, RocketIcon, BookIcon
-} from '../components/ui/Icons';
+import { KeyIcon, LightbulbIcon } from '../components/ui/Icons';
+import { personalVPNContent } from '../content/siteContent';
 
 const PersonalVPN = () => {
-  const benefits = [
-    {
-      title: "Complete Privacy",
-      description: "Your VPN server, your rules. No third parties, no logging policies to trust - just code you control.",
-      icon: <KeyIcon />,
-      gradient: "from-dark-accent-primary to-dark-accent-secondary"
-    },
-    {
-      title: "Own Your Data",
-      description: "All traffic flows through infrastructure you own. No metadata collection, no analytics, no tracking.",
-      icon: <ShieldCheckIcon />,
-      gradient: "from-dark-accent-secondary to-dark-accent-tertiary"
-    },
-    {
-      title: "Cost Effective",
-      description: "Deploy on a $5/month VPS and get unlimited bandwidth. One server handles your whole family.",
-      icon: <CoinsIcon />,
-      gradient: "from-dark-accent-tertiary to-dark-accent-primary"
-    },
-    {
-      title: "No Speed Limits",
-      description: "Full bandwidth from your cloud provider. No throttling, no artificial limits, no peak hour slowdowns.",
-      icon: <BoltIcon />,
-      gradient: "from-dark-accent-primary to-dark-accent-tertiary"
-    },
-    {
-      title: "Full Transparency",
-      description: "Open source code means you can audit every line. Know exactly what's running on your server.",
-      icon: <EyeShieldIcon />,
-      gradient: "from-dark-accent-secondary to-dark-accent-primary"
-    },
-    {
-      title: "Multi-Device",
-      description: "Connect all your devices - phones, laptops, tablets. Unlimited simultaneous connections.",
-      icon: <DevicesIcon />,
-      gradient: "from-dark-accent-tertiary to-dark-accent-secondary"
-    }
-  ];
+  const { benefits, useCases, ctaCards } = personalVPNContent;
 
-  const useCases = [
-    {
-      title: "Secure Public WiFi",
-      description: "Coffee shop, airport, hotel - encrypt all your traffic when using untrusted networks.",
-      icon: <CoffeeIcon />,
-      scenario: "Your banking app traffic is encrypted end-to-end through your personal server"
-    },
-    {
-      title: "ISP Privacy",
-      description: "Prevent your internet provider from tracking and analyzing your browsing habits.",
-      icon: <SearchIcon />,
-      scenario: "Your ISP only sees encrypted traffic to your VPN server, not your actual destinations"
-    },
-    {
-      title: "Travel Abroad",
-      description: "Access your home services and content when traveling internationally.",
-      icon: <PlaneIcon />,
-      scenario: "Connect through your home country to access regional content and services"
-    },
-    {
-      title: "Remote Work",
-      description: "Secure connection to your home network from anywhere in the world.",
-      icon: <BriefcaseIcon />,
-      scenario: "Access your home lab, NAS, and local services as if you were at home"
-    },
-    {
-      title: "Mobile Privacy",
-      description: "Protect your phone's internet connection on cellular networks everywhere you go.",
-      icon: <SignalIcon />,
-      scenario: "All mobile app traffic encrypted through your server, not your carrier's network"
-    },
-    {
-      title: "Family Protection",
-      description: "Single VPN server with DNS blocking protects all family devices automatically.",
-      icon: <UsersIcon />,
-      scenario: "Kids' devices get automatic ad-blocking and content filtering through your VPN"
-    }
-  ];
-
+  // Keep these arrays as they are more complex with additional nested data
   const technicalFeatures = [
     {
       category: "Security",
@@ -390,7 +312,7 @@ const PersonalVPN = () => {
             {/* Summary Card */}
             <div className="mt-12 bg-gradient-to-r from-dark-accent-primary/10 via-dark-accent-secondary/10 to-dark-accent-tertiary/10 p-8 rounded-2xl border border-dark-accent-primary">
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 text-dark-accent-primary">
+                <div className="w-12 h-12 text-dark-accent-secondary">
                   <LightbulbIcon />
                 </div>
                 <div>
@@ -411,7 +333,7 @@ const PersonalVPN = () => {
 
       {/* Privacy Highlight */}
       <PricingHighlight
-        icon={<KeyIcon />}
+        icon={<div className="w-12 h-12 text-dark-accent-primary"><KeyIcon /></div>}
         title={<>Zero Knowledge. Zero Logs.<br />Zero Compromise.</>}
         description={<>With your own server, you don't need to trust a privacy policy.<br /><span className="font-bold">You write the rules.</span></>}
         highlights={[
@@ -464,36 +386,7 @@ const PersonalVPN = () => {
         title="Ready to Take Control?"
         description="Join thousands who've ditched commercial VPNs for complete privacy and control"
         layout="split"
-        cards={[
-          {
-            icon: <RocketIcon />,
-            title: "Get Started Now",
-            description: "Download the Tunnels server and client. Free 24-hour trial to test everything. After that, just $5-10/month for your cloud server.",
-            features: [
-              "Server installer for Linux",
-              "Clients for all platforms",
-              "Complete setup documentation",
-              "24/7 community support",
-              "Free forever updates"
-            ],
-            button: { text: "Download Free", href: "/download", primary: true },
-            highlighted: true
-          },
-          {
-            icon: <BookIcon />,
-            title: "Read the Docs",
-            description: "Comprehensive guides covering every aspect of deploying and managing your personal VPN server.",
-            features: [
-              "Single server setup guide",
-              "Cloud provider tutorials",
-              "Client configuration",
-              "DNS blocking setup",
-              "Troubleshooting guide"
-            ],
-            button: { text: "View Documentation", href: "/technical", primary: false },
-            highlighted: false
-          }
-        ]}
+        cards={ctaCards}
       />
     </div>
   );
