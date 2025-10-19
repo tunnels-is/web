@@ -110,21 +110,19 @@ const FreeAndOpenSource = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {socialLinks.map((social) => (
-              <motion.a
+              <a
                 key={social.name}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                className="p-6 rounded-xl transition-all text-center"
+                className="p-6 rounded-xl transition-all text-center hover:bg-dark-elevated"
               >
-                <div className="w-20 h-20 mb-4 mx-auto flex items-center justify-center text-dark-accent-primary">
+                <div className="w-20 h-20 mb-4 mx-auto flex items-center justify-center text-white">
                   <div className="transform scale-[4] flex items-center justify-center">{social.icon}</div>
                 </div>
                 <h3 className="text-xl font-semibold text-dark-accent-primary mb-2">{social.name}</h3>
                 <p className="text-dark-text-secondary text-sm">{social.desc}</p>
-              </motion.a>
+              </a>
             ))}
           </div>
         </motion.div>
