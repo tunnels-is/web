@@ -48,22 +48,8 @@ const FeatureTimeline = ({
                   whileHover={{ scale: 1.05 }}
                   className="relative flex-shrink-0"
                 >
-                  {/* Glowing ring effect */}
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.15, 1],
-                      opacity: [0.3, 0.5, 0.3]
-                    }}
-                    transition={{
-                      duration: 2.5,
-                      repeat: Infinity,
-                      delay: index * 0.3
-                    }}
-                    className="absolute inset-0 rounded-full bg-dark-accent-primary blur-md"
-                  />
-
                   {/* Step circle */}
-                  <div className="relative w-12 h-12 bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary rounded-full flex items-center justify-center shadow-xl border-2 border-dark-accent-primary/30">
+                  <div className="relative w-12 h-12 bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary rounded-full flex items-center justify-center shadow-xl">
                     <span className="text-xl font-bold text-white">
                       {step.step}
                     </span>
@@ -88,22 +74,8 @@ const FeatureTimeline = ({
                   whileHover={{ scale: 1.05 }}
                   className="relative flex-shrink-0"
                 >
-                  {/* Glowing ring effect */}
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.15, 1],
-                      opacity: [0.3, 0.5, 0.3]
-                    }}
-                    transition={{
-                      duration: 2.5,
-                      repeat: Infinity,
-                      delay: index * 0.3
-                    }}
-                    className="absolute inset-0 rounded-full bg-dark-accent-primary blur-md"
-                  />
-
                   {/* Step circle */}
-                  <div className="relative w-16 h-16 bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary rounded-full flex items-center justify-center shadow-xl border-2 border-dark-accent-primary/30">
+                  <div className="relative w-16 h-16 bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary rounded-full flex items-center justify-center shadow-xl">
                     <span className="text-2xl font-bold text-white">
                       {step.step}
                     </span>
