@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import {
+  GlobeIcon, BoltIcon, ChartIcon, TargetIcon, LinkIcon, WrenchIcon
+} from '../components/ui/Icons';
 
 const CloudBaremetal = () => {
   const [ref1, isVisible1] = useScrollAnimation();
@@ -14,32 +17,32 @@ const CloudBaremetal = () => {
     {
       title: "Geographic Distribution",
       description: "Deploy VPN servers across multiple regions for optimal performance and low latency access worldwide.",
-      icon: "🌍"
+      icon: <GlobeIcon />
     },
     {
       title: "High Availability",
       description: "Redundant server architecture ensures continuous service even if individual nodes experience issues.",
-      icon: "⚡"
+      icon: <BoltIcon />
     },
     {
       title: "Scalable Architecture",
       description: "Separate authentication from VPN traffic handling. Add capacity by deploying additional VPN servers.",
-      icon: "📈"
+      icon: <ChartIcon />
     },
     {
       title: "Centralized Management",
       description: "Single control server manages users, permissions, and policies across all VPN endpoints.",
-      icon: "🎯"
+      icon: <TargetIcon />
     },
     {
       title: "Multi-Network Access",
       description: "Connect users to multiple private networks simultaneously, each through its optimal VPN server.",
-      icon: "🔗"
+      icon: <LinkIcon />
     },
     {
       title: "Full Control",
       description: "Deploy on your own infrastructure - cloud, baremetal, or hybrid. No vendor dependencies.",
-      icon: "🔧"
+      icon: <WrenchIcon />
     }
   ];
 

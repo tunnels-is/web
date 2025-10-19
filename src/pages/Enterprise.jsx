@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import {
+  ChartIcon, LockShieldIcon, ClockIcon, BuildingIcon, UnlockIcon, WrenchIcon
+} from '../components/ui/Icons';
 
 const Enterprise = () => {
   const [ref1, isVisible1] = useScrollAnimation();
@@ -10,32 +13,32 @@ const Enterprise = () => {
     {
       title: "Flexibility & Scalability",
       description: "From 100 to 1,000,000 users, Tunnels scales effortlessly with your organization's growth.",
-      icon: "📈"
+      icon: <ChartIcon />
     },
     {
       title: "Reduced Attack Surface",
       description: "Built with minimal dependencies and no third-party services, reducing vulnerabilities.",
-      icon: "🔒"
+      icon: <LockShieldIcon />
     },
     {
       title: "24/7 Support",
       description: "Enterprise clients receive round-the-clock support via all support platforms.",
-      icon: "🕐"
+      icon: <ClockIcon />
     },
     {
       title: "On-Premise Deployment",
       description: "Full on-premise installations for organizations requiring complete control and security compliance.",
-      icon: "🏢"
+      icon: <BuildingIcon />
     },
     {
       title: "No Vendor Lock",
       description: "Deploy on any network without extensive configurations. Your infrastructure, your control.",
-      icon: "🔓"
+      icon: <UnlockIcon />
     },
     {
       title: "Custom Integrations",
       description: "We work with you to create custom integrations that fit your specific needs.",
-      icon: "🔧"
+      icon: <WrenchIcon />
     },
   ];
 

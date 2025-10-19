@@ -10,43 +10,48 @@ import FAQSection from '../components/sections/FAQSection';
 import CTASection from '../components/sections/CTASection';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
+import {
+  KeyIcon, ShieldCheckIcon, CoinsIcon, BoltIcon, EyeShieldIcon, DevicesIcon,
+  CoffeeIcon, SearchIcon, PlaneIcon, BriefcaseIcon, SignalIcon, UsersIcon,
+  LightbulbIcon, RocketIcon, BookIcon
+} from '../components/ui/Icons';
 
 const PersonalVPN = () => {
   const benefits = [
     {
       title: "Complete Privacy",
       description: "Your VPN server, your rules. No third parties, no logging policies to trust - just code you control.",
-      icon: "🔐",
+      icon: <KeyIcon />,
       gradient: "from-dark-accent-primary to-dark-accent-secondary"
     },
     {
       title: "Own Your Data",
       description: "All traffic flows through infrastructure you own. No metadata collection, no analytics, no tracking.",
-      icon: "🛡️",
+      icon: <ShieldCheckIcon />,
       gradient: "from-dark-accent-secondary to-dark-accent-tertiary"
     },
     {
       title: "Cost Effective",
       description: "Deploy on a $5/month VPS and get unlimited bandwidth. One server handles your whole family.",
-      icon: "💰",
+      icon: <CoinsIcon />,
       gradient: "from-dark-accent-tertiary to-dark-accent-primary"
     },
     {
       title: "No Speed Limits",
       description: "Full bandwidth from your cloud provider. No throttling, no artificial limits, no peak hour slowdowns.",
-      icon: "⚡",
+      icon: <BoltIcon />,
       gradient: "from-dark-accent-primary to-dark-accent-tertiary"
     },
     {
       title: "Full Transparency",
       description: "Open source code means you can audit every line. Know exactly what's running on your server.",
-      icon: "👁️",
+      icon: <EyeShieldIcon />,
       gradient: "from-dark-accent-secondary to-dark-accent-primary"
     },
     {
       title: "Multi-Device",
       description: "Connect all your devices - phones, laptops, tablets. Unlimited simultaneous connections.",
-      icon: "📱",
+      icon: <DevicesIcon />,
       gradient: "from-dark-accent-tertiary to-dark-accent-secondary"
     }
   ];
@@ -55,37 +60,37 @@ const PersonalVPN = () => {
     {
       title: "Secure Public WiFi",
       description: "Coffee shop, airport, hotel - encrypt all your traffic when using untrusted networks.",
-      icon: "☕",
+      icon: <CoffeeIcon />,
       scenario: "Your banking app traffic is encrypted end-to-end through your personal server"
     },
     {
       title: "ISP Privacy",
       description: "Prevent your internet provider from tracking and analyzing your browsing habits.",
-      icon: "🔍",
+      icon: <SearchIcon />,
       scenario: "Your ISP only sees encrypted traffic to your VPN server, not your actual destinations"
     },
     {
       title: "Travel Abroad",
       description: "Access your home services and content when traveling internationally.",
-      icon: "✈️",
+      icon: <PlaneIcon />,
       scenario: "Connect through your home country to access regional content and services"
     },
     {
       title: "Remote Work",
       description: "Secure connection to your home network from anywhere in the world.",
-      icon: "💼",
+      icon: <BriefcaseIcon />,
       scenario: "Access your home lab, NAS, and local services as if you were at home"
     },
     {
       title: "Mobile Privacy",
       description: "Protect your phone's internet connection on cellular networks everywhere you go.",
-      icon: "📶",
+      icon: <SignalIcon />,
       scenario: "All mobile app traffic encrypted through your server, not your carrier's network"
     },
     {
       title: "Family Protection",
       description: "Single VPN server with DNS blocking protects all family devices automatically.",
-      icon: "👨‍👩‍👧‍👦",
+      icon: <UsersIcon />,
       scenario: "Kids' devices get automatic ad-blocking and content filtering through your VPN"
     }
   ];
@@ -385,7 +390,9 @@ const PersonalVPN = () => {
             {/* Summary Card */}
             <div className="mt-12 bg-gradient-to-r from-dark-accent-primary/10 via-dark-accent-secondary/10 to-dark-accent-tertiary/10 p-8 rounded-2xl border border-dark-accent-primary">
               <div className="flex items-start gap-6">
-                <div className="text-6xl">💡</div>
+                <div className="w-16 h-16 text-dark-accent-primary">
+                  <LightbulbIcon />
+                </div>
                 <div>
                   <h4 className="text-2xl font-bold text-dark-accent-primary mb-2 leading-tight">
                     The Bottom Line
@@ -404,7 +411,7 @@ const PersonalVPN = () => {
 
       {/* Privacy Highlight */}
       <PricingHighlight
-        icon="🔐"
+        icon={<KeyIcon />}
         title={<>Zero Knowledge. Zero Logs.<br />Zero Compromise.</>}
         description={<>With your own server, you don't need to trust a privacy policy.<br /><span className="font-bold">You write the rules.</span></>}
         highlights={[
@@ -459,7 +466,7 @@ const PersonalVPN = () => {
         layout="split"
         cards={[
           {
-            icon: "🚀",
+            icon: <RocketIcon />,
             title: "Get Started Now",
             description: "Download the Tunnels server and client. Free 24-hour trial to test everything. After that, just $5-10/month for your cloud server.",
             features: [
@@ -473,7 +480,7 @@ const PersonalVPN = () => {
             highlighted: true
           },
           {
-            icon: "📚",
+            icon: <BookIcon />,
             title: "Read the Docs",
             description: "Comprehensive guides covering every aspect of deploying and managing your personal VPN server.",
             features: [

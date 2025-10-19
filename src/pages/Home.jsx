@@ -5,6 +5,7 @@ import FeatureGrid from '../components/sections/FeatureGrid';
 import CTASection from '../components/sections/CTASection';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { NetworkGlobeIcon, ShieldCheckIcon, LayersIcon, BuildingIcon } from '../components/ui/Icons';
 
 const Home = () => {
   const [topicsRef, topicsVisible] = useScrollAnimation();
@@ -13,22 +14,22 @@ const Home = () => {
     {
       title: 'VPN & LAN',
       description: 'Connect to multiple networks simultaneously with advanced routing',
-      icon: '🌐',
+      icon: <NetworkGlobeIcon />,
     },
     {
       title: 'DNS Security',
       description: 'Built-in DNS protection with daily threat list updates',
-      icon: '🛡️',
+      icon: <ShieldCheckIcon />,
     },
     {
       title: 'No Installation',
       description: 'Portable executable with no system changes required',
-      icon: '📦',
+      icon: <LayersIcon />,
     },
     {
       title: 'Enterprise Ready',
       description: 'Scales from individuals to millions of users',
-      icon: '🏢',
+      icon: <BuildingIcon />,
     },
   ];
 

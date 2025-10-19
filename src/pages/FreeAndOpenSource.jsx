@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import { CodeIcon, ChatIcon, BirdIcon, PhoneIcon } from '../components/ui/Icons';
 
 const FreeAndOpenSource = () => {
   const [ref1, isVisible1] = useScrollAnimation();
@@ -107,10 +108,10 @@ const FreeAndOpenSource = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { name: 'GitHub', url: 'https://github.com/tunnels-is', icon: '💻', desc: 'View code & contribute' },
-              { name: 'Discord', url: 'https://discord.com/invite/7Ts3PCnCd9', icon: '💬', desc: 'Chat with the community' },
-              { name: 'Twitter', url: 'https://x.com/tunnels_is', icon: '🐦', desc: 'Follow for updates' },
-              { name: 'Reddit', url: 'https://www.reddit.com/r/tunnels_is/', icon: '📱', desc: 'Join discussions' },
+              { name: 'GitHub', url: 'https://github.com/tunnels-is', icon: <CodeIcon />, desc: 'View code & contribute' },
+              { name: 'Discord', url: 'https://discord.com/invite/7Ts3PCnCd9', icon: <ChatIcon />, desc: 'Chat with the community' },
+              { name: 'Twitter', url: 'https://x.com/tunnels_is', icon: <BirdIcon />, desc: 'Follow for updates' },
+              { name: 'Reddit', url: 'https://www.reddit.com/r/tunnels_is/', icon: <PhoneIcon />, desc: 'Join discussions' },
             ].map((social) => (
               <motion.a
                 key={social.name}

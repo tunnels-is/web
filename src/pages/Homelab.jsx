@@ -6,6 +6,12 @@ import SectionHeader from '../components/ui/SectionHeader';
 import CTASection from '../components/sections/CTASection';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import {
+  LockShieldIcon, NetworkGlobeIcon, ShieldCheckIcon, BoltIcon, DevicesIcon,
+  CoinsIcon, VideoIcon, HomeAutomationIcon, DatabaseIcon, SettingsIcon,
+  BlockIcon, GamepadIcon, DocumentIcon, SyncIcon, KeyIcon, RaspberryPiIcon,
+  ServerIcon, ContainerIcon, DownloadIcon, BookIcon, LightbulbIcon
+} from '../components/ui/Icons';
 
 const Homelab = () => {
   const [ref4, isVisible4] = useScrollAnimation();
@@ -14,32 +20,32 @@ const Homelab = () => {
     {
       title: "Self-Hosted Privacy",
       description: "Your network, your data, your rules. No third-party services or privacy concerns.",
-      icon: "🔒"
+      icon: <LockShieldIcon />
     },
     {
       title: "Remote Access",
       description: "Securely access your homelab from anywhere in the world with VPN connectivity.",
-      icon: "🌐"
+      icon: <NetworkGlobeIcon />
     },
     {
       title: "DNS Security & Blocking",
       description: "Built-in DNS blocking for ads, trackers, and malware protection for your entire home.",
-      icon: "🛡️"
+      icon: <ShieldCheckIcon />
     },
     {
       title: "Simple Installation",
       description: "Single server setup with no complex configuration. Get running in minutes.",
-      icon: "⚡"
+      icon: <BoltIcon />
     },
     {
       title: "Multi-Device Support",
       description: "Connect phones, laptops, tablets - all your devices with a single server.",
-      icon: "📱"
+      icon: <DevicesIcon />
     },
     {
       title: "Cost Effective",
       description: "Run on existing hardware - Raspberry Pi, old PC, or VM. No expensive infrastructure needed.",
-      icon: "💰"
+      icon: <CoinsIcon />
     }
   ];
 
@@ -78,32 +84,32 @@ const Homelab = () => {
     {
       title: "Media Server Access",
       description: "Stream your Plex, Jellyfin, or Emby content from anywhere without exposing ports to the internet.",
-      icon: "🎬"
+      icon: <VideoIcon />
     },
     {
       title: "Home Automation",
       description: "Securely access Home Assistant, openHAB, or other smart home systems remotely.",
-      icon: "🏠"
+      icon: <HomeAutomationIcon />
     },
     {
       title: "NAS & File Access",
       description: "Connect to your Synology, TrueNAS, or file server without complex VPN configurations.",
-      icon: "💾"
+      icon: <DatabaseIcon />
     },
     {
       title: "Development Environment",
       description: "Access your local dev servers, databases, and tools from anywhere you work.",
-      icon: "⚙️"
+      icon: <SettingsIcon />
     },
     {
       title: "Network-Wide Ad Blocking",
       description: "Deploy DNS-level ad and tracker blocking for all devices on your network.",
-      icon: "🚫"
+      icon: <BlockIcon />
     },
     {
       title: "Game Servers",
       description: "Host Minecraft, Valheim, or other game servers accessible to friends anywhere.",
-      icon: "🎮"
+      icon: <GamepadIcon />
     }
   ];
 
@@ -111,22 +117,22 @@ const Homelab = () => {
     {
       title: "Custom DNS Records",
       description: "Define internal DNS records for your homelab services with easy-to-remember names.",
-      icon: "📝"
+      icon: <DocumentIcon />
     },
     {
       title: "DNS Blocking Lists",
       description: "Automatic daily updates of malware, ad, and tracker domains to protect your network.",
-      icon: "🛡️"
+      icon: <ShieldCheckIcon />
     },
     {
       title: "Split DNS",
       description: "Route specific domains through your homelab DNS while using public DNS for everything else.",
-      icon: "🔄"
+      icon: <SyncIcon />
     },
     {
       title: "DNS Over VPN",
       description: "All connected clients automatically use your homelab DNS with security and blocking.",
-      icon: "🔒"
+      icon: <LockShieldIcon />
     }
   ];
 
@@ -134,22 +140,22 @@ const Homelab = () => {
     {
       title: "Zero Configuration NAT Traversal",
       description: "No need to configure port forwarding on your router",
-      icon: "🔄"
+      icon: <SyncIcon />
     },
     {
       title: "WireGuard Protocol",
       description: "Modern, fast, and secure VPN protocol under the hood",
-      icon: "⚡"
+      icon: <BoltIcon />
     },
     {
       title: "IPv4 & IPv6 Support",
       description: "Full dual-stack support for modern networks",
-      icon: "🌐"
+      icon: <NetworkGlobeIcon />
     },
     {
       title: "Automatic Certificate Management",
       description: "Let's Encrypt integration for secure HTTPS connections",
-      icon: "🔐"
+      icon: <KeyIcon />
     }
   ];
 
@@ -157,17 +163,17 @@ const Homelab = () => {
     {
       title: "Raspberry Pi",
       description: "Perfect for basic homelab VPN",
-      icon: "🥧"
+      icon: <RaspberryPiIcon />
     },
     {
       title: "Old PC / Thin Client",
       description: "Great for growing homelabs",
-      icon: "💻"
+      icon: <ServerIcon />
     },
     {
       title: "VM / Container",
       description: "Integrate with existing infrastructure",
-      icon: "📦"
+      icon: <ContainerIcon />
     }
   ];
 
@@ -302,7 +308,7 @@ const Homelab = () => {
         layout="split"
         cards={[
           {
-            icon: "📥",
+            icon: <DownloadIcon />,
             title: "Download & Install",
             description: "Get the Tunnels server and client applications. Free for 24 hours trial, then affordable pricing for continued use.",
             features: [
@@ -315,7 +321,7 @@ const Homelab = () => {
             highlighted: true
           },
           {
-            icon: "📚",
+            icon: <BookIcon />,
             title: "Read Documentation",
             description: "Comprehensive guides covering every aspect of setting up and managing your homelab VPN server.",
             features: [
