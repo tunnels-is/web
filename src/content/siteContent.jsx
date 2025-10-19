@@ -15,6 +15,7 @@ import {
   GlobeIcon, ChartIcon, TargetIcon, LinkIcon, WrenchIcon,
   ClockIcon, UnlockIcon, ChatIcon, BirdIcon, PhoneIcon, BuildingIcon, LayersIcon
 } from '../components/ui/Icons';
+import { GitHubIcon, DiscordIcon, TwitterIcon, RedditIcon } from '../components/SocialIcons';
 
 // ============================================================================
 // HOME PAGE CONTENT
@@ -1260,25 +1261,25 @@ export const freeOpenSourceContent = {
     {
       name: 'GitHub',
       url: 'https://github.com/tunnels-is',
-      icon: <CodeIcon />,
+      icon: <GitHubIcon />,
       desc: 'View code & contribute'
     },
     {
       name: 'Discord',
       url: 'https://discord.com/invite/7Ts3PCnCd9',
-      icon: <ChatIcon />,
+      icon: <DiscordIcon />,
       desc: 'Chat with the community'
     },
     {
       name: 'Twitter',
       url: 'https://x.com/tunnels_is',
-      icon: <BirdIcon />,
+      icon: <TwitterIcon />,
       desc: 'Follow for updates'
     },
     {
       name: 'Reddit',
       url: 'https://www.reddit.com/r/tunnels_is/',
-      icon: <PhoneIcon />,
+      icon: <RedditIcon />,
       desc: 'Join discussions'
     }
   ],
