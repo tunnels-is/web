@@ -84,9 +84,11 @@ The built files will be in the `dist/` directory, ready to be deployed to any st
 
 ## Available Scripts
 
-- `npm run dev` - Start development server
+- `npm run dev` - Start development server (accessible on 0.0.0.0:5173)
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build locally
+- `npm run screenshot` - Take screenshots of all pages (multiple viewports)
+- `npm run screenshot:quick <url>` - Take a quick screenshot of a specific page
 
 ## Customization
 
@@ -118,6 +120,23 @@ const navLinks = [
 ### Animations
 
 The project uses Framer Motion for animations. Customize animation variants in individual components or create reusable animation presets.
+
+## Screenshots
+
+Take screenshots during development using Puppeteer:
+
+```bash
+# Screenshot a specific page
+npm run screenshot:quick http://localhost:5173/about
+
+# Screenshot with custom viewport
+node scripts/take-screenshot.js http://localhost:5173 mobile 375 667
+
+# Screenshot all pages and viewports
+npm run screenshot
+```
+
+See [SCREENSHOTS.md](./SCREENSHOTS.md) for detailed documentation.
 
 ## Deployment
 
