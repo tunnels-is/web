@@ -5,13 +5,12 @@ import { motion } from 'framer-motion';
  * Creates minimal moving lines suggesting data flow and connectivity
  */
 const NetworkLines = ({ opacity = 0.08 }) => {
-  // Define a few connection points
+  // Define a few connection points (excluding center)
   const nodes = [
     { x: '15%', y: '20%' },
     { x: '85%', y: '25%' },
     { x: '25%', y: '75%' },
     { x: '75%', y: '80%' },
-    { x: '50%', y: '50%' },
   ];
 
   return (
@@ -145,75 +144,6 @@ const NetworkLines = ({ opacity = 0.08 }) => {
           />
         ))}
       </svg>
-
-      {/* Data packets traveling along the lines */}
-      {/* Packet 1: Following Line 1 (15%,20% to 85%,25%) */}
-      <motion.div
-        className="absolute w-2 h-2 rounded-full"
-        style={{
-          left: '15%',
-          top: '20%',
-          background: 'radial-gradient(circle, #3b82f6 0%, #3b82f6 50%, transparent 100%)',
-          boxShadow: '0 0 6px #3b82f6'
-        }}
-        animate={{
-          left: ['15%', '85%'],
-          top: ['20%', '25%'],
-          opacity: [0, opacity * 10, opacity * 10, 0]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "linear",
-          times: [0, 0.1, 0.9, 1]
-        }}
-      />
-
-      {/* Packet 2: Following Line 2 (25%,75% to 75%,80%) */}
-      <motion.div
-        className="absolute w-2 h-2 rounded-full"
-        style={{
-          left: '25%',
-          top: '75%',
-          background: 'radial-gradient(circle, #06b6d4 0%, #06b6d4 50%, transparent 100%)',
-          boxShadow: '0 0 6px #06b6d4'
-        }}
-        animate={{
-          left: ['25%', '75%'],
-          top: ['75%', '80%'],
-          opacity: [0, opacity * 10, opacity * 10, 0]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "linear",
-          delay: 2,
-          times: [0, 0.1, 0.9, 1]
-        }}
-      />
-
-      {/* Packet 3: Following Line 3 (15%,20% to 25%,75%) */}
-      <motion.div
-        className="absolute w-2 h-2 rounded-full"
-        style={{
-          left: '15%',
-          top: '20%',
-          background: 'radial-gradient(circle, #8b5cf6 0%, #8b5cf6 50%, transparent 100%)',
-          boxShadow: '0 0 6px #8b5cf6'
-        }}
-        animate={{
-          left: ['15%', '25%'],
-          top: ['20%', '75%'],
-          opacity: [0, opacity * 10, opacity * 10, 0]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "linear",
-          delay: 4,
-          times: [0, 0.1, 0.9, 1]
-        }}
-      />
     </div>
   );
 };
