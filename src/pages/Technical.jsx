@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import { technicalContent } from '../content/siteContent';
 
 const Technical = () => {
   const [ref1, isVisible1] = useScrollAnimation();
@@ -7,6 +8,8 @@ const Technical = () => {
   const [ref3, isVisible3] = useScrollAnimation();
   const [ref4, isVisible4] = useScrollAnimation();
   const [ref5, isVisible5] = useScrollAnimation();
+
+  const { hero, sections, cta } = technicalContent;
 
   return (
     <div className="min-h-screen pt-20 pb-12">
@@ -18,10 +21,10 @@ const Technical = () => {
           className="text-center"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-gradient">Technical Overview</span>
+            <span className="text-gradient">{hero.title}</span>
           </h1>
           <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto leading-snug">
-            Deep dive into the architecture and technical capabilities of Tunnels VPN.
+            {hero.description}
           </p>
         </motion.div>
       </section>
@@ -35,11 +38,10 @@ const Technical = () => {
           className="glass-effect p-8 md:p-12 rounded-2xl"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            <span className="text-gradient">Public Routable VPN Network</span>
+            <span className="text-gradient">{sections[0].title}</span>
           </h2>
           <p className="text-lg text-dark-text-secondary text-center mb-8 max-w-3xl mx-auto">
-            The Tunnels VPN application can apply dynamic routes to the public network tunnels,
-            allowing for split route tunneling across multiple VPN servers.
+            {sections[0].description}
           </p>
           <div className="bg-dark-elevated rounded-lg p-6">
             <div className="aspect-video bg-gradient-to-br from-dark-accent-primary/10 to-dark-accent-secondary/10 rounded-lg flex items-center justify-center">
@@ -63,43 +65,37 @@ const Technical = () => {
           className="glass-effect p-8 md:p-12 rounded-2xl"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            <span className="text-gradient">Encryption and Security</span>
+            <span className="text-gradient">{sections[1].title}</span>
           </h2>
           <p className="text-lg text-dark-text-secondary text-center mb-8 max-w-3xl mx-auto">
-            Tunnels implements modern cryptographic protocols and handshaking procedures.
+            {sections[1].description}
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
             <div className="glass-effect p-6 rounded-xl">
               <h3 className="text-xl font-semibold text-dark-accent-primary mb-4">Encryption Types</h3>
               <ul className="space-y-3 text-dark-text-secondary">
-                <li className="flex items-start">
-                  <span className="text-dark-accent-primary mr-2">•</span>
-                  AES-128 / AES-256
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dark-accent-primary mr-2">•</span>
-                  ChaCha20-Poly1305
-                </li>
+                {sections[1].encryptionTypes.map((type, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-dark-accent-primary mr-2">•</span>
+                    {type}
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="glass-effect p-6 rounded-xl">
               <h3 className="text-xl font-semibold text-dark-accent-primary mb-4">Handshake Types</h3>
               <ul className="space-y-3 text-dark-text-secondary">
-                <li className="flex items-start">
-                  <span className="text-dark-accent-primary mr-2">•</span>
-                  Elliptic Curve P521
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dark-accent-primary mr-2">•</span>
-                  X25519
-                </li>
+                {sections[1].handshakeTypes.map((type, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-dark-accent-primary mr-2">•</span>
+                    {type}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
           <p className="text-lg text-dark-text-secondary text-center mb-8">
-            Authentication and Authorization use a combination of user/password and certificates.
-            Every step of the encryption and handshake process is handled by Golang standard library methods -
-            we do not hand-roll our own encryption schemes or functions.
+            {sections[1].details}
           </p>
           <div className="bg-dark-elevated rounded-lg p-6">
             <div className="aspect-video bg-gradient-to-br from-dark-accent-secondary/10 to-dark-accent-tertiary/10 rounded-lg flex items-center justify-center">
@@ -123,12 +119,10 @@ const Technical = () => {
           className="glass-effect p-8 md:p-12 rounded-2xl"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            <span className="text-gradient">LAN Networks</span>
+            <span className="text-gradient">{sections[2].title}</span>
           </h2>
           <p className="text-lg text-dark-text-secondary text-center mb-8 max-w-3xl mx-auto">
-            Tunnels LAN networks connect individual devices through an abstract network layer that
-            exists on a single server. The LAN network is perfect for IoT devices, file servers,
-            databases, and other services that require stricter access controls.
+            {sections[2].description}
           </p>
           <div className="bg-dark-elevated rounded-lg p-6">
             <div className="aspect-video bg-gradient-to-br from-dark-accent-tertiary/10 to-dark-accent-primary/10 rounded-lg flex items-center justify-center">
@@ -152,12 +146,10 @@ const Technical = () => {
           className="glass-effect p-8 md:p-12 rounded-2xl"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            <span className="text-gradient">Advanced Routing</span>
+            <span className="text-gradient">{sections[3].title}</span>
           </h2>
           <p className="text-lg text-dark-text-secondary text-center mb-8 max-w-3xl mx-auto">
-            Defining custom routes in Tunnels is simple - it can be done server-side or in the device config.
-            Routing configurations are abstracted from the underlying networks, which enables routing of any
-            IP address to any VPN or LAN network.
+            {sections[3].description}
           </p>
           <div className="bg-dark-elevated rounded-lg p-6">
             <div className="aspect-video bg-gradient-to-br from-dark-accent-primary/10 to-dark-accent-tertiary/10 rounded-lg flex items-center justify-center">
@@ -181,12 +173,10 @@ const Technical = () => {
           className="glass-effect p-8 md:p-12 rounded-2xl"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            <span className="text-gradient">Abstract NAT</span>
+            <span className="text-gradient">{sections[4].title}</span>
           </h2>
           <p className="text-lg text-dark-text-secondary text-center mb-8 max-w-3xl mx-auto">
-            Tunnels NAT is completely abstracted from the underlying networks, much like the routing.
-            Any IP Address can be translated to any other IP Address. This feature can resolve networking
-            problems that happen in large environments.
+            {sections[4].description}
           </p>
           <div className="bg-dark-elevated rounded-lg p-6">
             <div className="aspect-video bg-gradient-to-br from-dark-accent-secondary/10 to-dark-accent-primary/10 rounded-lg flex items-center justify-center">
@@ -210,28 +200,27 @@ const Technical = () => {
           className="glass-effect p-12 rounded-2xl text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to explore more?
+            {cta.title}
           </h2>
           <p className="text-xl text-dark-text-secondary mb-8 max-w-2xl mx-auto">
-            Check out our comprehensive documentation for detailed technical guides and examples.
+            {cta.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.a
-              href="/download"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-dark-accent-primary text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all"
-            >
-              Download Tunnels
-            </motion.a>
-            <motion.a
-              href="/features"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 glass-effect rounded-lg font-semibold hover:bg-dark-elevated transition-all"
-            >
-              View All Features
-            </motion.a>
+            {cta.buttons.map((button, index) => (
+              <motion.a
+                key={index}
+                href={button.href}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-8 py-4 rounded-lg font-semibold transition-all ${
+                  button.primary
+                    ? 'bg-dark-accent-primary text-white hover:bg-opacity-90'
+                    : 'glass-effect hover:bg-dark-elevated'
+                }`}
+              >
+                {button.text}
+              </motion.a>
+            ))}
           </div>
         </motion.div>
       </section>

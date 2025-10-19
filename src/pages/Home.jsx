@@ -9,19 +9,16 @@ import { homeContent } from '../content/siteContent';
 
 const Home = () => {
   const [topicsRef, topicsVisible] = useScrollAnimation();
-  const { features } = homeContent;
+  const { hero, topicsSection, featuresSection, features, cta } = homeContent;
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSimple
-        title="Tunnels"
-        subtitle="VPN, LAN, NAT, Routing, DNS blocking, DNS routing and more!"
-        description="A modern networking solution that connects you to multiple networks at once, with built-in security and privacy features"
-        buttons={[
-          { text: "Download Now", href: "/download", primary: true },
-          { text: "Explore Features", href: "/features", teal: true }
-        ]}
+        title={hero.title}
+        subtitle={hero.subtitle}
+        description={hero.description}
+        buttons={hero.buttons}
         showNetworkLines={true}
         showScrollIndicator={true}
       />
@@ -30,23 +27,12 @@ const Home = () => {
       <ContentSection>
         <div ref={topicsRef}>
           <SectionHeader
-            title="Explore Use Cases"
-            subtitle="Discover how Tunnels can solve your networking challenges across different environments"
+            title={topicsSection.title}
+            subtitle={topicsSection.subtitle}
           />
 
           <div className="flex flex-wrap gap-4 justify-center max-w-5xl mx-auto">
-            {[
-              { label: 'Free & Open Source', path: '/free-and-opensource' },
-              { label: 'Security', path: '/security' },
-              { label: 'Public VPN', path: '/public' },
-              { label: 'Homelab', path: '/homelab' },
-              { label: 'Cloud & Baremetal', path: '/cloud' },
-              { label: 'IoT Networks', path: '/iot' },
-              { label: 'Office Networks', path: '/office' },
-              { label: 'LAN over WAN', path: '/lan-over-wan' },
-              { label: 'Personal VPN', path: '/personal-vpn' },
-              { label: 'DNS Security', path: '/dns' },
-            ].map((topic, index) => (
+            {topicsSection.topics.map((topic, index) => (
               <motion.a
                 key={topic.path}
                 href={topic.path}
@@ -74,8 +60,8 @@ const Home = () => {
       {/* Features Section */}
       <ContentSection background="dark-surface">
         <SectionHeader
-          title="Why Choose Tunnels"
-          subtitle="Advanced networking made simple, secure, and scalable"
+          title={featuresSection.title}
+          subtitle={featuresSection.subtitle}
         />
         <FeatureGrid
           features={features}
@@ -86,12 +72,9 @@ const Home = () => {
 
       {/* CTA Section */}
       <CTASection
-        title="Ready to Get Started?"
-        description="Try Tunnels free for 24 hours. No credit card required."
-        buttons={[
-          { text: "Download Free", href: "/download", primary: true },
-          { text: "View Pricing", href: "/pricing", primary: false }
-        ]}
+        title={cta.title}
+        description={cta.description}
+        buttons={cta.buttons}
       />
     </div>
   );

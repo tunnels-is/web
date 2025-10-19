@@ -1,57 +1,8 @@
 import { motion } from 'framer-motion';
+import { pricingContent } from '../content/siteContent';
 
 const Pricing = () => {
-  const subscriptions = [
-    {
-      title: "1 Month",
-      price: "$8",
-      period: "/month",
-      url: "https://tunnels.lemonsqueezy.com/buy/6f75871d-ea8d-46e3-927b-f62dc2453ad3",
-      features: [
-        "Public VPN Network Access",
-        "Money Back Guarantee",
-        "Community Support",
-        "All Basic Features",
-      ],
-      popular: false,
-    },
-    {
-      title: "6 Months",
-      price: "$6",
-      period: "/month",
-      url: "https://tunnels.lemonsqueezy.com/buy/214e7bee-3e9c-4d14-8e3d-0a96a1b48361",
-      features: [
-        "Public VPN Network Access",
-        "Money Back Guarantee",
-        "Priority Support",
-        "All Basic Features",
-        "25% Savings",
-      ],
-      popular: true,
-    },
-    {
-      title: "12 Months",
-      price: "$4",
-      period: "/month",
-      url: "https://tunnels.lemonsqueezy.com/buy/71bb1dd8-8fac-4d56-bfbf-63cfd6081c5a",
-      features: [
-        "Public VPN Network Access",
-        "Money Back Guarantee",
-        "Priority Support",
-        "All Basic Features",
-        "50% Savings",
-      ],
-      popular: false,
-    },
-  ];
-
-  const anonymousKey = {
-    title: "Anonymous License",
-    price: "$8",
-    period: "/month",
-    url: "https://tunnels.lemonsqueezy.com/buy/e8cbc47c-c19b-4ef7-9f8a-c8e2b94597dd",
-    description: "Top up your account anonymously with license keys",
-  };
+  const { hero, subscriptions, anonymousKey, freeFeatures, faq, cta } = pricingContent;
 
   return (
     <div className="min-h-screen pt-20 pb-12">
@@ -63,13 +14,13 @@ const Pricing = () => {
           className="text-center"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-gradient">Simple Pricing</span>
+            <span className="text-gradient">{hero.title}</span>
           </h1>
           <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto mb-4">
-            Choose the plan that works best for you. All plans include access to our public VPN network.
+            {hero.description}
           </p>
           <p className="text-lg text-dark-accent-primary font-semibold">
-            24-hour free trial • No credit card required
+            {hero.tagline}
           </p>
         </motion.div>
       </section>
@@ -168,44 +119,22 @@ const Pricing = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-            <span className="text-gradient">Always Free</span>
+            <span className="text-gradient">{freeFeatures.title}</span>
           </h2>
           <p className="text-center text-dark-text-secondary mb-12 max-w-2xl mx-auto">
-            These features are available to everyone, no subscription required.
+            {freeFeatures.description}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="glass-effect p-6 rounded-xl">
-              <h3 className="text-xl font-semibold text-dark-accent-primary mb-3">
-                ✓ Private Servers
-              </h3>
-              <p className="text-dark-text-secondary">
-                Create unlimited private VPN servers at no cost. Perfect for personal use or small teams.
-              </p>
-            </div>
-            <div className="glass-effect p-6 rounded-xl">
-              <h3 className="text-xl font-semibold text-dark-accent-primary mb-3">
-                ✓ DNS Protection
-              </h3>
-              <p className="text-dark-text-secondary">
-                Full DNS threat protection with daily blocklist updates, available without an account.
-              </p>
-            </div>
-            <div className="glass-effect p-6 rounded-xl">
-              <h3 className="text-xl font-semibold text-dark-accent-primary mb-3">
-                ✓ Custom DNS Records
-              </h3>
-              <p className="text-dark-text-secondary">
-                Register custom A, TXT, and CNAME records directly in your configuration.
-              </p>
-            </div>
-            <div className="glass-effect p-6 rounded-xl">
-              <h3 className="text-xl font-semibold text-dark-accent-primary mb-3">
-                ✓ No Limitations
-              </h3>
-              <p className="text-dark-text-secondary">
-                No device limits, no user limits on private servers. Use as many as you need.
-              </p>
-            </div>
+            {freeFeatures.features.map((feature, index) => (
+              <div key={index} className="glass-effect p-6 rounded-xl">
+                <h3 className="text-xl font-semibold text-dark-accent-primary mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-dark-text-secondary">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
           </div>
         </motion.div>
       </section>
@@ -218,33 +147,17 @@ const Pricing = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-            Frequently Asked Questions
+            {faq.title}
           </h2>
           <div className="space-y-6 max-w-3xl mx-auto">
-            <div className="glass-effect p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3">What's the difference between plans?</h3>
-              <p className="text-dark-text-secondary">
-                All plans provide the same features and access to the public VPN network. Longer subscriptions offer better value with discounted monthly rates.
-              </p>
-            </div>
-            <div className="glass-effect p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3">Can I create an account anonymously?</h3>
-              <p className="text-dark-text-secondary">
-                Yes! You can create accounts using usernames or UUIDs, and top up using anonymous license keys purchased separately.
-              </p>
-            </div>
-            <div className="glass-effect p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3">Do you offer refunds?</h3>
-              <p className="text-dark-text-secondary">
-                Yes, we offer a money-back guarantee on all subscriptions. Contact support if you're not satisfied.
-              </p>
-            </div>
-            <div className="glass-effect p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3">What payment methods do you accept?</h3>
-              <p className="text-dark-text-secondary">
-                We accept all major credit cards through our secure payment processor. Anonymous license keys can be purchased separately.
-              </p>
-            </div>
+            {faq.questions.map((item, index) => (
+              <div key={index} className="glass-effect p-6 rounded-xl">
+                <h3 className="text-xl font-semibold mb-3">{item.question}</h3>
+                <p className="text-dark-text-secondary">
+                  {item.answer}
+                </p>
+              </div>
+            ))}
           </div>
         </motion.div>
       </section>
@@ -258,28 +171,27 @@ const Pricing = () => {
           className="glass-effect p-12 rounded-2xl text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to get started?
+            {cta.title}
           </h2>
           <p className="text-xl text-dark-text-secondary mb-8 max-w-2xl mx-auto">
-            Try Tunnels free for 24 hours. No credit card required.
+            {cta.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.a
-              href="/download"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-dark-accent-primary text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all"
-            >
-              Download Now
-            </motion.a>
-            <motion.a
-              href="mailto:support@tunnels.is"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 glass-effect rounded-lg font-semibold hover:bg-dark-elevated transition-all"
-            >
-              Contact Sales
-            </motion.a>
+            {cta.buttons.map((button, index) => (
+              <motion.a
+                key={index}
+                href={button.href}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-8 py-4 rounded-lg font-semibold transition-all ${
+                  button.primary
+                    ? 'bg-dark-accent-primary text-white hover:bg-opacity-90'
+                    : 'glass-effect hover:bg-dark-elevated'
+                }`}
+              >
+                {button.text}
+              </motion.a>
+            ))}
           </div>
         </motion.div>
       </section>

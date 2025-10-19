@@ -21,6 +21,38 @@ import {
 // ============================================================================
 
 export const homeContent = {
+  hero: {
+    title: "Tunnels",
+    subtitle: "VPN, LAN, NAT, Routing, DNS blocking, DNS routing and more!",
+    description: "A modern networking solution that connects you to multiple networks at once, with built-in security and privacy features",
+    buttons: [
+      { text: "Download Now", href: "/download", primary: true },
+      { text: "Explore Features", href: "/features", teal: true }
+    ]
+  },
+
+  topicsSection: {
+    title: "Explore Use Cases",
+    subtitle: "Discover how Tunnels can solve your networking challenges across different environments",
+    topics: [
+      { label: 'Free & Open Source', path: '/free-and-opensource' },
+      { label: 'Security', path: '/security' },
+      { label: 'Public VPN', path: '/public' },
+      { label: 'Homelab', path: '/homelab' },
+      { label: 'Cloud & Baremetal', path: '/cloud' },
+      { label: 'IoT Networks', path: '/iot' },
+      { label: 'Office Networks', path: '/office' },
+      { label: 'LAN over WAN', path: '/lan-over-wan' },
+      { label: 'Personal VPN', path: '/personal-vpn' },
+      { label: 'DNS Security', path: '/dns' },
+    ]
+  },
+
+  featuresSection: {
+    title: "Why Choose Tunnels",
+    subtitle: "Advanced networking made simple, secure, and scalable"
+  },
+
   features: [
     {
       title: 'VPN & LAN',
@@ -43,6 +75,15 @@ export const homeContent = {
       icon: <BuildingIcon />,
     },
   ],
+
+  cta: {
+    title: "Ready to Get Started?",
+    description: "Try Tunnels free for 24 hours. No credit card required.",
+    buttons: [
+      { text: "Download Free", href: "/download", primary: true },
+      { text: "View Pricing", href: "/pricing", primary: false }
+    ]
+  }
 };
 
 // ============================================================================
@@ -357,49 +398,570 @@ export const personalVPNContent = {
 };
 
 // ============================================================================
-// CLOUD/BAREMETAL PAGE CONTENT
+// FEATURES PAGE CONTENT
 // ============================================================================
 
-export const cloudBaremetalContent = {
-  benefits: [
-    {
-      title: "Geographic Distribution",
-      description: "Deploy VPN servers across multiple regions for optimal performance and low latency access worldwide.",
-      icon: <GlobeIcon />
-    },
-    {
-      title: "High Availability",
-      description: "Redundant server architecture ensures continuous service even if individual nodes experience issues.",
-      icon: <BoltIcon />
-    },
-    {
-      title: "Scalable Architecture",
-      description: "Separate authentication from VPN traffic handling. Add capacity by deploying additional VPN servers.",
-      icon: <ChartIcon />
-    },
-    {
-      title: "Centralized Management",
-      description: "Single control server manages users, permissions, and policies across all VPN endpoints.",
-      icon: <TargetIcon />
-    },
-    {
-      title: "Multi-Network Access",
-      description: "Connect users to multiple private networks simultaneously, each through its optimal VPN server.",
-      icon: <LinkIcon />
-    },
-    {
-      title: "Full Control",
-      description: "Deploy on your own infrastructure - cloud, baremetal, or hybrid. No vendor dependencies.",
-      icon: <WrenchIcon />
-    }
-  ]
+export const featuresContent = {
+  hero: {
+    title: "Features",
+    description: "Tunnels provides a comprehensive suite of networking and security features designed for individuals and enterprises alike."
+  },
+
+  basicFeatures: {
+    title: "Basic Features",
+    subtitle: "Core features available to all users, focusing on privacy, security, and ease of use.",
+    features: [
+      {
+        title: "No Logging",
+        content: "User actions are not logged in our public VPN network",
+      },
+      {
+        title: "No Tracking",
+        content: "User actions are not tracked in any way in our public network",
+      },
+      {
+        title: "No Persistence",
+        content: "Everything is kept exactly where you placed tunnels, no hidden files or background services",
+      },
+      {
+        title: "Portable",
+        content: "Just download Tunnels and place it wherever you like, even on a USB. No installation required",
+      },
+      {
+        title: "Anonymity",
+        content: "Accounts can be created using usernames or UUIDs",
+      },
+      {
+        title: "Account Top-Ups",
+        content: "Tunnels offers anonymous license keys which can be used to top-up your account",
+      },
+      {
+        title: "Custom DNS",
+        content: "Register custom A, TXT and CNAME records for any domain",
+      },
+      {
+        title: "DNS to DoH",
+        content: "Our in-built DNS server can translate your normal DNS to DNS over HTTPS",
+      },
+      {
+        title: "WHOIS With A Click",
+        content: "Get WHOIS information for any resolved domain with the click of a button",
+      },
+      {
+        title: "Custom Block Lists",
+        content: "Use your own block lists to block domains",
+      },
+      {
+        title: "DNS Leak Prevention",
+        content: "Use our built-in DNS proxy to completely prevent DNS leaks, even without a Tunnels account",
+      },
+      {
+        title: "IPv6 Blocking",
+        content: "Tunnels can be configured to deny connections if IPv6 is enabled",
+      },
+      {
+        title: "DNS Analytics",
+        content: "Get real time DNS analytics",
+      },
+      {
+        title: "DNS Protection",
+        content: "Tunnels has a built in DNS blocking mechanisms, available for free",
+      },
+      {
+        title: "Daily Updates",
+        content: "Tunnels creates combined DNS blocklists from popular sources, everyday",
+      },
+    ]
+  },
+
+  advancedFeatures: {
+    title: "Advanced Features",
+    subtitle: "Advanced capabilities for power users and technical professionals.",
+    features: [
+      {
+        title: "Source Available",
+        content: "Our server and client implementations are source available on GitHub",
+      },
+      {
+        title: "Tunnels on OpenWRT",
+        content: "Our NAT protocol was designed to work on unix based router software",
+      },
+      {
+        title: "Modern Language",
+        content: "Tunnels is built from the ground up using Golang, a multi-threaded modern programming language",
+      },
+      {
+        title: "Kill Switch",
+        content: "Prevent IP leaks during accidental disconnects",
+      },
+      {
+        title: "User Management",
+        content: "Manage users, groups and devices in the application UI",
+      },
+      {
+        title: "Invite Friends",
+        content: "Invite friends to join your tunnels server with simple user/password registration",
+      },
+    ]
+  },
+
+  enterpriseFeatures: {
+    title: "Enterprise Features",
+    subtitle: "Enterprise-grade features for organizations requiring scale, support, and security compliance.",
+    features: [
+      {
+        title: "Custom Integrations",
+        content: "We are always open to creating custom integration when the need arises",
+      },
+      {
+        title: "User Management",
+        content: "Group based user management is built into the platform",
+      },
+      {
+        title: "24/7 Support",
+        content: "Enterprise clients receive 24/7 support via all of our support platforms",
+      },
+      {
+        title: "On Premise",
+        content: "Tunnels supports full on-premise deployments which are essential for passing security audits",
+      },
+      {
+        title: "Scales With Growth",
+        content: "100 users or 1,000,000 users, it makes no difference, our platform was designed to fit even the largest companies",
+      },
+      {
+        title: "No Hardware",
+        content: "No need to buy expensive hardware, our platform runs on whatever you have available, as long as it runs Linux",
+      },
+      {
+        title: "No Vendor Lock",
+        content: "Our platform can be deployed on any network without extensive configurations. This means you will not be vendor locked",
+      },
+    ]
+  },
+
+  cta: {
+    title: "Ready to get started?",
+    description: "Download Tunnels today and experience secure, private networking.",
+    buttons: [
+      { text: "Download Now", href: "/download", primary: true },
+      { text: "View Pricing", href: "/pricing", primary: false }
+    ]
+  }
 };
 
 // ============================================================================
-// ENTERPRISE PAGE CONTENT
+// DOWNLOAD PAGE CONTENT
+// ============================================================================
+
+export const downloadContent = {
+  version: "2.0.7",
+
+  hero: {
+    title: "Download Tunnels",
+    subtitle: "No installation required. Just download, extract, and run. Available for Windows, macOS, and Linux."
+  },
+
+  platforms: [
+    {
+      name: "Windows",
+      fileType: ".zip",
+    },
+    {
+      name: "macOS",
+      fileType: ".tar.gz",
+    },
+    {
+      name: "Linux",
+      fileType: ".tar.gz",
+    },
+  ],
+
+  allReleasesSection: {
+    description: "Looking for a different version or architecture?",
+    buttonText: "View All Releases on GitHub",
+    url: "https://github.com/tunnels-is/tunnels/releases/latest"
+  },
+
+  quickStart: {
+    title: "Quick Start",
+    steps: [
+      {
+        number: "1",
+        title: "Download",
+        description: "Choose your platform and download the latest release"
+      },
+      {
+        number: "2",
+        title: "Extract",
+        description: "Extract the archive to your preferred location"
+      },
+      {
+        number: "3",
+        title: "Run",
+        description: "Launch Tunnels - no installation required!"
+      }
+    ]
+  },
+
+  whatsIncluded: {
+    title: "What's Included",
+    features: [
+      {
+        title: "✓ No Installation",
+        description: "Portable executable with no system changes or background services"
+      },
+      {
+        title: "✓ Free DNS Protection",
+        description: "Built-in DNS blocking available without an account"
+      },
+      {
+        title: "✓ Private Servers",
+        description: "Create unlimited private servers at no cost"
+      },
+      {
+        title: "✓ 24h Free Trial",
+        description: "Test public VPN features with no credit card required"
+      }
+    ]
+  },
+
+  helpSection: {
+    title: "Need Help?",
+    description: "Check out our documentation for detailed setup guides and troubleshooting.",
+    buttons: [
+      { text: "Contact Support", href: "mailto:support@tunnels.is", primary: true },
+      { text: "View on GitHub", href: "https://github.com/tunnels-is", primary: false }
+    ]
+  }
+};
+
+// ============================================================================
+// PRICING PAGE CONTENT
+// ============================================================================
+
+export const pricingContent = {
+  hero: {
+    title: "Simple Pricing",
+    description: "Choose the plan that works best for you. All plans include access to our public VPN network.",
+    tagline: "24-hour free trial • No credit card required"
+  },
+
+  subscriptions: [
+    {
+      title: "1 Month",
+      price: "$8",
+      period: "/month",
+      url: "https://tunnels.lemonsqueezy.com/buy/6f75871d-ea8d-46e3-927b-f62dc2453ad3",
+      features: [
+        "Public VPN Network Access",
+        "Money Back Guarantee",
+        "Community Support",
+        "All Basic Features",
+      ],
+      popular: false,
+    },
+    {
+      title: "6 Months",
+      price: "$6",
+      period: "/month",
+      url: "https://tunnels.lemonsqueezy.com/buy/214e7bee-3e9c-4d14-8e3d-0a96a1b48361",
+      features: [
+        "Public VPN Network Access",
+        "Money Back Guarantee",
+        "Priority Support",
+        "All Basic Features",
+        "25% Savings",
+      ],
+      popular: true,
+    },
+    {
+      title: "12 Months",
+      price: "$4",
+      period: "/month",
+      url: "https://tunnels.lemonsqueezy.com/buy/71bb1dd8-8fac-4d56-bfbf-63cfd6081c5a",
+      features: [
+        "Public VPN Network Access",
+        "Money Back Guarantee",
+        "Priority Support",
+        "All Basic Features",
+        "50% Savings",
+      ],
+      popular: false,
+    },
+  ],
+
+  anonymousKey: {
+    title: "Anonymous License",
+    price: "$8",
+    period: "/month",
+    url: "https://tunnels.lemonsqueezy.com/buy/e8cbc47c-c19b-4ef7-9f8a-c8e2b94597dd",
+    description: "Top up your account anonymously with license keys",
+  },
+
+  freeFeatures: {
+    title: "Always Free",
+    description: "These features are available to everyone, no subscription required.",
+    features: [
+      {
+        title: "✓ Private Servers",
+        description: "Create unlimited private VPN servers at no cost. Perfect for personal use or small teams."
+      },
+      {
+        title: "✓ DNS Protection",
+        description: "Full DNS threat protection with daily blocklist updates, available without an account."
+      },
+      {
+        title: "✓ Custom DNS Records",
+        description: "Register custom A, TXT, and CNAME records directly in your configuration."
+      },
+      {
+        title: "✓ No Limitations",
+        description: "No device limits, no user limits on private servers. Use as many as you need."
+      }
+    ]
+  },
+
+  faq: {
+    title: "Frequently Asked Questions",
+    questions: [
+      {
+        question: "What's the difference between plans?",
+        answer: "All plans provide the same features and access to the public VPN network. Longer subscriptions offer better value with discounted monthly rates."
+      },
+      {
+        question: "Can I create an account anonymously?",
+        answer: "Yes! You can create accounts using usernames or UUIDs, and top up using anonymous license keys purchased separately."
+      },
+      {
+        question: "Do you offer refunds?",
+        answer: "Yes, we offer a money-back guarantee on all subscriptions. Contact support if you're not satisfied."
+      },
+      {
+        question: "What payment methods do you accept?",
+        answer: "We accept all major credit cards through our secure payment processor. Anonymous license keys can be purchased separately."
+      }
+    ]
+  },
+
+  cta: {
+    title: "Ready to get started?",
+    description: "Try Tunnels free for 24 hours. No credit card required.",
+    buttons: [
+      { text: "Download Now", href: "/download", primary: true },
+      { text: "Contact Sales", href: "mailto:support@tunnels.is", primary: false }
+    ]
+  }
+};
+
+// ============================================================================
+// TECHNICAL PAGE CONTENT
+// ============================================================================
+
+export const technicalContent = {
+  hero: {
+    title: "Technical Overview",
+    description: "Deep dive into the architecture and technical capabilities of Tunnels VPN."
+  },
+
+  sections: [
+    {
+      title: "Public Routable VPN Network",
+      description: "The Tunnels VPN application can apply dynamic routes to the public network tunnels, allowing for split route tunneling across multiple VPN servers."
+    },
+    {
+      title: "Encryption and Security",
+      description: "Tunnels implements modern cryptographic protocols and handshaking procedures.",
+      details: "Authentication and Authorization use a combination of user/password and certificates. Every step of the encryption and handshake process is handled by Golang standard library methods - we do not hand-roll our own encryption schemes or functions.",
+      encryptionTypes: [
+        "AES-128 / AES-256",
+        "ChaCha20-Poly1305"
+      ],
+      handshakeTypes: [
+        "Elliptic Curve P521",
+        "X25519"
+      ]
+    },
+    {
+      title: "LAN Networks",
+      description: "Tunnels LAN networks connect individual devices through an abstract network layer that exists on a single server. The LAN network is perfect for IoT devices, file servers, databases, and other services that require stricter access controls."
+    },
+    {
+      title: "Advanced Routing",
+      description: "Defining custom routes in Tunnels is simple - it can be done server-side or in the device config. Routing configurations are abstracted from the underlying networks, which enables routing of any IP address to any VPN or LAN network."
+    },
+    {
+      title: "Abstract NAT",
+      description: "Tunnels NAT is completely abstracted from the underlying networks, much like the routing. Any IP Address can be translated to any other IP Address. This feature can resolve networking problems that happen in large environments."
+    }
+  ],
+
+  cta: {
+    title: "Ready to explore more?",
+    description: "Check out our comprehensive documentation for detailed technical guides and examples.",
+    buttons: [
+      { text: "Download Tunnels", href: "/download", primary: true },
+      { text: "View All Features", href: "/features", primary: false }
+    ]
+  }
+};
+
+// ============================================================================
+// DNS PAGE CONTENT (EXTENDED)
+// ============================================================================
+
+export const dnsContent = {
+  hero: {
+    title: "Routable DNS",
+    subtitle: "With Security and Daily Threat List Updates",
+    description: "Tunnels offers a built-in DNS Server/Proxy which comes with extensive blacklisting features, daily block list updates and the ability to define custom DNS records. Tunnels DNS server also facilitates DNS Routing to ensure proper DNS resolution when connected to multiple networks."
+  },
+
+  dnsFeatures: [
+    {
+      title: "DNS Threat Protection",
+      description: "Block malicious domains before they can harm your network with daily updated threat lists from trusted sources.",
+      icon: "🛡️"
+    },
+    {
+      title: "Custom DNS Records",
+      description: "Register custom A, TXT, and CNAME records for any domain directly in your configuration.",
+      icon: "📝"
+    },
+    {
+      title: "DNS Routing",
+      description: "Forward specific domains to designated networks, enabling proper resolution across multiple VPN connections.",
+      icon: "🔄"
+    },
+    {
+      title: "DNS Analytics",
+      description: "Real-time insights into DNS queries with detailed logging and WHOIS information at your fingertips.",
+      icon: "📊"
+    },
+    {
+      title: "DNS to DoH",
+      description: "Automatically translate standard DNS queries to DNS over HTTPS for enhanced privacy.",
+      icon: "🔒"
+    },
+    {
+      title: "Daily Updates",
+      description: "Combined blocklists from popular sources, automatically updated every day to stay ahead of threats.",
+      icon: "🔄"
+    },
+  ],
+
+  serverDNS: {
+    title: "Server DNS Configurations",
+    description1: "Tunnels servers can be configured to forward domains, including wildcards, to an internal network. This removes the need for specific client side DNS records or switching DNS servers when users change networks.",
+    description2: "When a device connects to a Tunnels server, its DNS configurations are automatically sent to the device, ensuring seamless connectivity across all your networks."
+  },
+
+  deviceDNS: {
+    title: "Device DNS Configurations",
+    description1: "DNS records can be registered directly in the Tunnels application config, completely removing the need for external DNS servers.",
+    description2: "This gives you complete control over DNS resolution on your device, with the ability to override any domain and point it wherever you need - perfect for development, testing, or accessing internal services."
+  },
+
+  cta: {
+    title: "DNS Protection Available For Free",
+    description: "Get started with Tunnels DNS protection today. No account or payment needed for basic DNS features.",
+    buttons: [
+      { text: "Download Tunnels", href: "/download", primary: true }
+    ]
+  }
+};
+
+// ============================================================================
+// FREE AND OPEN SOURCE PAGE CONTENT
+// ============================================================================
+
+export const freeOpenSourceContent = {
+  hero: {
+    title: "Tunnels is Free and Open Source",
+    description: "All of our features are free and available in the open source version. No paywalls, no hidden fees.",
+    buttonText: "View on GitHub",
+    buttonUrl: "https://github.com/tunnels-is"
+  },
+
+  whyOpenSource: {
+    title: "Why Open Source?",
+    reasons: [
+      {
+        title: "Transparency",
+        content1: "Open source means complete transparency. Anyone can review our code, audit our security practices, and verify that we're doing exactly what we say we're doing.",
+        content2: "There are no hidden backdoors, no secret data collection, and no mysterious code that you can't inspect."
+      },
+      {
+        title: "Community",
+        content1: "Being open source allows developers and security experts from around the world to contribute, improve, and help shape the future of Tunnels.",
+        content2: "This collaborative approach leads to better security, more features, and faster bug fixes than any closed-source project could achieve alone."
+      },
+      {
+        title: "Freedom",
+        content1: "You're free to use Tunnels however you want - personally, commercially, or modify it to fit your specific needs. No licensing restrictions.",
+        content2: "Deploy it on your own infrastructure, integrate it with your systems, and maintain complete control over your networking solution."
+      },
+      {
+        title: "Trust",
+        content1: "In the world of VPNs and networking, trust is everything. Open source allows you to verify our claims and build that trust through transparency.",
+        content2: "Security experts can audit the code, and the community can vouch for the integrity of the project."
+      }
+    ]
+  },
+
+  community: {
+    title: "Join Our Community",
+    description: "Join our community to contribute, follow our development, or just stay connected with other Tunnels users."
+  },
+
+  socialLinks: [
+    {
+      name: 'GitHub',
+      url: 'https://github.com/tunnels-is',
+      icon: <CodeIcon />,
+      desc: 'View code & contribute'
+    },
+    {
+      name: 'Discord',
+      url: 'https://discord.com/invite/7Ts3PCnCd9',
+      icon: <ChatIcon />,
+      desc: 'Chat with the community'
+    },
+    {
+      name: 'Twitter',
+      url: 'https://x.com/tunnels_is',
+      icon: <BirdIcon />,
+      desc: 'Follow for updates'
+    },
+    {
+      name: 'Reddit',
+      url: 'https://www.reddit.com/r/tunnels_is/',
+      icon: <PhoneIcon />,
+      desc: 'Join discussions'
+    }
+  ],
+
+  cta: {
+    title: "Ready to get started?",
+    description: "Download Tunnels today and experience open source networking at its finest.",
+    buttons: [
+      { text: "Download Now", href: "/download", primary: true },
+      { text: "View Source Code", href: "https://github.com/tunnels-is", primary: false }
+    ]
+  }
+};
+
+// ============================================================================
+// ENTERPRISE PAGE CONTENT (EXTENDED)
 // ============================================================================
 
 export const enterpriseContent = {
+  hero: {
+    title: "Tunnels For Large Networks",
+    subtitle: "Lightweight design for big scale",
+    description: "Built from the ground up to handle enterprise-scale networking with minimal overhead and maximum security."
+  },
+
   benefits: [
     {
       title: "Flexibility & Scalability",
@@ -431,69 +993,247 @@ export const enterpriseContent = {
       description: "We work with you to create custom integrations that fit your specific needs.",
       icon: <WrenchIcon />
     }
-  ]
+  ],
+
+  management: {
+    title: "Effortless Management",
+    description1: "Automatically connect your employees to all of their networks, all at once. Tunnels is designed to be install-free - simply copy, paste, and run.",
+    description2: "This makes managing a large number of users simple and pain-free. Company-wide configurations can be distributed as simple files to users in multiple ways or automatically updated by system administrators.",
+    features: [
+      {
+        title: "No Installation Required",
+        description: "Deploy across your organization instantly"
+      },
+      {
+        title: "Centralized Configuration",
+        description: "Push updates to all devices simultaneously"
+      },
+      {
+        title: "IAM Integration",
+        description: "Built-in identity management with extension options"
+      }
+    ]
+  },
+
+  security: {
+    title: "Reduced Attack Surface",
+    description1: "Tunnels is written in Golang with minimal module use and no third-party services. This method of simplicity reduces the overall attack surface, simplifies security reviews, and minimizes the risk of vulnerabilities.",
+    description2: "Golang is an open source programming language made by Google and is under strict review by security experts.",
+    golangUrl: "https://go.dev",
+    features: [
+      {
+        title: "Minimal Dependencies",
+        description: "Fewer attack vectors, easier audits"
+      },
+      {
+        title: "No Third-Party Services",
+        description: "Complete control over your data and infrastructure"
+      },
+      {
+        title: "Security Audits Welcome",
+        description: "Simple codebase makes reviews straightforward"
+      }
+    ]
+  },
+
+  cta: {
+    title: "Ready to scale your network?",
+    description: "Contact our sales team to discuss how Tunnels can fit your enterprise needs.",
+    buttons: [
+      { text: "Contact Sales", href: "mailto:support@tunnels.is", primary: true }
+    ]
+  }
 };
 
 // ============================================================================
-// FREE AND OPEN SOURCE PAGE CONTENT
+// CLOUD/BAREMETAL PAGE CONTENT (EXTENDED)
 // ============================================================================
 
-export const freeOpenSourceContent = {
-  socialLinks: [
+export const cloudBaremetalContent = {
+  hero: {
+    title: "Cloud & Baremetal",
+    subtitle: "Multi-Server Architecture for Scale",
+    description: "Deploy a distributed VPN infrastructure with centralized authentication. Scale globally with multiple VPN servers while managing everything from a single control plane.",
+    buttons: [
+      { text: "Get Started", href: "/download", primary: true },
+      { text: "Talk to Sales", href: "mailto:support@tunnels.is", primary: false }
+    ]
+  },
+
+  benefitsSection: {
+    title: "Built for Scale & Reliability",
+    subtitle: "Architectural benefits that give you enterprise-grade capabilities without the enterprise complexity"
+  },
+
+  benefits: [
     {
-      name: 'GitHub',
-      url: 'https://github.com/tunnels-is',
-      icon: <CodeIcon />,
-      desc: 'View code & contribute'
+      title: "Geographic Distribution",
+      description: "Deploy VPN servers across multiple regions for optimal performance and low latency access worldwide.",
+      icon: <GlobeIcon />
     },
     {
-      name: 'Discord',
-      url: 'https://discord.com/invite/7Ts3PCnCd9',
-      icon: <ChatIcon />,
-      desc: 'Chat with the community'
+      title: "High Availability",
+      description: "Redundant server architecture ensures continuous service even if individual nodes experience issues.",
+      icon: <BoltIcon />
     },
     {
-      name: 'Twitter',
-      url: 'https://x.com/tunnels_is',
-      icon: <BirdIcon />,
-      desc: 'Follow for updates'
+      title: "Scalable Architecture",
+      description: "Separate authentication from VPN traffic handling. Add capacity by deploying additional VPN servers.",
+      icon: <ChartIcon />
     },
     {
-      name: 'Reddit',
-      url: 'https://www.reddit.com/r/tunnels_is/',
-      icon: <PhoneIcon />,
-      desc: 'Join discussions'
+      title: "Centralized Management",
+      description: "Single control server manages users, permissions, and policies across all VPN endpoints.",
+      icon: <TargetIcon />
+    },
+    {
+      title: "Multi-Network Access",
+      description: "Connect users to multiple private networks simultaneously, each through its optimal VPN server.",
+      icon: <LinkIcon />
+    },
+    {
+      title: "Full Control",
+      description: "Deploy on your own infrastructure - cloud, baremetal, or hybrid. No vendor dependencies.",
+      icon: <WrenchIcon />
     }
-  ]
-};
+  ],
 
-// ============================================================================
-// DNS PAGE CONTENT
-// ============================================================================
-
-export const dnsContent = {
-  dnsFeatures: [
-    {
-      title: "Custom DNS Records",
-      description: "Create and manage DNS records for your internal services and devices.",
-      icon: <DocumentIcon />
+  architecture: {
+    title: "Distributed by Design",
+    description: "Tunnels multi-server architecture separates concerns for maximum flexibility and performance. Deploy one control server for authentication and management, then add as many VPN servers as you need to handle traffic and provide geographic coverage.",
+    controlServer: {
+      title: "Control Server",
+      description: "Handles user authentication, authorization, device management, and policy enforcement. Signs authentication tokens for VPN servers to verify."
     },
-    {
-      title: "DNS Blocking",
-      description: "Block ads, trackers, and malicious domains at the DNS level for all devices.",
-      icon: <BlockIcon />
-    },
-    {
-      title: "Split DNS Routing",
-      description: "Route specific domains through different DNS servers based on your rules.",
-      icon: <SyncIcon />
-    },
-    {
-      title: "DNS Over VPN",
-      description: "All VPN traffic automatically uses your configured DNS settings.",
-      icon: <LockShieldIcon />
+    vpnServers: {
+      title: "VPN Servers",
+      description: "Handle VPN connections, tunnel traffic, and provide network access. Verify authentication signatures from control server without needing direct database access."
     }
-  ]
+  },
+
+  useCases: [
+    {
+      title: "Global Enterprise",
+      description: "Deploy regional VPN servers for offices in US, EU, and Asia with centralized authentication",
+      scenario: "Control Server in US-East, VPN servers in each region for local network access"
+    },
+    {
+      title: "Cloud + On-Premise Hybrid",
+      description: "Mix cloud-hosted control with baremetal VPN servers for sensitive workload isolation",
+      scenario: "AWS control server, VPN servers on owned datacenter hardware"
+    },
+    {
+      title: "High-Traffic Applications",
+      description: "Distribute VPN load across multiple servers while maintaining single point of user management",
+      scenario: "1 Control Server + 10 VPN servers handling 10,000+ concurrent connections"
+    },
+    {
+      title: "Development Environments",
+      description: "Separate VPN servers for dev, staging, and production with unified access control",
+      scenario: "Per-environment VPN servers with role-based access from single auth server"
+    }
+  ],
+
+  technicalCapabilities: [
+    {
+      title: "Signature-Based Authentication",
+      description: "Control server signs authentication tokens, VPN servers verify signatures",
+      technical: "Public key cryptography ensures VPN servers never need database access"
+    },
+    {
+      title: "Network Isolation",
+      description: "Each VPN server manages its own network range, preventing IP conflicts",
+      technical: "Configure different CIDR blocks per server (e.g., 10.0.0.0/16, 10.1.0.0/16)"
+    },
+    {
+      title: "Flexible Routing",
+      description: "Define custom routes for each VPN server to access specific network segments",
+      technical: "Route tables configured per server for fine-grained network access control"
+    },
+    {
+      title: "Zero-Touch Client Configuration",
+      description: "Clients automatically discover and connect to optimal VPN servers",
+      technical: "Control server provides available servers list, client handles failover"
+    }
+  ],
+
+  deploymentOptions: [
+    {
+      platform: "AWS / GCP / Azure",
+      description: "Deploy on major cloud providers with auto-scaling and managed infrastructure",
+      features: ["Easy deployment", "Managed networking", "Auto-scaling ready", "Global regions"]
+    },
+    {
+      platform: "Baremetal / Dedicated Servers",
+      description: "Maximum performance and control on physical hardware you own or lease",
+      features: ["Full hardware control", "No hypervisor overhead", "Predictable performance", "Cost-effective at scale"]
+    },
+    {
+      platform: "Hybrid Cloud",
+      description: "Best of both worlds - cloud for flexibility, baremetal for critical workloads",
+      features: ["Flexible deployment", "Cost optimization", "Compliance-friendly", "Geographic flexibility"]
+    },
+    {
+      platform: "Private Cloud / OpenStack",
+      description: "Self-hosted cloud infrastructure with full control over every layer",
+      features: ["Complete control", "Data sovereignty", "Custom networking", "No external dependencies"]
+    }
+  ],
+
+  performance: {
+    title: "Built for Performance",
+    stats: [
+      {
+        value: "1M+",
+        label: "Concurrent Users",
+        description: "Scale to millions with horizontal VPN server deployment"
+      },
+      {
+        value: "<5ms",
+        label: "Auth Latency",
+        description: "Lightning-fast signature verification on VPN servers"
+      },
+      {
+        value: "99.99%",
+        label: "Uptime SLA",
+        description: "Redundant architecture ensures high availability"
+      }
+    ]
+  },
+
+  gettingStarted: {
+    title: "Ready to Deploy?",
+    description: "Get started with multi-server Tunnels architecture today. Full deployment guides and 24/7 support for enterprise customers.",
+    documentation: {
+      title: "Documentation",
+      description: "Comprehensive guides for setting up control servers, VPN servers, and client configuration.",
+      features: [
+        "Multi-server architecture guide",
+        "Deployment best practices",
+        "Security configuration",
+        "Troubleshooting & monitoring"
+      ],
+      buttonText: "View Documentation",
+      buttonUrl: "/technical"
+    },
+    enterpriseSupport: {
+      title: "Enterprise Support",
+      description: "Need help with deployment? Our team provides full support for enterprise multi-server setups.",
+      features: [
+        "Architecture consulting",
+        "Custom integrations",
+        "24/7 technical support",
+        "Deployment assistance"
+      ],
+      buttonText: "Contact Sales",
+      buttonUrl: "mailto:support@tunnels.is"
+    },
+    finalCTA: {
+      buttonText: "Download & Get Started Free",
+      buttonUrl: "/download",
+      tagline: "24-hour free trial • No credit card required"
+    }
+  }
 };
 
 // Export all content as default for convenient importing
@@ -504,5 +1244,9 @@ export default {
   cloudBaremetal: cloudBaremetalContent,
   enterprise: enterpriseContent,
   freeOpenSource: freeOpenSourceContent,
-  dns: dnsContent
+  dns: dnsContent,
+  features: featuresContent,
+  download: downloadContent,
+  pricing: pricingContent,
+  technical: technicalContent
 };
