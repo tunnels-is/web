@@ -45,7 +45,7 @@ const FeatureCard = ({
       className={`p-6 rounded-xl transition-colors duration-200 ${getVariantClasses()}`}
     >
       {icon && (
-        <div className="w-10 h-10 mb-4 text-dark-accent-primary">{icon}</div>
+        <div className="w-12 h-12 mb-4">{icon}</div>
       )}
 
       <h3 className={`text-xl font-semibold mb-2 leading-tight ${

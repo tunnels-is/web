@@ -47,7 +47,7 @@ const Enterprise = () => {
                 transition={{ delay: index * 0.1 }}
                 className="glass-effect p-8 rounded-xl hover:scale-105 transition-transform duration-300"
               >
-                <div className="w-12 h-12 mb-4 text-dark-accent-primary">{benefit.icon}</div>
+                <div className="w-14 h-14 mb-4">{benefit.icon}</div>
                 <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
                   {benefit.title}
                 </h3>

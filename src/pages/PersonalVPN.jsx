@@ -312,7 +312,7 @@ const PersonalVPN = () => {
             {/* Summary Card */}
             <div className="mt-12 bg-gradient-to-r from-dark-accent-primary/10 via-dark-accent-secondary/10 to-dark-accent-tertiary/10 p-8 rounded-2xl border border-dark-accent-primary">
               <div className="flex items-start gap-6">
-                <div className="w-12 h-12 text-dark-accent-secondary">
+                <div className="w-14 h-14">
                   <LightbulbIcon />
                 </div>
                 <div>
@@ -333,7 +333,7 @@ const PersonalVPN = () => {
 
       {/* Privacy Highlight */}
       <PricingHighlight
-        icon={<div className="w-12 h-12 text-dark-accent-primary"><KeyIcon /></div>}
+        icon={<div className="w-16 h-16"><KeyIcon /></div>}
         title={<>Zero Knowledge. Zero Logs.<br />Zero Compromise.</>}
         description={<>With your own server, you don't need to trust a privacy policy.<br /><span className="font-bold">You write the rules.</span></>}
         highlights={[

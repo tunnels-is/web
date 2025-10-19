@@ -12,102 +12,160 @@ const Icon = ({ children, className = "w-12 h-12" }) => (
 // Security & Privacy Icons
 export const LockShieldIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="shield-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#3b82f6', stopOpacity: 0.3}} />
+        <stop offset="100%" style={{stopColor: '#8b5cf6', stopOpacity: 0.3}} />
+      </linearGradient>
+    </defs>
     <path d="M32 8L12 18V30C12 42.5 20.5 54 32 56C43.5 54 52 42.5 52 30V18L32 8Z"
-          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.2"/>
+          stroke="#3b82f6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="url(#shield-gradient)"/>
     <rect x="26" y="26" width="12" height="14" rx="2"
-          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.35"/>
+          stroke="#8b5cf6" strokeWidth="2.5" fill="#8b5cf6" fillOpacity="0.4"/>
     <path d="M26 30V24C26 20.7 28.7 18 32 18C35.3 18 38 20.7 38 24V30"
-          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+          stroke="#a78bfa" strokeWidth="2.5" strokeLinecap="round"/>
   </svg>
 );
 
 export const NetworkGlobeIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="32" cy="32" r="22" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.15"/>
-    <ellipse cx="32" cy="32" rx="10" ry="22" stroke="currentColor" strokeWidth="2.5"/>
+    <defs>
+      <linearGradient id="globe-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 0.25}} />
+        <stop offset="100%" style={{stopColor: '#3b82f6', stopOpacity: 0.25}} />
+      </linearGradient>
+    </defs>
+    <circle cx="32" cy="32" r="22" stroke="#06b6d4" strokeWidth="2.5" fill="url(#globe-gradient)"/>
+    <ellipse cx="32" cy="32" rx="10" ry="22" stroke="#3b82f6" strokeWidth="2.5"/>
     <path d="M10 32H54M32 10C26 18 26 46 32 54M32 10C38 18 38 46 32 54"
-          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+          stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round"/>
     <path d="M18 20C22 22 42 22 46 20M18 44C22 42 42 42 46 44"
-          stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          stroke="#22d3ee" strokeWidth="2" strokeLinecap="round"/>
   </svg>
 );
 
 export const ShieldCheckIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="shield-check-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#10b981', stopOpacity: 0.3}} />
+        <stop offset="100%" style={{stopColor: '#059669', stopOpacity: 0.3}} />
+      </linearGradient>
+    </defs>
     <path d="M32 8L12 18V30C12 42.5 20.5 54 32 56C43.5 54 52 42.5 52 30V18L32 8Z"
-          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.2"/>
-    <path d="M22 32L28 38L42 24" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+          stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="url(#shield-check-gradient)"/>
+    <path d="M22 32L28 38L42 24" stroke="#22c55e" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
 export const BoltIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bolt-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#fbbf24', stopOpacity: 0.5}} />
+        <stop offset="100%" style={{stopColor: '#f59e0b', stopOpacity: 0.5}} />
+      </linearGradient>
+    </defs>
     <path d="M36 10L18 36H32L28 54L46 28H32L36 10Z"
-          stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" fill="currentColor" fillOpacity="0.3"/>
+          stroke="#f59e0b" strokeWidth="2.5" strokeLinejoin="round" fill="url(#bolt-gradient)"/>
   </svg>
 );
 
 export const DevicesIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="8" y="16" width="32" height="24" rx="2"
-          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.2"/>
-    <path d="M16 40V44H32V40" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+          stroke="#8b5cf6" strokeWidth="2.5" fill="#8b5cf6" fillOpacity="0.25"/>
+    <path d="M16 40V44H32V40" stroke="#8b5cf6" strokeWidth="2.5" strokeLinecap="round"/>
     <rect x="44" y="12" width="14" height="24" rx="2"
-          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.25"/>
-    <path d="M48 36H54" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          stroke="#a78bfa" strokeWidth="2.5" fill="#a78bfa" fillOpacity="0.3"/>
+    <path d="M48 36H54" stroke="#c4b5fd" strokeWidth="2" strokeLinecap="round"/>
   </svg>
 );
 
 export const CoinsIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="26" cy="26" r="14" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.2"/>
-    <circle cx="38" cy="38" r="14" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.3"/>
-    <path d="M26 20V32M20 26H32" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+    <defs>
+      <linearGradient id="coin-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#fbbf24', stopOpacity: 0.35}} />
+        <stop offset="100%" style={{stopColor: '#f59e0b', stopOpacity: 0.35}} />
+      </linearGradient>
+      <linearGradient id="coin-gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#f59e0b', stopOpacity: 0.4}} />
+        <stop offset="100%" style={{stopColor: '#d97706', stopOpacity: 0.4}} />
+      </linearGradient>
+    </defs>
+    <circle cx="26" cy="26" r="14" stroke="#fbbf24" strokeWidth="2.5" fill="url(#coin-gradient-1)"/>
+    <circle cx="38" cy="38" r="14" stroke="#f59e0b" strokeWidth="2.5" fill="url(#coin-gradient-2)"/>
+    <path d="M26 20V32M20 26H32" stroke="#fcd34d" strokeWidth="2.5" strokeLinecap="round"/>
   </svg>
 );
 
 // Media & Entertainment
 export const VideoIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="video-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#ec4899', stopOpacity: 0.3}} />
+        <stop offset="100%" style={{stopColor: '#8b5cf6', stopOpacity: 0.3}} />
+      </linearGradient>
+    </defs>
     <rect x="8" y="16" width="48" height="32" rx="3"
-          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.2"/>
+          stroke="#ec4899" strokeWidth="2.5" fill="url(#video-gradient)"/>
     <path d="M26 26L38 32L26 38V26Z"
-          stroke="currentColor" strokeWidth="2" strokeLinejoin="round" fill="currentColor" fillOpacity="0.4"/>
+          stroke="#f9a8d4" strokeWidth="2" strokeLinejoin="round" fill="#ec4899" fillOpacity="0.5"/>
   </svg>
 );
 
 export const HomeAutomationIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="home-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#f59e0b', stopOpacity: 0.3}} />
+        <stop offset="100%" style={{stopColor: '#ef4444', stopOpacity: 0.3}} />
+      </linearGradient>
+    </defs>
     <path d="M10 32L32 14L54 32V52C54 53.1 53.1 54 52 54H12C10.9 54 10 53.1 10 52V32Z"
-          stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" fill="currentColor" fillOpacity="0.2"/>
-    <circle cx="32" cy="36" r="6" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.35"/>
+          stroke="#f59e0b" strokeWidth="2.5" strokeLinejoin="round" fill="url(#home-gradient)"/>
+    <circle cx="32" cy="36" r="6" stroke="#fbbf24" strokeWidth="2.5" fill="#fbbf24" fillOpacity="0.4"/>
     <path d="M32 30V36M26 36H32M38 36H32M32 42V36"
-          stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          stroke="#fcd34d" strokeWidth="2" strokeLinecap="round"/>
   </svg>
 );
 
 export const DatabaseIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="32" cy="18" rx="20" ry="8" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.25"/>
+    <defs>
+      <linearGradient id="db-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 0.35}} />
+        <stop offset="100%" style={{stopColor: '#0891b2', stopOpacity: 0.35}} />
+      </linearGradient>
+    </defs>
+    <ellipse cx="32" cy="18" rx="20" ry="8" stroke="#06b6d4" strokeWidth="2.5" fill="url(#db-gradient)"/>
     <path d="M12 18V32C12 36.4 20.5 40 32 40C43.5 40 52 36.4 52 32V18"
-          stroke="currentColor" strokeWidth="2.5"/>
+          stroke="#0ea5e9" strokeWidth="2.5"/>
     <path d="M12 32V46C12 50.4 20.5 54 32 54C43.5 54 52 50.4 52 46V32"
-          stroke="currentColor" strokeWidth="2.5"/>
+          stroke="#06b6d4" strokeWidth="2.5"/>
   </svg>
 );
 
 export const SettingsIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="32" cy="32" r="8" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.3"/>
+    <circle cx="32" cy="32" r="8" stroke="#64748b" strokeWidth="2.5" fill="#64748b" fillOpacity="0.35"/>
     <path d="M32 8V16M32 48V56M56 32H48M16 32H8M47.7 16.3L42.3 21.7M21.7 42.3L16.3 47.7M47.7 47.7L42.3 42.3M21.7 21.7L16.3 16.3"
-          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+          stroke="#94a3b8" strokeWidth="2.5" strokeLinecap="round"/>
   </svg>
 );
 
 export const BlockIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="32" cy="32" r="22" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.1"/>
-    <path d="M14 14L50 50" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+    <defs>
+      <linearGradient id="block-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#ef4444', stopOpacity: 0.25}} />
+        <stop offset="100%" style={{stopColor: '#dc2626', stopOpacity: 0.25}} />
+      </linearGradient>
+    </defs>
+    <circle cx="32" cy="32" r="22" stroke="#ef4444" strokeWidth="2.5" fill="url(#block-gradient)"/>
+    <path d="M14 14L50 50" stroke="#f87171" strokeWidth="3" strokeLinecap="round"/>
   </svg>
 );
 
@@ -147,10 +205,16 @@ export const SyncIcon = ({ className = "w-full h-full" }) => (
 
 export const KeyIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="20" cy="44" r="12" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.1"/>
+    <defs>
+      <linearGradient id="key-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#fbbf24', stopOpacity: 0.3}} />
+        <stop offset="100%" style={{stopColor: '#f59e0b', stopOpacity: 0.3}} />
+      </linearGradient>
+    </defs>
+    <circle cx="20" cy="44" r="12" stroke="#fbbf24" strokeWidth="2.5" fill="url(#key-gradient)"/>
     <path d="M28 36L50 14M50 14V22M50 14H42"
-          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="20" cy="44" r="4" fill="currentColor" fillOpacity="0.3"/>
+          stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="20" cy="44" r="4" fill="#fcd34d" fillOpacity="0.5"/>
   </svg>
 );
 
@@ -233,12 +297,18 @@ export const LayersIcon = ({ className = "w-full h-full" }) => (
 
 export const LightbulbIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bulb-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#fbbf24', stopOpacity: 0.4}} />
+        <stop offset="100%" style={{stopColor: '#f59e0b', stopOpacity: 0.4}} />
+      </linearGradient>
+    </defs>
     <path d="M32 10C22 10 14 18 14 28C14 34 17 39 22 42V46C22 48.2 23.8 50 26 50H38C40.2 50 42 48.2 42 46V42C47 39 50 34 50 28C50 18 42 10 32 10Z"
-          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.1"/>
+          stroke="#fbbf24" strokeWidth="2.5" fill="url(#bulb-gradient)"/>
     <path d="M26 50V52C26 54.2 27.8 56 30 56H34C36.2 56 38 54.2 38 52V50"
-          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+          stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round"/>
     <path d="M32 24V28M28 30L32 28M36 30L32 28"
-          stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          stroke="#fcd34d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
@@ -321,13 +391,19 @@ export const UsersIcon = ({ className = "w-full h-full" }) => (
 
 export const RocketIcon = ({ className = "w-full h-full" }) => (
   <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="rocket-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#8b5cf6', stopOpacity: 0.35}} />
+        <stop offset="100%" style={{stopColor: '#ec4899', stopOpacity: 0.35}} />
+      </linearGradient>
+    </defs>
     <path d="M32 10C32 10 46 14 50 28C54 42 50 50 50 50L38 54L26 54L14 50C14 50 10 42 14 28C18 14 32 10 32 10Z"
-          stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.1"/>
-    <circle cx="32" cy="28" r="4" fill="currentColor" fillOpacity="0.4"/>
+          stroke="#8b5cf6" strokeWidth="2.5" fill="url(#rocket-gradient)"/>
+    <circle cx="32" cy="28" r="4" fill="#a78bfa" fillOpacity="0.6"/>
     <path d="M14 50L10 54M50 50L54 54"
-          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+          stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round"/>
     <path d="M22 46L18 54M42 46L46 54"
-          stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          stroke="#fbbf24" strokeWidth="2" strokeLinecap="round"/>
   </svg>
 );
 

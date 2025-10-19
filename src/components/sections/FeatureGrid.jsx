@@ -66,7 +66,7 @@ const FeatureGrid = ({
           <div className="relative">
             {/* Icon */}
             {feature.icon && (
-              <div className="w-12 h-12 mb-4 text-dark-accent-primary">
+              <div className="w-14 h-14 mb-4">
                 {feature.icon}
               </div>
             )}

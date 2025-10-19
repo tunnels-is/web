@@ -110,7 +110,7 @@ const CTASection = ({
                 }`}
               >
                 {card.icon && (
-                  <div className="w-14 h-14 mb-6 text-dark-accent-secondary">{card.icon}</div>
+                  <div className="w-16 h-16 mb-6">{card.icon}</div>
                 )}
                 <h3 className={`text-3xl font-bold mb-4 leading-tight ${
                   card.highlighted ? 'text-dark-accent-primary' : 'text-dark-accent-secondary'
