@@ -4,6 +4,14 @@ import ContentSection from '../components/sections/ContentSection';
 import FeatureGrid from '../components/sections/FeatureGrid';
 import CTASection from '../components/sections/CTASection';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import {
+  ShieldCheckIcon,
+  DocumentIcon,
+  LinkIcon,
+  ChartIcon,
+  LockShieldIcon,
+  SyncIcon
+} from '../components/ui/Icons';
 
 const DNS = () => {
   const [ref2, isVisible2] = useScrollAnimation();
@@ -13,52 +21,59 @@ const DNS = () => {
     {
       title: "DNS Threat Protection",
       description: "Block malicious domains before they can harm your network with daily updated threat lists from trusted sources.",
-      icon: "🛡️"
+      icon: <ShieldCheckIcon />
     },
     {
       title: "Custom DNS Records",
       description: "Register custom A, TXT, and CNAME records for any domain directly in your configuration.",
-      icon: "📝"
+      icon: <DocumentIcon />
     },
     {
       title: "DNS Routing",
       description: "Forward specific domains to designated networks, enabling proper resolution across multiple VPN connections.",
-      icon: "🔄"
+      icon: <LinkIcon />
     },
     {
       title: "DNS Analytics",
       description: "Real-time insights into DNS queries with detailed logging and WHOIS information at your fingertips.",
-      icon: "📊"
+      icon: <ChartIcon />
     },
     {
       title: "DNS to DoH",
       description: "Automatically translate standard DNS queries to DNS over HTTPS for enhanced privacy.",
-      icon: "🔒"
+      icon: <LockShieldIcon />
     },
     {
       title: "Daily Updates",
       description: "Combined blocklists from popular sources, automatically updated every day to stay ahead of threats.",
-      icon: "🔄"
+      icon: <SyncIcon />
     },
   ];
 
   return (
-    <div className="min-h-screen pt-20 pb-12">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSimple
         title="Routable DNS"
         subtitle="With Security and Daily Threat List Updates"
         description="Tunnels offers a built-in DNS Server/Proxy which comes with extensive blacklisting features, daily block list updates and the ability to define custom DNS records. Tunnels DNS server also facilitates DNS Routing to ensure proper DNS resolution when connected to multiple networks."
-        showWaves={true}
+        showNetworkLines={true}
+        showScrollIndicator={true}
+        buttons={[
+          { text: "Download Free", href: "/download", primary: true },
+          { text: "Learn More", href: "#features", teal: true }
+        ]}
       />
 
       {/* DNS Features Grid */}
       <ContentSection>
-        <FeatureGrid
-          features={dnsFeatures}
-          columns={3}
-          cardStyle="glass"
-        />
+        <div id="features">
+          <FeatureGrid
+            features={dnsFeatures}
+            columns={3}
+            cardStyle="glass"
+          />
+        </div>
       </ContentSection>
 
       {/* DNS Server Side Configuration */}
