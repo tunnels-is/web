@@ -752,7 +752,12 @@ export const personalVPNContent = {
 export const featuresContent = {
   hero: {
     title: "Features",
-    description: "Tunnels provides a comprehensive suite of networking and security features designed for individuals and enterprises alike."
+    subtitle: "Complete Networking & Security Suite",
+    description: "Tunnels provides a comprehensive suite of networking and security features designed for individuals and enterprises alike.",
+    buttons: [
+      { text: "Download Now", href: "/download", primary: true },
+      { text: "View Pricing", href: "/pricing", teal: true }
+    ]
   },
 
   basicFeatures: {

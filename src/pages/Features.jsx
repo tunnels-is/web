@@ -19,12 +19,15 @@ const Features = () => {
   const enterpriseFeaturesData = enterpriseFeatures.features;
 
   return (
-    <div className="min-h-screen pt-20 pb-12">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSimple
         title={hero.title}
+        subtitle={hero.subtitle}
         description={hero.description}
-        showWaves={true}
+        buttons={hero.buttons}
+        showNetworkLines={true}
+        showScrollIndicator={true}
       />
 
       {/* Basic Features */}
