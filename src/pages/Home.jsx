@@ -43,6 +43,7 @@ const Home = () => {
           { text: "Download Now", href: "/download", primary: true },
           { text: "Explore Features", href: "/features", primary: false }
         ]}
+        showNetworkLines={true}
         showScrollIndicator={true}
       />
 

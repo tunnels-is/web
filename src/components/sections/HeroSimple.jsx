@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import FloatingOrbs from '../animations/FloatingOrbs';
 import WaveAnimation from '../animations/WaveAnimation';
+import NetworkLines from '../animations/NetworkLines';
 
 /**
  * HeroSimple - Simple hero section with optional orbs and waves
@@ -12,6 +13,7 @@ import WaveAnimation from '../animations/WaveAnimation';
  * @param {Array} buttons - Array of button configurations
  * @param {boolean} showOrbs - Show floating orbs (default: true)
  * @param {boolean} showWaves - Show wave animation (default: false)
+ * @param {boolean} showNetworkLines - Show network connection lines (default: false)
  * @param {boolean} showScrollIndicator - Show scroll indicator (default: false)
  * @param {Array} orbs - Custom orb configurations (optional)
  */
@@ -22,6 +24,7 @@ const HeroSimple = ({
   buttons = [],
   showOrbs = true,
   showWaves = false,
+  showNetworkLines = false,
   showScrollIndicator = false,
   orbs
 }) => {
@@ -50,6 +53,13 @@ const HeroSimple = ({
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Network Lines Animation */}
+      {showNetworkLines && (
+        <div className="absolute inset-0">
+          <NetworkLines opacity={0.08} />
+        </div>
+      )}
+
       {/* Animated Background Elements */}
       {showOrbs && (
         <div className="absolute inset-0 overflow-hidden">
