@@ -9,6 +9,7 @@ import Download from './pages/Download';
 import Pricing from './pages/Pricing';
 import FreeAndOpenSource from './pages/FreeAndOpenSource';
 import CloudBaremetal from './pages/CloudBaremetal';
+import Homelab from './pages/Homelab';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <Route path="/free-and-opensource" element={<FreeAndOpenSource />} />
           <Route path="/security" element={<Technical />} />
           <Route path="/public" element={<Features />} />
-          <Route path="/homelab" element={<Technical />} />
+          <Route path="/homelab" element={<Homelab />} />
           <Route path="/cloud" element={<CloudBaremetal />} />
           <Route path="/iot" element={<Technical />} />
           <Route path="/office" element={<Technical />} />
