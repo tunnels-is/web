@@ -42,7 +42,7 @@ const FeatureGrid = ({
       case 'glass':
         return `${baseClasses} glass-effect hover:bg-dark-elevated`;
       case 'gradient-border':
-        return `${baseClasses} bg-dark-elevated hover:bg-dark-bg border border-dark-border hover:border-dark-accent-primary`;
+        return `${baseClasses} bg-dark-bg/0 hover:bg-dark-bg/60 backdrop-blur-sm`;
       case 'elevated':
       default:
         return `${baseClasses} bg-dark-elevated hover:bg-dark-bg hover:shadow-xl hover:shadow-dark-accent-primary/20`;
@@ -54,29 +54,29 @@ const FeatureGrid = ({
       {features.map((feature, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
-          whileHover={{ y: -15, scale: 1.03 }}
+          transition={{
+            duration: 0.5,
+            delay: index * 0.08,
+            ease: [0.25, 0.46, 0.45, 0.94]
+          }}
           className={getCardClasses(feature, index)}
         >
-          {/* Gradient Border Effect (if applicable) */}
-          {cardStyle === 'gradient-border' && feature.gradient && (
-            <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-20 rounded-2xl blur-xl transition-all duration-500`}></div>
-          )}
-
           <div className="relative">
             {/* Icon */}
             {feature.icon && (
-              <div className="text-6xl mb-6">{feature.icon}</div>
+              <div className="text-6xl mb-6">
+                {feature.icon}
+              </div>
             )}
 
             {/* Title */}
             <h3 className={`text-2xl font-bold mb-4 ${
               feature.color
                 ? `text-dark-accent-${feature.color}`
-                : 'text-dark-text-primary group-hover:text-gradient'
-            } transition-all duration-300`}>
+                : 'text-dark-text-primary'
+            }`}>
               {feature.title}
             </h3>
 
@@ -87,7 +87,7 @@ const FeatureGrid = ({
 
             {/* Scenario (if exists - for use case cards) */}
             {feature.scenario && (
-              <div className="bg-dark-bg p-4 rounded-lg border-l-4 border-dark-accent-secondary mt-6">
+              <div className="bg-dark-bg/50 backdrop-blur-sm p-4 rounded-lg border-l-4 border-dark-accent-secondary mt-6">
                 <p className="text-sm text-dark-text-muted italic">
                   {feature.scenario}
                 </p>

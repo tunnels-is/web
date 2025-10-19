@@ -24,10 +24,14 @@ const TechnicalFeaturesSection = ({
       {categories.map((category, categoryIndex) => (
         <motion.div
           key={categoryIndex}
-          initial={{ opacity: 0, x: categoryIndex % 2 === 0 ? -50 : 50 }}
-          animate={isVisible ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
-          className="bg-dark-elevated p-8 rounded-2xl border border-dark-border hover:border-dark-accent-primary transition-all duration-300"
+          initial={{ opacity: 0, y: 40 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            duration: 0.6,
+            delay: categoryIndex * 0.15,
+            ease: [0.25, 0.46, 0.45, 0.94]
+          }}
+          className="p-8 rounded-2xl transition-all duration-300 group bg-dark-bg/0 hover:bg-dark-bg/60 backdrop-blur-sm"
         >
           <h3 className="text-3xl font-bold mb-8 text-gradient">
             {category.category}
@@ -37,12 +41,16 @@ const TechnicalFeaturesSection = ({
             {category.features.map((feature, featureIndex) => (
               <motion.div
                 key={featureIndex}
-                initial={{ opacity: 0, x: -20 }}
-                animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: categoryIndex * 0.2 + featureIndex * 0.1 }}
-                className="flex gap-4 items-start group"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.4,
+                  delay: categoryIndex * 0.15 + featureIndex * 0.08,
+                  ease: "easeOut"
+                }}
+                className="flex gap-4 items-start"
               >
-                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
