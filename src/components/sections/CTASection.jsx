@@ -112,18 +112,18 @@ const CTASection = ({
                 {card.icon && (
                   <div className="text-6xl mb-6">{card.icon}</div>
                 )}
-                <h3 className={`text-3xl font-bold mb-6 ${
+                <h3 className={`text-3xl font-bold mb-4 leading-tight ${
                   card.highlighted ? 'text-dark-accent-primary' : 'text-dark-accent-secondary'
                 }`}>
                   {card.title}
                 </h3>
-                <p className="text-lg text-dark-text-secondary mb-8 leading-relaxed">
+                <p className="text-lg text-dark-text-secondary mb-6 leading-snug">
                   {card.description}
                 </p>
                 {card.features && (
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-3 mb-8">
                     {card.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-dark-text-secondary">
+                      <li key={idx} className="flex items-center gap-3 text-dark-text-secondary leading-snug">
                         <svg className="w-6 h-6 text-dark-accent-tertiary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>

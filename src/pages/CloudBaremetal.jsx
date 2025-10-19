@@ -169,7 +169,7 @@ const CloudBaremetal = () => {
             <h2 className="text-2xl md:text-4xl font-semibold text-dark-text-secondary mb-8">
               Multi-Server Architecture for Scale
             </h2>
-            <p className="text-xl md:text-2xl text-dark-text-secondary mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-dark-text-secondary mb-12 max-w-4xl mx-auto leading-snug">
               Deploy a distributed VPN infrastructure with centralized authentication.
               Scale globally with multiple VPN servers while managing everything from a single control plane.
             </p>
@@ -232,7 +232,7 @@ const CloudBaremetal = () => {
                 <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
                   {benefit.title}
                 </h3>
-                <p className="text-dark-text-secondary leading-relaxed">
+                <p className="text-dark-text-secondary leading-snug">
                   {benefit.description}
                 </p>
               </motion.div>
@@ -254,7 +254,7 @@ const CloudBaremetal = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-gradient">Distributed by Design</span>
               </h2>
-              <p className="text-lg text-dark-text-secondary leading-relaxed mb-6">
+              <p className="text-lg text-dark-text-secondary leading-snug mb-6">
                 Tunnels multi-server architecture separates concerns for maximum flexibility and performance.
                 Deploy one control server for authentication and management, then add as many VPN servers
                 as you need to handle traffic and provide geographic coverage.
@@ -357,12 +357,12 @@ const CloudBaremetal = () => {
                 <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
                   {useCase.title}
                 </h3>
-                <p className="text-lg text-dark-text-secondary mb-4 leading-relaxed">
+                <p className="text-lg text-dark-text-secondary mb-4 leading-snug">
                   {useCase.description}
                 </p>
                 <div className="bg-dark-bg p-4 rounded-lg">
                   <p className="text-sm text-dark-text-muted mb-1 font-semibold uppercase tracking-wide">Example Setup</p>
-                  <p className="text-dark-text-secondary text-sm leading-relaxed">
+                  <p className="text-dark-text-secondary text-sm leading-snug">
                     {useCase.scenario}
                   </p>
                 </div>
@@ -409,7 +409,7 @@ const CloudBaremetal = () => {
                   </div>
                   <div className="flex-1 bg-dark-bg p-5 rounded-lg border border-dark-accent-secondary/30">
                     <p className="text-sm text-dark-text-muted mb-2 font-mono uppercase tracking-wider">Technical Detail</p>
-                    <p className="text-dark-text-secondary font-mono text-sm leading-relaxed">
+                    <p className="text-dark-text-secondary font-mono text-sm leading-snug">
                       {capability.technical}
                     </p>
                   </div>
@@ -450,7 +450,7 @@ const CloudBaremetal = () => {
                 <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
                   {option.platform}
                 </h3>
-                <p className="text-lg text-dark-text-secondary mb-6 leading-relaxed">
+                <p className="text-lg text-dark-text-secondary mb-6 leading-snug">
                   {option.description}
                 </p>
                 <ul className="space-y-3">

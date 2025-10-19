@@ -136,12 +136,12 @@ const StepContent = ({ step, index }) => (
     {/* Main card */}
     <div className="relative bg-dark-surface/80 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-dark-border group-hover:border-dark-accent-primary/50 transition-all duration-300 shadow-lg">
       {/* Title */}
-      <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-dark-accent-primary transition-colors duration-300">
+      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight group-hover:text-dark-accent-primary transition-colors duration-300">
         {step.title}
       </h3>
 
       {/* Description */}
-      <p className="text-base md:text-lg text-dark-text-secondary leading-relaxed mb-4">
+      <p className="text-base md:text-lg text-dark-text-secondary leading-snug mb-3">
         {step.description}
       </p>
 

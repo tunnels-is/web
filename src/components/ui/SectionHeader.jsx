@@ -41,7 +41,7 @@ const SectionHeader = ({
         </span>
       </h2>
       {subtitle && (
-        <p className={`text-xl md:text-2xl text-dark-text-secondary leading-relaxed ${maxWidthClass}`}>
+        <p className={`text-xl md:text-2xl text-dark-text-secondary leading-snug ${maxWidthClass}`}>
           {subtitle}
         </p>
       )}

@@ -56,10 +56,10 @@ const TechnicalFeaturesSection = ({
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg font-semibold text-dark-text-primary mb-2">
+                  <h4 className="text-lg font-semibold text-dark-text-primary mb-1 leading-tight">
                     {feature.name}
                   </h4>
-                  <p className="text-dark-text-secondary leading-relaxed">
+                  <p className="text-dark-text-secondary leading-snug">
                     {feature.detail}
                   </p>
                 </div>

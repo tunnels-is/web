@@ -48,13 +48,13 @@ const HeroWithWaves = ({
           </h1>
 
           {subtitle && (
-            <h2 className="text-2xl md:text-4xl font-semibold text-dark-text-secondary mb-8 leading-relaxed">
+            <h2 className="text-2xl md:text-4xl font-semibold text-dark-text-secondary mb-8 leading-snug">
               {subtitle}
             </h2>
           )}
 
           {description && (
-            <p className="text-xl md:text-2xl text-dark-text-secondary mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-dark-text-secondary mb-12 max-w-4xl mx-auto leading-snug">
               {description}
             </p>
           )}

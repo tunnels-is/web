@@ -98,7 +98,7 @@ const HeroWithGradients = ({
           )}
 
           {description && (
-            <p className="text-xl md:text-2xl text-dark-text-secondary mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-dark-text-secondary mb-12 max-w-4xl mx-auto leading-snug">
               {description}
             </p>
           )}

@@ -54,7 +54,7 @@ const PricingHighlight = ({
           </h2>
 
           {description && (
-            <p className="text-2xl md:text-3xl mb-12 max-w-5xl mx-auto leading-relaxed opacity-90">
+            <p className="text-2xl md:text-3xl mb-12 max-w-5xl mx-auto leading-snug opacity-90">
               {description}
             </p>
           )}
@@ -69,8 +69,8 @@ const PricingHighlight = ({
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20"
                 >
-                  <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                  <p className="text-lg opacity-90 leading-relaxed">{item.description}</p>
+                  <h3 className="text-2xl font-bold mb-2 leading-tight">{item.title}</h3>
+                  <p className="text-lg opacity-90 leading-snug">{item.description}</p>
                 </motion.div>
               ))}
             </div>

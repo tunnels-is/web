@@ -48,13 +48,13 @@ const FeatureCard = ({
         <div className="text-4xl mb-4">{icon}</div>
       )}
 
-      <h3 className={`text-xl font-semibold mb-3 ${
+      <h3 className={`text-xl font-semibold mb-2 leading-tight ${
         gradient ? 'text-gradient' : 'text-dark-accent-primary'
       }`}>
         {title}
       </h3>
 
-      <p className="text-dark-text-secondary leading-relaxed">
+      <p className="text-dark-text-secondary leading-snug">
         {text}
       </p>
     </motion.div>

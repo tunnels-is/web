@@ -250,10 +250,10 @@ const Homelab = () => {
           <div className="flex items-start gap-4">
             <div className="text-4xl">💡</div>
             <div>
-              <h4 className="text-xl font-semibold text-dark-accent-primary mb-2">
+              <h4 className="text-xl font-semibold text-dark-accent-primary mb-2 leading-tight">
                 Network-Wide Protection
               </h4>
-              <p className="text-dark-text-secondary leading-relaxed">
+              <p className="text-dark-text-secondary leading-snug">
                 All devices connected through your Tunnels homelab server automatically benefit from
                 DNS blocking and custom DNS records - no per-device configuration needed. Your phone,
                 laptop, and tablet all get ad-blocking anywhere in the world.

@@ -20,7 +20,7 @@ const Technical = () => {
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             <span className="text-gradient">Technical Overview</span>
           </h1>
-          <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto leading-snug">
             Deep dive into the architecture and technical capabilities of Tunnels VPN.
           </p>
         </motion.div>

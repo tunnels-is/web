@@ -44,7 +44,7 @@ const FreeAndOpenSource = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
             <span className="text-gradient">Why Open Source?</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-dark-text-secondary leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-dark-text-secondary leading-snug">
             <div>
               <h3 className="text-xl font-semibold text-dark-accent-primary mb-4">Transparency</h3>
               <p className="mb-4">

@@ -32,11 +32,11 @@ const FAQSection = ({
             whileHover={{ scale: 1.02 }}
             className="glass-effect p-8 rounded-2xl hover:bg-dark-elevated transition-all duration-300 border border-dark-border hover:border-dark-accent-primary"
           >
-            <h3 className="text-xl font-bold text-dark-accent-primary mb-4 flex items-start gap-3">
+            <h3 className="text-xl font-bold text-dark-accent-primary mb-2 leading-tight flex items-start gap-3">
               <span className="text-2xl flex-shrink-0">{icon}</span>
               <span>{question}</span>
             </h3>
-            <p className="text-lg text-dark-text-secondary leading-relaxed pl-11">
+            <p className="text-base text-dark-text-secondary leading-snug pl-11">
               {answer}
             </p>
           </motion.div>

@@ -387,10 +387,10 @@ const PersonalVPN = () => {
               <div className="flex items-start gap-6">
                 <div className="text-6xl">💡</div>
                 <div>
-                  <h4 className="text-2xl font-bold text-dark-accent-primary mb-3">
+                  <h4 className="text-2xl font-bold text-dark-accent-primary mb-2 leading-tight">
                     The Bottom Line
                   </h4>
-                  <p className="text-lg text-dark-text-secondary leading-relaxed">
+                  <p className="text-base text-dark-text-secondary leading-snug">
                     Commercial VPNs are convenient but require trust. Your personal VPN gives you complete control and transparency
                     at a lower cost. The choice depends on your priorities: convenience vs. control, trust vs. verification,
                     multiple locations vs. ownership.

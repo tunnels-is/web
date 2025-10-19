@@ -74,12 +74,12 @@ const DNS = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 <span className="text-gradient">Server DNS Configurations</span>
               </h2>
-              <p className="text-lg text-dark-text-secondary leading-relaxed mb-6">
+              <p className="text-base text-dark-text-secondary leading-snug mb-4">
                 Tunnels servers can be configured to forward domains, including wildcards, to an
                 internal network. This removes the need for specific client side DNS records or
                 switching DNS servers when users change networks.
               </p>
-              <p className="text-lg text-dark-text-secondary leading-relaxed">
+              <p className="text-base text-dark-text-secondary leading-snug">
                 When a device connects to a Tunnels server, its DNS configurations are automatically
                 sent to the device, ensuring seamless connectivity across all your networks.
               </p>
@@ -115,11 +115,11 @@ const DNS = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 <span className="text-gradient">Device DNS Configurations</span>
               </h2>
-              <p className="text-lg text-dark-text-secondary leading-relaxed mb-6">
+              <p className="text-base text-dark-text-secondary leading-snug mb-4">
                 DNS records can be registered directly in the Tunnels application config, completely
                 removing the need for external DNS servers.
               </p>
-              <p className="text-lg text-dark-text-secondary leading-relaxed">
+              <p className="text-base text-dark-text-secondary leading-snug">
                 This gives you complete control over DNS resolution on your device, with the ability
                 to override any domain and point it wherever you need - perfect for development,
                 testing, or accessing internal services.

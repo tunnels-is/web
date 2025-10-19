@@ -66,13 +66,13 @@ const FeatureGrid = ({
           <div className="relative">
             {/* Icon */}
             {feature.icon && (
-              <div className="text-6xl mb-6">
+              <div className="text-6xl mb-4">
                 {feature.icon}
               </div>
             )}
 
             {/* Title */}
-            <h3 className={`text-2xl font-bold mb-4 ${
+            <h3 className={`text-2xl font-bold mb-2 leading-tight ${
               feature.color
                 ? `text-dark-accent-${feature.color}`
                 : 'text-dark-text-primary'
@@ -81,7 +81,7 @@ const FeatureGrid = ({
             </h3>
 
             {/* Description */}
-            <p className="text-dark-text-secondary text-lg leading-relaxed">
+            <p className="text-dark-text-secondary text-base leading-snug">
               {feature.description}
             </p>
 

@@ -54,7 +54,7 @@ const Enterprise = () => {
           <h2 className="text-2xl md:text-3xl font-semibold text-dark-text-secondary mb-8">
             Lightweight design for big scale
           </h2>
-          <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto leading-snug">
             Built from the ground up to handle enterprise-scale networking with minimal overhead
             and maximum security.
           </p>
@@ -81,7 +81,7 @@ const Enterprise = () => {
                 <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
                   {benefit.title}
                 </h3>
-                <p className="text-dark-text-secondary leading-relaxed">
+                <p className="text-dark-text-secondary leading-snug">
                   {benefit.description}
                 </p>
               </motion.div>
@@ -102,11 +102,11 @@ const Enterprise = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               <span className="text-gradient">Effortless Management</span>
             </h2>
-            <p className="text-lg text-dark-text-secondary leading-relaxed mb-6">
+            <p className="text-lg text-dark-text-secondary leading-snug mb-6">
               Automatically connect your employees to all of their networks, all at once. Tunnels
               is designed to be install-free - simply copy, paste, and run.
             </p>
-            <p className="text-lg text-dark-text-secondary leading-relaxed mb-6">
+            <p className="text-lg text-dark-text-secondary leading-snug mb-6">
               This makes managing a large number of users simple and pain-free. Company-wide
               configurations can be distributed as simple files to users in multiple ways or
               automatically updated by system administrators.
@@ -164,12 +164,12 @@ const Enterprise = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               <span className="text-gradient">Reduced Attack Surface</span>
             </h2>
-            <p className="text-lg text-dark-text-secondary leading-relaxed mb-6">
+            <p className="text-lg text-dark-text-secondary leading-snug mb-6">
               Tunnels is written in Golang with minimal module use and no third-party services.
               This method of simplicity reduces the overall attack surface, simplifies security
               reviews, and minimizes the risk of vulnerabilities.
             </p>
-            <p className="text-lg text-dark-text-secondary leading-relaxed mb-6">
+            <p className="text-lg text-dark-text-secondary leading-snug mb-6">
               <a href="https://go.dev" target="_blank" rel="noopener noreferrer" className="text-dark-accent-primary hover:text-dark-accent-secondary transition-colors">
                 Golang
               </a>{' '}
