@@ -10,6 +10,7 @@ import Pricing from './pages/Pricing';
 import FreeAndOpenSource from './pages/FreeAndOpenSource';
 import CloudBaremetal from './pages/CloudBaremetal';
 import Homelab from './pages/Homelab';
+import PersonalVPN from './pages/PersonalVPN';
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
           <Route path="/iot" element={<Technical />} />
           <Route path="/office" element={<Technical />} />
           <Route path="/lan-over-wan" element={<Technical />} />
-          <Route path="/personal-vpn" element={<Technical />} />
+          <Route path="/personal-vpn" element={<PersonalVPN />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </Layout>
