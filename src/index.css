@@ -52,6 +52,12 @@
 
 * {
   border-color: var(--color-dark-border);
+  /* Enhanced font smoothing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  font-synthesis: none;
 }
 
 body {
@@ -59,10 +65,20 @@ body {
   color: var(--color-dark-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+  /* Prevent font weight shifts */
+  -webkit-text-stroke: 0.45px transparent;
+  text-shadow: 0 0 0.01px rgba(255, 255, 255, 0.1);
 }
 
 html {
   scroll-behavior: smooth;
+  /* Improved subpixel rendering */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 .text-gradient {
@@ -70,6 +86,33 @@ html {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  /* Enhanced smoothing for gradient text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Smooth rendering for all headings */
+h1, h2, h3, h4, h5, h6 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  letter-spacing: -0.015em;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
+}
+
+/* Extra smoothing for large text */
+h1, h2 {
+  -webkit-text-stroke: 0.5px transparent;
+  text-shadow: 0 0 0.01px rgba(255, 255, 255, 0.15);
+}
+
+/* Button and interactive text smoothing */
+button, a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .glass-effect {
