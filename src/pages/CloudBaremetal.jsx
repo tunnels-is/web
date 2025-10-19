@@ -470,9 +470,8 @@ const CloudBaremetal = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible6 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="glass-effect p-12 rounded-2xl"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
               <span className="text-gradient">Built for Performance</span>
             </h2>
 
