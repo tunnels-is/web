@@ -43,7 +43,6 @@ const Home = () => {
           { text: "Download Now", href: "/download", primary: true },
           { text: "Explore Features", href: "/features", primary: false }
         ]}
-        showWaves={true}
         showScrollIndicator={true}
       />
 
