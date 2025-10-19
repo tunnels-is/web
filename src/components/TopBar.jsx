@@ -21,9 +21,12 @@ const TopBar = () => {
 
   const navLinks = [
     { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/contact', label: 'Contact' },
+    { path: '/features', label: 'Features' },
+    { path: '/dns', label: 'DNS' },
+    { path: '/enterprise', label: 'Enterprise' },
+    { path: '/technical', label: 'Technical' },
+    { path: '/download', label: 'Download' },
+    { path: '/pricing', label: 'Pricing' },
   ];
 
   return (
@@ -43,7 +46,7 @@ const TopBar = () => {
               whileTap={{ scale: 0.95 }}
               className="text-2xl font-bold text-gradient"
             >
-              Portfolio
+              Tunnels
             </motion.div>
           </Link>
 

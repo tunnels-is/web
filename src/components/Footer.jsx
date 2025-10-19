@@ -4,9 +4,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'GitHub', url: '#', icon: '→' },
-    { name: 'LinkedIn', url: '#', icon: '→' },
-    { name: 'Twitter', url: '#', icon: '→' },
+    { name: 'GitHub', url: 'https://github.com/tunnels-is', icon: 'GH' },
+    { name: 'Discord', url: 'https://discord.com/invite/7Ts3PCnCd9', icon: 'DC' },
+    { name: 'Twitter', url: 'https://x.com/tunnels_is', icon: 'X' },
+    { name: 'Reddit', url: 'https://www.reddit.com/r/tunnels_is/', icon: 'RD' },
   ];
 
   return (
@@ -15,9 +16,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-gradient">Portfolio</h3>
+            <h3 className="text-xl font-bold text-gradient">Tunnels</h3>
             <p className="text-dark-text-secondary text-sm">
-              Creating modern, responsive, and beautiful web experiences.
+              Advanced networking made simple. Connect to multiple networks with VPN, LAN, DNS security, and more.
             </p>
           </div>
 
@@ -27,13 +28,20 @@ const Footer = () => {
               Quick Links
             </h4>
             <ul className="space-y-2">
-              {['Home', 'About', 'Projects', 'Contact'].map((link) => (
-                <li key={link}>
+              {[
+                { label: 'Home', path: '/' },
+                { label: 'Features', path: '/features' },
+                { label: 'DNS Security', path: '/dns' },
+                { label: 'Technical', path: '/technical' },
+                { label: 'Download', path: '/download' },
+                { label: 'Pricing', path: '/pricing' },
+              ].map((link) => (
+                <li key={link.label}>
                   <a
-                    href={`/${link.toLowerCase() === 'home' ? '' : link.toLowerCase()}`}
+                    href={link.path}
                     className="text-dark-text-secondary hover:text-dark-accent-primary transition-colors text-sm"
                   >
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -66,20 +74,22 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-dark-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-dark-text-muted text-sm">
-              © {currentYear} Portfolio. All rights reserved.
+              © {currentYear} Tunnels. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a
-                href="#"
+                href="mailto:support@tunnels.is"
                 className="text-dark-text-muted hover:text-dark-text-primary text-sm transition-colors"
               >
-                Privacy Policy
+                Contact Support
               </a>
               <a
-                href="#"
+                href="https://github.com/tunnels-is"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-dark-text-muted hover:text-dark-text-primary text-sm transition-colors"
               >
-                Terms of Service
+                Open Source
               </a>
             </div>
           </div>

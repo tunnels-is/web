@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import About from './pages/About';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
-import NotFound from './pages/NotFound';
+import Features from './pages/Features';
+import DNS from './pages/DNS';
+import Enterprise from './pages/Enterprise';
+import Technical from './pages/Technical';
+import Download from './pages/Download';
+import Pricing from './pages/Pricing';
 
 function App() {
   return (
@@ -12,10 +14,13 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/dns" element={<DNS />} />
+          <Route path="/enterprise" element={<Enterprise />} />
+          <Route path="/technical" element={<Technical />} />
+          <Route path="/download" element={<Download />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </Layout>
     </Router>

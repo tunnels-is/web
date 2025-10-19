@@ -7,24 +7,24 @@ const Home = () => {
 
   const features = [
     {
-      title: 'Modern Design',
-      description: 'Clean, minimalist interfaces with attention to detail',
-      icon: '✨',
+      title: 'VPN & LAN',
+      description: 'Connect to multiple networks simultaneously with advanced routing',
+      icon: '🌐',
     },
     {
-      title: 'Responsive',
-      description: 'Seamless experience across all devices and screen sizes',
-      icon: '📱',
+      title: 'DNS Security',
+      description: 'Built-in DNS protection with daily threat list updates',
+      icon: '🛡️',
     },
     {
-      title: 'Performance',
-      description: 'Optimized for speed and smooth animations',
-      icon: '⚡',
+      title: 'No Installation',
+      description: 'Portable executable with no system changes required',
+      icon: '📦',
     },
     {
-      title: 'Accessible',
-      description: 'Built with accessibility and usability in mind',
-      icon: '♿',
+      title: 'Enterprise Ready',
+      description: 'Scales from individuals to millions of users',
+      icon: '🏢',
     },
   ];
 
@@ -68,10 +68,11 @@ const Home = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="text-gradient">Welcome to</span>
-              <br />
-              <span className="text-dark-text-primary">Modern Design</span>
+              <span className="text-gradient">Tunnels</span>
             </h1>
+            <h2 className="text-2xl md:text-3xl font-semibold text-dark-text-secondary mb-8">
+              VPN, LAN, NAT, Routing, DNS blocking, DNS routing and more!
+            </h2>
           </motion.div>
 
           <motion.p
@@ -80,7 +81,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-dark-text-secondary mb-12 max-w-3xl mx-auto"
           >
-            Creating beautiful, performant, and accessible web experiences with React and modern technologies
+            A modern networking solution that connects you to multiple networks at once, with built-in security and privacy features
           </motion.p>
 
           <motion.div
@@ -90,20 +91,20 @@ const Home = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <motion.a
-              href="/projects"
+              href="/download"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white font-semibold rounded-lg transition-colors shadow-lg shadow-dark-accent-primary/20"
             >
-              View Projects
+              Download Now
             </motion.a>
             <motion.a
-              href="/contact"
+              href="/features"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 glass-effect hover:bg-dark-elevated text-dark-text-primary font-semibold rounded-lg transition-all"
             >
-              Get in Touch
+              Explore Features
             </motion.a>
           </motion.div>
 
@@ -139,10 +140,10 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
-              Why Choose Us
+              Why Choose Tunnels
             </h2>
             <p className="text-dark-text-secondary text-lg">
-              We focus on quality, performance, and user experience
+              Advanced networking made simple, secure, and scalable
             </p>
           </motion.div>
 
@@ -177,19 +178,29 @@ const Home = () => {
             className="glass-effect p-12 rounded-2xl"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-              Ready to Start Your Project?
+              Ready to Get Started?
             </h2>
             <p className="text-dark-text-secondary text-lg mb-8">
-              Let's work together to bring your ideas to life
+              Try Tunnels free for 24 hours. No credit card required.
             </p>
-            <motion.a
-              href="/contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-4 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
-            >
-              Contact Us Today
-            </motion.a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.a
+                href="/download"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block px-8 py-4 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+              >
+                Download Free
+              </motion.a>
+              <motion.a
+                href="/pricing"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block px-8 py-4 glass-effect text-dark-text-primary font-semibold rounded-lg hover:bg-dark-elevated transition-all"
+              >
+                View Pricing
+              </motion.a>
+            </div>
           </motion.div>
         </div>
       </section>
