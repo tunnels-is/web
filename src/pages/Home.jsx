@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Home = () => {
+  const [topicsRef, topicsVisible] = useScrollAnimation();
   const [featuresRef, featuresVisible] = useScrollAnimation();
   const [ctaRef, ctaVisible] = useScrollAnimation();
 
@@ -129,6 +130,53 @@ const Home = () => {
             />
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* Topics Section */}
+      <section ref={topicsRef} className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={topicsVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
+              Explore Use Cases
+            </h2>
+            <p className="text-dark-text-secondary text-lg max-w-3xl mx-auto">
+              Discover how Tunnels can solve your networking challenges across different environments
+            </p>
+          </motion.div>
+
+          <div className="flex flex-wrap gap-4 justify-center max-w-5xl mx-auto">
+            {[
+              { label: 'Free & Open Source', path: '/free-and-opensource' },
+              { label: 'Security', path: '/security' },
+              { label: 'Public VPN', path: '/public' },
+              { label: 'Homelab', path: '/homelab' },
+              { label: 'Cloud & Baremetal', path: '/cloud' },
+              { label: 'IoT Networks', path: '/iot' },
+              { label: 'Office Networks', path: '/office' },
+              { label: 'LAN over WAN', path: '/lan-over-wan' },
+              { label: 'Personal VPN', path: '/personal-vpn' },
+              { label: 'DNS Security', path: '/dns' },
+            ].map((topic, index) => (
+              <motion.a
+                key={topic.path}
+                href={topic.path}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={topicsVisible ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                whileHover={{ scale: 1.05, backgroundColor: 'rgba(59, 130, 246, 0.2)' }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 glass-effect rounded-lg font-semibold text-dark-text-primary hover:text-dark-accent-primary transition-all border border-dark-accent-primary/30"
+              >
+                {topic.label}
+              </motion.a>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Features Section */}
