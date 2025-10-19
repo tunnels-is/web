@@ -226,7 +226,7 @@ const CloudBaremetal = () => {
                 animate={isVisible1 ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="glass-effect p-8 rounded-xl hover:shadow-xl hover:shadow-dark-accent-primary/20 transition-all"
+                className="bg-dark-bg border-2 border-dark-accent-primary/30 p-8 rounded-xl hover:border-dark-accent-primary hover:shadow-xl hover:shadow-dark-accent-primary/20 transition-all"
               >
                 <div className="text-5xl mb-4">{benefit.icon}</div>
                 <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
@@ -352,7 +352,7 @@ const CloudBaremetal = () => {
                 initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                 animate={isVisible3 ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="glass-effect p-8 rounded-xl hover:scale-105 transition-transform duration-300"
+                className="bg-dark-bg border-2 border-dark-accent-primary/30 p-8 rounded-xl hover:border-dark-accent-primary hover:scale-105 transition-all duration-300"
               >
                 <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
                   {useCase.title}
@@ -445,7 +445,7 @@ const CloudBaremetal = () => {
                 animate={isVisible5 ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.03 }}
-                className="glass-effect p-8 rounded-xl border-2 border-dark-accent-primary/20 hover:border-dark-accent-primary/50 transition-all"
+                className="bg-dark-bg p-8 rounded-xl border-2 border-dark-accent-primary/30 hover:border-dark-accent-primary transition-all"
               >
                 <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
                   {option.platform}
