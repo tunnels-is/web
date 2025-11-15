@@ -41,14 +41,18 @@ const FeatureShowcase = ({
         className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
       >
         {/* Image or Illustration */}
-        <div className={imageOrder}>
+        <div className={`${imageOrder} ${image ? 'lg:overflow-visible' : ''}`}>
           {image ? (
-            // Image variant
-            <div className="rounded-xl overflow-hidden">
+            // Image variant - extends beyond ContentSection constraints only on outer edge
+            <div className={`relative rounded-xl overflow-hidden ${
+              imagePosition === 'right'
+                ? 'lg:-mr-[calc((100vw-1280px)/2+2rem)] xl:-mr-[calc((100vw-1280px)/2+2rem)]'
+                : 'lg:-ml-[calc((100vw-1280px)/2+2rem)] xl:-ml-[calc((100vw-1280px)/2+2rem)]'
+            }`}>
               <img
                 src={image}
                 alt={title}
-                className="max-w-none object-cover"
+                className="w-full object-cover"
               />
             </div>
           ) : (
