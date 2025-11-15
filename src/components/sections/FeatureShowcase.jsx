@@ -48,7 +48,7 @@ const FeatureShowcase = ({
               <img
                 src={image}
                 alt={title}
-                className=" object-cover"
+                className="max-w-none object-cover"
               />
             </div>
           ) : (

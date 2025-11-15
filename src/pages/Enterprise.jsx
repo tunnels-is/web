@@ -33,7 +33,7 @@ const Enterprise = () => {
       </ContentSection>
 
       {/* Effortless Management Section */}
-      <ContentSection background="dark-surface">
+      <ContentSection >
         <FeatureShowcase
           title={management.title}
           descriptions={[management.description1, management.description2]}
