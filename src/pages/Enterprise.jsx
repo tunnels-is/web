@@ -48,7 +48,7 @@ const Enterprise = () => {
         <FeatureShowcase
           title={security.title}
           features={security.features}
-          imagePosition="right"
+          imagePosition="left"
           featureCheckColor="dark-accent-tertiary"
           image={images.security}
           customContent={

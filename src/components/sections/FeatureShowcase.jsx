@@ -27,8 +27,10 @@ const FeatureShowcase = ({
 }) => {
   const [ref, isVisible] = useScrollAnimation();
 
-  const contentOrder = imagePosition === 'left' ? 'order-2 lg:order-2' : 'order-1 lg:order-2';
-  const imageOrder = imagePosition === 'left' ? 'order-1 lg:order-1' : 'order-2 lg:order-1';
+  // When imagePosition is 'left': image is order-1 (left), content is order-2 (right)
+  // When imagePosition is 'right': content is order-1 (left), image is order-2 (right)
+  const contentOrder = imagePosition === 'left' ? 'order-2 lg:order-2' : 'order-1 lg:order-1';
+  const imageOrder = imagePosition === 'left' ? 'order-1 lg:order-1' : 'order-2 lg:order-2';
 
   return (
     <div ref={ref}>
@@ -46,7 +48,7 @@ const FeatureShowcase = ({
               <img
                 src={image}
                 alt={title}
-                className="w-full h-auto object-cover"
+                className=" object-cover"
               />
             </div>
           ) : (
