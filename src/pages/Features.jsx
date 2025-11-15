@@ -50,7 +50,7 @@ const Features = () => {
       </ContentSection>
 
       {/* Advanced & Enterprise Features */}
-      <ContentSection background="dark-surface">
+      <ContentSection >
         <div ref={ref2}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

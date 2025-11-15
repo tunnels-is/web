@@ -60,7 +60,7 @@ const Home = () => {
       </ContentSection>
 
       {/* Features Section */}
-      <ContentSection background="dark-surface">
+      <ContentSection >
         <SectionHeader
           title={featuresSection.title}
           subtitle={featuresSection.subtitle}

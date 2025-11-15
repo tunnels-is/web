@@ -20,7 +20,7 @@ const FeatureCard = ({
   gradient,
   hoverEffect = true,
   delay = 0,
-  variant = 'glass'
+  variant = 'simple'
 }) => {
   const text = content || description;
 
@@ -29,7 +29,7 @@ const FeatureCard = ({
       case 'elevated':
         return 'bg-dark-elevated hover:bg-dark-bg hover:shadow-xl hover:shadow-dark-accent-primary/20';
       case 'simple':
-        return 'bg-dark-surface hover:bg-dark-elevated';
+        return 'hover:bg-dark-elevated';
       case 'glass':
       default:
         return 'glass-effect hover:bg-dark-elevated';
@@ -48,9 +48,8 @@ const FeatureCard = ({
         <div className="w-16 h-16 mb-4">{icon}</div>
       )}
 
-      <h3 className={`text-xl font-semibold mb-2 leading-tight ${
-        gradient ? 'text-gradient' : 'text-dark-accent-primary'
-      }`}>
+      <h3 className={`text-xl font-semibold mb-2 leading-tight ${gradient ? 'text-gradient' : 'text-dark-accent-primary'
+        }`}>
         {title}
       </h3>
 

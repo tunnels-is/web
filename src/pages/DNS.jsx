@@ -66,18 +66,18 @@ const DNS = () => {
       />
 
       {/* DNS Features Grid */}
-      <ContentSection>
+      <ContentSection >
         <div id="features">
           <FeatureGrid
             features={dnsFeatures}
             columns={3}
-            cardStyle="glass"
+            cardStyle="simple"
           />
         </div>
       </ContentSection>
 
       {/* DNS Server Side Configuration */}
-      <ContentSection background="dark-surface">
+      <ContentSection >
         <div ref={ref2}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

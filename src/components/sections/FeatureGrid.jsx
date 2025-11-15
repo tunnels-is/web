@@ -45,7 +45,7 @@ const FeatureGrid = ({
         return `${baseClasses} bg-dark-bg/0 hover:bg-dark-bg/60 backdrop-blur-sm`;
       case 'elevated':
       default:
-        return `${baseClasses} bg-dark-elevated hover:bg-dark-bg hover:shadow-xl hover:shadow-dark-accent-primary/20`;
+        return `${baseClasses}  hover:bg-dark-bg hover:shadow-xl hover:shadow-dark-accent-primary/20`;
     }
   };
 
@@ -72,11 +72,10 @@ const FeatureGrid = ({
             )}
 
             {/* Title */}
-            <h3 className={`text-2xl font-bold mb-2 leading-tight ${
-              feature.color
+            <h3 className={`text-2xl font-bold mb-2 leading-tight ${feature.color
                 ? `text-dark-accent-${feature.color}`
                 : 'text-dark-text-primary'
-            }`}>
+              }`}>
               {feature.title}
             </h3>
 

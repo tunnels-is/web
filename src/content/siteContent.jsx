@@ -22,6 +22,9 @@ import { GitHubIcon, DiscordIcon, TwitterIcon, RedditIcon } from '../components/
 // ============================================================================
 
 export const homeContent = {
+  tempContent: {
+    img: "https://raw.githubusercontent.com/tunnels-is/media/master/new-website/banner-grid/1.png"
+  },
   hero: {
     title: "Tunnels",
     subtitle: "VPN, LAN, NAT, Routing, DNS blocking, DNS routing and more!",
@@ -1303,6 +1306,11 @@ export const enterpriseContent = {
     title: "Tunnels For Large Networks",
     subtitle: "Lightweight design for big scale",
     description: "Built from the ground up to handle enterprise-scale networking with minimal overhead and maximum security."
+  },
+
+  images: {
+    management: "https://raw.githubusercontent.com/tunnels-is/media/master/new-website/banner-grid/1.png",
+    security: "https://raw.githubusercontent.com/tunnels-is/media/master/new-website/banner-grid/1.png"
   },
 
   benefits: [

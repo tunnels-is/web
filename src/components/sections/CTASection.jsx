@@ -21,7 +21,7 @@ const CTASection = ({
   buttons = [],
   layout = 'centered',
   cards = [],
-  background = 'glass',
+  background = 'solid',
   className = ''
 }) => {
   const [ref, isVisible] = useScrollAnimation();
@@ -37,7 +37,7 @@ const CTASection = ({
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className={`${backgroundClass} p-12 rounded-2xl`}
+            className="p-12 rounded-2xl"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
               {title}
@@ -57,7 +57,7 @@ const CTASection = ({
                   className={
                     button.primary
                       ? "inline-block px-8 py-4 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-                      : "inline-block px-8 py-4 glass-effect text-dark-text-primary font-semibold rounded-lg hover:bg-dark-elevated transition-colors"
+                      : "inline-block px-8 py-4 bg-dark-surface text-dark-text-primary font-semibold rounded-lg hover:bg-dark-elevated transition-colors"
                   }
                 >
                   {button.text}
@@ -103,11 +103,7 @@ const CTASection = ({
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className={`${backgroundClass} p-10 rounded-3xl hover:bg-dark-elevated transition-colors duration-200 border-2 ${
-                  card.highlighted
-                    ? 'border-dark-accent-primary'
-                    : 'border-dark-accent-secondary'
-                }`}
+                className="p-10 rounded-3xl hover:bg-dark-elevated transition-colors duration-200"
               >
                 {card.icon && (
                   <div className="w-20 h-20 mb-6">{card.icon}</div>
@@ -140,7 +136,7 @@ const CTASection = ({
                     className={
                       card.button.primary
                         ? "block w-full py-5 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white text-center text-xl font-bold rounded-xl shadow-xl hover:shadow-2xl transition-shadow"
-                        : "block w-full py-5 glass-effect text-dark-text-primary text-center text-xl font-bold rounded-xl hover:bg-dark-bg transition-colors border-2 border-dark-accent-secondary"
+                        : "block w-full py-5 bg-dark-surface text-dark-text-primary text-center text-xl font-bold rounded-xl hover:bg-dark-bg transition-colors"
                     }
                   >
                     {card.button.text}
