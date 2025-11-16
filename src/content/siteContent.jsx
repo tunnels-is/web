@@ -1153,46 +1153,52 @@ export const technicalContent = {
 };
 
 // ============================================================================
-// DNS PAGE CONTENT (EXTENDED)
+// DNS PAGE CONTENT
 // ============================================================================
 
 export const dnsContent = {
   hero: {
     title: "Routable DNS",
     subtitle: "With Security and Daily Threat List Updates",
-    description: "Tunnels offers a built-in DNS Server/Proxy which comes with extensive blacklisting features, daily block list updates and the ability to define custom DNS records. Tunnels DNS server also facilitates DNS Routing to ensure proper DNS resolution when connected to multiple networks."
+    description: "Tunnels offers a built-in DNS Server/Proxy which comes with extensive blacklisting features, daily block list updates and the ability to define custom DNS records. Tunnels DNS server also facilitates DNS Routing to ensure proper DNS resolution when connected to multiple networks.",
+    showNetworkLines: true,
+    showScrollIndicator: true,
+    buttons: [
+      { text: "Download Free", href: "/download", primary: true },
+      { text: "Learn More", href: "#features", teal: true }
+    ]
   },
 
   dnsFeatures: [
     {
       title: "DNS Threat Protection",
       description: "Block malicious domains before they can harm your network with daily updated threat lists from trusted sources.",
-      icon: "🛡️"
+      icon: <ShieldCheckIcon />
     },
     {
       title: "Custom DNS Records",
       description: "Register custom A, TXT, and CNAME records for any domain directly in your configuration.",
-      icon: "📝"
+      icon: <DocumentIcon />
     },
     {
       title: "DNS Routing",
       description: "Forward specific domains to designated networks, enabling proper resolution across multiple VPN connections.",
-      icon: "🔄"
+      icon: <LinkIcon />
     },
     {
       title: "DNS Analytics",
       description: "Real-time insights into DNS queries with detailed logging and WHOIS information at your fingertips.",
-      icon: "📊"
+      icon: <ChartIcon />
     },
     {
       title: "DNS to DoH",
       description: "Automatically translate standard DNS queries to DNS over HTTPS for enhanced privacy.",
-      icon: "🔒"
+      icon: <LockShieldIcon />
     },
     {
       title: "Daily Updates",
       description: "Combined blocklists from popular sources, automatically updated every day to stay ahead of threats.",
-      icon: "🔄"
+      icon: <SyncIcon />
     },
   ],
 
