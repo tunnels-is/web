@@ -6,7 +6,7 @@ const AnonymousLicenseCard = ({ title, description, price, period, url }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="glass-effect p-8 rounded-xl max-w-2xl mx-auto"
+      className=" p-8 rounded-xl max-w-2xl mx-auto"
     >
       <div className="text-center mb-6">
         <h3 className="text-2xl font-bold mb-2">{title}</h3>

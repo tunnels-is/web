@@ -1169,6 +1169,11 @@ export const dnsContent = {
     ]
   },
 
+  images: {
+    serverDNS: "https://raw.githubusercontent.com/tunnels-is/media/master/new-website/banner-grid/1.png",
+    deviceDNS: "https://raw.githubusercontent.com/tunnels-is/media/master/new-website/banner-grid/1.png"
+  },
+
   dnsFeatures: [
     {
       title: "DNS Threat Protection",
