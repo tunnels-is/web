@@ -55,7 +55,7 @@ const FeatureTimeline = ({
 
                 {/* Content card */}
                 <div className="flex-1">
-                  <StepContent step={step} index={index} />
+                  <StepContent step={step} index={index} position="right" />
                 </div>
               </div>
 
@@ -63,7 +63,7 @@ const FeatureTimeline = ({
               <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] gap-8 items-start">
                 {/* Left content (for odd indices) */}
                 <div className={isEven ? '' : 'flex justify-end'}>
-                  {!isEven && <StepContent step={step} index={index} />}
+                  {!isEven && <StepContent step={step} index={index} position="left" />}
                 </div>
 
                 {/* Center - Step badge */}
@@ -78,7 +78,7 @@ const FeatureTimeline = ({
 
                 {/* Right content (for even indices) */}
                 <div>
-                  {isEven && <StepContent step={step} index={index} />}
+                  {isEven && <StepContent step={step} index={index} position="right" />}
                 </div>
               </div>
             </motion.div>
@@ -90,12 +90,18 @@ const FeatureTimeline = ({
 };
 
 // Separated content component for reuse
-const StepContent = ({ step, index }) => (
-  <motion.div
-    className="relative"
-  >
-    {/* Main card */}
-    <div className="relative p-6 md:p-8 rounded-xl border border-dark-border">
+const StepContent = ({ step, index, position = "right" }) => {
+  // Determine border classes based on position
+  const borderClasses = position === "left"
+    ? "border-r border-b border-dark-border"
+    : "border-l border-b border-dark-border";
+
+  return (
+    <motion.div
+      className="relative"
+    >
+      {/* Main card */}
+      <div className={`relative p-6 md:p-8 ${borderClasses}`}>
       {/* Title */}
       <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight">
         {step.title}
@@ -154,6 +160,7 @@ const StepContent = ({ step, index }) => (
       )}
     </div>
   </motion.div>
-);
+  );
+};
 
 export default FeatureTimeline;
