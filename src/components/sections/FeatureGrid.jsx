@@ -65,7 +65,7 @@ const FeatureGrid = ({
             )}
 
             {/* Title */}
-            <h3 className={`text-2xl font-bold mb-2 leading-tight ${feature.color
+            <h3 className={`text-2xl font-bold mb-2 leading-tight relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-dark-accent-primary after:transition-all after:duration-300 group-hover:after:w-full ${feature.color
                 ? `text-dark-accent-${feature.color}`
                 : 'text-dark-text-primary'
               }`}>

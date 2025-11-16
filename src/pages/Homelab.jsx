@@ -1,4 +1,4 @@
-import HeroWithGradients from '../components/sections/HeroWithGradients';
+import HeroSimple from '../components/sections/HeroSimple';
 import FeatureGrid from '../components/sections/FeatureGrid';
 import FeatureTimeline from '../components/sections/FeatureTimeline';
 import ContentSection from '../components/sections/ContentSection';
@@ -34,13 +34,15 @@ const Homelab = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <HeroWithGradients
+      <HeroSimple
         badge={hero.badge}
         title={hero.title}
         subtitle={hero.subtitle}
         description={hero.description}
         buttons={hero.buttons}
         quickStats={hero.quickStats}
+        showGeometricShapes={true}
+        showRadialGlow={false}
       />
 
       {/* Benefits Section */}

@@ -44,17 +44,14 @@ const FeatureTimeline = ({
               {/* Mobile Layout */}
               <div className="flex md:hidden items-start gap-6">
                 {/* Step badge */}
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="relative flex-shrink-0"
-                >
+                <div className="relative flex-shrink-0">
                   {/* Step circle */}
                   <div className="relative w-12 h-12 bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary rounded-full flex items-center justify-center shadow-xl">
                     <span className="text-xl font-bold text-white">
                       {step.step}
                     </span>
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Content card */}
                 <div className="flex-1">
@@ -70,17 +67,14 @@ const FeatureTimeline = ({
                 </div>
 
                 {/* Center - Step badge */}
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="relative flex-shrink-0"
-                >
+                <div className="relative flex-shrink-0">
                   {/* Step circle */}
                   <div className="relative w-16 h-16 bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary rounded-full flex items-center justify-center shadow-xl">
                     <span className="text-2xl font-bold text-white">
                       {step.step}
                     </span>
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Right content (for even indices) */}
                 <div>
@@ -98,17 +92,12 @@ const FeatureTimeline = ({
 // Separated content component for reuse
 const StepContent = ({ step, index }) => (
   <motion.div
-    whileHover={{ y: -4 }}
-    transition={{ duration: 0.3 }}
-    className="relative group"
+    className="relative"
   >
-    {/* Background glow effect on hover */}
-    <div className="absolute inset-0 bg-gradient-to-br from-dark-accent-primary/5 to-dark-accent-secondary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
-
     {/* Main card */}
-    <div className="relative bg-dark-surface/80 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-dark-border group-hover:border-dark-accent-primary/50 transition-all duration-300 shadow-lg">
+    <div className="relative p-6 md:p-8 rounded-xl border border-dark-border">
       {/* Title */}
-      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight group-hover:text-dark-accent-primary transition-colors duration-300">
+      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight">
         {step.title}
       </h3>
 
@@ -122,7 +111,7 @@ const StepContent = ({ step, index }) => (
         <div className="space-y-3">
           {/* Command box */}
           {step.command && (
-            <div className="bg-dark-bg/50 p-4 rounded-lg border border-dark-accent-primary/20 hover:border-dark-accent-primary/40 transition-colors duration-300">
+            <div className="bg-dark-bg/50 p-4 rounded-lg border border-dark-accent-primary/20">
               <div className="flex items-start gap-3">
                 {/* Terminal icon */}
                 <svg className="w-5 h-5 text-dark-accent-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,7 +143,7 @@ const StepContent = ({ step, index }) => (
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.12 + idx * 0.05 }}
-                  className="px-3 py-1 bg-dark-accent-primary/10 hover:bg-dark-accent-primary/20 text-dark-accent-primary text-xs font-medium rounded-full border border-dark-accent-primary/30 hover:border-dark-accent-primary/50 transition-all duration-200 cursor-default"
+                  className="px-3 py-1 bg-dark-accent-primary/10 text-dark-accent-primary text-xs font-medium rounded-full border border-dark-accent-primary/30"
                 >
                   {provider}
                 </motion.span>
