@@ -40,27 +40,20 @@ const FeatureGrid = ({
     // Card style
     switch (cardStyle) {
       case 'glass':
-        return `${baseClasses} glass-effect hover:bg-dark-elevated`;
+        return `${baseClasses} glass-effect`;
       case 'gradient-border':
-        return `${baseClasses} bg-dark-bg/0 hover:bg-dark-bg/60 backdrop-blur-sm`;
+        return `${baseClasses} bg-dark-bg/0 backdrop-blur-sm`;
       case 'elevated':
       default:
-        return `${baseClasses}  hover:bg-dark-bg hover:shadow-xl hover:shadow-dark-accent-primary/20`;
+        return `${baseClasses}`;
     }
   };
 
   return (
     <div ref={ref} className={`grid grid-cols-1 md:grid-cols-2 ${columnClass} gap-8`}>
       {features.map((feature, index) => (
-        <motion.div
+        <div
           key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{
-            duration: 0.4,
-            delay: index * 0.05,
-            ease: "easeOut"
-          }}
           className={getCardClasses(feature, index)}
         >
           <div className="relative">
@@ -93,7 +86,7 @@ const FeatureGrid = ({
               </div>
             )}
           </div>
-        </motion.div>
+        </div>
       ))}
     </div>
   );

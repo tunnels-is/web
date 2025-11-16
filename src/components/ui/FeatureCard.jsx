@@ -27,22 +27,18 @@ const FeatureCard = ({
   const getVariantClasses = () => {
     switch (variant) {
       case 'elevated':
-        return 'bg-dark-elevated hover:bg-dark-bg hover:shadow-xl hover:shadow-dark-accent-primary/20';
+        return 'bg-dark-elevated';
       case 'simple':
-        return 'hover:bg-dark-elevated';
+        return '';
       case 'glass':
       default:
-        return 'glass-effect hover:bg-dark-elevated';
+        return 'glass-effect';
     }
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.4, ease: "easeOut" }}
-      whileHover={hoverEffect ? { y: -4, transition: { duration: 0.2 } } : {}}
-      className={`p-6 rounded-xl transition-colors duration-200 ${getVariantClasses()}`}
+    <div
+      className={`p-6 rounded-xl ${getVariantClasses()}`}
     >
       {icon && (
         <div className="w-16 h-16 mb-4">{icon}</div>
@@ -56,7 +52,7 @@ const FeatureCard = ({
       <p className="text-dark-text-secondary leading-snug">
         {text}
       </p>
-    </motion.div>
+    </div>
   );
 };
 

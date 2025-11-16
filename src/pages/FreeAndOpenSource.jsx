@@ -42,7 +42,7 @@ const FreeAndOpenSource = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible1 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="glass-effect p-12 rounded-2xl"
+          className=" p-12 rounded-2xl"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
             <span className="text-gradient">Why Open Source?</span>
