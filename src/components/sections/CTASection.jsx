@@ -39,7 +39,7 @@ const CTASection = ({
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="p-12 rounded-2xl"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               {title}
             </h2>
             {description && (
@@ -85,7 +85,7 @@ const CTASection = ({
               className="text-center mb-16"
             >
               <h2 className="text-5xl md:text-6xl font-bold mb-6">
-                <span className="text-gradient">{title}</span>
+                {title}
               </h2>
               {description && (
                 <p className="text-2xl text-dark-text-secondary max-w-4xl mx-auto">

@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
  * @param {string} title - Section title
  * @param {string} subtitle - Section subtitle/description
  * @param {string} alignment - Text alignment: center, left, right (default: center)
- * @param {boolean} gradient - Apply gradient to title (default: true)
  * @param {string} titleSize - Title size: small, medium, large, xlarge (default: large)
  * @param {string} className - Additional CSS classes
  */
@@ -14,7 +13,6 @@ const SectionHeader = ({
   title,
   subtitle,
   alignment = 'center',
-  gradient = true,
   titleSize = 'large',
   className = ''
 }) => {
@@ -36,9 +34,7 @@ const SectionHeader = ({
   return (
     <div className={`mb-16 ${alignmentClass} ${className}`}>
       <h2 className={`${titleSizeClass} font-bold mb-6`}>
-        <span className={gradient ? 'text-gradient' : 'text-dark-text-primary'}>
-          {title}
-        </span>
+        {title}
       </h2>
       {subtitle && (
         <p className={`text-xl md:text-2xl text-dark-text-secondary leading-snug ${maxWidthClass}`}>

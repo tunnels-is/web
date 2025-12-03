@@ -18,7 +18,7 @@ const FreeAndOpenSource = () => {
           className="text-center"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-gradient">Tunnels is Free and Open Source</span>
+            Tunnels is Free and Open Source
           </h1>
           <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto mb-8">
             All of our features are free and available in the open source version. No paywalls, no hidden fees.
@@ -45,7 +45,7 @@ const FreeAndOpenSource = () => {
           className=" p-12 rounded-2xl"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            <span className="text-gradient">Why Open Source?</span>
+            Why Open Source?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-dark-text-secondary leading-snug">
             <div>
@@ -103,7 +103,7 @@ const FreeAndOpenSource = () => {
           className="text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span className="text-gradient">Join Our Community</span>
+            Join Our Community
           </h2>
           <p className="text-xl text-dark-text-secondary mb-12 max-w-2xl mx-auto">
             Join our community to contribute, follow our development, or just stay connected with other Tunnels users.

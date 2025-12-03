@@ -74,7 +74,7 @@ const FeatureShowcaseOverlaySidePanel = ({
               transition={{ duration: 0.7, delay: 0.6 }}
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
             >
-              <span className="text-gradient">{title}</span>
+              {title}
             </motion.h2>
 
             {/* Descriptions */}

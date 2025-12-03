@@ -135,7 +135,7 @@ const CloudBaremetal = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="text-gradient">Cloud & Baremetal</span>
+              Cloud & Baremetal
             </h1>
             <h2 className="text-2xl md:text-4xl font-semibold text-dark-text-secondary mb-8">
               Multi-Server Architecture for Scale
@@ -182,7 +182,7 @@ const CloudBaremetal = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient">Built for Scale & Reliability</span>
+              Built for Scale & Reliability
             </h2>
             <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto">
               Architectural benefits that give you enterprise-grade capabilities without the enterprise complexity
@@ -223,7 +223,7 @@ const CloudBaremetal = () => {
           >
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-gradient">Distributed by Design</span>
+                Distributed by Design
               </h2>
               <p className="text-lg text-dark-text-secondary leading-snug mb-6">
                 Tunnels multi-server architecture separates concerns for maximum flexibility and performance.
@@ -309,7 +309,7 @@ const CloudBaremetal = () => {
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient">Real-World Deployments</span>
+              Real-World Deployments
             </h2>
             <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto">
               See how organizations are using multi-server Tunnels architecture
@@ -375,7 +375,7 @@ const CloudBaremetal = () => {
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient">Technical Architecture</span>
+              Technical Architecture
             </h2>
             <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto mb-8">
               Deep dive into the technical capabilities that power multi-server deployments
@@ -426,7 +426,7 @@ const CloudBaremetal = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient">Deploy Anywhere</span>
+              Deploy Anywhere
             </h2>
             <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto">
               Flexible deployment options to match your infrastructure strategy
@@ -472,7 +472,7 @@ const CloudBaremetal = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-              <span className="text-gradient">Built for Performance</span>
+              Built for Performance
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -482,7 +482,7 @@ const CloudBaremetal = () => {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="text-center"
               >
-                <div className="text-5xl md:text-6xl font-bold text-gradient mb-4">
+                <div className="text-5xl md:text-6xl font-bold mb-4">
                   1M+
                 </div>
                 <p className="text-xl text-dark-text-secondary font-semibold mb-2">
@@ -499,7 +499,7 @@ const CloudBaremetal = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-center"
               >
-                <div className="text-5xl md:text-6xl font-bold text-gradient mb-4">
+                <div className="text-5xl md:text-6xl font-bold mb-4">
                   &lt;5ms
                 </div>
                 <p className="text-xl text-dark-text-secondary font-semibold mb-2">
@@ -516,7 +516,7 @@ const CloudBaremetal = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="text-center"
               >
-                <div className="text-5xl md:text-6xl font-bold text-gradient mb-4">
+                <div className="text-5xl md:text-6xl font-bold mb-4">
                   99.99%
                 </div>
                 <p className="text-xl text-dark-text-secondary font-semibold mb-2">
@@ -541,7 +541,7 @@ const CloudBaremetal = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient">Ready to Deploy?</span>
+              Ready to Deploy?
             </h2>
             <p className="text-xl text-dark-text-secondary max-w-2xl mx-auto mb-8">
               Get started with multi-server Tunnels architecture today. Full deployment guides and

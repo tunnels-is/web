@@ -149,7 +149,7 @@ const HeroSimple = ({
           )}
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="text-gradient">{title}</span>
+            {title}
           </h1>
 
           {subtitle && (
@@ -212,7 +212,7 @@ const HeroSimple = ({
                 whileHover={{ scale: 1.05 }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">{stat.value}</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
                 <div className="text-dark-text-muted text-sm uppercase tracking-wider">{stat.label}</div>
               </motion.div>
             ))}

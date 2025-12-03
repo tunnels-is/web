@@ -38,7 +38,7 @@ const FeatureShowcaseOverlayCorner = ({
                 transition={{ duration: 0.7, delay: 0.3 }}
               >
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                  <span className="text-gradient">{title}</span>
+                  {title}
                 </h2>
 
                 {descriptions.length > 0 && (
@@ -132,7 +132,7 @@ const FeatureShowcaseOverlayCorner = ({
                 transition={{ duration: 0.7, delay: 0.3 }}
               >
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                  <span className="text-gradient">{title}</span>
+                  {title}
                 </h2>
 
                 {descriptions.length > 0 && (

@@ -33,7 +33,7 @@ const TechnicalFeaturesSection = ({
           }}
           className="p-8 rounded-2xl transition-all duration-300 group bg-dark-bg/0 hover:bg-dark-bg/60 backdrop-blur-sm"
         >
-          <h3 className="text-3xl font-bold mb-8 text-gradient">
+          <h3 className="text-3xl font-bold mb-8">
             {category.category}
           </h3>
 

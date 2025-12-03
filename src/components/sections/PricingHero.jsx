@@ -9,7 +9,7 @@ const PricingHero = ({ title, description, tagline }) => {
         className="text-center"
       >
         <h1 className="text-5xl md:text-6xl font-bold mb-6">
-          <span className="text-gradient">{title}</span>
+          {title}
         </h1>
         <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto mb-4">
           {description}

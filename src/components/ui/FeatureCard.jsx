@@ -7,7 +7,6 @@ import { motion } from 'framer-motion';
  * @param {string} content - Feature content/description
  * @param {string} description - Alternative to content
  * @param {string} icon - Icon emoji or component
- * @param {string} gradient - Gradient classes (optional)
  * @param {boolean} hoverEffect - Enable hover effects (default: true)
  * @param {number} delay - Animation delay (default: 0)
  * @param {string} variant - Card variant: glass, elevated, simple (default: glass)
@@ -17,7 +16,6 @@ const FeatureCard = ({
   content,
   description,
   icon,
-  gradient,
   hoverEffect = true,
   delay = 0,
   variant = 'simple'
@@ -44,8 +42,7 @@ const FeatureCard = ({
         <div className="w-16 h-16 mb-4">{icon}</div>
       )}
 
-      <h3 className={`text-xl font-semibold mb-2 leading-tight relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 group-hover:after:w-full ${gradient ? 'text-gradient' : 'text-dark-accent-primary'
-        }`}>
+      <h3 className="text-xl font-semibold mb-2 leading-tight relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 group-hover:after:w-full text-dark-accent-primary">
         {title}
       </h3>
 

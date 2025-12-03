@@ -21,7 +21,7 @@ const Technical = () => {
           className="text-center"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-gradient">{hero.title}</span>
+            {hero.title}
           </h1>
           <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto leading-snug">
             {hero.description}
@@ -38,7 +38,7 @@ const Technical = () => {
           className="glass-effect p-8 md:p-12 rounded-2xl"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            <span className="text-gradient">{sections[0].title}</span>
+            {sections[0].title}
           </h2>
           <p className="text-lg text-dark-text-secondary text-center mb-8 max-w-3xl mx-auto">
             {sections[0].description}
@@ -65,7 +65,7 @@ const Technical = () => {
           className="glass-effect p-8 md:p-12 rounded-2xl"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            <span className="text-gradient">{sections[1].title}</span>
+            {sections[1].title}
           </h2>
           <p className="text-lg text-dark-text-secondary text-center mb-8 max-w-3xl mx-auto">
             {sections[1].description}
@@ -119,7 +119,7 @@ const Technical = () => {
           className="glass-effect p-8 md:p-12 rounded-2xl"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            <span className="text-gradient">{sections[2].title}</span>
+            {sections[2].title}
           </h2>
           <p className="text-lg text-dark-text-secondary text-center mb-8 max-w-3xl mx-auto">
             {sections[2].description}
@@ -146,7 +146,7 @@ const Technical = () => {
           className="glass-effect p-8 md:p-12 rounded-2xl"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            <span className="text-gradient">{sections[3].title}</span>
+            {sections[3].title}
           </h2>
           <p className="text-lg text-dark-text-secondary text-center mb-8 max-w-3xl mx-auto">
             {sections[3].description}
@@ -173,7 +173,7 @@ const Technical = () => {
           className="glass-effect p-8 md:p-12 rounded-2xl"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            <span className="text-gradient">{sections[4].title}</span>
+            {sections[4].title}
           </h2>
           <p className="text-lg text-dark-text-secondary text-center mb-8 max-w-3xl mx-auto">
             {sections[4].description}

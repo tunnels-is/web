@@ -43,7 +43,7 @@ const TopBar = () => {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-2xl font-bold text-gradient"
+              className="text-2xl font-bold"
             >
               Tunnels
             </motion.div>

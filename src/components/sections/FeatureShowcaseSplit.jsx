@@ -39,7 +39,7 @@ const FeatureShowcaseSplit = ({
                   transition={{ duration: 0.7, delay: 0.2 }}
                 >
                   <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                    <span className="text-gradient">{title}</span>
+                    {title}
                   </h2>
 
                   <div className="space-y-4 mb-8">
@@ -129,7 +129,7 @@ const FeatureShowcaseSplit = ({
                   transition={{ duration: 0.7, delay: 0.2 }}
                 >
                   <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                    <span className="text-gradient">{title}</span>
+                    {title}
                   </h2>
 
                   <div className="space-y-4 mb-8">

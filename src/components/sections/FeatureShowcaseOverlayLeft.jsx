@@ -53,7 +53,7 @@ const FeatureShowcaseOverlayLeft = ({
             {/* Content Card with Glass Effect */}
             <div className="backdrop-blur-sm bg-dark-bg/40 p-8 md:p-10 rounded-2xl border border-white/10 shadow-2xl">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                <span className="text-gradient">{title}</span>
+                {title}
               </h2>
 
               <div className="space-y-4 mb-8">

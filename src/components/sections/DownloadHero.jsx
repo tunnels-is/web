@@ -9,7 +9,7 @@ const DownloadHero = ({ title, subtitle, version }) => {
         className="text-center"
       >
         <h1 className="text-5xl md:text-6xl font-bold mb-6">
-          <span className="text-gradient">{title}</span>
+          {title}
         </h1>
         <p className="text-xl text-dark-text-secondary mb-4">
           Latest version: <span className="text-dark-accent-primary font-semibold">v{version}</span>

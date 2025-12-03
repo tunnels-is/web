@@ -10,7 +10,7 @@ const QuickStartSection = ({ title, steps }) => {
         className=" p-12 rounded-2xl"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-          <span className="text-gradient">{title}</span>
+          {title}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (

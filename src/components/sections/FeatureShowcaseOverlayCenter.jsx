@@ -54,7 +54,7 @@ const FeatureShowcaseOverlayCenter = ({
             <div className="backdrop-blur-xl bg-dark-bg/60 p-8 md:p-12 rounded-3xl border border-white/20 shadow-2xl">
               {/* Title */}
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center leading-tight">
-                <span className="text-gradient">{title}</span>
+                {title}
               </h2>
 
               {/* Descriptions */}

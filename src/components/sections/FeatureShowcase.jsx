@@ -68,7 +68,7 @@ const FeatureShowcase = ({
         {/* Content */}
         <div className={contentOrder}>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span className="text-gradient">{title}</span>
+            {title}
           </h2>
 
           {customContent ? (

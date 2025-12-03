@@ -44,7 +44,7 @@ const HeroWithWaves = ({
           )}
 
           <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-            <span className="text-gradient">{title}</span>
+            {title}
           </h1>
 
           {subtitle && (
@@ -105,7 +105,7 @@ const HeroWithWaves = ({
                 transition={{ duration: 0.4, delay: 0.4 + index * 0.05, ease: "easeOut" }}
                 className="glass-effect p-6 rounded-xl"
               >
-                <div className="text-4xl font-bold text-gradient mb-2">{stat.value}</div>
+                <div className="text-4xl font-bold mb-2">{stat.value}</div>
                 <div className="text-dark-text-muted text-sm uppercase tracking-wider">{stat.label}</div>
               </motion.div>
             ))}

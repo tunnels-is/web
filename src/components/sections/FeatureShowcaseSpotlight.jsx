@@ -67,7 +67,7 @@ const FeatureShowcaseSpotlight = ({
                 transition={{ duration: 0.7, delay: 0.4 }}
               >
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="text-gradient">{title}</span>
+                  {title}
                 </h2>
               </motion.div>
 
@@ -117,7 +117,7 @@ const FeatureShowcaseSpotlight = ({
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="text-gradient">{title}</span>
+                  {title}
                 </h2>
               </motion.div>
 

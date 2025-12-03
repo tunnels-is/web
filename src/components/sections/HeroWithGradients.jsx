@@ -88,7 +88,7 @@ const HeroWithGradients = ({
           )}
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="text-gradient">{title}</span>
+            {title}
           </h1>
 
           {subtitle && (
@@ -140,7 +140,7 @@ const HeroWithGradients = ({
           >
             {quickStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-gradient mb-1">{stat.value}</div>
+                <div className="text-3xl font-bold mb-1">{stat.value}</div>
                 <div className="text-dark-text-muted text-sm">{stat.label}</div>
               </div>
             ))}

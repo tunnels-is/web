@@ -13,7 +13,7 @@ const AnonymousLicenseCard = ({ title, description, price, period, url }) => {
         <p className="text-dark-text-secondary">{description}</p>
       </div>
       <div className="flex items-center justify-center mb-6">
-        <span className="text-4xl font-bold text-gradient">{price}</span>
+        <span className="text-4xl font-bold">{price}</span>
         <span className="text-dark-text-secondary ml-2">{period}</span>
       </div>
       <motion.a

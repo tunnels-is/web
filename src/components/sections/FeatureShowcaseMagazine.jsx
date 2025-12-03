@@ -36,7 +36,7 @@ const FeatureShowcaseMagazine = ({
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4"
           >
-            <span className="text-gradient">{title}</span>
+            {title}
           </motion.h2>
 
           {/* Accent line */}

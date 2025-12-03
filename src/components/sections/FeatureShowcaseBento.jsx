@@ -35,7 +35,7 @@ const FeatureShowcaseBento = ({
               {/* Title Card */}
               <div className="glass-effect p-8 rounded-2xl h-full flex flex-col justify-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  <span className="text-gradient">{title}</span>
+                  {title}
                 </h2>
                 {descriptions.map((description, index) => (
                   <p key={index} className="text-dark-text-secondary leading-relaxed mb-4 last:mb-0">
@@ -97,7 +97,7 @@ const FeatureShowcaseBento = ({
               {/* Title Card */}
               <div className="glass-effect p-8 rounded-2xl h-full flex flex-col justify-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  <span className="text-gradient">{title}</span>
+                  {title}
                 </h2>
                 {descriptions.map((description, index) => (
                   <p key={index} className="text-dark-text-secondary leading-relaxed mb-4 last:mb-0">
