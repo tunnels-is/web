@@ -11,7 +11,7 @@ import WaveAnimation from '../animations/WaveAnimation';
  * @param {string} description - Description text
  * @param {Array} buttons - Array of button configurations
  * @param {Array} quickStats - Array of stat objects { value, label }
- * @param {boolean} showScrollIndicator - Show scroll indicator (default: true)
+ * @param {boolean} showScrollIndicator - Show scroll indicator (default: false)
  */
 const HeroWithWaves = ({
   badge,
@@ -20,7 +20,7 @@ const HeroWithWaves = ({
   description,
   buttons = [],
   quickStats = [],
-  showScrollIndicator = true,
+  showScrollIndicator = false,
 }) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">

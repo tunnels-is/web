@@ -20,7 +20,6 @@ const Home = () => {
         description={hero.description}
         buttons={hero.buttons}
         showNetworkLines={true}
-        showScrollIndicator={true}
       />
 
       {/* Topics Section */}

@@ -27,7 +27,6 @@ const DNS = () => {
         subtitle={dnsContent.hero.subtitle}
         description={dnsContent.hero.description}
         showNetworkLines={dnsContent.hero.showNetworkLines}
-        showScrollIndicator={dnsContent.hero.showScrollIndicator}
         buttons={dnsContent.hero.buttons}
       />
 

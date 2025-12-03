@@ -1162,7 +1162,7 @@ export const dnsContent = {
     subtitle: "With Security and Daily Threat List Updates",
     description: "Tunnels offers a built-in DNS Server/Proxy which comes with extensive blacklisting features, daily block list updates and the ability to define custom DNS records. Tunnels DNS server also facilitates DNS Routing to ensure proper DNS resolution when connected to multiple networks.",
     showNetworkLines: true,
-    showScrollIndicator: true,
+    showScrollIndicator: false,
     buttons: [
       { text: "Download Free", href: "/download", primary: true },
       { text: "Learn More", href: "#features", teal: true }

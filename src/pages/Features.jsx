@@ -25,7 +25,6 @@ const Features = () => {
         description={hero.description}
         buttons={hero.buttons}
         showNetworkLines={true}
-        showScrollIndicator={true}
       />
 
       {/* Basic Features */}
