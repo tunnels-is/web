@@ -40,13 +40,9 @@ const TopBar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="text-2xl font-bold"
-            >
+            <div className="text-2xl font-bold">
               Tunnels
-            </motion.div>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
