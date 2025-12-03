@@ -117,7 +117,7 @@ const StepContent = ({ step, index, position = "right" }) => {
         <div className="space-y-3">
           {/* Command box */}
           {step.command && (
-            <div className="bg-dark-bg/50 p-4 rounded-lg border border-dark-accent-primary/20">
+            <div className="bg-dark-bg/50 p-4 border border-dark-accent-primary/20">
               <div className="flex items-start gap-3">
                 {/* Terminal icon */}
                 <svg className="w-5 h-5 text-dark-accent-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
