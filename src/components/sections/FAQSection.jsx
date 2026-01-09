@@ -30,7 +30,7 @@ const FAQSection = ({
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ scale: 1.02 }}
-            className="glass-effect p-8 rounded-2xl hover:bg-dark-elevated transition-all duration-300 border border-dark-border hover:border-dark-accent-primary"
+            className="bg-dark-surface p-8 rounded-2xl hover:bg-dark-elevated transition-all duration-300"
           >
             <h3 className="text-xl font-bold text-dark-accent-primary mb-2 leading-tight flex items-start gap-3">
               <span className="text-2xl flex-shrink-0">{icon}</span>

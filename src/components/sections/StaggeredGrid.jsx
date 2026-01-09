@@ -41,7 +41,7 @@ const StaggeredGrid = ({
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: index * 0.1 }}
           whileHover={{ scale: 1.05, rotateZ: index % 2 === 0 ? 1 : -1 }}
-          className={`glass-effect p-8 rounded-2xl hover:bg-dark-elevated transition-all duration-300 ${
+          className={`bg-dark-surface p-8 rounded-2xl hover:bg-dark-elevated transition-all duration-300 ${
             getStaggerClass(index)
           }`}
         >

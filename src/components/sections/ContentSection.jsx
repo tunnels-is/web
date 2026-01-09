@@ -23,7 +23,7 @@ const ContentSection = ({
     'dark-bg': 'bg-dark-bg',
     'dark-surface': 'bg-dark-surface',
     'dark-elevated': 'bg-dark-elevated',
-    'gradient': 'bg-gradient-to-b from-dark-surface via-dark-bg to-dark-surface',
+    'gradient': 'bg-dark-surface',
     'transparent': ''
   }[background] || '';
 

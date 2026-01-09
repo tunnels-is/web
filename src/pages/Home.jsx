@@ -49,7 +49,7 @@ const Home = () => {
                   transition: { duration: 0.2, ease: "easeOut" }
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-6 py-3 glass-effect rounded-lg font-semibold text-dark-text-primary hover:text-dark-accent-primary transition-colors duration-200 border border-dark-accent-primary/30 hover:border-dark-accent-primary/60 hover:shadow-lg hover:shadow-dark-accent-primary/20"
+                className="px-6 py-3 bg-dark-surface rounded-lg font-semibold text-dark-text-primary hover:text-dark-accent-primary hover:bg-dark-elevated transition-colors duration-200"
               >
                 {topic.label}
               </motion.a>

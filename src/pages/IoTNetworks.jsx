@@ -75,7 +75,7 @@ const IoTNetworks = () => {
           >
             <div className="space-y-8">
               {/* Central Server */}
-              <div className="bg-gradient-to-br from-dark-accent-primary/20 to-dark-accent-secondary/20 p-8 rounded-xl text-center">
+              <div className="bg-dark-accent-primary/10 p-8 rounded-xl text-center">
                 <div className="flex items-center justify-center mb-4">
                   <div className="w-20 h-20 bg-dark-accent-primary/30 rounded-full flex items-center justify-center">
                     <svg className="w-10 h-10 text-dark-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,7 +97,7 @@ const IoTNetworks = () => {
               {/* IoT Devices Grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {['Sensors', 'Cameras', 'Gateways', 'Edge Nodes'].map((device, i) => (
-                  <div key={i} className="bg-gradient-to-br from-dark-accent-tertiary/20 to-dark-accent-primary/20 p-4 rounded-lg text-center">
+                  <div key={i} className="bg-dark-accent-tertiary/10 p-4 rounded-lg text-center">
                     <div className="flex items-center justify-center mb-3">
                       <div className="w-12 h-12 bg-dark-accent-tertiary/30 rounded-full flex items-center justify-center">
                         <svg className="w-6 h-6 text-dark-accent-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24">

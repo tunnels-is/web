@@ -26,7 +26,7 @@ const HeroWithWaves = ({
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Wave Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-bg via-dark-surface to-dark-bg"></div>
+        <div className="absolute inset-0 bg-dark-bg"></div>
         <WaveAnimation />
       </div>
 
@@ -76,8 +76,8 @@ const HeroWithWaves = ({
                 whileTap={{ scale: 0.98 }}
                 className={
                   button.primary
-                    ? "group px-10 py-5 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden"
-                    : "px-10 py-5 glass-effect hover:bg-dark-elevated text-dark-text-primary text-lg font-semibold rounded-xl transition-colors"
+                    ? "group px-10 py-5 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white text-lg font-semibold rounded-xl transition-colors relative overflow-hidden"
+                    : "px-10 py-5 bg-dark-surface hover:bg-dark-elevated text-dark-text-primary text-lg font-semibold rounded-xl transition-colors"
                 }
               >
                 <span className="relative z-10">{button.text}</span>

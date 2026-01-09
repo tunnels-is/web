@@ -28,12 +28,12 @@ const FeatureComparison = ({
           animate={isVisible ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: index * 0.1 }}
           whileHover={{ scale: 1.02, x: 10 }}
-          className={`glass-effect rounded-2xl overflow-hidden border-2 ${
+          className={`bg-dark-surface rounded-2xl overflow-hidden ${
             item.winner === 'personal'
-              ? 'border-dark-accent-primary hover:border-dark-accent-tertiary'
+              ? 'ring-2 ring-dark-accent-primary/50'
               : item.winner === 'commercial'
-              ? 'border-dark-accent-secondary hover:border-dark-accent-primary'
-              : 'border-dark-border hover:border-dark-accent-secondary'
+              ? 'ring-2 ring-dark-accent-secondary/50'
+              : ''
           }`}
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 items-center">
@@ -53,7 +53,7 @@ const FeatureComparison = ({
             {/* Commercial VPN */}
             <div className={`p-6 rounded-xl ${
               item.winner === 'commercial'
-                ? 'bg-dark-accent-secondary/20 border-2 border-dark-accent-secondary'
+                ? 'bg-dark-accent-secondary/20'
                 : 'bg-dark-bg'
             }`}>
               <p className="text-sm text-dark-text-muted mb-2 uppercase tracking-wider">{option1Label}</p>
@@ -67,7 +67,7 @@ const FeatureComparison = ({
             {/* Personal VPN */}
             <div className={`p-6 rounded-xl ${
               item.winner === 'personal'
-                ? 'bg-dark-accent-primary/20 border-2 border-dark-accent-primary'
+                ? 'bg-dark-accent-primary/20'
                 : 'bg-dark-bg'
             }`}>
               <p className="text-sm text-dark-text-muted mb-2 uppercase tracking-wider">{option2Label}</p>

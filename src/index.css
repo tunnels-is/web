@@ -83,16 +83,7 @@ html {
   text-size-adjust: 100%;
 }
 
-.text-gradient {
-  background: linear-gradient(to right, #d0d0d0, var(--color-dark-accent-primary));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  /* Enhanced smoothing for gradient text */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
+/* Gradient text removed - using solid colors for flat design */
 
 /* Smooth rendering for all headings */
 h1, h2, h3, h4, h5, h6 {

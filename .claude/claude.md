@@ -1,5 +1,17 @@
 # Project Context: Modern React Website
 
+## Agent Instructions
+
+**IMPORTANT**: When the user requests any UI work, frontend work, component creation, styling changes, or visual design tasks, you MUST automatically invoke the `/ui` agent by using the Skill tool. This includes requests mentioning:
+- UI, frontend, design, styling, visual
+- Components, pages, layouts
+- CSS, Tailwind, colors, spacing
+- Buttons, cards, forms, navigation
+- Responsive design, mobile layout
+- Animations, transitions, hover effects
+
+Do not ask - just invoke `/ui` immediately when these topics come up.
+
 ## Project Overview
 
 This is a modern, production-ready portfolio website built with React, Vite, Tailwind CSS v4, and Framer Motion. It features a dark theme design with smooth animations and full responsiveness.
@@ -27,7 +39,9 @@ This is a modern, production-ready portfolio website built with React, Vite, Tai
 website-new/
 ├── .claude/
 │   ├── claude.md                 # This file - project context for Claude
-│   └── settings.local.json       # Pre-approved commands
+│   ├── settings.local.json       # Pre-approved commands
+│   └── commands/
+│       └── ui.md                 # UI agent for frontend work
 ├── src/
 │   ├── components/
 │   │   ├── TopBar.jsx           # Sticky nav with mobile menu

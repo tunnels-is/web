@@ -26,7 +26,7 @@ const FeatureShowcaseSplit = ({
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="relative glass-effect rounded-3xl overflow-hidden min-h-[600px]"
+        className="relative bg-dark-surface rounded-3xl overflow-hidden min-h-[600px]"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
           {imagePosition === 'right' ? (
@@ -60,7 +60,7 @@ const FeatureShowcaseSplit = ({
                           transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                           className="flex items-center space-x-3 p-3 rounded-lg hover:bg-dark-bg/20 transition-colors"
                         >
-                          <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gradient-to-r from-dark-accent-primary to-dark-accent-secondary"></div>
+                          <div className="flex-shrink-0 w-2 h-2 rounded-full bg-dark-accent-primary"></div>
                           <span className="text-white font-medium">{feature.title}</span>
                         </motion.div>
                       ))}
@@ -71,11 +71,6 @@ const FeatureShowcaseSplit = ({
 
               {/* Image Section with Angular Clip */}
               <div className="relative h-[400px] lg:h-auto">
-                {/* Angular overlay mask */}
-                <div className="absolute inset-0 bg-gradient-to-br from-dark-accent-primary/5 to-dark-accent-secondary/5"></div>
-
-                {/* Angled divider line */}
-                <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-dark-accent-primary to-transparent transform -translate-x-8 skew-y-3"></div>
 
                 <motion.div
                   initial={{ opacity: 0, scale: 1.1 }}
@@ -98,11 +93,6 @@ const FeatureShowcaseSplit = ({
             <>
               {/* Image Section with Angular Clip */}
               <div className="relative h-[400px] lg:h-auto">
-                {/* Angular overlay mask */}
-                <div className="absolute inset-0 bg-gradient-to-br from-dark-accent-primary/5 to-dark-accent-secondary/5"></div>
-
-                {/* Angled divider line */}
-                <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-dark-accent-primary to-transparent transform translate-x-8 -skew-y-3"></div>
 
                 <motion.div
                   initial={{ opacity: 0, scale: 1.1 }}
@@ -150,7 +140,7 @@ const FeatureShowcaseSplit = ({
                           transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                           className="flex items-center space-x-3 p-3 rounded-lg hover:bg-dark-bg/20 transition-colors"
                         >
-                          <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gradient-to-r from-dark-accent-primary to-dark-accent-secondary"></div>
+                          <div className="flex-shrink-0 w-2 h-2 rounded-full bg-dark-accent-primary"></div>
                           <span className="text-white font-medium">{feature.title}</span>
                         </motion.div>
                       ))}
@@ -162,10 +152,6 @@ const FeatureShowcaseSplit = ({
           )}
         </div>
 
-        {/* Decorative gradient accent */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className={`absolute ${imagePosition === 'right' ? 'right-0' : 'left-0'} top-1/2 -translate-y-1/2 w-1/3 h-2/3 bg-gradient-radial from-dark-accent-primary/10 to-transparent blur-3xl`}></div>
-        </div>
       </motion.div>
     </div>
   );

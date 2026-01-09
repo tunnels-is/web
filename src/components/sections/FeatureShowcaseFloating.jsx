@@ -29,7 +29,7 @@ const FeatureShowcaseFloating = ({
         className="relative"
       >
         {/* Content Background Section */}
-        <div className={`glass-effect rounded-2xl p-8 md:p-12 ${
+        <div className={`bg-dark-surface rounded-2xl p-8 md:p-12 ${
           imagePosition === 'right' ? 'md:pr-[45%]' : 'md:pl-[45%]'
         }`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -49,7 +49,7 @@ const FeatureShowcaseFloating = ({
             <div className="space-y-4">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-3 p-4 rounded-lg bg-dark-bg/30 backdrop-blur-sm border border-dark-border/50">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary flex items-center justify-center mt-1">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-dark-accent-primary flex items-center justify-center mt-1">
                     <span className="text-white text-xs font-bold">✓</span>
                   </div>
                   <div className="flex-1">
@@ -74,10 +74,10 @@ const FeatureShowcaseFloating = ({
           } md:top-12 md:w-[45%] mt-8 md:mt-0`}
         >
           {/* Shadow/Glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-dark-accent-primary/30 to-dark-accent-secondary/30 rounded-2xl blur-2xl transform scale-105"></div>
+          <div className="absolute inset-0 bg-dark-accent-primary/20 rounded-2xl blur-2xl transform scale-105"></div>
 
           {/* Image container */}
-          <div className="relative glass-effect p-3 rounded-2xl">
+          <div className="relative bg-dark-surface p-3 rounded-2xl">
             <div className="relative rounded-xl overflow-hidden">
               <img
                 src={image}

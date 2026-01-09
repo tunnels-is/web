@@ -14,13 +14,12 @@ const PricingHighlight = ({
   title,
   description,
   icon,
-  highlights = [],
-  backgroundGradient = 'from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary'
+  highlights = []
 }) => {
   const [ref, isVisible] = useScrollAnimation();
 
   return (
-    <section ref={ref} className={`py-32 bg-gradient-to-r ${backgroundGradient} relative overflow-hidden`}>
+    <section ref={ref} className="py-32 bg-dark-accent-primary relative overflow-hidden">
       {/* Animated Background Pattern */}
       <motion.div
         animate={{

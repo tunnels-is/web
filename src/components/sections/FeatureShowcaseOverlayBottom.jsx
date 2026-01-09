@@ -38,8 +38,8 @@ const FeatureShowcaseOverlayBottom = ({
             alt={title}
             className="w-full h-full object-cover"
           />
-          {/* Gradient overlay from bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/60 to-transparent"></div>
+          {/* Overlay from bottom */}
+          <div className="absolute inset-0 bg-dark-bg/60"></div>
         </motion.div>
 
         {/* Overlaying Content - Bottom Portion */}
@@ -76,7 +76,7 @@ const FeatureShowcaseOverlayBottom = ({
                     {features.map((feature, index) => (
                       <div key={index} className="flex items-start space-x-3">
                         <div className="flex-shrink-0 mt-1">
-                          <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary flex items-center justify-center">
+                          <div className="w-6 h-6 rounded-lg bg-dark-accent-primary flex items-center justify-center">
                             <span className="text-white text-xs font-bold">✓</span>
                           </div>
                         </div>

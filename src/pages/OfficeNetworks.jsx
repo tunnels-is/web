@@ -184,7 +184,7 @@ const OfficeNetworks = () => {
               href="/download"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+              className="px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white font-semibold rounded-lg transition-colors"
             >
               Get Started Free
             </motion.a>
@@ -194,7 +194,7 @@ const OfficeNetworks = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 glass-effect hover:bg-dark-elevated text-dark-text-primary font-semibold rounded-lg transition-all"
+              className="px-8 py-4 bg-dark-surface hover:bg-dark-elevated text-dark-text-primary font-semibold rounded-lg transition-colors"
             >
               View Documentation
             </motion.a>
@@ -288,7 +288,7 @@ const OfficeNetworks = () => {
             >
               <div className="space-y-6">
                 {/* Office Server */}
-                <div className="bg-gradient-to-br from-dark-accent-primary/20 to-dark-accent-secondary/20 p-6 rounded-lg">
+                <div className="bg-dark-accent-primary/10 p-6 rounded-lg">
                   <div className="flex items-center justify-center mb-4">
                     <div className="w-16 h-16 bg-dark-accent-primary/30 rounded-full flex items-center justify-center">
                       <svg className="w-8 h-8 text-dark-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -309,7 +309,7 @@ const OfficeNetworks = () => {
                 {/* Remote Employees */}
                 <div className="grid grid-cols-3 gap-4">
                   {['Home Office', 'Coffee Shop', 'On the Road'].map((location, i) => (
-                    <div key={i} className="bg-gradient-to-br from-dark-accent-tertiary/20 to-dark-accent-primary/20 p-4 rounded-lg">
+                    <div key={i} className="bg-dark-accent-tertiary/10 p-4 rounded-lg">
                       <div className="flex items-center justify-center mb-3">
                         <div className="w-12 h-12 bg-dark-accent-tertiary/30 rounded-full flex items-center justify-center">
                           <svg className="w-6 h-6 text-dark-accent-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -429,7 +429,7 @@ const OfficeNetworks = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-dark-accent-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-white">{item.step}</span>
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
@@ -523,7 +523,7 @@ const OfficeNetworks = () => {
               href="/download"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-10 py-5 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all"
+              className="inline-block px-10 py-5 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white text-lg font-semibold rounded-xl transition-colors"
             >
               Download Tunnels Free
             </motion.a>

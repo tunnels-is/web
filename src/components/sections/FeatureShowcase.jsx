@@ -10,7 +10,6 @@ import useScrollAnimation from '../../hooks/useScrollAnimation';
  * @param {string} image - Image URL (alternative to illustration)
  * @param {React.ReactNode} illustration - SVG or illustration component (alternative to image)
  * @param {string} imagePosition - Position of image/illustration: left or right (default: right)
- * @param {string} imageGradient - Gradient classes for illustration background (only used if illustration prop is provided)
  * @param {string} featureCheckColor - Color for checkmark (default: dark-accent-primary)
  * @param {React.ReactNode} customContent - Optional custom content to replace descriptions
  */
@@ -21,7 +20,6 @@ const FeatureShowcase = ({
   image = null,
   illustration = null,
   imagePosition = 'right',
-  imageGradient = 'from-dark-accent-primary/20 to-dark-accent-secondary/20',
   featureCheckColor = 'dark-accent-primary',
   customContent = null
 }) => {
@@ -57,8 +55,8 @@ const FeatureShowcase = ({
             </div>
           ) : (
             // Illustration variant
-            <div className="glass-effect p-8 rounded-xl">
-              <div className={`aspect-square bg-gradient-to-br ${imageGradient} rounded-lg flex items-center justify-center`}>
+            <div className="bg-dark-surface p-8 rounded-xl">
+              <div className="aspect-square bg-dark-accent-primary/10 rounded-lg flex items-center justify-center">
                 {illustration}
               </div>
             </div>

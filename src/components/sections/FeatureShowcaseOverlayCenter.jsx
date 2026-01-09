@@ -86,7 +86,7 @@ const FeatureShowcaseOverlayCenter = ({
                         key={index}
                         className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors border border-white/10"
                       >
-                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary flex items-center justify-center">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-dark-accent-primary flex items-center justify-center">
                           <span className="text-white text-sm font-bold">✓</span>
                         </div>
                         <div className="flex-1">
@@ -99,10 +99,8 @@ const FeatureShowcaseOverlayCenter = ({
               )}
             </div>
 
-            {/* Decorative glow effects */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-dark-accent-primary/20 via-dark-accent-secondary/20 to-dark-accent-primary/20 rounded-3xl blur-3xl -z-10"></div>
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-dark-accent-primary/30 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-32 h-32 bg-dark-accent-secondary/30 rounded-full blur-3xl"></div>
+            {/* Decorative glow effect */}
+            <div className="absolute -inset-4 bg-dark-accent-primary/10 rounded-3xl blur-3xl -z-10"></div>
           </motion.div>
         </div>
       </motion.div>

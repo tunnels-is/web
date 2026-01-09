@@ -42,7 +42,7 @@ const CloudProvidersGrid = ({
         >
           {provider.recommended && (
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="px-4 py-2 bg-gradient-to-r from-dark-accent-primary to-dark-accent-secondary text-white text-sm font-bold rounded-full shadow-lg">
+              <span className="px-4 py-2 bg-dark-accent-primary text-white text-sm font-bold rounded-full">
                 RECOMMENDED
               </span>
             </div>

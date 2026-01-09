@@ -24,7 +24,7 @@ const FeatureShowcaseCard = ({
         initial={{ opacity: 0, y: 30 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="glass-effect rounded-2xl overflow-hidden shadow-2xl"
+        className="bg-dark-surface rounded-2xl overflow-hidden"
       >
         {/* Image Section */}
         <div className="relative h-80 md:h-96 overflow-hidden">
@@ -33,8 +33,8 @@ const FeatureShowcaseCard = ({
             alt={title}
             className="w-full h-full object-cover"
           />
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark-bg/80"></div>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-dark-bg/60"></div>
         </div>
 
         {/* Content Section */}
@@ -56,7 +56,7 @@ const FeatureShowcaseCard = ({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-dark-border">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary flex items-center justify-center">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-dark-accent-primary flex items-center justify-center">
                     <span className="text-white text-sm font-bold">✓</span>
                   </div>
                   <div>

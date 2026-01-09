@@ -100,7 +100,7 @@ const Homelab = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible4 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-12 bg-gradient-to-r from-dark-accent-primary/10 via-dark-accent-secondary/10 to-dark-accent-tertiary/10 p-8 rounded-xl"
+          className="mt-12 bg-dark-accent-primary/10 p-8 rounded-xl"
         >
           <div className="flex items-start gap-4">
             <div className="w-20 h-20">

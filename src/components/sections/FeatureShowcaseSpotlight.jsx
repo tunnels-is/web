@@ -98,7 +98,7 @@ const FeatureShowcaseSpotlight = ({
                       key={index}
                       className="flex items-center space-x-2 px-6 py-3 rounded-full bg-dark-bg/30 border border-dark-border hover:border-dark-accent-primary transition-colors"
                     >
-                      <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-dark-accent-primary to-dark-accent-secondary"></div>
+                      <div className="w-1.5 h-1.5 rounded-full bg-dark-accent-primary"></div>
                       <span className="text-white font-medium text-sm">{feature.title}</span>
                     </div>
                   ))}
@@ -148,7 +148,7 @@ const FeatureShowcaseSpotlight = ({
                       key={index}
                       className="flex items-center space-x-2 px-6 py-3 rounded-full bg-dark-bg/30 border border-dark-border hover:border-dark-accent-primary transition-colors"
                     >
-                      <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-dark-accent-primary to-dark-accent-secondary"></div>
+                      <div className="w-1.5 h-1.5 rounded-full bg-dark-accent-primary"></div>
                       <span className="text-white font-medium text-sm">{feature.title}</span>
                     </div>
                   ))}

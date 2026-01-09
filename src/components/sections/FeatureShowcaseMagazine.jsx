@@ -44,7 +44,7 @@ const FeatureShowcaseMagazine = ({
             initial={{ width: 0 }}
             animate={isVisible ? { width: '120px' } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-1 bg-gradient-to-r from-dark-accent-primary to-dark-accent-secondary rounded-full"
+            className="h-1 bg-dark-accent-primary rounded-full"
           ></motion.div>
         </div>
 
@@ -71,7 +71,7 @@ const FeatureShowcaseMagazine = ({
                 />
 
                 {/* Subtle overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-dark-accent-primary/0 to-dark-accent-secondary/0 group-hover:from-dark-accent-primary/10 group-hover:to-dark-accent-secondary/10 transition-all duration-300"></div>
+                <div className="absolute inset-0 group-hover:bg-dark-accent-primary/10 transition-all duration-300"></div>
               </div>
 
               {/* Decorative frame corner */}
@@ -109,7 +109,7 @@ const FeatureShowcaseMagazine = ({
                     <div key={index} className="group">
                       <div className="flex items-start space-x-4">
                         {/* Number badge */}
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-dark-accent-primary/20 to-dark-accent-secondary/20 flex items-center justify-center border border-dark-accent-primary/30 group-hover:border-dark-accent-primary transition-colors">
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-dark-accent-primary/20 flex items-center justify-center">
                           <span className="text-dark-accent-primary font-bold text-lg">{index + 1}</span>
                         </div>
                         <div className="flex-1">

@@ -38,8 +38,8 @@ const FeatureShowcaseOverlayLeft = ({
             alt={title}
             className="w-full h-full object-cover"
           />
-          {/* Dark gradient overlay from left */}
-          <div className="absolute inset-0 bg-gradient-to-r from-dark-bg via-dark-bg/95 to-transparent"></div>
+          {/* Dark overlay from left */}
+          <div className="absolute inset-0 bg-dark-bg/80"></div>
         </motion.div>
 
         {/* Overlaying Content - Left Side */}
@@ -75,7 +75,7 @@ const FeatureShowcaseOverlayLeft = ({
                       transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                       className="flex items-center space-x-3 group"
                     >
-                      <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-dark-accent-primary to-dark-accent-secondary group-hover:scale-150 transition-transform"></div>
+                      <div className="w-1.5 h-1.5 rounded-full bg-dark-accent-primary group-hover:scale-150 transition-transform"></div>
                       <span className="text-white/80 group-hover:text-white transition-colors">
                         {feature.title}
                       </span>

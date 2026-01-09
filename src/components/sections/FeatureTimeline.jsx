@@ -26,7 +26,7 @@ const FeatureTimeline = ({
     <div ref={ref} className="relative">
       {/* Vertical timeline line */}
       {showConnectingLines && (
-        <div className="absolute left-6 md:left-1/2 top-8 bottom-8 w-0.5 bg-gradient-to-b from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary opacity-30" />
+        <div className="absolute left-6 md:left-1/2 top-8 bottom-8 w-0.5 bg-dark-accent-primary opacity-30" />
       )}
 
       <div className={compactMode ? "space-y-6" : "space-y-12"}>
@@ -46,7 +46,7 @@ const FeatureTimeline = ({
                 {/* Step badge */}
                 <div className="relative flex-shrink-0">
                   {/* Step circle */}
-                  <div className="relative w-12 h-12 bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary rounded-full flex items-center justify-center shadow-xl">
+                  <div className="relative w-12 h-12 bg-dark-accent-primary rounded-full flex items-center justify-center shadow-xl">
                     <span className="text-xl font-bold text-white">
                       {step.step}
                     </span>
@@ -69,7 +69,7 @@ const FeatureTimeline = ({
                 {/* Center - Step badge */}
                 <div className="relative flex-shrink-0">
                   {/* Step circle */}
-                  <div className="relative w-16 h-16 bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary rounded-full flex items-center justify-center shadow-xl">
+                  <div className="relative w-16 h-16 bg-dark-accent-primary rounded-full flex items-center justify-center shadow-xl">
                     <span className="text-2xl font-bold text-white">
                       {step.step}
                     </span>

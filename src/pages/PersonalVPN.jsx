@@ -88,10 +88,6 @@ const PersonalVPN = () => {
       {/* Comparison Section */}
       <ContentSection background="dark-surface" id="comparison">
         <div className="relative">
-          {/* Diagonal Background Split */}
-          <div className="absolute inset-0 -mx-4 sm:-mx-6 lg:-mx-8">
-            <div className="absolute inset-0 bg-gradient-to-br from-dark-accent-primary/5 to-transparent transform -skew-y-3"></div>
-          </div>
 
           <div className="relative">
             <SectionHeader
@@ -103,7 +99,7 @@ const PersonalVPN = () => {
             />
 
             {/* Summary Card */}
-            <div className="mt-12 bg-gradient-to-r from-dark-accent-primary/10 via-dark-accent-secondary/10 to-dark-accent-tertiary/10 p-8 rounded-2xl border border-dark-accent-primary">
+            <div className="mt-12 bg-dark-accent-primary/10 p-8 rounded-2xl">
               <div className="flex items-start gap-6">
                 <div className="w-20 h-20">
                   <LightbulbIcon />

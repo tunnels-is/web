@@ -56,8 +56,8 @@ const CTASection = ({
                   whileTap={{ scale: 0.98 }}
                   className={
                     button.primary
-                      ? "inline-block px-8 py-4 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-                      : "inline-block px-8 py-4 bg-dark-surface text-dark-text-primary font-semibold rounded-lg hover:bg-dark-elevated transition-colors"
+                      ? "inline-block px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white font-semibold rounded-lg transition-colors"
+                      : "inline-block px-8 py-4 bg-dark-surface hover:bg-dark-elevated text-dark-text-primary font-semibold rounded-lg transition-colors"
                   }
                 >
                   {button.text}
@@ -135,8 +135,8 @@ const CTASection = ({
                     whileTap={{ scale: 0.98 }}
                     className={
                       card.button.primary
-                        ? "block w-full py-5 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white text-center text-xl font-bold rounded-xl shadow-xl hover:shadow-2xl transition-shadow"
-                        : "block w-full py-5 bg-dark-surface text-dark-text-primary text-center text-xl font-bold rounded-xl hover:bg-dark-bg transition-colors"
+                        ? "block w-full py-5 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white text-center text-xl font-bold rounded-xl transition-colors"
+                        : "block w-full py-5 bg-dark-surface hover:bg-dark-elevated text-dark-text-primary text-center text-xl font-bold rounded-xl transition-colors"
                     }
                   >
                     {card.button.text}

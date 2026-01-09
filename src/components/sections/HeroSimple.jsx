@@ -46,8 +46,7 @@ const HeroSimple = ({
       {/* Radial Glow Effect */}
       {showRadialGlow && (
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-radial from-dark-accent-primary/10 via-transparent to-transparent" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-dark-accent-secondary/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-dark-accent-primary/5 rounded-full blur-3xl" />
         </div>
       )}
 

@@ -120,8 +120,8 @@ const HeroWithGradients = ({
                 whileTap={{ scale: 0.95 }}
                 className={
                   button.primary
-                    ? "px-8 py-4 bg-gradient-to-r from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
-                    : "px-8 py-4 glass-effect hover:bg-dark-elevated text-dark-text-primary font-semibold rounded-lg transition-all"
+                    ? "px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white font-semibold rounded-lg transition-colors"
+                    : "px-8 py-4 bg-dark-surface hover:bg-dark-elevated text-dark-text-primary font-semibold rounded-lg transition-colors"
                 }
               >
                 {button.text}

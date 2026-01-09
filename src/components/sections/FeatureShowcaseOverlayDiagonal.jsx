@@ -38,8 +38,8 @@ const FeatureShowcaseOverlayDiagonal = ({
             alt={title}
             className="w-full h-full object-cover"
           />
-          {/* Diagonal gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-dark-bg/90 via-dark-bg/50 to-transparent"></div>
+          {/* Diagonal overlay */}
+          <div className="absolute inset-0 bg-dark-bg/70"></div>
         </motion.div>
 
         {/* Diagonal Content Overlay */}
@@ -86,7 +86,7 @@ const FeatureShowcaseOverlayDiagonal = ({
                     style={{ marginLeft: `${index * 1.5}rem` }}
                   >
                     <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-dark-accent-primary to-dark-accent-secondary"></div>
+                      <div className="w-2 h-2 rounded-full bg-dark-accent-primary"></div>
                       <span className="text-white font-medium">{feature.title}</span>
                     </div>
                   </motion.div>
@@ -96,15 +96,6 @@ const FeatureShowcaseOverlayDiagonal = ({
           </motion.div>
         </div>
 
-        {/* Decorative diagonal line accent */}
-        <motion.div
-          initial={{ scaleX: 0, scaleY: 0 }}
-          animate={isVisible ? { scaleX: 1, scaleY: 1 } : {}}
-          transition={{ duration: 1.2, delay: 0.6 }}
-          className="absolute top-0 left-0 w-full h-full pointer-events-none"
-        >
-          <div className="absolute top-1/4 left-0 w-1 h-1/2 bg-gradient-to-b from-dark-accent-primary via-dark-accent-secondary to-transparent transform -rotate-45 origin-top-left opacity-30"></div>
-        </motion.div>
       </motion.div>
     </div>
   );

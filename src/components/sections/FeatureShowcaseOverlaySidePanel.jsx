@@ -40,12 +40,8 @@ const FeatureShowcaseOverlaySidePanel = ({
             alt={title}
             className="w-full h-full object-cover"
           />
-          {/* Gradient overlay from side */}
-          <div className={`absolute inset-0 ${
-            imagePosition === 'right'
-              ? 'bg-gradient-to-l from-dark-bg/50 to-transparent'
-              : 'bg-gradient-to-r from-dark-bg/50 to-transparent'
-          }`}></div>
+          {/* Overlay from side */}
+          <div className="absolute inset-0 bg-dark-bg/30"></div>
         </motion.div>
 
         {/* Side Panel Overlay */}
@@ -110,7 +106,7 @@ const FeatureShowcaseOverlaySidePanel = ({
                   >
                     <div className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors">
                       <div className="flex-shrink-0 mt-1">
-                        <div className="w-6 h-6 rounded-md bg-gradient-to-br from-dark-accent-primary/30 to-dark-accent-secondary/30 border border-dark-accent-primary/50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="w-6 h-6 rounded-md bg-dark-accent-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform">
                           <span className="text-dark-accent-primary text-xs font-bold">✓</span>
                         </div>
                       </div>
@@ -126,15 +122,6 @@ const FeatureShowcaseOverlaySidePanel = ({
               </motion.div>
             )}
 
-            {/* Decorative vertical accent line */}
-            <motion.div
-              initial={{ scaleY: 0 }}
-              animate={isVisible ? { scaleY: 1 } : {}}
-              transition={{ duration: 1, delay: 1.2 }}
-              className={`absolute top-1/4 ${
-                imagePosition === 'right' ? 'left-0' : 'right-0'
-              } w-1 h-1/2 bg-gradient-to-b from-dark-accent-primary via-dark-accent-secondary to-transparent rounded-full origin-top`}
-            ></motion.div>
           </motion.div>
         </div>
       </motion.div>

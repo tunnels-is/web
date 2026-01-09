@@ -12,6 +12,9 @@ import Homelab from './pages/Homelab';
 import PersonalVPN from './pages/PersonalVPN';
 import OfficeNetworks from './pages/OfficeNetworks';
 import IoTNetworks from './pages/IoTNetworks';
+import LanOverWan from './pages/LanOverWan';
+import PublicVPN from './pages/PublicVPN';
+import Security from './pages/Security';
 
 function App() {
   return (
@@ -25,13 +28,13 @@ function App() {
           <Route path="/download" element={<Download />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/free-and-opensource" element={<FreeAndOpenSource />} />
-          <Route path="/security" element={<Home />} />
-          <Route path="/public" element={<Features />} />
+          <Route path="/security" element={<Security />} />
+          <Route path="/public" element={<PublicVPN />} />
           <Route path="/homelab" element={<Homelab />} />
           <Route path="/cloud" element={<CloudBaremetal />} />
           <Route path="/iot" element={<IoTNetworks />} />
           <Route path="/office" element={<OfficeNetworks />} />
-          <Route path="/lan-over-wan" element={<Home />} />
+          <Route path="/lan-over-wan" element={<LanOverWan />} />
           <Route path="/personal-vpn" element={<PersonalVPN />} />
           <Route path="*" element={<Home />} />
         </Routes>

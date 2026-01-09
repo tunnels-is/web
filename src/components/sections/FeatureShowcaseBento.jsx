@@ -33,7 +33,7 @@ const FeatureShowcaseBento = ({
             {/* Content Section - Takes up left side */}
             <div className="lg:col-span-5 space-y-6">
               {/* Title Card */}
-              <div className="glass-effect p-8 rounded-2xl h-full flex flex-col justify-center">
+              <div className="bg-dark-surface p-8 rounded-2xl h-full flex flex-col justify-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                   {title}
                 </h2>
@@ -48,9 +48,9 @@ const FeatureShowcaseBento = ({
               {features.length > 0 && (
                 <div className="grid grid-cols-1 gap-4">
                   {features.slice(0, 2).map((feature, index) => (
-                    <div key={index} className="glass-effect p-6 rounded-xl border border-dark-border hover:border-dark-accent-primary transition-colors">
+                    <div key={index} className="bg-dark-surface p-6 rounded-xl hover:bg-dark-elevated transition-colors">
                       <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary flex items-center justify-center">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-dark-accent-primary flex items-center justify-center">
                           <span className="text-white font-bold">✓</span>
                         </div>
                         <div>
@@ -66,7 +66,7 @@ const FeatureShowcaseBento = ({
 
             {/* Image Section - Takes up right side, spans more rows */}
             <div className="lg:col-span-7 lg:row-span-2">
-              <div className="glass-effect p-4 rounded-2xl h-full">
+              <div className="bg-dark-surface p-4 rounded-2xl h-full">
                 <div className="relative h-full min-h-[400px] lg:min-h-[600px] rounded-xl overflow-hidden">
                   <img
                     src={image}
@@ -81,7 +81,7 @@ const FeatureShowcaseBento = ({
           <>
             {/* Image Section - Takes up left side, spans more rows */}
             <div className="lg:col-span-7 lg:row-span-2">
-              <div className="glass-effect p-4 rounded-2xl h-full">
+              <div className="bg-dark-surface p-4 rounded-2xl h-full">
                 <div className="relative h-full min-h-[400px] lg:min-h-[600px] rounded-xl overflow-hidden">
                   <img
                     src={image}
@@ -95,7 +95,7 @@ const FeatureShowcaseBento = ({
             {/* Content Section - Takes up right side */}
             <div className="lg:col-span-5 space-y-6">
               {/* Title Card */}
-              <div className="glass-effect p-8 rounded-2xl h-full flex flex-col justify-center">
+              <div className="bg-dark-surface p-8 rounded-2xl h-full flex flex-col justify-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                   {title}
                 </h2>
@@ -110,9 +110,9 @@ const FeatureShowcaseBento = ({
               {features.length > 0 && (
                 <div className="grid grid-cols-1 gap-4">
                   {features.slice(0, 2).map((feature, index) => (
-                    <div key={index} className="glass-effect p-6 rounded-xl border border-dark-border hover:border-dark-accent-primary transition-colors">
+                    <div key={index} className="bg-dark-surface p-6 rounded-xl hover:bg-dark-elevated transition-colors">
                       <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary flex items-center justify-center">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-dark-accent-primary flex items-center justify-center">
                           <span className="text-white font-bold">✓</span>
                         </div>
                         <div>

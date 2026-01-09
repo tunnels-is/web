@@ -53,7 +53,7 @@ const FeatureShowcaseOverlayCorner = ({
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
                 animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="glass-effect p-8 rounded-2xl border border-dark-border shadow-2xl lg:mr-[-25%] relative"
+                className="bg-dark-surface p-8 rounded-2xl lg:mr-[-25%] relative"
               >
                 {descriptions.length > 1 && (
                   <p className="text-dark-text-secondary leading-relaxed mb-6">
@@ -66,7 +66,7 @@ const FeatureShowcaseOverlayCorner = ({
                     {features.map((feature, index) => (
                       <div key={index} className="flex items-start space-x-3 group">
                         <div className="flex-shrink-0 mt-1">
-                          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-dark-accent-primary/20 to-dark-accent-secondary/20 border border-dark-accent-primary/40 flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <div className="w-8 h-8 rounded-lg bg-dark-accent-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                             <span className="text-dark-accent-primary text-sm font-bold">✓</span>
                           </div>
                         </div>
@@ -82,7 +82,7 @@ const FeatureShowcaseOverlayCorner = ({
                 )}
 
                 {/* Decorative corner accent */}
-                <div className="absolute -top-2 -right-2 w-20 h-20 bg-gradient-to-br from-dark-accent-primary/30 to-dark-accent-secondary/30 rounded-full blur-2xl"></div>
+                <div className="absolute -top-2 -right-2 w-20 h-20 bg-dark-accent-primary/20 rounded-full blur-2xl"></div>
               </motion.div>
             </div>
 
@@ -99,8 +99,6 @@ const FeatureShowcaseOverlayCorner = ({
                   alt={title}
                   className="w-full h-full object-cover"
                 />
-                {/* Subtle vignette */}
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-dark-bg/20"></div>
               </motion.div>
             </div>
           </>
@@ -119,8 +117,6 @@ const FeatureShowcaseOverlayCorner = ({
                   alt={title}
                   className="w-full h-full object-cover"
                 />
-                {/* Subtle vignette */}
-                <div className="absolute inset-0 bg-gradient-to-bl from-transparent to-dark-bg/20"></div>
               </motion.div>
             </div>
 
@@ -147,7 +143,7 @@ const FeatureShowcaseOverlayCorner = ({
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
                 animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="glass-effect p-8 rounded-2xl border border-dark-border shadow-2xl lg:ml-[-25%] relative"
+                className="bg-dark-surface p-8 rounded-2xl lg:ml-[-25%] relative"
               >
                 {descriptions.length > 1 && (
                   <p className="text-dark-text-secondary leading-relaxed mb-6">
@@ -160,7 +156,7 @@ const FeatureShowcaseOverlayCorner = ({
                     {features.map((feature, index) => (
                       <div key={index} className="flex items-start space-x-3 group">
                         <div className="flex-shrink-0 mt-1">
-                          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-dark-accent-primary/20 to-dark-accent-secondary/20 border border-dark-accent-primary/40 flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <div className="w-8 h-8 rounded-lg bg-dark-accent-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                             <span className="text-dark-accent-primary text-sm font-bold">✓</span>
                           </div>
                         </div>
@@ -176,7 +172,7 @@ const FeatureShowcaseOverlayCorner = ({
                 )}
 
                 {/* Decorative corner accent */}
-                <div className="absolute -top-2 -left-2 w-20 h-20 bg-gradient-to-br from-dark-accent-primary/30 to-dark-accent-secondary/30 rounded-full blur-2xl"></div>
+                <div className="absolute -top-2 -left-2 w-20 h-20 bg-dark-accent-primary/20 rounded-full blur-2xl"></div>
               </motion.div>
             </div>
           </>

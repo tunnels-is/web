@@ -50,7 +50,7 @@ const TechnicalFeaturesSection = ({
                 }}
                 className="flex gap-4 items-start"
               >
-                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-dark-accent-primary to-dark-accent-secondary rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-10 h-10 bg-dark-accent-primary rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
