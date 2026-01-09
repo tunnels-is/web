@@ -7,124 +7,33 @@ import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
-import { NetworkGlobeIcon, ServerIcon, LockShieldIcon, BoltIcon, GlobeIcon, LinkIcon } from '../components/ui/Icons';
+import { lanOverWanContent } from '../content/siteContent';
 
 const LanOverWan = () => {
   const [archRef, archVisible] = useScrollAnimation();
-
-  const benefits = [
-    {
-      title: "Connect Remote Networks",
-      description: "Bridge isolated LANs across the internet as if they were directly connected. Access devices and services on remote networks seamlessly.",
-      icon: <NetworkGlobeIcon />,
-      color: "primary"
-    },
-    {
-      title: "Site-to-Site Connectivity",
-      description: "Connect branch offices, data centers, or home networks together. Create a unified network spanning multiple physical locations.",
-      icon: <GlobeIcon />,
-      color: "secondary"
-    },
-    {
-      title: "Secure Tunnel",
-      description: "All traffic between sites is encrypted end-to-end. Your private network traffic stays private, even over public internet.",
-      icon: <LockShieldIcon />,
-      color: "tertiary"
-    },
-    {
-      title: "Low Latency",
-      description: "Optimized for performance with minimal overhead. Direct tunnels between sites without routing through central servers.",
-      icon: <BoltIcon />,
-      color: "primary"
-    },
-    {
-      title: "Automatic Discovery",
-      description: "Devices on connected networks can discover and communicate with each other automatically through DNS and routing.",
-      icon: <LinkIcon />,
-      color: "secondary"
-    },
-    {
-      title: "Self-Hosted",
-      description: "Run your own VPN server for complete control. No third-party services, no data leaving your infrastructure.",
-      icon: <ServerIcon />,
-      color: "tertiary"
-    }
-  ];
-
-  const useCases = [
-    {
-      title: "Multi-Office Networking",
-      description: "Connect headquarters with branch offices. Employees access internal resources regardless of location.",
-      scenario: "HQ in New York connects to offices in London and Tokyo - all on one unified network"
-    },
-    {
-      title: "Home to Cloud",
-      description: "Bridge your home network to cloud infrastructure. Access cloud resources as if they were local.",
-      scenario: "Homelab connects directly to AWS VPC for hybrid deployments"
-    },
-    {
-      title: "Disaster Recovery",
-      description: "Maintain hot standby sites with real-time data replication over secure tunnels.",
-      scenario: "Primary datacenter syncs to backup site across the country"
-    },
-    {
-      title: "IoT Device Management",
-      description: "Manage IoT devices deployed across multiple sites from a central location.",
-      scenario: "Industrial sensors at 50 locations all accessible from central monitoring"
-    }
-  ];
-
-  const setupSteps = [
-    {
-      step: "1",
-      title: "Deploy Tunnels Server",
-      description: "Set up a Tunnels server on your primary network. This will act as the connection hub."
-    },
-    {
-      step: "2",
-      title: "Configure Network Routes",
-      description: "Define which subnets should be accessible across the WAN. Specify CIDR blocks for each site."
-    },
-    {
-      step: "3",
-      title: "Connect Remote Sites",
-      description: "Deploy Tunnels clients or servers at remote locations. They will establish secure tunnels automatically."
-    },
-    {
-      step: "4",
-      title: "Access Resources",
-      description: "Devices on connected networks can now communicate directly. DNS resolution works across all sites."
-    }
-  ];
+  const content = lanOverWanContent;
 
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <HeroSimple
-        badge="Bridge Networks Securely"
-        title="LAN Over WAN"
-        subtitle="Connect Remote Networks Seamlessly"
-        description="Bridge isolated local networks across the internet. Create a unified network spanning multiple physical locations with end-to-end encryption."
-        buttons={[
-          { text: "Get Started", href: "/download", primary: true },
-          { text: "View Docs", href: "https://docs.tunnels.is/docs", teal: true }
-        ]}
-        quickStats={[
-          { value: "<10ms", label: "Added Latency" },
-          { value: "AES-256", label: "Encryption" },
-          { value: "Unlimited", label: "Sites" }
-        ]}
+        badge={content.hero.badge}
+        title={content.hero.title}
+        subtitle={content.hero.subtitle}
+        description={content.hero.description}
+        buttons={content.hero.buttons}
+        quickStats={content.hero.quickStats}
         showGeometricShapes={true}
       />
 
       {/* Benefits Section */}
       <ContentSection background="dark-surface">
         <SectionHeader
-          title="Why LAN Over WAN?"
-          subtitle="Connect your networks with enterprise-grade security and simplicity"
+          title={content.benefitsSection.title}
+          subtitle={content.benefitsSection.subtitle}
         />
         <FeatureGrid
-          features={benefits}
+          features={content.benefits}
           columns={3}
           cardStyle="elevated"
         />
@@ -134,8 +43,8 @@ const LanOverWan = () => {
       <ContentSection>
         <div ref={archRef}>
           <SectionHeader
-            title="How It Works"
-            subtitle="Secure tunnels connecting your networks"
+            title={content.architectureSection.title}
+            subtitle={content.architectureSection.subtitle}
           />
 
           <motion.div
@@ -154,8 +63,8 @@ const LanOverWan = () => {
                     </svg>
                   </div>
                 </div>
-                <h4 className="text-xl font-semibold text-white mb-2">Tunnels Server</h4>
-                <p className="text-dark-text-secondary">Central hub managing all site connections</p>
+                <h4 className="text-xl font-semibold text-white mb-2">{content.architectureSection.centralServer.title}</h4>
+                <p className="text-dark-text-secondary">{content.architectureSection.centralServer.description}</p>
               </div>
 
               {/* Connection Lines */}
@@ -167,7 +76,7 @@ const LanOverWan = () => {
 
               {/* Remote Sites */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Office A', 'Office B', 'Datacenter', 'Home'].map((site, i) => (
+                {content.architectureSection.sites.map((site, i) => (
                   <div key={i} className="bg-dark-accent-tertiary/10 p-4 rounded-lg text-center">
                     <div className="flex items-center justify-center mb-3">
                       <div className="w-12 h-12 bg-dark-accent-tertiary/30 rounded-full flex items-center justify-center">
@@ -182,7 +91,7 @@ const LanOverWan = () => {
               </div>
 
               <p className="text-center text-dark-text-secondary text-sm italic">
-                All sites connected via encrypted tunnels
+                {content.architectureSection.footer}
               </p>
             </div>
           </motion.div>
@@ -192,11 +101,11 @@ const LanOverWan = () => {
       {/* Use Cases */}
       <ContentSection background="dark-surface">
         <SectionHeader
-          title="Common Use Cases"
-          subtitle="How organizations use LAN over WAN"
+          title={content.useCasesSection.title}
+          subtitle={content.useCasesSection.subtitle}
         />
         <StaggeredGrid
-          items={useCases}
+          items={content.useCases}
           columns={2}
         />
       </ContentSection>
@@ -204,22 +113,19 @@ const LanOverWan = () => {
       {/* Setup Guide */}
       <ContentSection>
         <SectionHeader
-          title="Quick Setup"
-          subtitle="Get connected in minutes"
+          title={content.setupSection.title}
+          subtitle={content.setupSection.subtitle}
         />
         <div className="max-w-6xl mx-auto">
-          <FeatureTimeline steps={setupSteps} />
+          <FeatureTimeline steps={content.setupSteps} />
         </div>
       </ContentSection>
 
       {/* CTA */}
       <CTASection
-        title="Ready to Connect Your Networks?"
-        description="Download Tunnels and start bridging your LANs over the internet securely."
-        buttons={[
-          { text: "Download Free", href: "/download", primary: true },
-          { text: "Read Documentation", href: "https://docs.tunnels.is/docs" }
-        ]}
+        title={content.cta.title}
+        description={content.cta.description}
+        buttons={content.cta.buttons}
       />
     </div>
   );

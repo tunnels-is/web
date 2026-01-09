@@ -21,9 +21,9 @@ const FeatureShowcaseCard = ({
   return (
     <div ref={ref} className="max-w-4xl mx-auto">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
         className="bg-dark-surface rounded-2xl overflow-hidden"
       >
         {/* Image Section */}

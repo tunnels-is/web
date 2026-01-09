@@ -1843,6 +1843,407 @@ export const iotNetworksContent = {
   ]
 };
 
+// ============================================================================
+// LAN OVER WAN PAGE CONTENT
+// ============================================================================
+
+export const lanOverWanContent = {
+  hero: {
+    badge: "Bridge Networks Securely",
+    title: "LAN Over WAN",
+    subtitle: "Connect Remote Networks Seamlessly",
+    description: "Bridge isolated local networks across the internet. Create a unified network spanning multiple physical locations with end-to-end encryption.",
+    buttons: [
+      { text: "Get Started", href: "/download", primary: true },
+      { text: "View Docs", href: "https://docs.tunnels.is/docs", teal: true }
+    ],
+    quickStats: [
+      { value: "<10ms", label: "Added Latency" },
+      { value: "AES-256", label: "Encryption" },
+      { value: "Unlimited", label: "Sites" }
+    ]
+  },
+
+  benefitsSection: {
+    title: "Why LAN Over WAN?",
+    subtitle: "Connect your networks with enterprise-grade security and simplicity"
+  },
+
+  benefits: [
+    {
+      title: "Connect Remote Networks",
+      description: "Bridge isolated LANs across the internet as if they were directly connected. Access devices and services on remote networks seamlessly.",
+      icon: <NetworkGlobeIcon />,
+      color: "primary"
+    },
+    {
+      title: "Site-to-Site Connectivity",
+      description: "Connect branch offices, data centers, or home networks together. Create a unified network spanning multiple physical locations.",
+      icon: <GlobeIcon />,
+      color: "secondary"
+    },
+    {
+      title: "Secure Tunnel",
+      description: "All traffic between sites is encrypted end-to-end. Your private network traffic stays private, even over public internet.",
+      icon: <LockShieldIcon />,
+      color: "tertiary"
+    },
+    {
+      title: "Low Latency",
+      description: "Optimized for performance with minimal overhead. Direct tunnels between sites without routing through central servers.",
+      icon: <BoltIcon />,
+      color: "primary"
+    },
+    {
+      title: "Automatic Discovery",
+      description: "Devices on connected networks can discover and communicate with each other automatically through DNS and routing.",
+      icon: <LinkIcon />,
+      color: "secondary"
+    },
+    {
+      title: "Self-Hosted",
+      description: "Run your own VPN server for complete control. No third-party services, no data leaving your infrastructure.",
+      icon: <ServerIcon />,
+      color: "tertiary"
+    }
+  ],
+
+  useCasesSection: {
+    title: "Common Use Cases",
+    subtitle: "How organizations use LAN over WAN"
+  },
+
+  useCases: [
+    {
+      title: "Multi-Office Networking",
+      description: "Connect headquarters with branch offices. Employees access internal resources regardless of location.",
+      scenario: "HQ in New York connects to offices in London and Tokyo - all on one unified network"
+    },
+    {
+      title: "Home to Cloud",
+      description: "Bridge your home network to cloud infrastructure. Access cloud resources as if they were local.",
+      scenario: "Homelab connects directly to AWS VPC for hybrid deployments"
+    },
+    {
+      title: "Disaster Recovery",
+      description: "Maintain hot standby sites with real-time data replication over secure tunnels.",
+      scenario: "Primary datacenter syncs to backup site across the country"
+    },
+    {
+      title: "IoT Device Management",
+      description: "Manage IoT devices deployed across multiple sites from a central location.",
+      scenario: "Industrial sensors at 50 locations all accessible from central monitoring"
+    }
+  ],
+
+  architectureSection: {
+    title: "How It Works",
+    subtitle: "Secure tunnels connecting your networks",
+    centralServer: {
+      title: "Tunnels Server",
+      description: "Central hub managing all site connections"
+    },
+    sites: ["Office A", "Office B", "Datacenter", "Home"],
+    footer: "All sites connected via encrypted tunnels"
+  },
+
+  setupSection: {
+    title: "Quick Setup",
+    subtitle: "Get connected in minutes"
+  },
+
+  setupSteps: [
+    {
+      step: "1",
+      title: "Deploy Tunnels Server",
+      description: "Set up a Tunnels server on your primary network. This will act as the connection hub."
+    },
+    {
+      step: "2",
+      title: "Configure Network Routes",
+      description: "Define which subnets should be accessible across the WAN. Specify CIDR blocks for each site."
+    },
+    {
+      step: "3",
+      title: "Connect Remote Sites",
+      description: "Deploy Tunnels clients or servers at remote locations. They will establish secure tunnels automatically."
+    },
+    {
+      step: "4",
+      title: "Access Resources",
+      description: "Devices on connected networks can now communicate directly. DNS resolution works across all sites."
+    }
+  ],
+
+  cta: {
+    title: "Ready to Connect Your Networks?",
+    description: "Download Tunnels and start bridging your LANs over the internet securely.",
+    buttons: [
+      { text: "Download Free", href: "/download", primary: true },
+      { text: "Read Documentation", href: "https://docs.tunnels.is/docs" }
+    ]
+  }
+};
+
+// ============================================================================
+// PUBLIC VPN PAGE CONTENT
+// ============================================================================
+
+export const publicVPNContent = {
+  hero: {
+    badge: "Your Own VPN Service",
+    title: "Public VPN",
+    subtitle: "Route Your Traffic Through Your Own Server",
+    description: "Create your own public VPN service. Route internet traffic through servers you control with full privacy and no third-party access to your data.",
+    buttons: [
+      { text: "Get Started", href: "/download", primary: true },
+      { text: "Setup Guide", href: "https://docs.tunnels.is/docs", teal: true }
+    ],
+    quickStats: [
+      { value: "100%", label: "Self-Hosted" },
+      { value: "Zero", label: "Third Parties" },
+      { value: "Full", label: "Control" }
+    ]
+  },
+
+  benefitsSection: {
+    title: "Why Self-Hosted Public VPN?",
+    subtitle: "Complete control over your internet privacy"
+  },
+
+  benefits: [
+    {
+      title: "Public IP Routing",
+      description: "Get a routable public IP through your VPN server. Access your services from anywhere without complex NAT configurations.",
+      icon: <GlobeIcon />,
+      color: "primary"
+    },
+    {
+      title: "Privacy Protection",
+      description: "Route your internet traffic through your own server. No third-party VPN provider seeing your data.",
+      icon: <LockShieldIcon />,
+      color: "secondary"
+    },
+    {
+      title: "Full Tunnel Mode",
+      description: "Route all traffic through the VPN or choose split tunneling. Complete control over what goes through the tunnel.",
+      icon: <NetworkGlobeIcon />,
+      color: "tertiary"
+    },
+    {
+      title: "High Performance",
+      description: "Direct connection to your server means minimal latency. No overloaded shared servers.",
+      icon: <BoltIcon />,
+      color: "primary"
+    },
+    {
+      title: "Your Infrastructure",
+      description: "Deploy on any cloud provider or your own hardware. Choose locations that work best for you.",
+      icon: <ServerIcon />,
+      color: "secondary"
+    },
+    {
+      title: "No Logs",
+      description: "Since you control the server, you control the logging. True privacy that you can verify.",
+      icon: <ShieldCheckIcon />,
+      color: "tertiary"
+    }
+  ],
+
+  useCasesSection: {
+    title: "Common Use Cases",
+    subtitle: "How people use public VPN routing"
+  },
+
+  useCases: [
+    {
+      title: "Bypass Geo-Restrictions",
+      description: "Access content from different regions by routing through servers in those locations.",
+      scenario: "Stream content from home while traveling abroad"
+    },
+    {
+      title: "Secure Public WiFi",
+      description: "Protect your traffic when connected to untrusted networks at cafes, airports, or hotels.",
+      scenario: "Work securely from any coffee shop"
+    },
+    {
+      title: "Host Public Services",
+      description: "Get a stable public IP for hosting services without exposing your home IP.",
+      scenario: "Run a game server or website from home"
+    },
+    {
+      title: "Development Testing",
+      description: "Test geo-specific features or access region-locked APIs during development.",
+      scenario: "Test payment integrations in different regions"
+    }
+  ],
+
+  providersSection: {
+    title: "Affordable Cloud Options",
+    subtitle: "Deploy your VPN server starting at just a few dollars per month"
+  },
+
+  providers: [
+    { name: "DigitalOcean", price: "$4/mo", region: "Global" },
+    { name: "Linode", price: "$5/mo", region: "Global" },
+    { name: "Vultr", price: "$5/mo", region: "Global" },
+    { name: "Hetzner", price: "€3/mo", region: "EU/US" }
+  ],
+
+  providersFooter: "Any VPS provider works. These are just popular options with global presence.",
+
+  setupSection: {
+    title: "Quick Setup",
+    subtitle: "Get your public VPN running in minutes"
+  },
+
+  setupSteps: [
+    {
+      step: "1",
+      title: "Deploy a Cloud Server",
+      description: "Spin up a VPS on any cloud provider in your preferred location. Even the smallest instance works."
+    },
+    {
+      step: "2",
+      title: "Install Tunnels Server",
+      description: "Download and run the Tunnels server binary. Single command deployment."
+    },
+    {
+      step: "3",
+      title: "Configure Public Routing",
+      description: "Enable NAT and configure your server to route traffic to the internet."
+    },
+    {
+      step: "4",
+      title: "Connect & Browse",
+      description: "Connect your devices and enjoy a secure, private connection to the internet."
+    }
+  ],
+
+  cta: {
+    title: "Ready for True Privacy?",
+    description: "Download Tunnels and create your own public VPN service today.",
+    buttons: [
+      { text: "Download Free", href: "/download", primary: true },
+      { text: "Read Documentation", href: "https://docs.tunnels.is/docs" }
+    ]
+  }
+};
+
+// ============================================================================
+// SECURITY PAGE CONTENT
+// ============================================================================
+
+export const securityContent = {
+  hero: {
+    badge: "Security First",
+    title: "Built for Security",
+    subtitle: "Modern Encryption, Zero Trust",
+    description: "Tunnels is designed from the ground up with security as the primary concern. Open source, auditable, and using only proven cryptographic primitives.",
+    buttons: [
+      { text: "View Source", href: "https://github.com/tunnels-is", primary: true },
+      { text: "Security Docs", href: "https://docs.tunnels.is/docs", teal: true }
+    ]
+  },
+
+  featuresSection: {
+    title: "Security Features",
+    subtitle: "Defense in depth at every layer"
+  },
+
+  securityFeatures: [
+    {
+      title: "End-to-End Encryption",
+      description: "All traffic is encrypted from device to destination. Even we cannot see your data in transit.",
+      icon: <LockShieldIcon />,
+      color: "primary"
+    },
+    {
+      title: "Modern Cryptography",
+      description: "Uses ChaCha20-Poly1305 and AES-256-GCM encryption with Curve25519 key exchange.",
+      icon: <KeyIcon />,
+      color: "secondary"
+    },
+    {
+      title: "Zero Trust Architecture",
+      description: "Every connection is authenticated. No implicit trust between any components.",
+      icon: <ShieldCheckIcon />,
+      color: "tertiary"
+    },
+    {
+      title: "Open Source",
+      description: "All code is publicly auditable. Security through transparency, not obscurity.",
+      icon: <CodeIcon />,
+      color: "primary"
+    },
+    {
+      title: "Self-Hosted",
+      description: "Run your own servers. Your data never touches infrastructure you don't control.",
+      icon: <ServerIcon />,
+      color: "secondary"
+    },
+    {
+      title: "No Logging",
+      description: "Tunnels doesn't log connection data. Since you control the server, you control what's logged.",
+      icon: <EyeShieldIcon />,
+      color: "tertiary"
+    }
+  ],
+
+  cryptographySection: {
+    title: "Cryptographic Primitives",
+    subtitle: "Industry-standard, battle-tested cryptography"
+  },
+
+  encryptionTypes: [
+    { name: "ChaCha20-Poly1305", description: "High-speed stream cipher with authentication" },
+    { name: "AES-256-GCM", description: "Industry standard block cipher with authentication" },
+    { name: "Curve25519", description: "Elliptic curve Diffie-Hellman key exchange" },
+    { name: "BLAKE2b", description: "Fast cryptographic hash function" }
+  ],
+
+  practicesSection: {
+    title: "Security Practices",
+    subtitle: "How we keep your data safe"
+  },
+
+  practices: [
+    {
+      title: "Perfect Forward Secrecy",
+      description: "Session keys are ephemeral. Compromising one session doesn't compromise past or future sessions."
+    },
+    {
+      title: "Authenticated Encryption",
+      description: "All encrypted data includes authentication tags to prevent tampering and replay attacks."
+    },
+    {
+      title: "Secure Key Exchange",
+      description: "Keys are exchanged using modern elliptic curve cryptography resistant to known attacks."
+    },
+    {
+      title: "Memory Safety",
+      description: "Built with Go, a memory-safe language that prevents buffer overflow vulnerabilities."
+    }
+  ],
+
+  openSourceSection: {
+    title: "Open Source Security",
+    description: "We believe security should be verifiable. Our entire codebase is open source, allowing security researchers and the community to audit our implementation.",
+    subDescription: "No hidden code, no secret backdoors, no trust required. Verify everything yourself.",
+    buttonText: "View on GitHub",
+    buttonUrl: "https://github.com/tunnels-is"
+  },
+
+  cta: {
+    title: "Security Without Compromise",
+    description: "Experience enterprise-grade security that you can verify yourself.",
+    buttons: [
+      { text: "Download Free", href: "/download", primary: true },
+      { text: "Read Security Docs", href: "https://docs.tunnels.is/docs" }
+    ]
+  }
+};
+
 // Export all content as default for convenient importing
 export default {
   home: homeContent,
@@ -1856,5 +2257,8 @@ export default {
   download: downloadContent,
   pricing: pricingContent,
   technical: technicalContent,
-  iotNetworks: iotNetworksContent
+  iotNetworks: iotNetworksContent,
+  lanOverWan: lanOverWanContent,
+  publicVPN: publicVPNContent,
+  security: securityContent
 };

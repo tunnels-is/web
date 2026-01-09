@@ -36,9 +36,9 @@ const FeatureTimeline = ({
           return (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.12 }}
+              transition={{ duration: 0.3, delay: index * 0.06, ease: [0.4, 0, 0.2, 1] }}
               className="relative"
             >
               {/* Mobile Layout */}
@@ -146,9 +146,9 @@ const StepContent = ({ step, index, position = "right" }) => {
               {step.providers.map((provider, idx) => (
                 <motion.span
                   key={idx}
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.12 + idx * 0.05 }}
+                  transition={{ duration: 0.2, delay: index * 0.06 + idx * 0.03, ease: [0.4, 0, 0.2, 1] }}
                   className="px-3 py-1 bg-dark-accent-primary/10 text-dark-accent-primary text-xs font-medium rounded-full border border-dark-accent-primary/30"
                 >
                   {provider}

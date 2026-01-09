@@ -39,9 +39,9 @@ const PricingHighlight = ({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
           className="text-center text-white"
         >
           {icon && (
@@ -63,9 +63,9 @@ const PricingHighlight = ({
               {highlights.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  transition={{ duration: 0.3, delay: index * 0.06, ease: [0.4, 0, 0.2, 1] }}
                   className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20"
                 >
                   <h3 className="text-2xl font-bold mb-2 leading-tight">{item.title}</h3>

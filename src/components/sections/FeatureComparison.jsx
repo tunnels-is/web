@@ -24,11 +24,10 @@ const FeatureComparison = ({
       {comparisonItems.map((item, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+          initial={{ opacity: 0, x: index % 2 === 0 ? -24 : 24 }}
           animate={isVisible ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
-          whileHover={{ scale: 1.02, x: 10 }}
-          className={`bg-dark-surface rounded-2xl overflow-hidden ${
+          transition={{ duration: 0.3, delay: index * 0.04, ease: [0.4, 0, 0.2, 1] }}
+          className={`group bg-dark-surface rounded-2xl overflow-hidden hover:bg-dark-elevated border border-transparent hover:border-dark-accent-primary/30 transition-all duration-150 ${
             item.winner === 'personal'
               ? 'ring-2 ring-dark-accent-primary/50'
               : item.winner === 'commercial'
@@ -39,7 +38,7 @@ const FeatureComparison = ({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 items-center">
             {/* Feature Name */}
             <div className="md:col-span-1">
-              <h3 className="text-2xl font-bold text-dark-text-primary flex items-center gap-3">
+              <h3 className="text-2xl font-bold text-dark-text-primary flex items-center gap-3 group-hover:text-dark-accent-primary transition-colors duration-150">
                 {item.winner === 'personal' && (
                   <span className="text-3xl">🏆</span>
                 )}

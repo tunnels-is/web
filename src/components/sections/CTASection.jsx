@@ -34,9 +34,9 @@ const CTASection = ({
       <section ref={ref} className={`py-24 ${className}`}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
             className="p-12 rounded-2xl"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -49,19 +49,17 @@ const CTASection = ({
             )}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {buttons.map((button, index) => (
-                <motion.a
+                <a
                   key={index}
                   href={button.href}
-                  whileHover={{ y: -2, transition: { duration: 0.2 } }}
-                  whileTap={{ scale: 0.98 }}
                   className={
                     button.primary
-                      ? "inline-block px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white font-semibold rounded-lg transition-colors"
-                      : "inline-block px-8 py-4 bg-dark-surface hover:bg-dark-elevated text-dark-text-primary font-semibold rounded-lg transition-colors"
+                      ? "inline-block px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-secondary text-white font-semibold rounded-lg transition-all duration-150 shadow-lg shadow-dark-accent-primary/20 hover:shadow-dark-accent-primary/40 active:opacity-90"
+                      : "inline-block px-8 py-4 bg-dark-surface hover:bg-dark-elevated hover:border-dark-accent-primary/50 text-dark-text-primary font-semibold rounded-lg transition-all duration-150 border border-transparent active:opacity-90"
                   }
                 >
                   {button.text}
-                </motion.a>
+                </a>
               ))}
             </div>
           </motion.div>
@@ -79,9 +77,9 @@ const CTASection = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {title && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
               className="text-center mb-16"
             >
               <h2 className="text-5xl md:text-6xl font-bold mb-6">
@@ -99,17 +97,16 @@ const CTASection = ({
             {cards.map((card, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="p-10 rounded-3xl hover:bg-dark-elevated transition-colors duration-200"
+                transition={{ duration: 0.3, delay: index * 0.05, ease: [0.4, 0, 0.2, 1] }}
+                className="group p-10 rounded-3xl hover:bg-dark-elevated border border-transparent hover:border-dark-accent-primary/30 transition-all duration-150"
               >
                 {card.icon && (
                   <div className="w-20 h-20 mb-6">{card.icon}</div>
                 )}
-                <h3 className={`text-3xl font-bold mb-4 leading-tight ${
-                  card.highlighted ? 'text-dark-accent-primary' : 'text-dark-accent-secondary'
+                <h3 className={`text-3xl font-bold mb-4 leading-tight transition-colors duration-150 ${
+                  card.highlighted ? 'text-dark-accent-primary group-hover:text-dark-accent-secondary' : 'text-dark-accent-secondary group-hover:text-dark-accent-primary'
                 }`}>
                   {card.title}
                 </h3>
@@ -129,18 +126,16 @@ const CTASection = ({
                   </ul>
                 )}
                 {card.button && (
-                  <motion.a
+                  <a
                     href={card.button.href}
-                    whileHover={{ y: -2, transition: { duration: 0.2 } }}
-                    whileTap={{ scale: 0.98 }}
                     className={
                       card.button.primary
-                        ? "block w-full py-5 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white text-center text-xl font-bold rounded-xl transition-colors"
-                        : "block w-full py-5 bg-dark-surface hover:bg-dark-elevated text-dark-text-primary text-center text-xl font-bold rounded-xl transition-colors"
+                        ? "block w-full py-5 bg-dark-accent-primary hover:bg-dark-accent-secondary text-white text-center text-xl font-bold rounded-xl transition-all duration-150 shadow-lg shadow-dark-accent-primary/20 hover:shadow-dark-accent-primary/40 active:opacity-90"
+                        : "block w-full py-5 bg-dark-surface hover:bg-dark-elevated hover:border-dark-accent-primary/50 text-dark-text-primary text-center text-xl font-bold rounded-xl transition-all duration-150 border border-transparent active:opacity-90"
                     }
                   >
                     {card.button.text}
-                  </motion.a>
+                  </a>
                 )}
               </motion.div>
             ))}

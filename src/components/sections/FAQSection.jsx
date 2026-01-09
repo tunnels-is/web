@@ -26,13 +26,12 @@ const FAQSection = ({
         return (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ scale: 1.02 }}
-            className="bg-dark-surface p-8 rounded-2xl hover:bg-dark-elevated transition-all duration-300"
+            transition={{ duration: 0.25, delay: index * 0.04, ease: [0.4, 0, 0.2, 1] }}
+            className="group bg-dark-surface p-8 rounded-2xl hover:bg-dark-elevated border border-transparent hover:border-dark-accent-primary/30 transition-all duration-150"
           >
-            <h3 className="text-xl font-bold text-dark-accent-primary mb-2 leading-tight flex items-start gap-3">
+            <h3 className="text-xl font-bold text-dark-accent-primary mb-2 leading-tight flex items-start gap-3 group-hover:text-dark-accent-secondary transition-colors duration-150">
               <span className="text-2xl flex-shrink-0">{icon}</span>
               <span>{question}</span>
             </h3>

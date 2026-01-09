@@ -32,7 +32,7 @@ const TopBar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-150 ${
         scrolled ? 'glass-effect shadow-lg' : 'bg-transparent'
       }`}
     >
@@ -51,7 +51,7 @@ const TopBar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-100 ${
                   location.pathname === link.path
                     ? 'bg-dark-accent-primary text-white'
                     : 'text-dark-text-secondary hover:text-dark-text-primary hover:bg-dark-elevated'
@@ -93,16 +93,16 @@ const TopBar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.15 }}
             className="md:hidden glass-effect border-t border-dark-border"
           >
             <div className="px-4 py-4 space-y-2">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.path}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ duration: 0.15, delay: index * 0.03 }}
                 >
                   <Link
                     to={link.path}

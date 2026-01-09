@@ -23,9 +23,9 @@ const FeatureShowcaseSplit = ({
   return (
     <div ref={ref} className="relative overflow-hidden">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
         className="relative bg-dark-surface rounded-3xl overflow-hidden min-h-[600px]"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
@@ -34,9 +34,9 @@ const FeatureShowcaseSplit = ({
               {/* Content Section */}
               <div className="relative z-10 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
                 <motion.div
-                  initial={{ opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, x: -16 }}
                   animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.7, delay: 0.2 }}
+                  transition={{ duration: 0.3, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
                 >
                   <h2 className="text-4xl md:text-5xl font-bold mb-6">
                     {title}
@@ -55,10 +55,10 @@ const FeatureShowcaseSplit = ({
                       {features.map((feature, index) => (
                         <motion.div
                           key={index}
-                          initial={{ opacity: 0, x: -20 }}
+                          initial={{ opacity: 0, x: -12 }}
                           animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                          transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                          className="flex items-center space-x-3 p-3 rounded-lg hover:bg-dark-bg/20 transition-colors"
+                          transition={{ duration: 0.25, delay: 0.15 + index * 0.04, ease: [0.4, 0, 0.2, 1] }}
+                          className="flex items-center space-x-3 p-3 rounded-lg hover:bg-dark-bg/20 transition-colors duration-150"
                         >
                           <div className="flex-shrink-0 w-2 h-2 rounded-full bg-dark-accent-primary"></div>
                           <span className="text-white font-medium">{feature.title}</span>
@@ -73,9 +73,9 @@ const FeatureShowcaseSplit = ({
               <div className="relative h-[400px] lg:h-auto">
 
                 <motion.div
-                  initial={{ opacity: 0, scale: 1.1 }}
+                  initial={{ opacity: 0, scale: 1.03 }}
                   animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.8, delay: 0.3 }}
+                  transition={{ duration: 0.35, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
                   className="absolute inset-0"
                   style={{
                     clipPath: 'polygon(0 0, 100% 0, 100% 100%, 8% 100%)'
@@ -95,9 +95,9 @@ const FeatureShowcaseSplit = ({
               <div className="relative h-[400px] lg:h-auto">
 
                 <motion.div
-                  initial={{ opacity: 0, scale: 1.1 }}
+                  initial={{ opacity: 0, scale: 1.03 }}
                   animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.8, delay: 0.3 }}
+                  transition={{ duration: 0.35, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
                   className="absolute inset-0"
                   style={{
                     clipPath: 'polygon(0 0, 92% 0, 100% 100%, 0 100%)'
@@ -114,9 +114,9 @@ const FeatureShowcaseSplit = ({
               {/* Content Section */}
               <div className="relative z-10 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
                 <motion.div
-                  initial={{ opacity: 0, x: 30 }}
+                  initial={{ opacity: 0, x: 16 }}
                   animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.7, delay: 0.2 }}
+                  transition={{ duration: 0.3, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
                 >
                   <h2 className="text-4xl md:text-5xl font-bold mb-6">
                     {title}
@@ -135,10 +135,10 @@ const FeatureShowcaseSplit = ({
                       {features.map((feature, index) => (
                         <motion.div
                           key={index}
-                          initial={{ opacity: 0, x: 20 }}
+                          initial={{ opacity: 0, x: 12 }}
                           animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                          transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                          className="flex items-center space-x-3 p-3 rounded-lg hover:bg-dark-bg/20 transition-colors"
+                          transition={{ duration: 0.25, delay: 0.15 + index * 0.04, ease: [0.4, 0, 0.2, 1] }}
+                          className="flex items-center space-x-3 p-3 rounded-lg hover:bg-dark-bg/20 transition-colors duration-150"
                         >
                           <div className="flex-shrink-0 w-2 h-2 rounded-full bg-dark-accent-primary"></div>
                           <span className="text-white font-medium">{feature.title}</span>

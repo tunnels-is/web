@@ -25,7 +25,7 @@ const FeatureShowcaseOverlayCorner = ({
       <motion.div
         initial={{ opacity: 0 }}
         animate={isVisible ? { opacity: 1 } : {}}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
         className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center min-h-[600px]"
       >
         {imagePosition === 'right' ? (
@@ -33,9 +33,9 @@ const FeatureShowcaseOverlayCorner = ({
             {/* Left Side - Partial Content */}
             <div className="lg:col-span-6 p-8 md:p-12 lg:pr-0 relative z-20">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -16 }}
                 animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.7, delay: 0.3 }}
+                transition={{ duration: 0.3, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
               >
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                   {title}
@@ -50,9 +50,9 @@ const FeatureShowcaseOverlayCorner = ({
 
               {/* Floating Content Card - Overlaps with image */}
               <motion.div
-                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                initial={{ opacity: 0, y: 16, scale: 0.97 }}
                 animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                transition={{ duration: 0.35, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
                 className="bg-dark-surface p-8 rounded-2xl lg:mr-[-25%] relative"
               >
                 {descriptions.length > 1 && (
@@ -89,9 +89,9 @@ const FeatureShowcaseOverlayCorner = ({
             {/* Right Side - Image */}
             <div className="lg:col-span-6 relative h-[500px] lg:h-[700px]">
               <motion.div
-                initial={{ opacity: 0, x: 50, scale: 1.05 }}
+                initial={{ opacity: 0, x: 24, scale: 1.02 }}
                 animate={isVisible ? { opacity: 1, x: 0, scale: 1 } : {}}
-                transition={{ duration: 0.9, delay: 0.2 }}
+                transition={{ duration: 0.4, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
                 className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl"
               >
                 <img
@@ -107,9 +107,9 @@ const FeatureShowcaseOverlayCorner = ({
             {/* Left Side - Image */}
             <div className="lg:col-span-6 relative h-[500px] lg:h-[700px] order-2 lg:order-1">
               <motion.div
-                initial={{ opacity: 0, x: -50, scale: 1.05 }}
+                initial={{ opacity: 0, x: -24, scale: 1.02 }}
                 animate={isVisible ? { opacity: 1, x: 0, scale: 1 } : {}}
-                transition={{ duration: 0.9, delay: 0.2 }}
+                transition={{ duration: 0.4, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
                 className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl"
               >
                 <img
@@ -123,9 +123,9 @@ const FeatureShowcaseOverlayCorner = ({
             {/* Right Side - Partial Content */}
             <div className="lg:col-span-6 p-8 md:p-12 lg:pl-0 relative z-20 order-1 lg:order-2">
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 16 }}
                 animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.7, delay: 0.3 }}
+                transition={{ duration: 0.3, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
               >
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                   {title}
@@ -140,9 +140,9 @@ const FeatureShowcaseOverlayCorner = ({
 
               {/* Floating Content Card - Overlaps with image */}
               <motion.div
-                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                initial={{ opacity: 0, y: 16, scale: 0.97 }}
                 animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                transition={{ duration: 0.35, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
                 className="bg-dark-surface p-8 rounded-2xl lg:ml-[-25%] relative"
               >
                 {descriptions.length > 1 && (

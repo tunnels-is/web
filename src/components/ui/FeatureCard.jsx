@@ -42,7 +42,7 @@ const FeatureCard = ({
         <div className="w-16 h-16 mb-4">{icon}</div>
       )}
 
-      <h3 className="text-xl font-semibold mb-2 leading-tight relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 group-hover:after:w-full text-dark-accent-primary">
+      <h3 className="text-xl font-semibold mb-2 leading-tight relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-150 group-hover:after:w-full text-dark-accent-primary">
         {title}
       </h3>
 

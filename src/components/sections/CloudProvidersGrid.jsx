@@ -30,14 +30,13 @@ const CloudProvidersGrid = ({
       {providers.map((provider, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
-          whileHover={{ y: -10, scale: 1.03 }}
-          className={`relative bg-dark-elevated p-8 rounded-2xl border-2 transition-all duration-300 ${
+          transition={{ duration: 0.3, delay: index * 0.05, ease: [0.4, 0, 0.2, 1] }}
+          className={`group relative bg-dark-elevated p-8 rounded-2xl border-2 transition-all duration-150 ${
             provider.recommended
-              ? 'border-dark-accent-primary hover:shadow-2xl hover:shadow-dark-accent-primary/20'
-              : 'border-dark-border hover:border-dark-accent-secondary'
+              ? 'border-dark-accent-primary hover:border-dark-accent-secondary hover:shadow-lg hover:shadow-dark-accent-primary/20'
+              : 'border-dark-border hover:border-dark-accent-primary/50 hover:bg-dark-surface'
           }`}
         >
           {provider.recommended && (
@@ -49,10 +48,10 @@ const CloudProvidersGrid = ({
           )}
 
           <div className="mb-6">
-            <h3 className="text-3xl font-bold text-dark-text-primary mb-2">
+            <h3 className="text-3xl font-bold text-dark-text-primary mb-2 group-hover:text-dark-accent-primary transition-colors duration-150">
               {provider.name}
             </h3>
-            <div className="text-4xl font-bold mb-4">
+            <div className="text-4xl font-bold mb-4 group-hover:text-dark-accent-secondary transition-colors duration-150">
               {provider.price}
             </div>
           </div>

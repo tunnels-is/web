@@ -50,9 +50,9 @@ const ContentSection = ({
   return (
     <section ref={ref} className={`${backgroundClasses} ${paddingClasses} ${className}`}>
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
       >
         {content}
       </motion.div>

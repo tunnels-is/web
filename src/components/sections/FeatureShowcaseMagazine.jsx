@@ -23,17 +23,17 @@ const FeatureShowcaseMagazine = ({
   return (
     <div ref={ref}>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
         className="relative"
       >
         {/* Large Editorial Title */}
         <div className="mb-12">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            transition={{ duration: 0.3, delay: 0.05, ease: [0.4, 0, 0.2, 1] }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4"
           >
             {title}
@@ -43,7 +43,7 @@ const FeatureShowcaseMagazine = ({
           <motion.div
             initial={{ width: 0 }}
             animate={isVisible ? { width: '120px' } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.35, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
             className="h-1 bg-dark-accent-primary rounded-full"
           ></motion.div>
         </div>
@@ -52,9 +52,9 @@ const FeatureShowcaseMagazine = ({
         <div className="relative">
           {/* Image - Floats within content */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.97 }}
             animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.35, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
             className={`relative ${
               imagePosition === 'right'
                 ? 'float-right ml-8 mb-8'
@@ -71,7 +71,7 @@ const FeatureShowcaseMagazine = ({
                 />
 
                 {/* Subtle overlay on hover */}
-                <div className="absolute inset-0 group-hover:bg-dark-accent-primary/10 transition-all duration-300"></div>
+                <div className="absolute inset-0 group-hover:bg-dark-accent-primary/10 transition-all duration-150"></div>
               </div>
 
               {/* Decorative frame corner */}
@@ -84,9 +84,9 @@ const FeatureShowcaseMagazine = ({
             {descriptions.map((description, index) => (
               <motion.p
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 8 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                transition={{ duration: 0.25, delay: 0.2 + index * 0.04, ease: [0.4, 0, 0.2, 1] }}
                 className="text-xl md:text-2xl text-dark-text-secondary leading-relaxed mb-6 font-light"
               >
                 {description}
@@ -99,9 +99,9 @@ const FeatureShowcaseMagazine = ({
             {/* Features Section */}
             {features.length > 0 && (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.7, delay: 0.7 }}
+                transition={{ duration: 0.3, delay: 0.25, ease: [0.4, 0, 0.2, 1] }}
                 className="mt-12 pt-8 border-t border-dark-border"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

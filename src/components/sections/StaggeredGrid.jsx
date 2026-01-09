@@ -37,11 +37,10 @@ const StaggeredGrid = ({
       {items.map((item, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
-          whileHover={{ scale: 1.05, rotateZ: index % 2 === 0 ? 1 : -1 }}
-          className={`bg-dark-surface p-8 rounded-2xl hover:bg-dark-elevated transition-all duration-300 ${
+          transition={{ duration: 0.3, delay: index * 0.05, ease: [0.4, 0, 0.2, 1] }}
+          className={`group bg-dark-surface p-8 rounded-2xl hover:bg-dark-elevated border border-transparent hover:border-dark-accent-primary/30 transition-all duration-150 ${
             getStaggerClass(index)
           }`}
         >
@@ -49,7 +48,7 @@ const StaggeredGrid = ({
             <div className="w-20 h-20 mb-4">{item.icon}</div>
           )}
 
-          <h3 className="text-2xl font-bold text-dark-accent-primary mb-2 leading-tight">
+          <h3 className="text-2xl font-bold text-dark-accent-primary mb-2 leading-tight group-hover:text-dark-accent-secondary transition-colors duration-150">
             {item.title}
           </h3>
 

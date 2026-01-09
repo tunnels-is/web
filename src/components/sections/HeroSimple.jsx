@@ -135,9 +135,9 @@ const HeroSimple = ({
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
         >
           {badge && (
             <div className="inline-block mb-6">
@@ -160,9 +160,9 @@ const HeroSimple = ({
 
         {description && (
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            transition={{ duration: 0.3, delay: 0.05, ease: [0.4, 0, 0.2, 1] }}
             className="text-xl md:text-2xl text-dark-text-secondary mb-12 max-w-3xl mx-auto"
           >
             {description}
@@ -172,27 +172,25 @@ const HeroSimple = ({
         {/* Buttons */}
         {buttons.length > 0 && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.3, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             {buttons.map((button, index) => (
-              <motion.a
+              <a
                 key={index}
                 href={button.href}
-                whileHover={{ y: -2, transition: { duration: 0.2 } }}
-                whileTap={{ scale: 0.98 }}
                 className={
                   button.primary
-                    ? "px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white font-semibold rounded-lg transition-colors shadow-lg shadow-dark-accent-primary/20"
+                    ? "px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-secondary text-white font-semibold rounded-lg transition-all duration-150 shadow-lg shadow-dark-accent-primary/20 hover:shadow-dark-accent-primary/40 active:opacity-90"
                     : button.teal
-                    ? "px-8 py-4 bg-dark-accent-tertiary hover:bg-dark-accent-tertiary/90 text-white font-semibold rounded-lg transition-colors shadow-lg shadow-dark-accent-tertiary/20"
-                    : "px-8 py-4 glass-effect hover:bg-dark-elevated text-dark-text-primary font-semibold rounded-lg transition-colors"
+                    ? "px-8 py-4 bg-dark-accent-tertiary hover:bg-dark-accent-tertiary/80 text-white font-semibold rounded-lg transition-all duration-150 shadow-lg shadow-dark-accent-tertiary/20 hover:shadow-dark-accent-tertiary/40 active:opacity-90"
+                    : "px-8 py-4 glass-effect hover:bg-dark-elevated hover:border-dark-accent-primary/50 text-dark-text-primary font-semibold rounded-lg transition-all duration-150 border border-transparent active:opacity-90"
                 }
               >
                 {button.text}
-              </motion.a>
+              </a>
             ))}
           </motion.div>
         )}
@@ -200,20 +198,19 @@ const HeroSimple = ({
         {/* Quick Stats */}
         {quickStats.length > 0 && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.3, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
             className="mt-16 flex flex-wrap justify-center gap-12"
           >
             {quickStats.map((stat, index) => (
-              <motion.div
+              <div
                 key={index}
-                whileHover={{ scale: 1.05 }}
-                className="text-center"
+                className="text-center group cursor-default"
               >
-                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
-                <div className="text-dark-text-muted text-sm uppercase tracking-wider">{stat.label}</div>
-              </motion.div>
+                <div className="text-4xl md:text-5xl font-bold mb-2 transition-colors duration-150 group-hover:text-dark-accent-primary">{stat.value}</div>
+                <div className="text-dark-text-muted text-sm uppercase tracking-wider transition-colors duration-150 group-hover:text-dark-text-secondary">{stat.label}</div>
+              </div>
             ))}
           </motion.div>
         )}
@@ -224,17 +221,17 @@ const HeroSimple = ({
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
+          transition={{ delay: 0.5, duration: 0.4 }}
           className="absolute bottom-20 left-1/2 transform -translate-x-1/2"
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             className="w-6 h-10 border-2 border-dark-text-muted rounded-full flex items-start justify-center p-2"
           >
             <motion.div
               animate={{ opacity: [0, 1, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
+              transition={{ duration: 1.5, repeat: Infinity }}
               className="w-1.5 h-1.5 bg-dark-text-muted rounded-full"
             />
           </motion.div>
