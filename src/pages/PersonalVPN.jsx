@@ -1,4 +1,4 @@
-import HeroWithWaves from '../components/sections/HeroWithWaves';
+import HeroSimple from '../components/sections/HeroSimple';
 import FeatureGrid from '../components/sections/FeatureGrid';
 import StaggeredGrid from '../components/sections/StaggeredGrid';
 import TechnicalFeaturesSection from '../components/sections/TechnicalFeaturesSection';
@@ -23,15 +23,17 @@ const PersonalVPN = () => {
 
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <HeroWithWaves
+      <HeroSimple
         badge={hero.badge}
         title={hero.title}
-        subtitle={<>{hero.subtitle}<br /><span className="text-dark-accent-tertiary">{hero.subtitleHighlight}</span></>}
+        subtitle={hero.subtitle}
         description={hero.description}
         buttons={hero.buttons}
         quickStats={hero.quickStats}
+        showGeometricShapes={true}
+        showRadialGlow={false}
       />
 
       {/* Benefits Section */}

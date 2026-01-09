@@ -69,13 +69,13 @@ export const homeContent = {
       icon: <ShieldCheckIcon />,
     },
     {
-      title: 'No Installation',
-      description: 'Portable executable with no system changes required',
+      title: 'Portable',
+      description: 'Download and run - minimal setup required',
       icon: <LayersIcon />,
     },
     {
       title: 'Enterprise Ready',
-      description: 'Scales from individuals to millions of users',
+      description: 'Scales from individuals to enterprise deployments',
       icon: <BuildingIcon />,
     },
   ],
@@ -99,7 +99,7 @@ export const homelabContent = {
     badge: "Perfect for Self-Hosters",
     title: "Homelab VPN",
     subtitle: "Self-Hosted VPN for Your Home Network",
-    description: "Deploy a single server and securely access your homelab from anywhere. Built-in DNS management, ad blocking, and zero-configuration setup.",
+    description: "Deploy a single server and securely access your homelab from anywhere. Built-in DNS management, ad blocking, and straightforward setup.",
     buttons: [
       { text: "Download Free", href: "/download", primary: true },
       { text: "View Documentation", href: "/", primary: false }
@@ -139,7 +139,7 @@ export const homelabContent = {
     },
     {
       title: "Multi-Device Support",
-      description: "Connect phones, laptops, tablets - all your devices with a single server.",
+      description: "Connect laptops and desktops - all your devices with a single server.",
       icon: <DevicesIcon />
     },
     {
@@ -166,7 +166,7 @@ export const homelabContent = {
       step: "2",
       title: "Configure Server Settings",
       description: "Set up basic configuration for authentication and VPN access.",
-      command: "Edit /etc/tunnels/config.yaml",
+      command: "Edit /etc/tunnels/config.json",
       details: "Configure APIIP, APIPort, and network settings"
     },
     {
@@ -174,14 +174,14 @@ export const homelabContent = {
       title: "Install the Client",
       description: "Download and install the Tunnels client on your devices.",
       command: "Download from tunnels.is/download",
-      details: "Available for Windows, macOS, Linux, iOS, and Android"
+      details: "Available for Windows, macOS, and Linux"
     },
     {
       step: "4",
       title: "Connect & Configure",
       description: "Add your server to the client and connect to your homelab network.",
       command: "Click + to add server, enter your APIIP and APIPort",
-      details: "Default credentials: admin/admin (change immediately!)"
+      details: "Create a user account and device token for authentication"
     }
   ],
 
@@ -193,7 +193,7 @@ export const homelabContent = {
   useCases: [
     {
       title: "Media Server Access",
-      description: "Stream your Plex, Jellyfin, or Emby content from anywhere without exposing ports to the internet.",
+      description: "Stream your Plex, Jellyfin, or Emby content from anywhere through your secure VPN tunnel.",
       icon: <VideoIcon />
     },
     {
@@ -228,7 +228,7 @@ export const homelabContent = {
     subtitle: "Built-in DNS server with custom records, blocking, and advanced routing",
     infoBox: {
       title: "Network-Wide Protection",
-      description: "All devices connected through your Tunnels homelab server automatically benefit from DNS blocking and custom DNS records - no per-device configuration needed. Your phone, laptop, and tablet all get ad-blocking anywhere in the world."
+      description: "All devices connected through your Tunnels homelab server automatically benefit from DNS blocking and custom DNS records - no per-device configuration needed. Your laptop and desktop get ad-blocking anywhere in the world."
     }
   },
 
@@ -262,23 +262,23 @@ export const homelabContent = {
 
   technicalHighlights: [
     {
-      title: "Zero Configuration NAT Traversal",
-      description: "No need to configure port forwarding on your router",
+      title: "Simple Port Forwarding",
+      description: "Forward API and VPN ports to your server for remote access",
       icon: <SyncIcon />
     },
     {
-      title: "WireGuard Protocol",
-      description: "Modern, fast, and secure VPN protocol under the hood",
+      title: "Custom UDP Protocol",
+      description: "Lightweight, fast VPN protocol with ChaCha20-Poly1305 encryption",
       icon: <BoltIcon />
     },
     {
-      title: "IPv4 & IPv6 Support",
-      description: "Full dual-stack support for modern networks",
+      title: "IPv4 Networking",
+      description: "Full IPv4 support for reliable connectivity",
       icon: <NetworkGlobeIcon />
     },
     {
-      title: "Automatic Certificate Management",
-      description: "Let's Encrypt integration for secure HTTPS connections",
+      title: "TLS Certificate Support",
+      description: "Configure your own certificates for secure HTTPS connections",
       icon: <KeyIcon />
     }
   ],
@@ -309,7 +309,7 @@ export const homelabContent = {
 
   ctaSection: {
     title: "Get Started Today",
-    description: "Join thousands of homelabbers using Tunnels for secure remote access",
+    description: "Get started with Tunnels for secure remote access to your homelab",
     layout: "split"
   },
 
@@ -320,7 +320,7 @@ export const homelabContent = {
       description: "Get the Tunnels server and client applications. Free for 24 hours trial, then affordable pricing for continued use.",
       features: [
         "Server for Linux (all distributions)",
-        "Clients for Windows, macOS, Linux, iOS, Android",
+        "Clients for Windows, macOS, and Linux",
         "Installation guides and documentation",
         "Community support"
       ],
@@ -349,20 +349,19 @@ export const homelabContent = {
 
 export const personalVPNContent = {
   hero: {
-    badge: "🔒 Your Server, Your Privacy",
+    badge: "Your VPN, Your Rules",
     title: "Personal VPN",
-    subtitle: "Run Your Own VPN Server",
-    subtitleHighlight: "Take Back Control of Your Privacy",
-    description: "Deploy a personal VPN server in minutes. No third parties, no trust required, no logs - just you and your encrypted connection to the internet.",
+    subtitle: "Skip the Middleman",
+    description: "Why trust a VPN company when you can run your own? Spin up a server, connect your devices, and browse privately. It's easier than you think.",
     buttons: [
       { text: "Get Started Free", href: "/download", primary: true },
-      { text: "Compare vs Commercial VPNs", href: "#comparison", primary: false }
+      { text: "See How It Compares", href: "#comparison", primary: false }
     ],
     quickStats: [
       { value: "$5", label: "Per Month" },
-      { value: "15 min", label: "Setup Time" },
-      { value: "∞", label: "Devices" },
-      { value: "100%", label: "Privacy" }
+      { value: "15 min", label: "Setup" },
+      { value: "Multi", label: "Devices" },
+      { value: "Zero", label: "Logs" }
     ]
   },
 
@@ -386,7 +385,7 @@ export const personalVPNContent = {
     },
     {
       title: "Cost Effective",
-      description: "Deploy on a $5/month VPS and get unlimited bandwidth. One server handles your whole family.",
+      description: "Deploy on a $5/month VPS with configurable bandwidth allocation. One server handles your whole family.",
       icon: <CoinsIcon />,
       gradient: "from-dark-accent-tertiary to-dark-accent-primary"
     },
@@ -404,7 +403,7 @@ export const personalVPNContent = {
     },
     {
       title: "Multi-Device",
-      description: "Connect all your devices - phones, laptops, tablets. Unlimited simultaneous connections.",
+      description: "Connect all your computers - laptops and desktops. Multiple simultaneous connections per user.",
       icon: <DevicesIcon />,
       gradient: "from-dark-accent-tertiary to-dark-accent-secondary"
     }
@@ -441,16 +440,16 @@ export const personalVPNContent = {
       scenario: "Access your home lab, NAS, and local services as if you were at home"
     },
     {
-      title: "Mobile Privacy",
-      description: "Protect your phone's internet connection on cellular networks everywhere you go.",
+      title: "Network Privacy",
+      description: "Protect your internet connection on any network everywhere you go.",
       icon: <SignalIcon />,
-      scenario: "All mobile app traffic encrypted through your server, not your carrier's network"
+      scenario: "All traffic encrypted through your server, not visible to network operators"
     },
     {
       title: "Family Protection",
-      description: "Single VPN server with DNS blocking protects all family devices automatically.",
+      description: "Single VPN server with DNS blocking protects all family computers automatically.",
       icon: <UsersIcon />,
-      scenario: "Kids' devices get automatic ad-blocking and content filtering through your VPN"
+      scenario: "Family computers get automatic ad-blocking and content filtering through your VPN"
     }
   ],
 
@@ -463,8 +462,8 @@ export const personalVPNContent = {
     {
       category: "Security",
       features: [
-        { name: "WireGuard Protocol", detail: "Modern, audited VPN protocol with state-of-the-art cryptography" },
-        { name: "ChaCha20 Encryption", detail: "Military-grade encryption for all your traffic" },
+        { name: "Custom UDP Protocol", detail: "Modern VPN protocol with X25519 key exchange and ChaCha20-Poly1305 encryption" },
+        { name: "ChaCha20 Encryption", detail: "Modern, strong encryption for all your traffic" },
         { name: "Perfect Forward Secrecy", detail: "Each session has unique keys - past traffic stays secure" },
         { name: "No Logs, Guaranteed", detail: "Your server doesn't log because you configured it not to" }
       ]
@@ -481,19 +480,19 @@ export const personalVPNContent = {
     {
       category: "Performance",
       features: [
-        { name: "Low Latency", detail: "WireGuard overhead is minimal - typically <1ms" },
+        { name: "Low Latency", detail: "Minimal protocol overhead for fast connections" },
         { name: "Full Bandwidth", detail: "Modern servers handle gigabit speeds easily" },
         { name: "Automatic Reconnect", detail: "Seamless reconnection when switching networks" },
-        { name: "Battery Efficient", detail: "WireGuard is optimized for mobile devices" }
+        { name: "Battery Efficient", detail: "Lightweight protocol optimized for efficiency" }
       ]
     },
     {
       category: "Management",
       features: [
-        { name: "Multi-Device Support", detail: "Unlimited devices per account" },
+        { name: "Multi-Device Support", detail: "Multiple devices per account (configurable limit)" },
         { name: "User Management", detail: "Create accounts for family members with individual policies" },
         { name: "Traffic Monitoring", detail: "Optional bandwidth and connection monitoring" },
-        { name: "Easy Client Setup", detail: "Simple QR code or config file deployment" }
+        { name: "Easy Client Setup", detail: "Simple config file deployment and 2FA QR codes" }
       ]
     }
   ],
@@ -529,8 +528,8 @@ export const personalVPNContent = {
       step: "04",
       title: "Install Client Apps",
       description: "Download the Tunnels client for your devices from the official website.",
-      command: "Available for all platforms",
-      specs: "Windows, macOS, Linux, iOS, Android"
+      command: "Available for desktop platforms",
+      specs: "Windows, macOS, and Linux"
     },
     {
       step: "05",
@@ -560,7 +559,7 @@ export const personalVPNContent = {
     {
       feature: "Cost (Annual)",
       commercial: "$60-120/year per user",
-      personal: "$60-120/year unlimited users",
+      personal: "$60-120/year for multiple users",
       winner: "personal"
     },
     {
@@ -572,7 +571,7 @@ export const personalVPNContent = {
     {
       feature: "Device Limit",
       commercial: "5-10 devices typical",
-      personal: "Unlimited devices",
+      personal: "Multiple devices (configurable)",
       winner: "personal"
     },
     {
@@ -617,7 +616,7 @@ export const personalVPNContent = {
       },
       {
         title: "Your Keys",
-        description: "Encryption keys generated on your devices. Never transmitted, never stored."
+        description: "Encryption keys generated fresh for each session using secure key exchange."
       }
     ]
   },
@@ -703,7 +702,7 @@ export const personalVPNContent = {
     },
     {
       q: "How many devices can connect simultaneously?",
-      a: "Unlimited. A basic $5/month server can easily handle 10-20 simultaneous connections. For larger families, upgrade to a $10-20/month server."
+      a: "A basic $5/month server can easily handle 10-20 simultaneous connections. For larger families, upgrade to a $10-20/month server with more bandwidth allocation."
     },
     {
       q: "What happens if my server goes down?",
@@ -713,7 +712,7 @@ export const personalVPNContent = {
 
   finalCTA: {
     title: "Ready to Take Control?",
-    description: "Join thousands who've ditched commercial VPNs for complete privacy and control",
+    description: "Take control of your privacy with your own VPN server",
     layout: "split"
   },
 
@@ -724,9 +723,9 @@ export const personalVPNContent = {
       description: "Download the Tunnels server and client. Free 24-hour trial to test everything. After that, just $5-10/month for your cloud server.",
       features: [
         "Server installer for Linux",
-        "Clients for all platforms",
+        "Clients for desktop platforms",
         "Complete setup documentation",
-        "24/7 community support",
+        "Community support via Discord",
         "Free forever updates"
       ],
       button: { text: "Download Free", href: "/download", primary: true },
@@ -778,11 +777,11 @@ export const featuresContent = {
       },
       {
         title: "No Persistence",
-        content: "Everything is kept exactly where you placed tunnels, no hidden files or background services",
+        content: "Configuration stays where you place it. Windows requires WinTUN driver for networking.",
       },
       {
         title: "Portable",
-        content: "Just download Tunnels and place it wherever you like, even on a USB. No installation required",
+        content: "Just download Tunnels and place it wherever you like, even on a USB. Minimal setup required.",
       },
       {
         title: "Anonymity",
@@ -794,7 +793,7 @@ export const featuresContent = {
       },
       {
         title: "Custom DNS",
-        content: "Register custom A, TXT and CNAME records for any domain",
+        content: "Register custom A and TXT records for any domain with wildcard support",
       },
       {
         title: "DNS to DoH",
@@ -840,8 +839,8 @@ export const featuresContent = {
         content: "Our server and client implementations are source available on GitHub",
       },
       {
-        title: "Tunnels on OpenWRT",
-        content: "Our NAT protocol was designed to work on unix based router software",
+        title: "Linux-Based Systems",
+        content: "Runs on any Linux system including embedded devices and servers",
       },
       {
         title: "Modern Language",
@@ -873,7 +872,7 @@ export const featuresContent = {
       },
       {
         title: "Scales With Growth",
-        content: "100 users or 1,000,000 users, it makes no difference, our platform was designed to fit even the largest companies",
+        content: "Scale from small teams to large organizations with multi-server deployments",
       },
       {
         title: "No Hardware",
@@ -905,7 +904,7 @@ export const downloadContent = {
 
   hero: {
     title: "Download Tunnels",
-    subtitle: "No installation required. Just download, extract, and run. Available for Windows, macOS, and Linux."
+    subtitle: "Download, extract, and run. Available for Windows, macOS, and Linux. Windows requires WinTUN driver."
   },
 
   platforms: [
@@ -945,7 +944,7 @@ export const downloadContent = {
       {
         number: "3",
         title: "Run",
-        description: "Launch Tunnels - no installation required!"
+        description: "Launch Tunnels and configure your connection"
       }
     ]
   },
@@ -955,7 +954,7 @@ export const downloadContent = {
     features: [
       {
         title: "✓ No Installation",
-        description: "Portable executable with no system changes or background services"
+        description: "Portable executable - Windows installs WinTUN driver for networking"
       },
       {
         title: "✓ Free DNS Protection",
@@ -1059,11 +1058,11 @@ export const pricingContent = {
       },
       {
         title: "✓ Custom DNS Records",
-        description: "Register custom A, TXT, and CNAME records directly in your configuration."
+        description: "Register custom A and TXT records with wildcard support in your configuration."
       },
       {
-        title: "✓ No Limitations",
-        description: "No device limits, no user limits on private servers. Use as many as you need."
+        title: "✓ Flexible Limits",
+        description: "Configure device and user limits to match your needs on private servers."
       }
     ]
   },
@@ -1182,7 +1181,7 @@ export const dnsContent = {
     },
     {
       title: "Custom DNS Records",
-      description: "Register custom A, TXT, and CNAME records for any domain directly in your configuration.",
+      description: "Register custom A and TXT records with wildcard support directly in your configuration.",
       icon: <DocumentIcon />
     },
     {
@@ -1327,7 +1326,7 @@ export const enterpriseContent = {
   benefits: [
     {
       title: "Flexibility & Scalability",
-      description: "From 100 to 1,000,000 users, Tunnels scales effortlessly with your organization's growth.",
+      description: "Scale your deployment by adding additional VPN servers as your organization grows.",
       icon: <ChartIcon />
     },
     {
@@ -1359,20 +1358,20 @@ export const enterpriseContent = {
 
   management: {
     title: "Effortless Management",
-    description1: "Automatically connect your employees to all of their networks, all at once. Tunnels is designed to be install-free - simply copy, paste, and run.",
+    description1: "Connect your employees to all of their networks at once. Tunnels is designed for easy deployment - simply download, configure, and run.",
     description2: "This makes managing a large number of users simple and pain-free. Company-wide configurations can be distributed as simple files to users in multiple ways or automatically updated by system administrators.",
     features: [
       {
-        title: "No Installation Required",
-        description: "Deploy across your organization instantly"
+        title: "Minimal Installation",
+        description: "Deploy across your organization with simple setup"
       },
       {
         title: "Centralized Configuration",
-        description: "Push updates to all devices simultaneously"
+        description: "Distribute configuration files to devices"
       },
       {
-        title: "IAM Integration",
-        description: "Built-in identity management with extension options"
+        title: "User Management",
+        description: "Built-in user, device, and group management"
       }
     ]
   },
@@ -1487,7 +1486,7 @@ export const cloudBaremetalContent = {
     {
       title: "High-Traffic Applications",
       description: "Distribute VPN load across multiple servers while maintaining single point of user management",
-      scenario: "1 Control Server + 10 VPN servers handling 10,000+ concurrent connections"
+      scenario: "1 Control Server + multiple VPN servers handling distributed load"
     },
     {
       title: "Development Environments",
@@ -1513,17 +1512,17 @@ export const cloudBaremetalContent = {
       technical: "Route tables configured per server for fine-grained network access control"
     },
     {
-      title: "Zero-Touch Client Configuration",
-      description: "Clients automatically discover and connect to optimal VPN servers",
-      technical: "Control server provides available servers list, client handles failover"
+      title: "Simple Client Configuration",
+      description: "Clients connect to configured VPN servers with server list from control server",
+      technical: "Control server provides available servers list for client configuration"
     }
   ],
 
   deploymentOptions: [
     {
       platform: "AWS / GCP / Azure",
-      description: "Deploy on major cloud providers with auto-scaling and managed infrastructure",
-      features: ["Easy deployment", "Managed networking", "Auto-scaling ready", "Global regions"]
+      description: "Deploy on major cloud providers with managed infrastructure",
+      features: ["Easy deployment", "Managed networking", "Manual scaling", "Global regions"]
     },
     {
       platform: "Baremetal / Dedicated Servers",
@@ -1546,19 +1545,19 @@ export const cloudBaremetalContent = {
     title: "Built for Performance",
     stats: [
       {
-        value: "1M+",
+        value: "Thousands",
         label: "Concurrent Users",
-        description: "Scale to millions with horizontal VPN server deployment"
+        description: "Scale by deploying multiple VPN servers"
       },
       {
-        value: "<5ms",
+        value: "Fast",
         label: "Auth Latency",
-        description: "Lightning-fast signature verification on VPN servers"
+        description: "Efficient signature verification on VPN servers"
       },
       {
-        value: "99.99%",
-        label: "Uptime SLA",
-        description: "Redundant architecture ensures high availability"
+        value: "High",
+        label: "Availability",
+        description: "Redundant multi-server architecture for reliability"
       }
     ]
   },
@@ -1598,6 +1597,252 @@ export const cloudBaremetalContent = {
   }
 };
 
+// ============================================================================
+// IOT NETWORKS PAGE CONTENT
+// ============================================================================
+
+export const iotNetworksContent = {
+  hero: {
+    badge: "Secure Your Connected Devices",
+    title: "IoT Networks",
+    subtitle: "Connect and Secure Your Device Fleet",
+    description: "Manage thousands of IoT devices from a single dashboard. Secure remote access to sensors, cameras, and smart devices with enterprise-grade encryption and centralized control.",
+    buttons: [
+      { text: "Get Started Free", href: "/download", primary: true },
+      { text: "View Documentation", href: "https://docs.tunnels.is/docs", primary: false }
+    ],
+    quickStats: [
+      { value: "Thousands", label: "Devices" },
+      { value: "Secure", label: "By Default" },
+      { value: "Simple", label: "Config" }
+    ]
+  },
+
+  benefitsSection: {
+    title: "Built for IoT at Scale",
+    subtitle: "Everything you need to connect, secure, and manage your IoT infrastructure"
+  },
+
+  benefits: [
+    {
+      title: "Centralized Device Management",
+      description: "Register, organize, and monitor all your IoT devices from a single dashboard. Group devices by location, function, or project.",
+      icon: <DevicesIcon />,
+      gradient: "from-dark-accent-primary to-dark-accent-secondary"
+    },
+    {
+      title: "Network Isolation",
+      description: "Keep IoT traffic separated from your main network. Define isolated subnets for different device types with strict access controls.",
+      icon: <ShieldCheckIcon />,
+      gradient: "from-dark-accent-secondary to-dark-accent-tertiary"
+    },
+    {
+      title: "Remote Access Anywhere",
+      description: "Securely access your devices from anywhere in the world. Only VPN server ports need to be accessible.",
+      icon: <NetworkGlobeIcon />,
+      gradient: "from-dark-accent-tertiary to-dark-accent-primary"
+    },
+    {
+      title: "Headless Device Support",
+      description: "CLI mode for resource-constrained devices. No GUI required - perfect for sensors, gateways, and embedded systems.",
+      icon: <RaspberryPiIcon />,
+      gradient: "from-dark-accent-primary to-dark-accent-tertiary"
+    },
+    {
+      title: "Automatic IP Assignment",
+      description: "Built-in DHCP assigns IP addresses automatically. Devices connect and receive configuration without manual setup.",
+      icon: <SyncIcon />,
+      gradient: "from-dark-accent-secondary to-dark-accent-primary"
+    },
+    {
+      title: "Bandwidth Control",
+      description: "Set per-device bandwidth limits and connection quotas. Prevent any single device from consuming excessive resources.",
+      icon: <ChartIcon />,
+      gradient: "from-dark-accent-tertiary to-dark-accent-secondary"
+    }
+  ],
+
+  useCasesSection: {
+    title: "Perfect For Your IoT Setup",
+    subtitle: "From smart homes to industrial deployments, Tunnels handles it all"
+  },
+
+  useCases: [
+    {
+      title: "Smart Home Networks",
+      description: "Connect cameras, sensors, and smart home devices securely. Access your home automation from anywhere.",
+      icon: <HomeAutomationIcon />,
+      scenario: "Access your Home Assistant, cameras, and sensors remotely without exposing them to the internet"
+    },
+    {
+      title: "Industrial Monitoring",
+      description: "Connect distributed sensors and equipment across facilities. Centralized monitoring with network isolation.",
+      icon: <SettingsIcon />,
+      scenario: "Monitor factory sensors and PLCs from headquarters with segmented network access"
+    },
+    {
+      title: "Remote Sensor Networks",
+      description: "Manage sensor deployments in remote locations. Reliable connectivity even with intermittent connections.",
+      icon: <SignalIcon />,
+      scenario: "Agricultural sensors, weather stations, and environmental monitors reporting to a central server"
+    },
+    {
+      title: "Security Camera Systems",
+      description: "Secure access to camera feeds without exposing them publicly. Group cameras by location with access controls.",
+      icon: <VideoIcon />,
+      scenario: "Multi-site camera systems accessible only to authorized personnel"
+    },
+    {
+      title: "Edge Computing Nodes",
+      description: "Manage distributed edge devices across locations. Deploy updates and monitor health remotely.",
+      icon: <ServerIcon />,
+      scenario: "Retail edge nodes, kiosk systems, and distributed compute infrastructure"
+    },
+    {
+      title: "Fleet Management",
+      description: "Track and manage devices across vehicles and mobile assets. Secure connectivity on the move.",
+      icon: <BriefcaseIcon />,
+      scenario: "Vehicle tracking systems, mobile sensors, and connected fleet devices"
+    }
+  ],
+
+  securitySection: {
+    title: "Enterprise-Grade Security",
+    subtitle: "Modern cryptography designed for long-term IoT deployments"
+  },
+
+  securityFeatures: [
+    {
+      title: "Strong Encryption",
+      description: "AES-256-GCM encryption protects all device communications. Post-quantum ready with X25519 + ML-KEM hybrid key exchange."
+    },
+    {
+      title: "Device Authentication",
+      description: "Token-based authentication for headless devices. No interactive login required - devices authenticate automatically."
+    },
+    {
+      title: "Access Control Groups",
+      description: "Organize devices into groups with specific access policies. Control which devices can communicate with each other."
+    },
+    {
+      title: "Per-Device Firewall",
+      description: "Configure firewall rules for each device. Block unwanted traffic and restrict device communication to allowed hosts."
+    }
+  ],
+
+  architectureSection: {
+    title: "Simple Architecture",
+    description: "Deploy a single server to manage your entire IoT fleet. Devices connect securely from anywhere.",
+    centralServer: {
+      title: "Tunnels Server",
+      description: "Handles authentication, device registry, and network routing"
+    },
+    devices: {
+      title: "IoT Devices",
+      description: "Sensors, cameras, gateways - any device with network connectivity"
+    }
+  },
+
+  setupSection: {
+    title: "Get Started in Minutes",
+    subtitle: "Simple deployment for any IoT setup"
+  },
+
+  setupSteps: [
+    {
+      step: "01",
+      title: "Deploy Server",
+      description: "Install Tunnels server on your infrastructure - cloud, on-premise, or edge.",
+      specs: "Runs on any Linux system"
+    },
+    {
+      step: "02",
+      title: "Configure Network",
+      description: "Define your IoT network range and access policies through the admin interface.",
+      specs: "Set up subnets and groups"
+    },
+    {
+      step: "03",
+      title: "Register Devices",
+      description: "Add devices to the registry and generate authentication tokens for each device.",
+      specs: "Manual device registration with tokens"
+    },
+    {
+      step: "04",
+      title: "Connect & Monitor",
+      description: "Devices connect using their tokens. Monitor status and traffic from the dashboard.",
+      specs: "Real-time device metrics"
+    }
+  ],
+
+  faqSection: {
+    title: "Common Questions",
+    subtitle: "Everything you need to know about IoT networking with Tunnels"
+  },
+
+  faqs: [
+    {
+      q: "How many devices can I connect?",
+      a: "Tunnels is designed to scale. A single server can handle thousands of concurrent device connections. For larger deployments, add additional VPN servers to distribute the load."
+    },
+    {
+      q: "Do devices need a lot of resources to run the client?",
+      a: "No. The Tunnels client has a CLI mode designed for resource-constrained devices. It runs efficiently on Raspberry Pi, embedded Linux systems, and other low-power hardware."
+    },
+    {
+      q: "Can I isolate IoT devices from my main network?",
+      a: "Yes. Tunnels supports network segmentation with separate subnets and firewall rules. IoT devices can be completely isolated from other network traffic while still being accessible through the VPN."
+    },
+    {
+      q: "How do devices authenticate without user interaction?",
+      a: "Devices use token-based authentication. You generate a device token from the admin interface, and the device uses that token to authenticate automatically on startup."
+    },
+    {
+      q: "Can I set bandwidth limits per device?",
+      a: "Yes. You can configure bandwidth limits and connection quotas for individual devices or device groups to prevent any single device from consuming excessive resources."
+    },
+    {
+      q: "Does it work with intermittent connections?",
+      a: "Yes. The client handles disconnections gracefully and automatically reconnects when connectivity is restored. Configurable ping timeouts let you tune behavior for your network conditions."
+    }
+  ],
+
+  finalCTA: {
+    title: "Ready to Secure Your IoT Network?",
+    description: "Build secure, scalable IoT infrastructure with Tunnels",
+    layout: "split"
+  },
+
+  ctaCards: [
+    {
+      icon: <DownloadIcon />,
+      title: "Get Started Now",
+      description: "Download Tunnels server and client. Free 24-hour trial to test with your devices.",
+      features: [
+        "Server for Linux (all distributions)",
+        "CLI client for IoT devices",
+        "GUI client for management",
+        "Complete setup documentation"
+      ],
+      button: { text: "Download Free", href: "/download", primary: true },
+      highlighted: true
+    },
+    {
+      icon: <BookIcon />,
+      title: "Read the Documentation",
+      description: "Comprehensive guides for setting up and managing your IoT network infrastructure.",
+      features: [
+        "Server deployment guide",
+        "Device registration",
+        "Network configuration",
+        "Security best practices"
+      ],
+      button: { text: "View Documentation", href: "https://docs.tunnels.is/docs", primary: false },
+      highlighted: false
+    }
+  ]
+};
+
 // Export all content as default for convenient importing
 export default {
   home: homeContent,
@@ -1610,5 +1855,6 @@ export default {
   features: featuresContent,
   download: downloadContent,
   pricing: pricingContent,
-  technical: technicalContent
+  technical: technicalContent,
+  iotNetworks: iotNetworksContent
 };
