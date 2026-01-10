@@ -2,12 +2,18 @@ import HeroSimple from '../components/sections/HeroSimple';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
 import FeatureGrid from '../components/sections/FeatureGrid';
-import FeatureShowcase from '../components/sections/FeatureShowcase';
 import CTASection from '../components/sections/CTASection';
+import IllustratedSection from '../components/IllustratedSection';
 import { enterpriseContent } from '../content/siteContent';
+import {
+  EnterpriseIllustration,
+  TeamIllustration,
+  AccessControlIllustration,
+  SecurityIllustration,
+} from '../components/illustrations';
 
 const Enterprise = () => {
-  const { hero, benefits, management, security, cta, images } = enterpriseContent;
+  const { hero, benefits, management, security, cta } = enterpriseContent;
 
   return (
     <div className="min-h-screen">
@@ -32,40 +38,61 @@ const Enterprise = () => {
         />
       </ContentSection>
 
-      {/* Effortless Management Section */}
-      <ContentSection >
-        <FeatureShowcase
-          title={management.title}
-          descriptions={[management.description1, management.description2]}
-          features={management.features}
-          imagePosition="right"
-          image={images.management}
-        />
-      </ContentSection>
+      {/* Illustrated: Enterprise Scale */}
+      <IllustratedSection
+        subtitle="Built for Scale"
+        title="Enterprise-Grade Infrastructure"
+        description="Deploy across thousands of nodes with centralized management. tunnels scales from small teams to global enterprises without compromising performance."
+        features={[
+          "Supports 10,000+ concurrent connections",
+          "Sub-millisecond routing decisions",
+          "Horizontal scaling architecture",
+          "99.99% uptime SLA available"
+        ]}
+        illustration={EnterpriseIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+        dark={false}
+      />
 
-      {/* Security Section */}
-      <ContentSection>
-        <FeatureShowcase
-          title={security.title}
-          features={security.features}
-          imagePosition="left"
-          featureCheckColor="dark-accent-tertiary"
-          image={images.security}
-          customContent={
-            <>
-              <p className="text-lg text-dark-text-secondary leading-snug mb-6">
-                {security.description1}
-              </p>
-              <p className="text-lg text-dark-text-secondary leading-snug mb-6">
-                <a href={security.golangUrl} target="_blank" rel="noopener noreferrer" className="text-dark-accent-primary hover:text-dark-accent-secondary transition-colors">
-                  Golang
-                </a>{' '}
-                {security.description2}
-              </p>
-            </>
-          }
-        />
-      </ContentSection>
+      {/* Illustrated: Team Management */}
+      <IllustratedSection
+        subtitle="Effortless Management"
+        title={management.title}
+        description={`${management.description1} ${management.description2}`}
+        features={management.features.map(f => f.title)}
+        illustration={TeamIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+      />
+
+      {/* Illustrated: Access Control */}
+      <IllustratedSection
+        subtitle="Fine-Grained Permissions"
+        title="Role-Based Access Control"
+        description="Define who can access what with granular permissions. Create policies based on users, groups, devices, or network segments."
+        features={[
+          "User and group-based policies",
+          "Device trust levels",
+          "Time-based access rules",
+          "Audit logging for compliance"
+        ]}
+        illustration={AccessControlIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+        dark={false}
+      />
+
+      {/* Illustrated: Security */}
+      <IllustratedSection
+        subtitle="Enterprise Security"
+        title={security.title}
+        description={security.description1}
+        features={security.features.map(f => f.title)}
+        illustration={SecurityIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+      />
 
       {/* CTA Section */}
       <CTASection

@@ -10,8 +10,14 @@ import FAQSection from '../components/sections/FAQSection';
 import CTASection from '../components/sections/CTASection';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
+import IllustratedSection from '../components/IllustratedSection';
 import { KeyIcon, LightbulbIcon } from '../components/ui/Icons';
 import { personalVPNContent } from '../content/siteContent';
+import {
+  PrivacyShieldIllustration,
+  GlobalNetworkIllustration,
+  CloudIllustration,
+} from '../components/illustrations';
 
 const PersonalVPN = () => {
   const {
@@ -23,7 +29,7 @@ const PersonalVPN = () => {
 
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSimple
         badge={hero.badge}
@@ -48,6 +54,22 @@ const PersonalVPN = () => {
           cardStyle="gradient-border"
         />
       </ContentSection>
+
+      {/* Illustrated: Privacy Protection */}
+      <IllustratedSection
+        subtitle="Zero Trust Architecture"
+        title="Your Privacy, Protected"
+        description="Unlike commercial VPNs, your data never touches third-party servers. Every packet is encrypted end-to-end, and only you hold the keys."
+        features={[
+          "No logs policy - we can't see your traffic",
+          "You control the encryption keys",
+          "No third-party data access",
+          "Open-source and auditable"
+        ]}
+        illustration={PrivacyShieldIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+      />
 
       {/* Use Cases Section */}
       <ContentSection>
@@ -84,6 +106,23 @@ const PersonalVPN = () => {
           />
         </div>
       </ContentSection>
+
+      {/* Illustrated: Global Access */}
+      <IllustratedSection
+        subtitle="Worldwide Connectivity"
+        title="Access Your Network Anywhere"
+        description="Travel the world while your devices stay connected to home. Access local resources, stream your media, and work securely from any location."
+        features={[
+          "Connect from any country",
+          "Bypass geo-restrictions to your own content",
+          "Secure access on public WiFi",
+          "Low latency connections worldwide"
+        ]}
+        illustration={GlobalNetworkIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+        dark={false}
+      />
 
       {/* Comparison Section */}
       <ContentSection background="dark-surface" id="comparison">
@@ -124,6 +163,22 @@ const PersonalVPN = () => {
         title={<>{privacyHighlight.title}<br />{privacyHighlight.titleLine2}</>}
         description={<>{privacyHighlight.description}<br /><span className="font-bold">{privacyHighlight.descriptionBold}</span></>}
         highlights={privacyHighlight.highlights}
+      />
+
+      {/* Illustrated: Deploy Anywhere */}
+      <IllustratedSection
+        subtitle="Flexible Deployment"
+        title="Host on Any Cloud or Hardware"
+        description="Deploy your personal VPN server anywhere - from a $5/month VPS to your own Raspberry Pi at home. No vendor lock-in, complete portability."
+        features={[
+          "Works on all major cloud providers",
+          "Run on your own hardware",
+          "Docker and bare-metal support",
+          "Migrate between providers easily"
+        ]}
+        illustration={CloudIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
       />
 
       {/* Cloud Providers */}

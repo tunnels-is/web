@@ -3,9 +3,14 @@ import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
 import FeatureCard from '../components/ui/FeatureCard';
 import CTASection from '../components/sections/CTASection';
+import IllustratedSection from '../components/IllustratedSection';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { motion } from 'framer-motion';
 import { featuresContent } from '../content/siteContent';
+import {
+  WireGuardIllustration,
+  SpeedIllustration,
+} from '../components/illustrations';
 
 const Features = () => {
   const [ref1, isVisible1] = useScrollAnimation();
@@ -47,6 +52,39 @@ const Features = () => {
           </motion.div>
         </div>
       </ContentSection>
+
+      {/* Illustrated: WireGuard Foundation */}
+      <IllustratedSection
+        subtitle="Modern Protocol"
+        title="Built on WireGuard"
+        description="tunnels leverages WireGuard's modern cryptography and minimal codebase. This gives you state-of-the-art security with exceptional performance."
+        features={[
+          "ChaCha20 encryption",
+          "Only ~4,000 lines of code",
+          "Formally verified cryptography",
+          "Built into Linux kernel"
+        ]}
+        illustration={WireGuardIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+        dark={false}
+      />
+
+      {/* Illustrated: Performance */}
+      <IllustratedSection
+        subtitle="Blazing Fast"
+        title="Performance First"
+        description="Experience near-native network performance. WireGuard's efficient design means minimal CPU overhead and maximum throughput on any hardware."
+        features={[
+          "10+ Gbps throughput",
+          "Sub-millisecond latency",
+          "Low CPU utilization",
+          "Mobile battery friendly"
+        ]}
+        illustration={SpeedIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+      />
 
       {/* Advanced & Enterprise Features */}
       <ContentSection >

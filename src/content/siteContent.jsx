@@ -1598,6 +1598,92 @@ export const cloudBaremetalContent = {
 };
 
 // ============================================================================
+// OFFICE NETWORKS PAGE CONTENT
+// ============================================================================
+
+export const officeNetworksContent = {
+  hero: {
+    title: "Office Networks",
+    subtitle: "Secure Access for Your Entire Team",
+    description: "Connect remote employees to office resources with enterprise-grade security. Manage users, control access, and keep your network protected - all without the complexity.",
+    buttons: [
+      { text: "Get Started Free", href: "/download", primary: true },
+      { text: "View Documentation", href: "https://docs.tunnels.is/docs", primary: false }
+    ]
+  },
+
+  benefitsSection: {
+    title: "Everything You Need for Office VPN",
+    subtitle: "Built-in features that make managing office network access simple and secure"
+  },
+
+  benefits: [
+    {
+      title: "Centralized User Management",
+      description: "Manage all employees from a single dashboard. Create user groups, assign access levels, and control who can access which resources.",
+      icon: <UsersIcon />
+    },
+    {
+      title: "Group-Based Access Control",
+      description: "Create departments or teams with specific network access. Engineering gets dev servers, Finance gets accounting systems.",
+      icon: <ShieldCheckIcon />
+    },
+    {
+      title: "Split Tunneling",
+      description: "Route only office traffic through the VPN. Personal browsing stays on local internet, keeping bandwidth efficient.",
+      icon: <LinkIcon />
+    },
+    {
+      title: "Internal DNS",
+      description: "Access internal services by name. Set up wiki.company, git.internal, or any custom domain that resolves only on the VPN.",
+      icon: <GlobeIcon />
+    },
+    {
+      title: "Two-Factor Authentication",
+      description: "Secure employee access with TOTP-based 2FA. Protect your network even if passwords are compromised.",
+      icon: <LockShieldIcon />
+    },
+    {
+      title: "Device Management",
+      description: "Track and manage every device connecting to your network. Revoke access instantly when employees leave.",
+      icon: <DevicesIcon />
+    }
+  ],
+
+  useCases: [
+    {
+      title: "Remote Team Access",
+      description: "Give remote employees secure access to office resources as if they were on-site",
+      scenario: "Employees work from home but access file servers, printers, and internal tools seamlessly"
+    },
+    {
+      title: "Multi-Office Connectivity",
+      description: "Connect branch offices to headquarters with dedicated VPN servers per location",
+      scenario: "HQ in New York, branches in LA and London - all on one unified network"
+    },
+    {
+      title: "Contractor Access",
+      description: "Provide limited, time-bound access to external contractors without exposing your full network",
+      scenario: "Contractors get access only to their project servers, automatically revoked when contract ends"
+    },
+    {
+      title: "BYOD Policy",
+      description: "Allow employees to use personal devices securely with per-device access controls",
+      scenario: "Personal laptops connect to work resources through isolated, monitored VPN tunnels"
+    }
+  ],
+
+  cta: {
+    title: "Ready to Secure Your Office?",
+    description: "Get started with Tunnels for your office network. Free to use, open source, and ready for teams of any size.",
+    buttons: [
+      { text: "Download Tunnels Free", href: "/download", primary: true },
+      { text: "Contact Us", href: "mailto:support@tunnels.is", primary: false }
+    ]
+  }
+};
+
+// ============================================================================
 // IOT NETWORKS PAGE CONTENT
 // ============================================================================
 

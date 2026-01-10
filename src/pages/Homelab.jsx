@@ -4,10 +4,16 @@ import FeatureTimeline from '../components/sections/FeatureTimeline';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
 import CTASection from '../components/sections/CTASection';
+import IllustratedSection from '../components/IllustratedSection';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { LightbulbIcon } from '../components/ui/Icons';
 import { homelabContent } from '../content/siteContent';
+import {
+  SelfHostedIllustration,
+  TerminalIllustration,
+  DNSFlowIllustration,
+} from '../components/illustrations';
 
 const Homelab = () => {
   const [ref4, isVisible4] = useScrollAnimation();
@@ -32,7 +38,7 @@ const Homelab = () => {
   } = homelabContent;
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSimple
         badge={hero.badge}
@@ -58,6 +64,22 @@ const Homelab = () => {
         />
       </ContentSection>
 
+      {/* Illustrated: Self-Hosted Control */}
+      <IllustratedSection
+        subtitle="Complete Ownership"
+        title="Your Infrastructure, Your Rules"
+        description="Run everything on your own hardware. No cloud dependencies, no subscription fees, no data leaving your network. True digital sovereignty for your homelab."
+        features={[
+          "Zero cloud dependencies",
+          "No recurring subscription costs",
+          "Complete data ownership",
+          "Works offline when internet is down"
+        ]}
+        illustration={SelfHostedIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+      />
+
       {/* Setup Steps */}
       <ContentSection>
         <SectionHeader
@@ -68,6 +90,23 @@ const Homelab = () => {
           <FeatureTimeline steps={setupSteps} />
         </div>
       </ContentSection>
+
+      {/* Illustrated: Easy Setup */}
+      <IllustratedSection
+        subtitle="Quick Start"
+        title="Up and Running in Minutes"
+        description="A single command installs everything. No complex configuration, no networking expertise required. Just run the installer and your homelab is connected."
+        features={[
+          "One-line installation script",
+          "Auto-detects your environment",
+          "Pre-configured for common setups",
+          "Detailed logs for troubleshooting"
+        ]}
+        illustration={TerminalIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+        dark={false}
+      />
 
       {/* Use Cases */}
       <ContentSection background="dark-surface">
@@ -117,6 +156,23 @@ const Homelab = () => {
           </div>
         </motion.div>
       </ContentSection>
+
+      {/* Illustrated: Private DNS */}
+      <IllustratedSection
+        subtitle="Local Resolution"
+        title="Private DNS for Your Network"
+        description="Access your services by name instead of IP addresses. tunnels provides automatic DNS resolution for all your connected devices and services."
+        features={[
+          "home.lan resolves to your server",
+          "Split-horizon DNS support",
+          "Automatic service discovery",
+          "Works with Pi-hole and AdGuard"
+        ]}
+        illustration={DNSFlowIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+        dark={false}
+      />
 
       {/* Technical Highlights */}
       <ContentSection background="dark-surface">

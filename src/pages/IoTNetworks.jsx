@@ -6,9 +6,14 @@ import FAQSection from '../components/sections/FAQSection';
 import CTASection from '../components/sections/CTASection';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
+import IllustratedSection from '../components/IllustratedSection';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { iotNetworksContent } from '../content/siteContent';
+import {
+  IoTNetworkIllustration,
+  EncryptionIllustration,
+} from '../components/illustrations';
 
 const IoTNetworks = () => {
   const {
@@ -21,7 +26,7 @@ const IoTNetworks = () => {
   const [securityRef, securityVisible] = useScrollAnimation();
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSimple
         badge={hero.badge}
@@ -47,6 +52,22 @@ const IoTNetworks = () => {
         />
       </ContentSection>
 
+      {/* Illustrated: Secure IoT Mesh */}
+      <IllustratedSection
+        subtitle="Mesh Connectivity"
+        title="Connect All Your IoT Devices"
+        description="Create a secure mesh network for your IoT infrastructure. Every device communicates through encrypted tunnels, isolated from the public internet."
+        features={[
+          "Zero-trust device authentication",
+          "Automatic mesh routing",
+          "Works with any IoT protocol",
+          "No open ports on devices"
+        ]}
+        illustration={IoTNetworkIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+      />
+
       {/* Use Cases Section */}
       <ContentSection>
         <SectionHeader
@@ -68,9 +89,9 @@ const IoTNetworks = () => {
           />
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={archVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0 }}
+            animate={archVisible ? { opacity: 1 } : {}}
+            transition={{ duration: 0.4 }}
             className="max-w-4xl mx-auto"
           >
             <div className="space-y-8">
@@ -130,10 +151,10 @@ const IoTNetworks = () => {
             {securityFeatures.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={securityVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-effect p-6 rounded-xl border-l-4 border-dark-accent-primary"
+                initial={{ opacity: 0 }}
+                animate={securityVisible ? { opacity: 1 } : {}}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className="bg-dark-surface p-6 rounded-xl border-l-4 border-dark-accent-primary"
               >
                 <h4 className="font-semibold text-xl text-dark-accent-primary mb-2">{feature.title}</h4>
                 <p className="text-dark-text-secondary leading-relaxed">{feature.description}</p>
@@ -142,6 +163,23 @@ const IoTNetworks = () => {
           </div>
         </div>
       </ContentSection>
+
+      {/* Illustrated: End-to-End Encryption */}
+      <IllustratedSection
+        subtitle="Military-Grade Security"
+        title="Encryption for Every Packet"
+        description="All IoT data is encrypted at the device level before transmission. Even if network traffic is intercepted, your data remains completely unreadable."
+        features={[
+          "AES-256 encryption standard",
+          "Per-device unique keys",
+          "Perfect forward secrecy",
+          "Regular key rotation"
+        ]}
+        illustration={EncryptionIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+        dark={false}
+      />
 
       {/* Setup Guide */}
       <ContentSection background="gradient">

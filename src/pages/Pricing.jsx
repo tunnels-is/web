@@ -5,12 +5,17 @@ import AnonymousLicenseCard from '../components/sections/AnonymousLicenseCard';
 import FreeFeaturesSection from '../components/sections/FreeFeaturesSection';
 import PricingFAQSection from '../components/sections/PricingFAQSection';
 import CTASection from '../components/sections/CTASection';
+import IllustratedSection from '../components/IllustratedSection';
+import {
+  OpenSourceIllustration,
+  SelfHostedIllustration,
+} from '../components/illustrations';
 
 const Pricing = () => {
   const { hero, subscriptions, anonymousKey, freeFeatures, faq, cta } = pricingContent;
 
   return (
-    <div className="min-h-screen pt-20 pb-12">
+    <div className="min-h-screen">
       <PricingHero
         title={hero.title}
         description={hero.description}
@@ -35,6 +40,39 @@ const Pricing = () => {
         title={freeFeatures.title}
         description={freeFeatures.description}
         features={freeFeatures.features}
+      />
+
+      {/* Illustrated: Free Forever */}
+      <IllustratedSection
+        subtitle="No Hidden Costs"
+        title="Open Source = Free Forever"
+        description="All core features are available in our open-source version. No artificial limitations, no feature paywalls. Self-host and use every feature for free."
+        features={[
+          "Full VPN functionality included",
+          "Unlimited devices and connections",
+          "No bandwidth restrictions",
+          "Community support on Discord"
+        ]}
+        illustration={OpenSourceIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+      />
+
+      {/* Illustrated: Self-Host */}
+      <IllustratedSection
+        subtitle="Own Your Infrastructure"
+        title="Self-Host for Complete Control"
+        description="Deploy on your own servers and pay nothing to us. Full control over your data, your network, and your costs. The subscription is optional support."
+        features={[
+          "Run on your own hardware",
+          "No recurring fees required",
+          "Full data sovereignty",
+          "Commercial use allowed"
+        ]}
+        illustration={SelfHostedIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+        dark={false}
       />
 
       <CTASection

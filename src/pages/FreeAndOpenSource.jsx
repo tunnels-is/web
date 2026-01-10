@@ -1,169 +1,148 @@
-import { motion } from 'framer-motion';
-import useScrollAnimation from '../hooks/useScrollAnimation';
+import HeroSimple from '../components/sections/HeroSimple';
+import ContentSection from '../components/sections/ContentSection';
+import SectionHeader from '../components/ui/SectionHeader';
+import CTASection from '../components/sections/CTASection';
+import IllustratedSection from '../components/IllustratedSection';
 import { freeOpenSourceContent } from '../content/siteContent';
+import {
+  OpenSourceIllustration,
+  SecurityIllustration,
+} from '../components/illustrations';
 
 const FreeAndOpenSource = () => {
-  const [ref1, isVisible1] = useScrollAnimation();
-  const [ref2, isVisible2] = useScrollAnimation();
-
   const { socialLinks } = freeOpenSourceContent;
 
   return (
-    <div className="min-h-screen pt-20 pb-12">
-      {/* Hero Banner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Tunnels is Free and Open Source
-          </h1>
-          <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto mb-8">
-            All of our features are free and available in the open source version. No paywalls, no hidden fees.
-          </p>
-          <motion.a
-            href="https://github.com/tunnels-is"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block px-8 py-4 bg-dark-accent-primary text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all"
-          >
-            View on GitHub
-          </motion.a>
-        </motion.div>
-      </section>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <HeroSimple
+        title="Tunnels is Free and Open Source"
+        description="All of our features are free and available in the open source version. No paywalls, no hidden fees."
+        buttons={[
+          { text: "View on GitHub", href: "https://github.com/tunnels-is", primary: true }
+        ]}
+        showNetworkLines={true}
+      />
 
-      {/* Why Open Source */}
-      <section ref={ref1} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible1 ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className=" p-12 rounded-2xl"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            Why Open Source?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-dark-text-secondary leading-snug">
-            <div>
-              <h3 className="text-xl font-semibold text-dark-accent-primary mb-4">Transparency</h3>
-              <p className="mb-4">
-                Open source means complete transparency. Anyone can review our code, audit our security practices,
-                and verify that we're doing exactly what we say we're doing.
-              </p>
-              <p>
-                There are no hidden backdoors, no secret data collection, and no mysterious code that you can't inspect.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-dark-accent-primary mb-4">Community</h3>
-              <p className="mb-4">
-                Being open source allows developers and security experts from around the world to contribute,
-                improve, and help shape the future of Tunnels.
-              </p>
-              <p>
-                This collaborative approach leads to better security, more features, and faster bug fixes than
-                any closed-source project could achieve alone.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-dark-accent-primary mb-4">Freedom</h3>
-              <p className="mb-4">
-                You're free to use Tunnels however you want - personally, commercially, or modify it to fit
-                your specific needs. No licensing restrictions.
-              </p>
-              <p>
-                Deploy it on your own infrastructure, integrate it with your systems, and maintain complete
-                control over your networking solution.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-dark-accent-primary mb-4">Trust</h3>
-              <p className="mb-4">
-                In the world of VPNs and networking, trust is everything. Open source allows you to verify
-                our claims and build that trust through transparency.
-              </p>
-              <p>
-                Security experts can audit the code, and the community can vouch for the integrity of the project.
-              </p>
-            </div>
+      {/* Why Open Source Section */}
+      <ContentSection background="dark-surface">
+        <SectionHeader
+          title="Why Open Source?"
+          titleSize="medium"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="bg-dark-elevated p-8 rounded-xl">
+            <h3 className="text-xl font-semibold text-dark-accent-primary mb-4">Transparency</h3>
+            <p className="text-dark-text-secondary mb-4">
+              Open source means complete transparency. Anyone can review our code, audit our security practices,
+              and verify that we're doing exactly what we say we're doing.
+            </p>
+            <p className="text-dark-text-secondary">
+              There are no hidden backdoors, no secret data collection, and no mysterious code that you can't inspect.
+            </p>
           </div>
-        </motion.div>
-      </section>
-
-      {/* Join Community */}
-      <section ref={ref2} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible2 ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Join Our Community
-          </h2>
-          <p className="text-xl text-dark-text-secondary mb-12 max-w-2xl mx-auto">
-            Join our community to contribute, follow our development, or just stay connected with other Tunnels users.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-6 rounded-xl transition-all text-center hover:bg-dark-elevated"
-              >
-                <div className="w-20 h-20 mb-4 mx-auto flex items-center justify-center text-white">
-                  <div className="transform scale-[4] flex items-center justify-center">{social.icon}</div>
-                </div>
-                <h3 className="text-xl font-semibold text-dark-accent-primary mb-2">{social.name}</h3>
-                <p className="text-dark-text-secondary text-sm">{social.desc}</p>
-              </a>
-            ))}
+          <div className="bg-dark-elevated p-8 rounded-xl">
+            <h3 className="text-xl font-semibold text-dark-accent-primary mb-4">Community</h3>
+            <p className="text-dark-text-secondary mb-4">
+              Being open source allows developers and security experts from around the world to contribute,
+              improve, and help shape the future of Tunnels.
+            </p>
+            <p className="text-dark-text-secondary">
+              This collaborative approach leads to better security, more features, and faster bug fixes than
+              any closed-source project could achieve alone.
+            </p>
           </div>
-        </motion.div>
-      </section>
+          <div className="bg-dark-elevated p-8 rounded-xl">
+            <h3 className="text-xl font-semibold text-dark-accent-primary mb-4">Freedom</h3>
+            <p className="text-dark-text-secondary mb-4">
+              You're free to use Tunnels however you want - personally, commercially, or modify it to fit
+              your specific needs. No licensing restrictions.
+            </p>
+            <p className="text-dark-text-secondary">
+              Deploy it on your own infrastructure, integrate it with your systems, and maintain complete
+              control over your networking solution.
+            </p>
+          </div>
+          <div className="bg-dark-elevated p-8 rounded-xl">
+            <h3 className="text-xl font-semibold text-dark-accent-primary mb-4">Trust</h3>
+            <p className="text-dark-text-secondary mb-4">
+              In the world of VPNs and networking, trust is everything. Open source allows you to verify
+              our claims and build that trust through transparency.
+            </p>
+            <p className="text-dark-text-secondary">
+              Security experts can audit the code, and the community can vouch for the integrity of the project.
+            </p>
+          </div>
+        </div>
+      </ContentSection>
 
-      {/* CTA Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="glass-effect p-12 rounded-2xl text-center"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to get started?
-          </h2>
-          <p className="text-xl text-dark-text-secondary mb-8 max-w-2xl mx-auto">
-            Download Tunnels today and experience open source networking at its finest.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.a
-              href="/download"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-dark-accent-primary text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all"
-            >
-              Download Now
-            </motion.a>
-            <motion.a
-              href="https://github.com/tunnels-is"
+      {/* Illustrated: Community Driven */}
+      <IllustratedSection
+        subtitle="Built Together"
+        title="Community-Driven Development"
+        description="Tunnels is built by a global community of developers, security researchers, and networking experts. Every contribution makes the project stronger."
+        features={[
+          "Open pull requests welcome",
+          "Active Discord community",
+          "Regular security audits",
+          "Transparent roadmap"
+        ]}
+        illustration={OpenSourceIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+        dark={false}
+      />
+
+      {/* Illustrated: Auditable Security */}
+      <IllustratedSection
+        subtitle="Verifiable Security"
+        title="Audit Every Line of Code"
+        description="Don't trust, verify. Our entire codebase is available for inspection. Security researchers regularly audit our code and report findings publicly."
+        features={[
+          "Full source on GitHub",
+          "Public security advisories",
+          "Bug bounty program",
+          "Reproducible builds"
+        ]}
+        illustration={SecurityIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+      />
+
+      {/* Join Community Section */}
+      <ContentSection background="dark-surface">
+        <SectionHeader
+          title="Join Our Community"
+          subtitle="Join our community to contribute, follow our development, or just stay connected with other Tunnels users."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {socialLinks.map((social) => (
+            <a
+              key={social.name}
+              href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 glass-effect rounded-lg font-semibold hover:bg-dark-elevated transition-all"
+              className="p-6 rounded-xl text-center bg-dark-elevated hover:bg-dark-bg transition-colors duration-150"
             >
-              View Source Code
-            </motion.a>
-          </div>
-        </motion.div>
-      </section>
+              <div className="w-16 h-16 mb-4 mx-auto flex items-center justify-center text-white">
+                <div className="transform scale-[3] flex items-center justify-center">{social.icon}</div>
+              </div>
+              <h3 className="text-lg font-semibold text-dark-accent-primary mb-2">{social.name}</h3>
+              <p className="text-dark-text-secondary text-sm">{social.desc}</p>
+            </a>
+          ))}
+        </div>
+      </ContentSection>
+
+      {/* CTA Section */}
+      <CTASection
+        title="Ready to get started?"
+        description="Download Tunnels today and experience open source networking at its finest."
+        buttons={[
+          { text: "Download Now", href: "/download", primary: true },
+          { text: "View Source Code", href: "https://github.com/tunnels-is", primary: false }
+        ]}
+      />
     </div>
   );
 };

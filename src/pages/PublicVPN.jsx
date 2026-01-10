@@ -5,13 +5,19 @@ import FeatureTimeline from '../components/sections/FeatureTimeline';
 import CTASection from '../components/sections/CTASection';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
+import IllustratedSection from '../components/IllustratedSection';
 import { publicVPNContent } from '../content/siteContent';
+import {
+  GlobalNetworkIllustration,
+  PrivacyShieldIllustration,
+  CloudIllustration,
+} from '../components/illustrations';
 
 const PublicVPN = () => {
   const content = publicVPNContent;
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSimple
         badge={content.hero.badge}
@@ -36,6 +42,22 @@ const PublicVPN = () => {
         />
       </ContentSection>
 
+      {/* Illustrated: Privacy */}
+      <IllustratedSection
+        subtitle="True Privacy"
+        title="Browse Without Being Watched"
+        description="When you need to access the public internet privately, route your traffic through your own server. No third-party VPN provider sees your data."
+        features={[
+          "Your own server, your own IP",
+          "No logs by third parties",
+          "Full control over exit location",
+          "No bandwidth throttling"
+        ]}
+        illustration={PrivacyShieldIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+      />
+
       {/* Use Cases */}
       <ContentSection>
         <SectionHeader
@@ -47,6 +69,23 @@ const PublicVPN = () => {
           columns={2}
         />
       </ContentSection>
+
+      {/* Illustrated: Global Reach */}
+      <IllustratedSection
+        subtitle="Deploy Globally"
+        title="Exit Points Anywhere"
+        description="Deploy your VPN server in any region for optimal performance. Choose locations based on your needs - close to you for speed, or in specific countries for access."
+        features={[
+          "50+ global cloud regions",
+          "Choose your IP location",
+          "Sub-100ms latency options",
+          "Multiple redundant servers"
+        ]}
+        illustration={GlobalNetworkIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+        dark={false}
+      />
 
       {/* Cloud Providers */}
       <ContentSection background="dark-surface">
@@ -67,6 +106,22 @@ const PublicVPN = () => {
           {content.providersFooter}
         </p>
       </ContentSection>
+
+      {/* Illustrated: Easy Deployment */}
+      <IllustratedSection
+        subtitle="Simple Setup"
+        title="Deploy in Minutes"
+        description="Get your public VPN server running in under 5 minutes. Our one-click deployment scripts work with all major cloud providers."
+        features={[
+          "One-command installation",
+          "Auto-configure firewall rules",
+          "Free SSL certificates",
+          "Automatic updates available"
+        ]}
+        illustration={CloudIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+      />
 
       {/* Setup Guide */}
       <ContentSection>

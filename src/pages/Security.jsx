@@ -3,16 +3,22 @@ import FeatureGrid from '../components/sections/FeatureGrid';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
 import CTASection from '../components/sections/CTASection';
+import IllustratedSection from '../components/IllustratedSection';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { securityContent } from '../content/siteContent';
+import {
+  SecurityIllustration,
+  WireGuardIllustration,
+  OpenSourceIllustration,
+} from '../components/illustrations';
 
 const Security = () => {
   const [cryptoRef, cryptoVisible] = useScrollAnimation();
   const content = securityContent;
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSimple
         badge={content.hero.badge}
@@ -35,6 +41,22 @@ const Security = () => {
           cardStyle="elevated"
         />
       </ContentSection>
+
+      {/* Illustrated: Zero Trust Architecture */}
+      <IllustratedSection
+        subtitle="Defense in Depth"
+        title="Security at Every Layer"
+        description="From the protocol level to application design, every component is built with security as the primary concern. No compromises, no shortcuts."
+        features={[
+          "Zero-trust network design",
+          "Mutual authentication required",
+          "Minimal attack surface",
+          "Regular security audits"
+        ]}
+        illustration={SecurityIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+      />
 
       {/* Cryptography Section */}
       <ContentSection>
@@ -66,6 +88,23 @@ const Security = () => {
         </div>
       </ContentSection>
 
+      {/* Illustrated: WireGuard Protocol */}
+      <IllustratedSection
+        subtitle="Modern Cryptography"
+        title="Built on WireGuard"
+        description="We chose WireGuard for its simplicity, speed, and security. Just ~4,000 lines of code means a smaller attack surface and easier auditing than legacy VPN protocols."
+        features={[
+          "ChaCha20 symmetric encryption",
+          "Curve25519 key exchange",
+          "BLAKE2s hashing",
+          "Poly1305 authentication"
+        ]}
+        illustration={WireGuardIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+        dark={false}
+      />
+
       {/* Security Practices */}
       <ContentSection background="dark-surface">
         <SectionHeader
@@ -81,6 +120,22 @@ const Security = () => {
           ))}
         </div>
       </ContentSection>
+
+      {/* Illustrated: Open Source */}
+      <IllustratedSection
+        subtitle="Transparent & Verifiable"
+        title="100% Open Source Code"
+        description="Every line of our code is available for inspection. Security researchers, enterprises, and individuals can verify our claims and audit our implementation."
+        features={[
+          "Full source code on GitHub",
+          "MIT license - free forever",
+          "Community security reviews",
+          "Bug bounty program"
+        ]}
+        illustration={OpenSourceIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+      />
 
       {/* Open Source Section */}
       <ContentSection>

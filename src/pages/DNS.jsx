@@ -1,21 +1,15 @@
 import HeroSimple from '../components/sections/HeroSimple';
 import ContentSection from '../components/sections/ContentSection';
 import FeatureGrid from '../components/sections/FeatureGrid';
-import FeatureShowcase from '../components/sections/FeatureShowcase';
-import FeatureShowcaseCard from '../components/sections/FeatureShowcaseCard';
-import FeatureShowcaseBento from '../components/sections/FeatureShowcaseBento';
-import FeatureShowcaseFloating from '../components/sections/FeatureShowcaseFloating';
-import FeatureShowcaseSplit from '../components/sections/FeatureShowcaseSplit';
-import FeatureShowcaseMagazine from '../components/sections/FeatureShowcaseMagazine';
-import FeatureShowcaseSpotlight from '../components/sections/FeatureShowcaseSpotlight';
-import FeatureShowcaseOverlayLeft from '../components/sections/FeatureShowcaseOverlayLeft';
-import FeatureShowcaseOverlayBottom from '../components/sections/FeatureShowcaseOverlayBottom';
-import FeatureShowcaseOverlayCorner from '../components/sections/FeatureShowcaseOverlayCorner';
-import FeatureShowcaseOverlayDiagonal from '../components/sections/FeatureShowcaseOverlayDiagonal';
-import FeatureShowcaseOverlayCenter from '../components/sections/FeatureShowcaseOverlayCenter';
-import FeatureShowcaseOverlaySidePanel from '../components/sections/FeatureShowcaseOverlaySidePanel';
+import SectionHeader from '../components/ui/SectionHeader';
 import CTASection from '../components/sections/CTASection';
+import IllustratedSection from '../components/IllustratedSection';
 import { dnsContent } from '../content/siteContent';
+import {
+  DNSIllustration,
+  DNSFlowIllustration,
+  SelfHostedIllustration,
+} from '../components/illustrations';
 
 const DNS = () => {
 
@@ -31,150 +25,97 @@ const DNS = () => {
       />
 
       {/* DNS Features Grid */}
-      <ContentSection >
+      <ContentSection>
         <div id="features">
+          <SectionHeader
+            title="Private DNS Features"
+            subtitle="Everything you need for internal name resolution"
+          />
           <FeatureGrid
             features={dnsContent.dnsFeatures}
             columns={3}
-            cardStyle="simple"
+            cardStyle="elevated"
           />
         </div>
       </ContentSection>
 
-      {/* DNS Server Side Configuration */}
-      <ContentSection>
-        <FeatureShowcase
+      {/* Illustrated: How DNS Works */}
+      <IllustratedSection
+        subtitle="Simple Resolution"
+        title="Private DNS for Your Network"
+        description="Access your services by memorable names instead of IP addresses. tunnels automatically resolves internal hostnames for all connected devices."
+        features={[
+          "home.lan → your home server",
+          "nas.lan → your storage device",
+          "pi.lan → your Raspberry Pi",
+          "Works across all your devices"
+        ]}
+        illustration={DNSFlowIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+        dark={false}
+      />
+
+      {/* DNS Server Configuration */}
+      <ContentSection background="dark-surface">
+        <SectionHeader
           title={dnsContent.serverDNS.title}
-          descriptions={[dnsContent.serverDNS.description1, dnsContent.serverDNS.description2]}
-          imagePosition="right"
-          image={dnsContent.images.serverDNS}
+          subtitle="Configure DNS on your tunnels server"
         />
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-dark-elevated p-8 rounded-xl">
+            <p className="text-dark-text-secondary mb-4">{dnsContent.serverDNS.description1}</p>
+            <p className="text-dark-text-secondary">{dnsContent.serverDNS.description2}</p>
+          </div>
+        </div>
       </ContentSection>
 
-      {/* DNS Device Side Configuration */}
-      <ContentSection>
-        <FeatureShowcase
+      {/* Illustrated: Self-Hosted DNS */}
+      <IllustratedSection
+        subtitle="No External Dependencies"
+        title="Your DNS, Your Control"
+        description="Unlike cloud DNS services, your DNS queries never leave your network. Complete privacy and control over name resolution."
+        features={[
+          "No DNS query logging by third parties",
+          "Works when internet is down",
+          "Integrate with Pi-hole or AdGuard",
+          "Custom DNS records for any service"
+        ]}
+        illustration={SelfHostedIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+      />
+
+      {/* DNS Device Configuration */}
+      <ContentSection background="dark-surface">
+        <SectionHeader
           title={dnsContent.deviceDNS.title}
-          descriptions={[dnsContent.deviceDNS.description1, dnsContent.deviceDNS.description2]}
-          imagePosition="left"
-          image={dnsContent.images.deviceDNS}
+          subtitle="Automatic configuration for connected devices"
         />
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-dark-elevated p-8 rounded-xl">
+            <p className="text-dark-text-secondary mb-4">{dnsContent.deviceDNS.description1}</p>
+            <p className="text-dark-text-secondary">{dnsContent.deviceDNS.description2}</p>
+          </div>
+        </div>
       </ContentSection>
 
-      {/* Card Style Variation */}
-      <ContentSection>
-        <FeatureShowcaseCard
-          title={dnsContent.serverDNS.title}
-          descriptions={[dnsContent.serverDNS.description1, dnsContent.serverDNS.description2]}
-          image={dnsContent.images.serverDNS}
-        />
-      </ContentSection>
-
-      {/* Bento Style Variation */}
-      <ContentSection>
-        <FeatureShowcaseBento
-          title={dnsContent.deviceDNS.title}
-          descriptions={[dnsContent.deviceDNS.description1, dnsContent.deviceDNS.description2]}
-          imagePosition="right"
-          image={dnsContent.images.deviceDNS}
-        />
-      </ContentSection>
-
-      {/* Floating Style Variation */}
-      <ContentSection>
-        <FeatureShowcaseFloating
-          title={dnsContent.serverDNS.title}
-          descriptions={[dnsContent.serverDNS.description1, dnsContent.serverDNS.description2]}
-          imagePosition="left"
-          image={dnsContent.images.serverDNS}
-        />
-      </ContentSection>
-
-      {/* Split Panel Style Variation */}
-      <ContentSection>
-        <FeatureShowcaseSplit
-          title={dnsContent.deviceDNS.title}
-          descriptions={[dnsContent.deviceDNS.description1, dnsContent.deviceDNS.description2]}
-          imagePosition="right"
-          image={dnsContent.images.deviceDNS}
-        />
-      </ContentSection>
-
-      {/* Magazine Style Variation */}
-      <ContentSection>
-        <FeatureShowcaseMagazine
-          title={dnsContent.serverDNS.title}
-          descriptions={[dnsContent.serverDNS.description1, dnsContent.serverDNS.description2]}
-          imagePosition="left"
-          image={dnsContent.images.serverDNS}
-        />
-      </ContentSection>
-
-      {/* Spotlight Style Variation */}
-      <ContentSection>
-        <FeatureShowcaseSpotlight
-          title={dnsContent.deviceDNS.title}
-          descriptions={[dnsContent.deviceDNS.description1, dnsContent.deviceDNS.description2]}
-          imagePosition="top"
-          image={dnsContent.images.deviceDNS}
-        />
-      </ContentSection>
-
-      {/* Overlay Left Style Variation */}
-      <ContentSection>
-        <FeatureShowcaseOverlayLeft
-          title={dnsContent.serverDNS.title}
-          descriptions={[dnsContent.serverDNS.description1, dnsContent.serverDNS.description2]}
-          image={dnsContent.images.serverDNS}
-        />
-      </ContentSection>
-
-      {/* Overlay Bottom Style Variation */}
-      <ContentSection>
-        <FeatureShowcaseOverlayBottom
-          title={dnsContent.deviceDNS.title}
-          descriptions={[dnsContent.deviceDNS.description1, dnsContent.deviceDNS.description2]}
-          image={dnsContent.images.deviceDNS}
-        />
-      </ContentSection>
-
-      {/* Overlay Corner Style Variation */}
-      <ContentSection>
-        <FeatureShowcaseOverlayCorner
-          title={dnsContent.serverDNS.title}
-          descriptions={[dnsContent.serverDNS.description1, dnsContent.serverDNS.description2]}
-          imagePosition="right"
-          image={dnsContent.images.serverDNS}
-        />
-      </ContentSection>
-
-      {/* Overlay Diagonal Style Variation */}
-      <ContentSection>
-        <FeatureShowcaseOverlayDiagonal
-          title={dnsContent.deviceDNS.title}
-          descriptions={[dnsContent.deviceDNS.description1, dnsContent.deviceDNS.description2]}
-          image={dnsContent.images.deviceDNS}
-        />
-      </ContentSection>
-
-      {/* Overlay Center Style Variation */}
-      <ContentSection>
-        <FeatureShowcaseOverlayCenter
-          title={dnsContent.serverDNS.title}
-          descriptions={[dnsContent.serverDNS.description1, dnsContent.serverDNS.description2]}
-          image={dnsContent.images.serverDNS}
-        />
-      </ContentSection>
-
-      {/* Overlay Side Panel Style Variation */}
-      <ContentSection>
-        <FeatureShowcaseOverlaySidePanel
-          title={dnsContent.deviceDNS.title}
-          descriptions={[dnsContent.deviceDNS.description1, dnsContent.deviceDNS.description2]}
-          imagePosition="left"
-          image={dnsContent.images.deviceDNS}
-        />
-      </ContentSection>
+      {/* Illustrated: Split DNS */}
+      <IllustratedSection
+        subtitle="Smart Routing"
+        title="Split-Horizon DNS"
+        description="Access internal services by name when on your network, and automatically route through the tunnel when remote. Seamless experience everywhere."
+        features={[
+          "Same hostname works everywhere",
+          "Automatic route selection",
+          "No manual configuration needed",
+          "Instant failover between paths"
+        ]}
+        illustration={DNSIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+        dark={false}
+      />
 
       {/* CTA Section */}
       <CTASection

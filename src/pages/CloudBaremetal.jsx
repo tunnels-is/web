@@ -1,627 +1,194 @@
-import { motion } from 'framer-motion';
-import useScrollAnimation from '../hooks/useScrollAnimation';
+import HeroSimple from '../components/sections/HeroSimple';
+import ContentSection from '../components/sections/ContentSection';
+import SectionHeader from '../components/ui/SectionHeader';
+import FeatureGrid from '../components/sections/FeatureGrid';
+import StaggeredGrid from '../components/sections/StaggeredGrid';
+import CTASection from '../components/sections/CTASection';
+import IllustratedSection from '../components/IllustratedSection';
 import { cloudBaremetalContent } from '../content/siteContent';
-import { GlobeIcon, ServerIcon, BoltIcon, CodeIcon } from '../components/ui/Icons';
+import {
+  MultiServerIllustration,
+  CloudIllustration,
+  GlobalNetworkIllustration,
+  SecurityIllustration,
+} from '../components/illustrations';
 
 const CloudBaremetal = () => {
-  const [ref1, isVisible1] = useScrollAnimation();
-  const [ref2, isVisible2] = useScrollAnimation();
-  const [ref3, isVisible3] = useScrollAnimation();
-  const [ref4, isVisible4] = useScrollAnimation();
-  const [ref5, isVisible5] = useScrollAnimation();
-  const [ref6, isVisible6] = useScrollAnimation();
-  const [ref7, isVisible7] = useScrollAnimation();
-
-  const { benefits } = cloudBaremetalContent;
-
-  const useCases = [
-    {
-      title: "Global Enterprise",
-      description: "Deploy regional VPN servers for offices in US, EU, and Asia with centralized authentication",
-      scenario: "Control Server in US-East, VPN servers in each region for local network access"
-    },
-    {
-      title: "Cloud + On-Premise Hybrid",
-      description: "Mix cloud-hosted control with baremetal VPN servers for sensitive workload isolation",
-      scenario: "AWS control server, VPN servers on owned datacenter hardware"
-    },
-    {
-      title: "High-Traffic Applications",
-      description: "Distribute VPN load across multiple servers while maintaining single point of user management",
-      scenario: "1 Control Server + 10 VPN servers handling 10,000+ concurrent connections"
-    },
-    {
-      title: "Development Environments",
-      description: "Separate VPN servers for dev, staging, and production with unified access control",
-      scenario: "Per-environment VPN servers with role-based access from single auth server"
-    }
-  ];
-
-  const deploymentOptions = [
-    {
-      platform: "AWS / GCP / Azure",
-      description: "Deploy on major cloud providers with auto-scaling and managed infrastructure",
-      features: ["Easy deployment", "Managed networking", "Auto-scaling ready", "Global regions"]
-    },
-    {
-      platform: "Baremetal / Dedicated Servers",
-      description: "Maximum performance and control on physical hardware you own or lease",
-      features: ["Full hardware control", "No hypervisor overhead", "Predictable performance", "Cost-effective at scale"]
-    },
-    {
-      platform: "Hybrid Cloud",
-      description: "Best of both worlds - cloud for flexibility, baremetal for critical workloads",
-      features: ["Flexible deployment", "Cost optimization", "Compliance-friendly", "Geographic flexibility"]
-    },
-    {
-      platform: "Private Cloud / OpenStack",
-      description: "Self-hosted cloud infrastructure with full control over every layer",
-      features: ["Complete control", "Data sovereignty", "Custom networking", "No external dependencies"]
-    }
-  ];
-
-  const technicalCapabilities = [
-    {
-      title: "Signature-Based Authentication",
-      description: "Control server signs authentication tokens, VPN servers verify signatures",
-      technical: "Public key cryptography ensures VPN servers never need database access"
-    },
-    {
-      title: "Network Isolation",
-      description: "Each VPN server manages its own network range, preventing IP conflicts",
-      technical: "Configure different CIDR blocks per server (e.g., 10.0.0.0/16, 10.1.0.0/16)"
-    },
-    {
-      title: "Flexible Routing",
-      description: "Define custom routes for each VPN server to access specific network segments",
-      technical: "Route tables configured per server for fine-grained network access control"
-    },
-    {
-      title: "Zero-Touch Client Configuration",
-      description: "Clients automatically discover and connect to optimal VPN servers",
-      technical: "Control server provides available servers list, client handles failover"
-    }
-  ];
+  const { hero, benefitsSection, benefits, architecture, useCases, deploymentOptions, performance } = cloudBaremetalContent;
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            animate={{
-              scale: [1, 1.3, 1],
-              rotate: [0, 180, 0],
-            }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-            className="absolute top-1/3 -left-32 w-96 h-96 bg-dark-accent-primary/10 rounded-full blur-3xl"
-          />
-          <motion.div
-            animate={{
-              scale: [1.3, 1, 1.3],
-              rotate: [180, 0, 180],
-            }}
-            transition={{
-              duration: 35,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-            className="absolute bottom-1/3 -right-32 w-96 h-96 bg-dark-accent-tertiary/10 rounded-full blur-3xl"
-          />
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              x: [0, 100, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-            className="absolute top-1/2 left-1/2 w-96 h-96 bg-dark-accent-secondary/10 rounded-full blur-3xl"
-          />
-        </div>
+      <HeroSimple
+        title={hero.title}
+        subtitle={hero.subtitle}
+        description={hero.description}
+        buttons={hero.buttons}
+        showNetworkLines={true}
+      />
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Cloud & Baremetal
-            </h1>
-            <h2 className="text-2xl md:text-4xl font-semibold text-dark-text-secondary mb-8">
-              Multi-Server Architecture for Scale
-            </h2>
-            <p className="text-xl md:text-2xl text-dark-text-secondary mb-12 max-w-4xl mx-auto leading-snug">
-              Deploy a distributed VPN infrastructure with centralized authentication.
-              Scale globally with multiple VPN servers while managing everything from a single control plane.
-            </p>
-          </motion.div>
+      {/* Benefits Section */}
+      <ContentSection background="dark-surface">
+        <SectionHeader
+          title={benefitsSection.title}
+          subtitle={benefitsSection.subtitle}
+        />
+        <FeatureGrid
+          features={benefits}
+          columns={3}
+          cardStyle="elevated"
+        />
+      </ContentSection>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <motion.a
-              href="/download"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white font-semibold rounded-lg transition-colors"
-            >
-              Get Started
-            </motion.a>
-            <motion.a
-              href="mailto:support@tunnels.is"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-dark-surface hover:bg-dark-elevated text-dark-text-primary font-semibold rounded-lg transition-colors"
-            >
-              Talk to Sales
-            </motion.a>
-          </motion.div>
-        </div>
-      </section>
+      {/* Illustrated: Multi-Server Architecture */}
+      <IllustratedSection
+        subtitle="Distributed Architecture"
+        title="Scale Without Limits"
+        description="Deploy VPN servers across multiple regions while managing everything from a single control plane. Each server operates independently, verifying auth tokens without database access."
+        features={[
+          "One control server for auth",
+          "Unlimited VPN server nodes",
+          "Geographic distribution",
+          "Independent failure domains"
+        ]}
+        illustration={MultiServerIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+        dark={false}
+      />
 
-      {/* Benefits Grid */}
-      <section ref={ref1} className="py-24 bg-dark-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible1 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Built for Scale & Reliability
-            </h2>
-            <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto">
-              Architectural benefits that give you enterprise-grade capabilities without the enterprise complexity
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isVisible1 ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-dark-elevated p-8 rounded-xl hover:bg-dark-bg hover:shadow-xl hover:shadow-dark-accent-primary/20 transition-all"
-              >
-                <div className="w-20 h-20 mb-4">{benefit.icon}</div>
-                <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
-                  {benefit.title}
-                </h3>
-                <p className="text-dark-text-secondary leading-snug">
-                  {benefit.description}
-                </p>
-              </motion.div>
-            ))}
+      {/* Architecture Section */}
+      <ContentSection>
+        <SectionHeader
+          title={architecture.title}
+          subtitle={architecture.description}
+          titleSize="medium"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="p-8 rounded-xl border-l-4 border-dark-accent-primary bg-dark-surface">
+            <h3 className="text-xl font-bold text-dark-accent-primary mb-3">{architecture.controlServer.title}</h3>
+            <p className="text-dark-text-secondary">{architecture.controlServer.description}</p>
+          </div>
+          <div className="p-8 rounded-xl border-l-4 border-dark-accent-tertiary bg-dark-surface">
+            <h3 className="text-xl font-bold text-dark-accent-tertiary mb-3">{architecture.vpnServers.title}</h3>
+            <p className="text-dark-text-secondary">{architecture.vpnServers.description}</p>
           </div>
         </div>
-      </section>
+      </ContentSection>
 
-      {/* Architecture Overview */}
-      <section ref={ref2} className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible2 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-          >
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Distributed by Design
-              </h2>
-              <p className="text-lg text-dark-text-secondary leading-snug mb-6">
-                Tunnels multi-server architecture separates concerns for maximum flexibility and performance.
-                Deploy one control server for authentication and management, then add as many VPN servers
-                as you need to handle traffic and provide geographic coverage.
-              </p>
+      {/* Illustrated: Global Reach */}
+      <IllustratedSection
+        subtitle="Worldwide Deployment"
+        title="Deploy Anywhere, Manage Centrally"
+        description="Run VPN servers in any region - cloud providers, colocations, or your own data centers. Users automatically connect to optimal endpoints while you maintain central control."
+        features={[
+          "Multi-region deployment",
+          "Automatic failover",
+          "Central policy management",
+          "Real-time monitoring"
+        ]}
+        illustration={GlobalNetworkIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+      />
 
-              <div className="space-y-6">
-                <div className="glass-effect p-6 rounded-xl border-l-4 border-dark-accent-primary">
-                  <h4 className="font-semibold text-xl text-dark-accent-primary mb-2">Control Server</h4>
-                  <p className="text-dark-text-secondary">
-                    Handles user authentication, authorization, device management, and policy enforcement.
-                    Signs authentication tokens for VPN servers to verify.
-                  </p>
-                </div>
+      {/* Use Cases Section */}
+      <ContentSection background="dark-surface">
+        <SectionHeader
+          title="Real-World Deployments"
+          subtitle="See how organizations are using multi-server Tunnels architecture"
+        />
+        <StaggeredGrid
+          items={useCases}
+          columns={2}
+        />
+      </ContentSection>
 
-                <div className="glass-effect p-6 rounded-xl border-l-4 border-dark-accent-tertiary">
-                  <h4 className="font-semibold text-xl text-dark-accent-tertiary mb-2">VPN Servers</h4>
-                  <p className="text-dark-text-secondary">
-                    Handle VPN connections, tunnel traffic, and provide network access. Verify authentication
-                    signatures from control server without needing direct database access.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={isVisible2 ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="p-8"
-            >
-              <div className="space-y-6">
-                <div className="bg-dark-accent-primary/10 p-6 rounded-lg">
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="w-16 h-16 bg-dark-accent-primary/30 rounded-full flex items-center justify-center">
-                      <svg className="w-8 h-8 text-dark-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <h4 className="text-center font-semibold text-lg mb-2">1 Control Server</h4>
-                  <p className="text-center text-dark-text-secondary text-sm">Auth, IAM, Management</p>
-                </div>
-
-                <div className="flex justify-center">
-                  <svg className="w-8 h-8 text-dark-accent-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                  </svg>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="bg-dark-accent-tertiary/10 p-4 rounded-lg">
-                      <div className="flex items-center justify-center mb-3">
-                        <div className="w-12 h-12 bg-dark-accent-tertiary/30 rounded-full flex items-center justify-center">
-                          <svg className="w-6 h-6 text-dark-accent-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
-                          </svg>
-                        </div>
-                      </div>
-                      <p className="text-center text-dark-text-secondary text-xs">VPN {i}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <p className="text-center text-dark-text-secondary text-sm italic">
-                  + N more VPN servers as needed
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Use Cases */}
-      <section ref={ref3} className="py-24 bg-dark-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible3 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Real-World Deployments
-            </h2>
-            <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto">
-              See how organizations are using multi-server Tunnels architecture
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16">
-            {useCases.map((useCase, index) => {
-              const icons = [
-                <GlobeIcon />,      // Global Enterprise
-                <ServerIcon />,     // Cloud + On-Premise
-                <BoltIcon />,       // High-Traffic
-                <CodeIcon />        // Development
-              ];
-
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isVisible3 ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
-                  className="relative group"
-                >
-                  {/* Icon badge */}
-                  <div className="absolute -left-2 top-0 w-14 h-14 text-dark-accent-primary flex items-center justify-center">
-                    {icons[index]}
-                  </div>
-
-                <div className="pl-16">
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-dark-accent-primary transition-colors leading-tight pt-3">
-                    {useCase.title}
-                  </h3>
-                  <p className="text-base text-dark-text-secondary mb-6 leading-relaxed">
-                    {useCase.description}
-                  </p>
-
-                  {/* Scenario card with different styling */}
-                  <div className="bg-dark-bg/50 backdrop-blur-sm p-5 rounded-lg border-t border-dark-accent-primary/20">
-                    <div className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-dark-accent-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <p className="text-sm text-dark-text-secondary leading-relaxed">
-                        {useCase.scenario}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Technical Capabilities */}
-      <section ref={ref4} className="py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible4 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Technical Architecture
-            </h2>
-            <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto mb-8">
-              Deep dive into the technical capabilities that power multi-server deployments
-            </p>
-            <motion.a
-              href="https://docs.tunnels.is/docs"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block px-6 py-3 bg-dark-accent-primary/10 hover:bg-dark-accent-primary/20 text-dark-accent-primary border border-dark-accent-primary/30 hover:border-dark-accent-primary/50 rounded-lg font-semibold transition-all"
-            >
-              View Documentation
-            </motion.a>
-          </motion.div>
-
-          <div className="space-y-16">
-            {technicalCapabilities.map((capability, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isVisible4 ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="border-l-2 border-dark-accent-primary/30 pl-8"
-              >
-                <h3 className="text-2xl font-semibold text-white mb-3">
-                  {capability.title}
-                </h3>
-                <p className="text-lg text-dark-text-secondary mb-4 leading-relaxed">
-                  {capability.description}
-                </p>
-                <p className="text-sm text-dark-text-muted font-mono leading-relaxed">
-                  {capability.technical}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Illustrated: Flexible Deployment */}
+      <IllustratedSection
+        subtitle="Your Infrastructure"
+        title="Cloud, Baremetal, or Hybrid"
+        description="Deploy on the infrastructure that fits your needs. Mix and match cloud providers with on-premise hardware. No vendor lock-in, complete flexibility."
+        features={[
+          "AWS, GCP, Azure support",
+          "Bare metal performance",
+          "Private cloud compatible",
+          "Docker containers available"
+        ]}
+        illustration={CloudIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+        dark={false}
+      />
 
       {/* Deployment Options */}
-      <section ref={ref5} className="py-24 bg-dark-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible5 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Deploy Anywhere
-            </h2>
-            <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto">
-              Flexible deployment options to match your infrastructure strategy
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {deploymentOptions.map((option, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={isVisible5 ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.03 }}
-                className="bg-dark-elevated p-8 rounded-xl hover:bg-dark-bg transition-all"
-              >
-                <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
-                  {option.platform}
-                </h3>
-                <p className="text-lg text-dark-text-secondary mb-6 leading-snug">
-                  {option.description}
-                </p>
-                <ul className="space-y-3">
-                  {option.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center space-x-3">
-                      <span className="text-dark-accent-tertiary text-xl">✓</span>
-                      <span className="text-dark-text-secondary">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
+      <ContentSection>
+        <SectionHeader
+          title="Deploy Anywhere"
+          subtitle="Flexible deployment options to match your infrastructure strategy"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {deploymentOptions.map((option, index) => (
+            <div key={index} className="bg-dark-surface p-8 rounded-xl hover:bg-dark-elevated transition-colors duration-150">
+              <h3 className="text-xl font-bold text-dark-accent-primary mb-3">{option.platform}</h3>
+              <p className="text-dark-text-secondary mb-4">{option.description}</p>
+              <ul className="space-y-2">
+                {option.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center gap-2 text-dark-text-secondary">
+                    <svg className="w-4 h-4 text-dark-accent-tertiary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-      </section>
+      </ContentSection>
+
+      {/* Illustrated: Security */}
+      <IllustratedSection
+        subtitle="Enterprise Security"
+        title="Zero Trust Architecture"
+        description="VPN servers verify authentication tokens using public key cryptography. No shared secrets, no database connections between servers - minimal attack surface by design."
+        features={[
+          "Signature-based auth",
+          "No shared secrets",
+          "Isolated failure domains",
+          "Full audit logging"
+        ]}
+        illustration={SecurityIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+      />
 
       {/* Performance Stats */}
-      <section ref={ref6} className="pt-32 pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible6 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-              Built for Performance
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isVisible6 ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-center"
-              >
-                <div className="text-5xl md:text-6xl font-bold mb-4">
-                  1M+
-                </div>
-                <p className="text-xl text-dark-text-secondary font-semibold mb-2">
-                  Concurrent Users
-                </p>
-                <p className="text-dark-text-muted">
-                  Scale to millions with horizontal VPN server deployment
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isVisible6 ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-center"
-              >
-                <div className="text-5xl md:text-6xl font-bold mb-4">
-                  &lt;5ms
-                </div>
-                <p className="text-xl text-dark-text-secondary font-semibold mb-2">
-                  Auth Latency
-                </p>
-                <p className="text-dark-text-muted">
-                  Lightning-fast signature verification on VPN servers
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isVisible6 ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-center"
-              >
-                <div className="text-5xl md:text-6xl font-bold mb-4">
-                  99.99%
-                </div>
-                <p className="text-xl text-dark-text-secondary font-semibold mb-2">
-                  Uptime SLA
-                </p>
-                <p className="text-dark-text-muted">
-                  Redundant architecture ensures high availability
-                </p>
-              </motion.div>
+      <ContentSection background="dark-surface">
+        <SectionHeader
+          title={performance.title}
+          subtitle="Enterprise-grade performance metrics"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          {performance.stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-dark-accent-primary mb-2">{stat.value}</div>
+              <div className="text-lg font-semibold text-dark-text-primary mb-1">{stat.label}</div>
+              <p className="text-dark-text-muted text-sm">{stat.description}</p>
             </div>
-          </motion.div>
+          ))}
         </div>
-      </section>
+      </ContentSection>
 
-      {/* Getting Started */}
-      <section ref={ref7} className="py-24 bg-dark-bg">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible7 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to Deploy?
-            </h2>
-            <p className="text-xl text-dark-text-secondary max-w-2xl mx-auto mb-8">
-              Get started with multi-server Tunnels architecture today. Full deployment guides and
-              24/7 support for enterprise customers.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible7 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12"
-          >
-            <div className="glass-effect p-8 rounded-xl">
-              <h3 className="text-2xl font-semibold text-dark-accent-primary mb-4">
-                Documentation
-              </h3>
-              <p className="text-dark-text-secondary mb-6">
-                Comprehensive guides for setting up control servers, VPN servers, and client configuration.
-              </p>
-              <ul className="space-y-2 text-dark-text-secondary mb-6">
-                <li>• Multi-server architecture guide</li>
-                <li>• Deployment best practices</li>
-                <li>• Security configuration</li>
-                <li>• Troubleshooting & monitoring</li>
-              </ul>
-              <motion.a
-                href="/"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-block px-6 py-3 bg-dark-accent-primary text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all"
-              >
-                View Documentation
-              </motion.a>
-            </div>
-
-            <div className="glass-effect p-8 rounded-xl">
-              <h3 className="text-2xl font-semibold text-dark-accent-secondary mb-4">
-                Enterprise Support
-              </h3>
-              <p className="text-dark-text-secondary mb-6">
-                Need help with deployment? Our team provides full support for enterprise multi-server setups.
-              </p>
-              <ul className="space-y-2 text-dark-text-secondary mb-6">
-                <li>• Architecture consulting</li>
-                <li>• Custom integrations</li>
-                <li>• 24/7 technical support</li>
-                <li>• Deployment assistance</li>
-              </ul>
-              <motion.a
-                href="mailto:support@tunnels.is"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-block px-6 py-3 bg-dark-accent-secondary text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all"
-              >
-                Contact Sales
-              </motion.a>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible7 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center"
-          >
-            <motion.a
-              href="/download"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block px-10 py-5 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white text-lg font-semibold rounded-xl transition-colors"
-            >
-              Download & Get Started Free
-            </motion.a>
-            <p className="text-dark-text-muted mt-4">
-              24-hour free trial • No credit card required
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* CTA Section */}
+      <CTASection
+        title="Ready to Deploy?"
+        description="Get started with multi-server Tunnels architecture today. Full deployment guides and 24/7 support for enterprise customers."
+        buttons={[
+          { text: "Download & Get Started", href: "/download", primary: true },
+          { text: "View Documentation", href: "https://docs.tunnels.is/docs", primary: false }
+        ]}
+      />
     </div>
   );
 };

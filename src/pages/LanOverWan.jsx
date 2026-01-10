@@ -5,16 +5,21 @@ import FeatureTimeline from '../components/sections/FeatureTimeline';
 import CTASection from '../components/sections/CTASection';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
+import IllustratedSection from '../components/IllustratedSection';
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { lanOverWanContent } from '../content/siteContent';
+import {
+  LANOverWANIllustration,
+  SpeedIllustration,
+} from '../components/illustrations';
 
 const LanOverWan = () => {
   const [archRef, archVisible] = useScrollAnimation();
   const content = lanOverWanContent;
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSimple
         badge={content.hero.badge}
@@ -38,6 +43,22 @@ const LanOverWan = () => {
           cardStyle="elevated"
         />
       </ContentSection>
+
+      {/* Illustrated: Virtual LAN */}
+      <IllustratedSection
+        subtitle="Seamless Integration"
+        title="One Network, Any Location"
+        description="Connect multiple physical locations as if they were on the same local network. File shares, printers, and services work exactly as they would in a single office."
+        features={[
+          "Layer 2 connectivity across sites",
+          "Full broadcast domain support",
+          "No IP conflicts with smart routing",
+          "Seamless failover between paths"
+        ]}
+        illustration={LANOverWANIllustration}
+        illustrationPosition="right"
+        illustrationSize="large"
+      />
 
       {/* Architecture Section */}
       <ContentSection>
@@ -97,6 +118,23 @@ const LanOverWan = () => {
           </motion.div>
         </div>
       </ContentSection>
+
+      {/* Illustrated: High Performance */}
+      <IllustratedSection
+        subtitle="Enterprise Performance"
+        title="WireGuard Speed, LAN Simplicity"
+        description="Built on WireGuard's high-performance protocol, your LAN-over-WAN connections achieve near-native speeds with minimal latency overhead."
+        features={[
+          "Sub-millisecond latency overhead",
+          "10+ Gbps throughput capable",
+          "Efficient CPU utilization",
+          "Automatic path optimization"
+        ]}
+        illustration={SpeedIllustration}
+        illustrationPosition="left"
+        illustrationSize="large"
+        dark={false}
+      />
 
       {/* Use Cases */}
       <ContentSection background="dark-surface">
