@@ -1,23 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dark-bg: #0a0a0a;
-  --color-dark-surface: #121212;
-  --color-dark-elevated: #1e1e1e;
-  --color-dark-border: #2a2a2a;
-  --color-dark-text-primary: #ffffff;
-  --color-dark-text-secondary: #a0a0a0;
-  --color-dark-text-muted: #666666;
+  /* Color palette - clean professional dark theme */
+  --color-dark-bg: #0b0f1a;
+  --color-dark-surface: #111827;
+  --color-dark-elevated: #1e293b;
+  --color-dark-card: #162032;
+  --color-dark-border: #1e3a5f;
+  --color-dark-border-light: #2d4a6f;
+
+  --color-dark-text-primary: #f1f5f9;
+  --color-dark-text-secondary: #94a3b8;
+  --color-dark-text-muted: #64748b;
+
   --color-dark-accent-primary: #3b82f6;
   --color-dark-accent-secondary: #60a5fa;
   --color-dark-accent-tertiary: #06b6d4;
+  --color-dark-accent-green: #10b981;
 
-  --animate-fade-in: fade-in 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --animate-slide-up: slide-up 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --animate-slide-down: slide-down 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --animate-slide-left: slide-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --animate-slide-right: slide-right 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --animate-scale-in: scale-in 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Animations */
+  --animate-fade-in: fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-slide-up: slide-up 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-slide-down: slide-down 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   @keyframes fade-in {
     from { opacity: 0; }
@@ -33,31 +37,20 @@
     from { transform: translateY(-16px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
   }
-
-  @keyframes slide-left {
-    from { transform: translateX(16px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-  }
-
-  @keyframes slide-right {
-    from { transform: translateX(-16px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-  }
-
-  @keyframes scale-in {
-    from { transform: scale(0.95); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-  }
 }
 
+/* Base resets */
 * {
   border-color: var(--color-dark-border);
-  /* Enhanced font smoothing */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
-  font-synthesis: none;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -65,149 +58,131 @@ body {
   color: var(--color-dark-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-kerning: normal;
-  font-variant-ligatures: common-ligatures;
-  /* Prevent font weight shifts */
-  -webkit-text-stroke: 0.45px transparent;
-  text-shadow: 0 0 0.01px rgba(255, 255, 255, 0.1);
-  /* Prevent horizontal scrolling */
   overflow-x: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-  /* Improved subpixel rendering */
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-/* Gradient text removed - using solid colors for flat design */
-
-/* Smooth rendering for all headings */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-kerning: normal;
-  letter-spacing: -0.015em;
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
-}
-
-/* Main headings stay with Inter */
-h1, h2 {
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  -webkit-text-stroke: 0.5px transparent;
-  text-shadow: 0 0 0.01px rgba(255, 255, 255, 0.15);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
-/* H3 with Space Grotesk for feature/card titles */
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.25rem; }
 h3 {
   font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   font-weight: 600;
+  font-size: 1.25rem;
   letter-spacing: -0.015em;
 }
 
-/* H4-H6 stay with Inter */
-h4, h5, h6 {
-  font-weight: 600;
-  letter-spacing: -0.005em;
-}
-
-/* Button and interactive text smoothing */
-button, a {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-/* Buttons with slightly heavier weight for better readability */
-button, .btn, [class*="px-"][class*="py-"] {
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-/* Description and secondary text with lighter weight */
 p {
   font-weight: 400;
+  line-height: 1.7;
   letter-spacing: -0.005em;
-  line-height: 1.65;
 }
 
-/* Tighter line height for feature cards and lists */
-.feature-card p,
-.card p,
-[class*="feature"] p,
-[class*="card"] p,
-ul li,
-ol li {
-  line-height: 1.45;
-}
-
-/* Even tighter for feature titles and list items */
-.feature-title,
-.card-title,
-[class*="feature"] h3,
-[class*="card"] h3,
-li h3,
-li h4 {
-  line-height: 1.25;
-  margin-bottom: 0.5rem;
-}
-
-/* Lists should be more compact */
-ul, ol {
-  line-height: 1.45;
-}
-
-ul li, ol li {
-  margin-bottom: 0.375rem;
-}
-
-/* Feature grids and card grids should be tighter */
-[class*="grid"] p {
-  line-height: 1.45;
-  margin-bottom: 0.5rem;
-}
-
-/* Aggressive reduction for section content */
-section p,
-.section p,
-[class*="Section"] p {
-  line-height: 1.5;
-}
-
-/* Feature descriptions specifically */
-[class*="description"] {
-  line-height: 1.45;
-}
-
-/* Icon + text layouts */
-.text-4xl + * h3,
-.text-4xl + * h4,
-.text-6xl + * h3 {
-  line-height: 1.25;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Small text and captions */
 .text-sm, small {
   font-weight: 400;
-  letter-spacing: 0.005em;
+  letter-spacing: 0.01em;
 }
 
-/* Feature/Card specific styling - Space Grotesk for sub-item titles */
+/* Glass effect */
+.glass-effect {
+  background-color: rgba(11, 15, 26, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(30, 58, 95, 0.5);
+}
+
+/* Card styles */
+.card {
+  background: var(--color-dark-card);
+  border: 1px solid var(--color-dark-border);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--color-dark-border-light);
+  background: var(--color-dark-elevated);
+}
+
+/* Button styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  background: var(--color-dark-accent-primary);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  background: transparent;
+  color: var(--color-dark-text-primary);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-dark-border-light);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-dark-accent-primary);
+  color: var(--color-dark-accent-primary);
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* Section dividers */
+.section-divider {
+  border-top: 1px solid var(--color-dark-border);
+}
+
+/* Subtle gradient background for hero */
+.hero-gradient {
+  background: linear-gradient(180deg, var(--color-dark-bg) 0%, #0d1525 50%, var(--color-dark-bg) 100%);
+}
+
+/* Feature card titles */
 .feature-title, .card-title, [class*="feature"] h3, [class*="card"] h3 {
   font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   font-weight: 600;
-  letter-spacing: -0.015em;
 }
 
-.glass-effect {
-  background-color: rgb(18 18 18 / 0.5);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgb(42 42 42 / 0.5);
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark-border-light);
 }

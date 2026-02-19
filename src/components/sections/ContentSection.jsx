@@ -1,15 +1,6 @@
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 import { motion } from 'framer-motion';
 
-/**
- * ContentSection - Wrapper for all content sections with consistent spacing
- *
- * @param {string} background - Background style: dark-bg, dark-surface, dark-elevated, gradient, transparent (default: transparent)
- * @param {string} padding - Padding style: normal, large, small (default: normal)
- * @param {React.ReactNode} children - Content to render
- * @param {string} className - Additional CSS classes
- * @param {boolean} animated - Enable scroll animation (default: true)
- */
 const ContentSection = ({
   background = 'transparent',
   padding = 'normal',
@@ -23,18 +14,17 @@ const ContentSection = ({
     'dark-bg': 'bg-dark-bg',
     'dark-surface': 'bg-dark-surface',
     'dark-elevated': 'bg-dark-elevated',
-    'gradient': 'bg-dark-surface',
     'transparent': ''
   }[background] || '';
 
   const paddingClasses = {
-    'small': 'py-16',
-    'normal': 'py-24 md:py-32',
-    'large': 'py-32 md:py-40'
-  }[padding] || 'py-24 md:py-32';
+    'small': 'py-12 md:py-16',
+    'normal': 'py-16 md:py-24',
+    'large': 'py-24 md:py-32'
+  }[padding] || 'py-16 md:py-24';
 
   const content = (
-    <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {children}
     </div>
   );
@@ -50,9 +40,9 @@ const ContentSection = ({
   return (
     <section ref={ref} className={`${backgroundClasses} ${paddingClasses} ${className}`}>
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
       >
         {content}
       </motion.div>

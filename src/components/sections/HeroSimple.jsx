@@ -1,23 +1,6 @@
 import { motion } from 'framer-motion';
-import WaveAnimation from '../animations/WaveAnimation';
 import NetworkLines from '../animations/NetworkLines';
 
-/**
- * HeroSimple - Simple hero section with optional animations
- * Used for: Home, Features, DNS pages
- *
- * @param {string} badge - Optional badge text
- * @param {string} title - Main heading
- * @param {string} subtitle - Subtitle below title
- * @param {string} description - Description text
- * @param {Array} buttons - Array of button configurations
- * @param {Array} quickStats - Array of stat objects { value, label }
- * @param {boolean} showWaves - Show wave animation (default: false)
- * @param {boolean} showNetworkLines - Show network connection lines (default: false)
- * @param {boolean} showScrollIndicator - Show scroll indicator (default: false)
- * @param {boolean} showGeometricShapes - Show floating geometric shapes (default: false)
- * @param {boolean} showRadialGlow - Show radial glow effect (default: false)
- */
 const HeroSimple = ({
   badge,
   title,
@@ -25,145 +8,58 @@ const HeroSimple = ({
   description,
   buttons = [],
   quickStats = [],
-  showWaves = false,
   showNetworkLines = false,
-  showScrollIndicator = false,
-  showGeometricShapes = false,
-  showRadialGlow = false,
 }) => {
-
-  // Geometric shapes configuration
-  const geometricShapes = [
-    { size: 120, left: '10%', top: '20%', duration: 15, shape: 'circle' },
-    { size: 90, left: '85%', top: '15%', duration: 18, shape: 'square' },
-    { size: 140, left: '15%', top: '70%', duration: 20, shape: 'triangle' },
-    { size: 100, left: '80%', top: '75%', duration: 22, shape: 'diamond' },
-    { size: 80, left: '50%', top: '10%', duration: 17, shape: 'hexagon' },
-  ];
-
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-      {/* Radial Glow Effect */}
-      {showRadialGlow && (
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-dark-accent-primary/5 rounded-full blur-3xl" />
-        </div>
-      )}
-
-      {/* Geometric Shapes Animation */}
-      {showGeometricShapes && (
-        <div className="absolute inset-0">
-          {geometricShapes.map((shape, index) => (
-            <motion.div
-              key={index}
-              style={{ left: shape.left, top: shape.top }}
-              animate={{
-                y: [0, -30, 0],
-                rotate: [0, 360],
-                opacity: [0.2, 0.5, 0.2],
-              }}
-              transition={{
-                duration: shape.duration,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-              className="absolute"
-            >
-              {shape.shape === 'circle' && (
-                <div
-                  style={{ width: shape.size, height: shape.size }}
-                  className="rounded-full border-2 border-dark-accent-primary/30"
-                />
-              )}
-              {shape.shape === 'square' && (
-                <div
-                  style={{ width: shape.size, height: shape.size }}
-                  className="border-2 border-dark-accent-tertiary/30 rotate-45"
-                />
-              )}
-              {shape.shape === 'triangle' && (
-                <div
-                  style={{
-                    width: 0,
-                    height: 0,
-                    borderLeft: `${shape.size/2}px solid transparent`,
-                    borderRight: `${shape.size/2}px solid transparent`,
-                    borderBottom: `${shape.size}px solid rgba(var(--color-accent-secondary-rgb, 147, 51, 234), 0.3)`
-                  }}
-                />
-              )}
-              {shape.shape === 'diamond' && (
-                <div
-                  style={{ width: shape.size, height: shape.size }}
-                  className="border-2 border-dark-accent-secondary/30 rotate-45"
-                />
-              )}
-              {shape.shape === 'hexagon' && (
-                <svg
-                  width={shape.size}
-                  height={shape.size}
-                  viewBox="0 0 100 100"
-                  className="border-dark-accent-primary/30"
-                >
-                  <polygon
-                    points="50,5 90,25 90,75 50,95 10,75 10,25"
-                    fill="none"
-                    stroke="rgba(59, 130, 246, 0.3)"
-                    strokeWidth="2"
-                  />
-                </svg>
-              )}
-            </motion.div>
-          ))}
-        </div>
-      )}
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden hero-gradient">
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
+        backgroundSize: '40px 40px'
+      }} />
 
       {/* Network Lines Animation */}
       {showNetworkLines && (
         <div className="absolute inset-0">
-          <NetworkLines opacity={0.08} />
+          <NetworkLines opacity={0.06} />
         </div>
       )}
 
-      {/* Wave Animation */}
-      {showWaves && (
-        <div className="absolute inset-0">
-          <WaveAnimation opacity={0.15} />
-        </div>
-      )}
+      {/* Gradient orb */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-dark-accent-primary/[0.04] rounded-full blur-[100px]" />
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
         >
           {badge && (
             <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-dark-accent-primary/20 rounded-full text-dark-accent-primary font-semibold text-sm backdrop-blur-sm border border-dark-accent-primary/30">
+              <span className="px-4 py-1.5 bg-dark-accent-primary/10 rounded-full text-dark-accent-primary font-medium text-sm border border-dark-accent-primary/20">
                 {badge}
               </span>
             </div>
           )}
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
             {title}
           </h1>
 
           {subtitle && (
-            <h2 className="text-2xl md:text-3xl font-semibold text-dark-text-secondary mb-8">
+            <p className="text-lg sm:text-xl md:text-2xl font-medium text-dark-text-secondary mb-4 max-w-3xl mx-auto">
               {subtitle}
-            </h2>
+            </p>
           )}
         </motion.div>
 
         {description && (
           <motion.p
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.05, ease: [0.4, 0, 0.2, 1] }}
-            className="text-xl md:text-2xl text-dark-text-secondary mb-12 max-w-3xl mx-auto"
+            transition={{ duration: 0.4, delay: 0.05, ease: [0.4, 0, 0.2, 1] }}
+            className="text-base sm:text-lg text-dark-text-muted mb-10 max-w-2xl mx-auto leading-relaxed"
           >
             {description}
           </motion.p>
@@ -172,22 +68,16 @@ const HeroSimple = ({
         {/* Buttons */}
         {buttons.length > 0 && (
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            transition={{ duration: 0.4, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+            className="flex flex-col sm:flex-row gap-3 justify-center items-center"
           >
             {buttons.map((button, index) => (
               <a
                 key={index}
                 href={button.href}
-                className={
-                  button.primary
-                    ? "px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-secondary text-white font-semibold rounded-lg transition-all duration-150 shadow-lg shadow-dark-accent-primary/20 hover:shadow-dark-accent-primary/40 active:opacity-90"
-                    : button.teal
-                    ? "px-8 py-4 bg-dark-accent-tertiary hover:bg-dark-accent-tertiary/80 text-white font-semibold rounded-lg transition-all duration-150 shadow-lg shadow-dark-accent-tertiary/20 hover:shadow-dark-accent-tertiary/40 active:opacity-90"
-                    : "px-8 py-4 glass-effect hover:bg-dark-elevated hover:border-dark-accent-primary/50 text-dark-text-primary font-semibold rounded-lg transition-all duration-150 border border-transparent active:opacity-90"
-                }
+                className={button.primary ? 'btn-primary px-8 py-3.5 text-base' : 'btn-secondary px-8 py-3.5 text-base'}
               >
                 {button.text}
               </a>
@@ -198,45 +88,20 @@ const HeroSimple = ({
         {/* Quick Stats */}
         {quickStats.length > 0 && (
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
+            transition={{ duration: 0.4, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
             className="mt-16 flex flex-wrap justify-center gap-12"
           >
             {quickStats.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center group cursor-default"
-              >
-                <div className="text-4xl md:text-5xl font-bold mb-2 transition-colors duration-150 group-hover:text-dark-accent-primary">{stat.value}</div>
-                <div className="text-dark-text-muted text-sm uppercase tracking-wider transition-colors duration-150 group-hover:text-dark-text-secondary">{stat.label}</div>
+              <div key={index} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-dark-text-primary mb-1">{stat.value}</div>
+                <div className="text-dark-text-muted text-xs uppercase tracking-wider font-medium">{stat.label}</div>
               </div>
             ))}
           </motion.div>
         )}
       </div>
-
-      {/* Scroll Indicator */}
-      {showScrollIndicator && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.4 }}
-          className="absolute bottom-20 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-6 h-10 border-2 border-dark-text-muted rounded-full flex items-start justify-center p-2"
-          >
-            <motion.div
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-1.5 bg-dark-text-muted rounded-full"
-            />
-          </motion.div>
-        </motion.div>
-      )}
     </section>
   );
 };

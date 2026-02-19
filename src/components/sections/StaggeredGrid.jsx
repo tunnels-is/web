@@ -1,64 +1,43 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
-/**
- * StaggeredGrid - Masonry/staggered layout for cards
- * Commonly used for use case cards or feature highlights
- *
- * @param {Array} items - Array of item objects
- * @param {string} items[].title - Item title
- * @param {string} items[].description - Item description
- * @param {string} items[].icon - Icon emoji or component
- * @param {string} items[].scenario - Additional scenario text (optional)
- * @param {Array} staggerPattern - Custom stagger pattern [0, 8, 16] in rem units (optional)
- * @param {number} columns - Number of columns (default: 3)
- */
 const StaggeredGrid = ({
   items = [],
-  staggerPattern = [0, 8, 16],
   columns = 3
 }) => {
   const [ref, isVisible] = useScrollAnimation();
 
   const columnClass = {
     2: 'md:grid-cols-2',
-    3: 'lg:grid-cols-3',
-    4: 'lg:grid-cols-4'
-  }[columns] || 'lg:grid-cols-3';
-
-  const getStaggerClass = (index) => {
-    const pattern = staggerPattern[index % staggerPattern.length];
-    if (pattern === 0) return 'md:mt-0';
-    return `md:mt-${pattern}`;
-  };
+    3: 'md:grid-cols-2 lg:grid-cols-3',
+    4: 'md:grid-cols-2 lg:grid-cols-4'
+  }[columns] || 'md:grid-cols-2 lg:grid-cols-3';
 
   return (
-    <div ref={ref} className={`grid grid-cols-1 md:grid-cols-2 ${columnClass} gap-6`}>
+    <div ref={ref} className={`grid grid-cols-1 ${columnClass} gap-5`}>
       {items.map((item, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.3, delay: index * 0.05, ease: [0.4, 0, 0.2, 1] }}
-          className={`group bg-dark-surface p-8 rounded-2xl hover:bg-dark-elevated border border-transparent hover:border-dark-accent-primary/30 transition-all duration-150 ${
-            getStaggerClass(index)
-          }`}
+          transition={{ duration: 0.3, delay: index * 0.04 }}
+          className="group p-6 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-all duration-200"
         >
           {item.icon && (
-            <div className="w-20 h-20 mb-4">{item.icon}</div>
+            <div className="w-12 h-12 mb-4">{item.icon}</div>
           )}
 
-          <h3 className="text-2xl font-bold text-dark-accent-primary mb-2 leading-tight group-hover:text-dark-accent-secondary transition-colors duration-150">
+          <h3 className="text-lg font-semibold text-dark-text-primary mb-2 group-hover:text-dark-accent-primary transition-colors">
             {item.title}
           </h3>
 
-          <p className="text-base text-dark-text-secondary mb-6 leading-snug">
+          <p className="text-sm text-dark-text-secondary leading-relaxed mb-4">
             {item.description}
           </p>
 
           {item.scenario && (
-            <div className="bg-dark-bg p-4 rounded-lg border-l-4 border-dark-accent-secondary">
-              <p className="text-sm text-dark-text-muted italic">
+            <div className="p-3 rounded-lg bg-dark-bg/50 border-l-2 border-dark-accent-primary/40">
+              <p className="text-xs text-dark-text-muted italic">
                 {item.scenario}
               </p>
             </div>

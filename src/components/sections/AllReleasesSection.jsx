@@ -6,22 +6,18 @@ const AllReleasesSection = ({ description, buttonText, url }) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
+        transition={{ delay: 0.3 }}
         className="text-center"
       >
-        <p className="text-dark-text-secondary mb-4">
-          {description}
-        </p>
-        <motion.a
+        <p className="text-dark-text-secondary text-sm mb-4">{description}</p>
+        <a
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-block px-6 py-3 glass-effect rounded-lg font-semibold hover:bg-dark-elevated transition-all"
+          className="btn-secondary inline-block px-6 py-2.5"
         >
           {buttonText}
-        </motion.a>
+        </a>
       </motion.div>
     </section>
   );

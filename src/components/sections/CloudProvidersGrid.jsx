@@ -1,18 +1,6 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
-/**
- * CloudProvidersGrid - Provider comparison cards with recommended badges
- *
- * @param {Array} providers - Array of provider objects
- * @param {string} providers[].name - Provider name
- * @param {string} providers[].price - Pricing info
- * @param {string} providers[].specs - Server specifications
- * @param {string} providers[].locations - Available locations
- * @param {Array} providers[].pros - Array of pros/benefits
- * @param {boolean} providers[].recommended - Is recommended
- * @param {number} columns - Number of columns (default: 3)
- */
 const CloudProvidersGrid = ({
   providers = [],
   columns = 3
@@ -21,59 +9,59 @@ const CloudProvidersGrid = ({
 
   const gridClass = {
     2: 'md:grid-cols-2',
-    3: 'lg:grid-cols-3',
-    4: 'lg:grid-cols-4'
-  }[columns] || 'lg:grid-cols-3';
+    3: 'md:grid-cols-2 lg:grid-cols-3',
+    4: 'md:grid-cols-2 lg:grid-cols-4'
+  }[columns] || 'md:grid-cols-2 lg:grid-cols-3';
 
   return (
-    <div ref={ref} className={`grid grid-cols-1 md:grid-cols-2 ${gridClass} gap-8`}>
+    <div ref={ref} className={`grid grid-cols-1 ${gridClass} gap-5`}>
       {providers.map((provider, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.3, delay: index * 0.05, ease: [0.4, 0, 0.2, 1] }}
-          className={`group relative bg-dark-elevated p-8 rounded-2xl border-2 transition-all duration-150 ${
+          transition={{ duration: 0.3, delay: index * 0.05 }}
+          className={`group relative p-6 rounded-xl border transition-all duration-200 ${
             provider.recommended
-              ? 'border-dark-accent-primary hover:border-dark-accent-secondary hover:shadow-lg hover:shadow-dark-accent-primary/20'
-              : 'border-dark-border hover:border-dark-accent-primary/50 hover:bg-dark-surface'
+              ? 'border-dark-accent-primary bg-dark-card shadow-md shadow-dark-accent-primary/10'
+              : 'border-dark-border bg-dark-card hover:border-dark-border-light'
           }`}
         >
           {provider.recommended && (
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="px-4 py-2 bg-dark-accent-primary text-white text-sm font-bold rounded-full">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+              <span className="px-3 py-1 bg-dark-accent-primary text-white text-xs font-semibold rounded-full">
                 RECOMMENDED
               </span>
             </div>
           )}
 
-          <div className="mb-6">
-            <h3 className="text-3xl font-bold text-dark-text-primary mb-2 group-hover:text-dark-accent-primary transition-colors duration-150">
+          <div className="mb-5">
+            <h3 className="text-xl font-bold text-dark-text-primary mb-1 group-hover:text-dark-accent-primary transition-colors">
               {provider.name}
             </h3>
-            <div className="text-4xl font-bold mb-4 group-hover:text-dark-accent-secondary transition-colors duration-150">
+            <div className="text-2xl font-bold text-dark-accent-primary">
               {provider.price}
             </div>
           </div>
 
-          <div className="space-y-4 mb-6">
-            <div className="bg-dark-bg p-4 rounded-lg">
-              <p className="text-sm text-dark-text-muted mb-2">Specs</p>
-              <p className="text-dark-text-secondary">{provider.specs}</p>
+          <div className="space-y-3 mb-5">
+            <div className="p-3 rounded-lg bg-dark-bg/50">
+              <p className="text-xs text-dark-text-muted mb-0.5">Specs</p>
+              <p className="text-dark-text-secondary text-sm">{provider.specs}</p>
             </div>
-            <div className="bg-dark-bg p-4 rounded-lg">
-              <p className="text-sm text-dark-text-muted mb-2">Locations</p>
-              <p className="text-dark-text-secondary">{provider.locations}</p>
+            <div className="p-3 rounded-lg bg-dark-bg/50">
+              <p className="text-xs text-dark-text-muted mb-0.5">Locations</p>
+              <p className="text-dark-text-secondary text-sm">{provider.locations}</p>
             </div>
           </div>
 
           <div className="space-y-2">
             {provider.pros.map((pro, idx) => (
-              <div key={idx} className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-dark-accent-tertiary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div key={idx} className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-dark-accent-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span className="text-dark-text-secondary">{pro}</span>
+                <span className="text-dark-text-secondary text-sm">{pro}</span>
               </div>
             ))}
           </div>

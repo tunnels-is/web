@@ -1,14 +1,3 @@
-import { motion } from 'framer-motion';
-
-/**
- * SectionHeader - Reusable section heading component
- *
- * @param {string} title - Section title
- * @param {string} subtitle - Section subtitle/description
- * @param {string} alignment - Text alignment: center, left, right (default: center)
- * @param {string} titleSize - Title size: small, medium, large, xlarge (default: large)
- * @param {string} className - Additional CSS classes
- */
 const SectionHeader = ({
   title,
   subtitle,
@@ -23,21 +12,21 @@ const SectionHeader = ({
   }[alignment] || 'text-center';
 
   const titleSizeClass = {
-    small: 'text-3xl md:text-4xl',
-    medium: 'text-4xl md:text-5xl',
-    large: 'text-5xl md:text-6xl',
-    xlarge: 'text-6xl md:text-7xl'
-  }[titleSize] || 'text-5xl md:text-6xl';
+    small: 'text-2xl md:text-3xl',
+    medium: 'text-3xl md:text-4xl',
+    large: 'text-3xl md:text-4xl',
+    xlarge: 'text-4xl md:text-5xl'
+  }[titleSize] || 'text-3xl md:text-4xl';
 
-  const maxWidthClass = alignment === 'center' ? 'max-w-4xl mx-auto' : '';
+  const maxWidthClass = alignment === 'center' ? 'max-w-3xl mx-auto' : '';
 
   return (
-    <div className={`mb-16 ${alignmentClass} ${className}`}>
-      <h2 className={`${titleSizeClass} font-bold mb-6`}>
+    <div className={`mb-12 ${alignmentClass} ${className}`}>
+      <h2 className={`${titleSizeClass} font-bold mb-4 tracking-tight`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-xl md:text-2xl text-dark-text-secondary leading-snug ${maxWidthClass}`}>
+        <p className={`text-base md:text-lg text-dark-text-secondary leading-relaxed ${maxWidthClass}`}>
           {subtitle}
         </p>
       )}

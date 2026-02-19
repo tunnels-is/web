@@ -136,20 +136,20 @@ const Homelab = () => {
         {/* DNS Info Box */}
         <motion.div
           ref={ref4}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={isVisible4 ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-12 bg-dark-accent-primary/10 p-8 rounded-xl"
+          transition={{ duration: 0.3, delay: 0.2 }}
+          className="mt-8 p-6 rounded-xl bg-dark-accent-primary/10 border border-dark-accent-primary/20"
         >
           <div className="flex items-start gap-4">
-            <div className="w-20 h-20">
+            <div className="w-12 h-12 flex-shrink-0">
               <LightbulbIcon />
             </div>
             <div>
-              <h4 className="text-xl font-semibold text-dark-accent-primary mb-2 leading-tight">
+              <h4 className="text-lg font-semibold text-dark-accent-primary mb-1">
                 {dnsSection.infoBox.title}
               </h4>
-              <p className="text-dark-text-secondary leading-snug">
+              <p className="text-dark-text-secondary text-sm leading-relaxed">
                 {dnsSection.infoBox.description}
               </p>
             </div>
@@ -198,8 +198,8 @@ const Homelab = () => {
           columns={3}
           cardStyle="glass"
         />
-        <div className="mt-12 text-center bg-dark-surface p-6 rounded-xl">
-          <p className="text-dark-text-secondary text-lg">
+        <div className="mt-8 text-center p-5 rounded-xl bg-dark-card border border-dark-border">
+          <p className="text-sm text-dark-text-secondary">
             <span className="text-dark-accent-primary font-semibold">Pro Tip:</span>
             {" "}{hardwareSection.proTip}
           </p>

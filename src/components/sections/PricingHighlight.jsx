@@ -1,15 +1,6 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
-/**
- * PricingHighlight - Bold full-width highlight section with gradient background
- *
- * @param {string} title - Main title
- * @param {string} description - Description text
- * @param {string} icon - Icon emoji (optional)
- * @param {Array} highlights - Array of highlight objects with title and description
- * @param {string} backgroundGradient - Custom gradient classes (default: from-dark-accent-primary via-dark-accent-secondary to-dark-accent-tertiary)
- */
 const PricingHighlight = ({
   title,
   description,
@@ -19,57 +10,43 @@ const PricingHighlight = ({
   const [ref, isVisible] = useScrollAnimation();
 
   return (
-    <section ref={ref} className="py-32 bg-dark-accent-primary relative overflow-hidden">
-      {/* Animated Background Pattern */}
-      <motion.div
-        animate={{
-          backgroundPosition: ['0% 0%', '100% 100%'],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          repeatType: 'reverse'
-        }}
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M50 0L100 50L50 100L0 50Z\' fill=\'none\' stroke=\'white\' stroke-width=\'2\'/%3E%3C/svg%3E")',
-          backgroundSize: '100px 100px'
-        }}
-      ></motion.div>
+    <section ref={ref} className="py-20 bg-dark-accent-primary relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10" style={{
+        backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.2) 1px, transparent 0)',
+        backgroundSize: '32px 32px'
+      }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.4 }}
           className="text-center text-white"
         >
           {icon && (
-            <div className="flex justify-center mb-8">{icon}</div>
+            <div className="flex justify-center mb-6">{icon}</div>
           )}
 
-          <h2 className="text-5xl md:text-7xl font-bold mb-8">
-            {title}
-          </h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-5 tracking-tight">{title}</h2>
 
           {description && (
-            <p className="text-2xl md:text-3xl mb-12 max-w-5xl mx-auto leading-snug opacity-90">
+            <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-90">
               {description}
             </p>
           )}
 
           {highlights.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto mt-10">
               {highlights.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 16 }}
+                  initial={{ opacity: 0, y: 12 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.3, delay: index * 0.06, ease: [0.4, 0, 0.2, 1] }}
-                  className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20"
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/15"
                 >
-                  <h3 className="text-2xl font-bold mb-2 leading-tight">{item.title}</h3>
-                  <p className="text-lg opacity-90 leading-snug">{item.description}</p>
+                  <h3 className="text-lg font-bold mb-1.5">{item.title}</h3>
+                  <p className="text-sm opacity-85">{item.description}</p>
                 </motion.div>
               ))}
             </div>

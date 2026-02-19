@@ -1,62 +1,40 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
-/**
- * CTASection - Call-to-action section with flexible layouts
- *
- * @param {string} title - CTA title
- * @param {string} description - CTA description
- * @param {Array} buttons - Array of button configurations
- * @param {string} buttons[].text - Button text
- * @param {string} buttons[].href - Button link
- * @param {boolean} buttons[].primary - Primary button style
- * @param {string} layout - Layout type: centered, split, grid (default: centered)
- * @param {Array} cards - Array of CTA cards for split/grid layouts (optional)
- * @param {string} background - Background style (default: glass)
- * @param {string} className - Additional CSS classes
- */
 const CTASection = ({
   title,
   description,
   buttons = [],
   layout = 'centered',
   cards = [],
-  background = 'solid',
   className = ''
 }) => {
   const [ref, isVisible] = useScrollAnimation();
 
-  const backgroundClass = background === 'glass' ? 'glass-effect' : 'bg-dark-surface';
-
-  // Centered layout - simple CTA with buttons
   if (layout === 'centered') {
     return (
-      <section ref={ref} className={`py-24 ${className}`}>
+      <section ref={ref} className={`py-16 md:py-24 ${className}`}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-            className="p-12 rounded-2xl"
+            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+            className="p-10 md:p-14 rounded-2xl bg-dark-card border border-dark-border"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight">
               {title}
             </h2>
             {description && (
-              <p className="text-dark-text-secondary text-lg mb-8">
+              <p className="text-dark-text-secondary text-base mb-8 max-w-xl mx-auto">
                 {description}
               </p>
             )}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               {buttons.map((button, index) => (
                 <a
                   key={index}
                   href={button.href}
-                  className={
-                    button.primary
-                      ? "inline-block px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-secondary text-white font-semibold rounded-lg transition-all duration-150 shadow-lg shadow-dark-accent-primary/20 hover:shadow-dark-accent-primary/40 active:opacity-90"
-                      : "inline-block px-8 py-4 bg-dark-surface hover:bg-dark-elevated hover:border-dark-accent-primary/50 text-dark-text-primary font-semibold rounded-lg transition-all duration-150 border border-transparent active:opacity-90"
-                  }
+                  className={button.primary ? 'btn-primary px-8 py-3' : 'btn-secondary px-8 py-3'}
                 >
                   {button.text}
                 </a>
@@ -68,57 +46,52 @@ const CTASection = ({
     );
   }
 
-  // Split/Grid layout - with cards
   if (layout === 'split' || layout === 'grid') {
     const gridClass = layout === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 lg:grid-cols-2';
 
     return (
-      <section ref={ref} className={`py-24 ${className}`}>
+      <section ref={ref} className={`py-16 md:py-24 ${className}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {title && (
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              className="text-center mb-16"
+              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+              className="text-center mb-12"
             >
-              <h2 className="text-5xl md:text-6xl font-bold mb-6">
-                {title}
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">{title}</h2>
               {description && (
-                <p className="text-2xl text-dark-text-secondary max-w-4xl mx-auto">
-                  {description}
-                </p>
+                <p className="text-lg text-dark-text-secondary max-w-3xl mx-auto">{description}</p>
               )}
             </motion.div>
           )}
 
-          <div className={`grid ${gridClass} gap-8`}>
+          <div className={`grid ${gridClass} gap-5`}>
             {cards.map((card, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.3, delay: index * 0.05, ease: [0.4, 0, 0.2, 1] }}
-                className="group p-10 rounded-3xl hover:bg-dark-elevated border border-transparent hover:border-dark-accent-primary/30 transition-all duration-150"
+                className="group p-8 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-all duration-200"
               >
                 {card.icon && (
-                  <div className="w-20 h-20 mb-6">{card.icon}</div>
+                  <div className="w-14 h-14 mb-5">{card.icon}</div>
                 )}
-                <h3 className={`text-3xl font-bold mb-4 leading-tight transition-colors duration-150 ${
-                  card.highlighted ? 'text-dark-accent-primary group-hover:text-dark-accent-secondary' : 'text-dark-accent-secondary group-hover:text-dark-accent-primary'
+                <h3 className={`text-xl font-bold mb-3 transition-colors ${
+                  card.highlighted ? 'text-dark-accent-primary' : 'text-dark-text-primary group-hover:text-dark-accent-primary'
                 }`}>
                   {card.title}
                 </h3>
-                <p className="text-lg text-dark-text-secondary mb-6 leading-snug">
+                <p className="text-dark-text-secondary text-sm mb-5 leading-relaxed">
                   {card.description}
                 </p>
                 {card.features && (
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-2.5 mb-6">
                     {card.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-dark-text-secondary leading-snug">
-                        <svg className="w-6 h-6 text-dark-accent-tertiary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <li key={idx} className="flex items-center gap-2.5 text-dark-text-secondary text-sm">
+                        <svg className="w-4 h-4 text-dark-accent-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         <span>{feature}</span>
                       </li>
@@ -128,11 +101,7 @@ const CTASection = ({
                 {card.button && (
                   <a
                     href={card.button.href}
-                    className={
-                      card.button.primary
-                        ? "block w-full py-5 bg-dark-accent-primary hover:bg-dark-accent-secondary text-white text-center text-xl font-bold rounded-xl transition-all duration-150 shadow-lg shadow-dark-accent-primary/20 hover:shadow-dark-accent-primary/40 active:opacity-90"
-                        : "block w-full py-5 bg-dark-surface hover:bg-dark-elevated hover:border-dark-accent-primary/50 text-dark-text-primary text-center text-xl font-bold rounded-xl transition-all duration-150 border border-transparent active:opacity-90"
-                    }
+                    className={card.button.primary ? 'btn-primary w-full text-center py-3' : 'btn-secondary w-full text-center py-3'}
                   >
                     {card.button.text}
                   </a>

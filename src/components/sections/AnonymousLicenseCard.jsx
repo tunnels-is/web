@@ -3,29 +3,27 @@ import { motion } from 'framer-motion';
 const AnonymousLicenseCard = ({ title, description, price, period, url }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className=" p-8 rounded-xl max-w-2xl mx-auto"
+      transition={{ duration: 0.4 }}
+      className="p-8 rounded-xl bg-dark-card border border-dark-border max-w-2xl mx-auto"
     >
-      <div className="text-center mb-6">
-        <h3 className="text-2xl font-bold mb-2">{title}</h3>
-        <p className="text-dark-text-secondary">{description}</p>
+      <div className="text-center mb-5">
+        <h3 className="text-xl font-bold mb-2">{title}</h3>
+        <p className="text-dark-text-secondary text-sm">{description}</p>
       </div>
-      <div className="flex items-center justify-center mb-6">
+      <div className="flex items-baseline justify-center mb-6">
         <span className="text-4xl font-bold">{price}</span>
-        <span className="text-dark-text-secondary ml-2">{period}</span>
+        <span className="text-dark-text-muted ml-1.5 text-sm">{period}</span>
       </div>
-      <motion.a
+      <a
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="block w-full max-w-sm mx-auto px-6 py-3 glass-effect rounded-lg font-semibold text-center hover:bg-dark-elevated transition-all"
+        className="btn-secondary block w-full max-w-sm mx-auto text-center py-2.5"
       >
         Purchase License Key
-      </motion.a>
+      </a>
     </motion.div>
   );
 };

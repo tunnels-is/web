@@ -1,92 +1,59 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
-/**
- * FeatureGrid - Grid layout for displaying features/benefits cards
- *
- * @param {Array} features - Array of feature objects
- * @param {string} features[].title - Feature title
- * @param {string} features[].description - Feature description
- * @param {string} features[].icon - Icon emoji or component
- * @param {string} features[].gradient - Gradient classes (optional)
- * @param {string} features[].color - Color variant (primary, secondary, tertiary) (optional)
- * @param {number} columns - Number of columns (2, 3, or 4) (default: 3)
- * @param {string} cardStyle - Card style variant: elevated, glass, gradient-border (default: elevated)
- * @param {boolean} staggered - Enable staggered/masonry layout (default: false)
- */
 const FeatureGrid = ({
   features = [],
   columns = 3,
   cardStyle = 'elevated',
-  staggered = false
 }) => {
   const [ref, isVisible] = useScrollAnimation();
 
   const columnClass = {
     2: 'md:grid-cols-2',
-    3: 'lg:grid-cols-3',
-    4: 'lg:grid-cols-4'
-  }[columns] || 'lg:grid-cols-3';
-
-  const getCardClasses = (feature, index) => {
-    let baseClasses = 'relative group p-8 rounded-2xl transition-all duration-150';
-
-    // Staggered offset
-    if (staggered) {
-      const offsetClass = index % 3 === 0 ? 'md:mt-0' : index % 3 === 1 ? 'md:mt-8' : 'md:mt-16';
-      baseClasses += ` ${offsetClass}`;
-    }
-
-    // Card style
-    switch (cardStyle) {
-      case 'glass':
-        return `${baseClasses} glass-effect`;
-      case 'gradient-border':
-        return `${baseClasses} bg-dark-bg/0 backdrop-blur-sm`;
-      case 'elevated':
-      default:
-        return `${baseClasses}`;
-    }
-  };
+    3: 'md:grid-cols-2 lg:grid-cols-3',
+    4: 'md:grid-cols-2 lg:grid-cols-4'
+  }[columns] || 'md:grid-cols-2 lg:grid-cols-3';
 
   return (
-    <div ref={ref} className={`grid grid-cols-1 md:grid-cols-2 ${columnClass} gap-8`}>
+    <div ref={ref} className={`grid grid-cols-1 ${columnClass} gap-5`}>
       {features.map((feature, index) => (
-        <div
+        <motion.div
           key={index}
-          className={getCardClasses(feature, index)}
+          initial={{ opacity: 0, y: 16 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.3, delay: index * 0.04, ease: [0.4, 0, 0.2, 1] }}
+          className={`group p-6 rounded-xl border transition-all duration-200 ${
+            cardStyle === 'glass'
+              ? 'bg-dark-card/50 border-dark-border hover:border-dark-border-light hover:bg-dark-card'
+              : 'bg-dark-card border-dark-border hover:border-dark-border-light hover:bg-dark-elevated'
+          }`}
         >
-          <div className="relative">
-            {/* Icon */}
-            {feature.icon && (
-              <div className="w-20 h-20 mb-4">
-                {feature.icon}
-              </div>
-            )}
+          {/* Icon */}
+          {feature.icon && (
+            <div className="w-12 h-12 mb-4">
+              {feature.icon}
+            </div>
+          )}
 
-            {/* Title */}
-            <h3 className={`text-2xl font-bold mb-2 leading-tight relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-dark-accent-primary after:transition-all after:duration-150 group-hover:after:w-full ${feature.color
-                ? `text-dark-accent-${feature.color}`
-                : 'text-dark-text-primary'
-              }`}>
-              {feature.title}
-            </h3>
+          {/* Title */}
+          <h3 className="text-lg font-semibold mb-2 text-dark-text-primary group-hover:text-dark-accent-primary transition-colors">
+            {feature.title}
+          </h3>
 
-            {/* Description */}
-            <p className="text-dark-text-secondary text-base leading-snug">
-              {feature.description}
-            </p>
+          {/* Description */}
+          <p className="text-dark-text-secondary text-sm leading-relaxed">
+            {feature.description}
+          </p>
 
-            {/* Scenario (if exists - for use case cards) */}
-            {feature.scenario && (
-              <div className="bg-dark-bg/50 backdrop-blur-sm p-4 rounded-lg border-l-4 border-dark-accent-secondary mt-6">
-                <p className="text-sm text-dark-text-muted italic">
-                  {feature.scenario}
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
+          {/* Scenario (if exists) */}
+          {feature.scenario && (
+            <div className="mt-4 p-3 rounded-lg bg-dark-bg/50 border-l-2 border-dark-accent-primary/40">
+              <p className="text-xs text-dark-text-muted italic">
+                {feature.scenario}
+              </p>
+            </div>
+          )}
+        </motion.div>
       ))}
     </div>
   );

@@ -15,7 +15,6 @@ const IllustratedSection = ({
 }) => {
   const [ref, isVisible] = useScrollAnimation(0.1);
 
-  // Bigger illustration sizes
   const sizeClasses = {
     small: 'w-64 h-64',
     medium: 'w-80 h-80',
@@ -34,29 +33,29 @@ const IllustratedSection = ({
   return (
     <section
       ref={ref}
-      className={`py-16 md:py-20 ${dark ? 'bg-dark-surface' : 'bg-dark-elevated'} ${className}`}
+      className={`py-16 md:py-24 ${dark ? 'bg-dark-surface' : ''} ${className}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Content Side */}
           <motion.div
             className={`flex-1 ${contentOrder}`}
-            initial={{ opacity: 0 }}
-            animate={isVisible ? { opacity: 1 } : {}}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
           >
             {subtitle && (
-              <span className="text-dark-accent-tertiary text-sm font-medium uppercase tracking-wider mb-2 block">
+              <span className="text-dark-accent-primary text-sm font-semibold uppercase tracking-wider mb-3 block">
                 {subtitle}
               </span>
             )}
             {title && (
-              <h2 className="text-3xl md:text-4xl font-bold text-dark-text-primary mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-dark-text-primary mb-4 tracking-tight">
                 {title}
               </h2>
             )}
             {description && (
-              <p className="text-dark-text-secondary text-lg mb-6 leading-relaxed">
+              <p className="text-dark-text-secondary text-base mb-6 leading-relaxed">
                 {description}
               </p>
             )}
@@ -71,7 +70,7 @@ const IllustratedSection = ({
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                   >
                     <svg
-                      className="w-5 h-5 text-dark-accent-tertiary mt-0.5 flex-shrink-0"
+                      className="w-5 h-5 text-dark-accent-green mt-0.5 flex-shrink-0"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -83,7 +82,7 @@ const IllustratedSection = ({
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <span className="text-dark-text-secondary">{feature}</span>
+                    <span className="text-dark-text-secondary text-sm">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -95,9 +94,9 @@ const IllustratedSection = ({
           {Illustration && (
             <motion.div
               className={`flex-1 flex justify-center ${illustrationOrder}`}
-              initial={{ opacity: 0 }}
-              animate={isVisible ? { opacity: 1 } : {}}
-              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+              initial={{ opacity: 0, y: 16 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
             >
               <div className={sizeClasses[illustrationSize]}>
                 <Illustration

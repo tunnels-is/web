@@ -138,16 +138,16 @@ const PersonalVPN = () => {
             />
 
             {/* Summary Card */}
-            <div className="mt-12 bg-dark-accent-primary/10 p-8 rounded-2xl">
-              <div className="flex items-start gap-6">
-                <div className="w-20 h-20">
+            <div className="mt-8 p-6 rounded-xl bg-dark-accent-primary/10 border border-dark-accent-primary/20">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 flex-shrink-0">
                   <LightbulbIcon />
                 </div>
                 <div>
-                  <h4 className="text-2xl font-bold text-dark-accent-primary mb-2 leading-tight">
+                  <h4 className="text-lg font-bold text-dark-accent-primary mb-1">
                     {comparisonSection.bottomLine.title}
                   </h4>
-                  <p className="text-base text-dark-text-secondary leading-snug">
+                  <p className="text-sm text-dark-text-secondary leading-relaxed">
                     {comparisonSection.bottomLine.description}
                   </p>
                 </div>
@@ -190,9 +190,9 @@ const PersonalVPN = () => {
         <CloudProvidersGrid
           providers={cloudProviders}
         />
-        <div className="mt-12 text-center bg-dark-surface p-8 rounded-2xl">
-          <p className="text-lg text-dark-text-secondary">
-            <span className="text-dark-accent-primary font-bold">Pro Tip:</span>
+        <div className="mt-8 text-center p-5 rounded-xl bg-dark-card border border-dark-border">
+          <p className="text-sm text-dark-text-secondary">
+            <span className="text-dark-accent-primary font-semibold">Pro Tip:</span>
             {" "}{cloudProvidersSection.proTip}
           </p>
         </div>

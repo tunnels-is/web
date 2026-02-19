@@ -129,13 +129,13 @@ const CloudBaremetal = () => {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {deploymentOptions.map((option, index) => (
-            <div key={index} className="bg-dark-surface p-8 rounded-xl hover:bg-dark-elevated transition-colors duration-150">
-              <h3 className="text-xl font-bold text-dark-accent-primary mb-3">{option.platform}</h3>
-              <p className="text-dark-text-secondary mb-4">{option.description}</p>
+            <div key={index} className="p-6 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-colors">
+              <h3 className="text-lg font-bold text-dark-accent-primary mb-2">{option.platform}</h3>
+              <p className="text-dark-text-secondary text-sm mb-4">{option.description}</p>
               <ul className="space-y-2">
                 {option.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-dark-text-secondary">
-                    <svg className="w-4 h-4 text-dark-accent-tertiary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <li key={idx} className="flex items-center gap-2 text-dark-text-secondary text-sm">
+                    <svg className="w-4 h-4 text-dark-accent-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span>{feature}</span>
@@ -172,9 +172,9 @@ const CloudBaremetal = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {performance.stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-dark-accent-primary mb-2">{stat.value}</div>
-              <div className="text-lg font-semibold text-dark-text-primary mb-1">{stat.label}</div>
-              <p className="text-dark-text-muted text-sm">{stat.description}</p>
+              <div className="text-3xl md:text-4xl font-bold text-dark-accent-primary mb-1">{stat.value}</div>
+              <div className="text-sm font-semibold text-dark-text-primary mb-1">{stat.label}</div>
+              <p className="text-dark-text-muted text-xs">{stat.description}</p>
             </div>
           ))}
         </div>

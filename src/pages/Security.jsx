@@ -19,17 +19,15 @@ const Security = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <HeroSimple
         badge={content.hero.badge}
         title={content.hero.title}
         subtitle={content.hero.subtitle}
         description={content.hero.description}
         buttons={content.hero.buttons}
-        showGeometricShapes={true}
+        showNetworkLines={true}
       />
 
-      {/* Security Features */}
       <ContentSection background="dark-surface">
         <SectionHeader
           title={content.featuresSection.title}
@@ -42,7 +40,6 @@ const Security = () => {
         />
       </ContentSection>
 
-      {/* Illustrated: Zero Trust Architecture */}
       <IllustratedSection
         subtitle="Defense in Depth"
         title="Security at Every Layer"
@@ -58,37 +55,34 @@ const Security = () => {
         illustrationSize="large"
       />
 
-      {/* Cryptography Section */}
       <ContentSection>
         <div ref={cryptoRef}>
           <SectionHeader
             title={content.cryptographySection.title}
             subtitle={content.cryptographySection.subtitle}
           />
-
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={cryptoVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+            transition={{ duration: 0.4 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto"
           >
             {content.encryptionTypes.map((crypto, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={cryptoVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-dark-surface p-6 rounded-xl"
+                transition={{ duration: 0.3, delay: index * 0.06 }}
+                className="p-6 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-colors"
               >
-                <h3 className="text-xl font-bold text-dark-accent-primary mb-2">{crypto.name}</h3>
-                <p className="text-dark-text-secondary">{crypto.description}</p>
+                <h3 className="text-lg font-bold text-dark-accent-primary mb-2">{crypto.name}</h3>
+                <p className="text-dark-text-secondary text-sm leading-relaxed">{crypto.description}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </ContentSection>
 
-      {/* Illustrated: WireGuard Protocol */}
       <IllustratedSection
         subtitle="Modern Cryptography"
         title="Built on WireGuard"
@@ -105,23 +99,21 @@ const Security = () => {
         dark={false}
       />
 
-      {/* Security Practices */}
       <ContentSection background="dark-surface">
         <SectionHeader
           title={content.practicesSection.title}
           subtitle={content.practicesSection.subtitle}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
           {content.practices.map((practice, index) => (
-            <div key={index} className="bg-dark-elevated p-6 rounded-xl border-l-4 border-dark-accent-primary">
-              <h3 className="text-lg font-semibold text-white mb-2">{practice.title}</h3>
-              <p className="text-dark-text-secondary">{practice.description}</p>
+            <div key={index} className="p-6 rounded-xl bg-dark-card border border-dark-border border-l-2 border-l-dark-accent-primary hover:border-dark-border-light transition-colors">
+              <h3 className="text-base font-semibold text-dark-text-primary mb-2">{practice.title}</h3>
+              <p className="text-dark-text-secondary text-sm leading-relaxed">{practice.description}</p>
             </div>
           ))}
         </div>
       </ContentSection>
 
-      {/* Illustrated: Open Source */}
       <IllustratedSection
         subtitle="Transparent & Verifiable"
         title="100% Open Source Code"
@@ -137,28 +129,22 @@ const Security = () => {
         illustrationSize="large"
       />
 
-      {/* Open Source Section */}
       <ContentSection>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">{content.openSourceSection.title}</h2>
-          <p className="text-xl text-dark-text-secondary mb-8">
-            {content.openSourceSection.description}
-          </p>
-          <p className="text-dark-text-muted mb-8">
-            {content.openSourceSection.subDescription}
-          </p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight">{content.openSourceSection.title}</h2>
+          <p className="text-base text-dark-text-secondary mb-4">{content.openSourceSection.description}</p>
+          <p className="text-dark-text-muted text-sm mb-6">{content.openSourceSection.subDescription}</p>
           <a
             href={content.openSourceSection.buttonUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white font-semibold rounded-lg transition-colors"
+            className="btn-primary px-8 py-3"
           >
             {content.openSourceSection.buttonText}
           </a>
         </div>
       </ContentSection>
 
-      {/* CTA */}
       <CTASection
         title={content.cta.title}
         description={content.cta.description}
