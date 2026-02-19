@@ -137,13 +137,13 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="py-5 border-t border-dark-border/30 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-dark-text-muted text-[11px]">
+          <p className="text-dark-text-muted text-xs">
             &copy; {currentYear} Tunnels. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
             <a
               href="mailto:support@tunnels.is"
-              className="text-dark-text-muted hover:text-dark-text-secondary text-[11px] transition-colors"
+              className="text-dark-text-muted hover:text-dark-text-secondary text-xs transition-colors"
             >
               Contact
             </a>
@@ -151,7 +151,7 @@ const Footer = () => {
               href="https://github.com/tunnels-is"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-dark-text-muted hover:text-dark-text-secondary text-[11px] transition-colors"
+              className="text-dark-text-muted hover:text-dark-text-secondary text-xs transition-colors"
             >
               Open Source
             </a>

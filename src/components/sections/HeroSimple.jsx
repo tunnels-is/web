@@ -10,13 +10,15 @@ const HeroSimple = ({
   quickStats = [],
   highlights = [],
 }) => {
+  const hasHighlights = highlights.length > 0;
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
+    <section className="relative min-h-screen flex flex-col overflow-hidden hero-gradient">
       {/* Banner art background */}
       <HeroBannerArt />
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 pb-20 -mt-[10vh]">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex-1 flex flex-col justify-center pt-20 pb-6">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -83,17 +85,16 @@ const HeroSimple = ({
             {quickStats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-dark-text-primary mb-0.5">{stat.value}</div>
-                <div className="text-dark-text-muted text-[11px] uppercase tracking-widest font-medium">{stat.label}</div>
+                <div className="text-dark-text-muted text-xs uppercase tracking-widest font-medium">{stat.label}</div>
               </div>
             ))}
           </motion.div>
         )}
-
       </div>
 
       {/* Highlights stripe */}
-      {highlights.length > 0 && (
-        <div className="absolute bottom-[10%] left-0 right-0 z-10 bg-white/[0.015] border-y border-white/[0.03]">
+      {hasHighlights && (
+        <div className="relative z-10 bg-white/[0.015] border-y border-white/[0.03] mt-auto mb-8 sm:mb-12 lg:mb-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -119,7 +120,7 @@ const HeroSimple = ({
       )}
 
       {/* Bottom fade */}
-      {highlights.length === 0 && (
+      {!hasHighlights && (
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-bg to-transparent pointer-events-none" />
       )}
     </section>

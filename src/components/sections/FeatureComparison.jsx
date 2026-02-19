@@ -28,7 +28,7 @@ const FeatureComparison = ({
             <div className={`p-3 rounded-lg ${
               item.winner === 'commercial' ? 'bg-dark-accent-secondary/8 border border-dark-accent-secondary/15' : 'bg-dark-bg/40'
             }`}>
-              <p className="text-[11px] text-dark-text-muted mb-0.5 uppercase tracking-wider font-medium">{option1Label}</p>
+              <p className="text-xs text-dark-text-muted mb-0.5 uppercase tracking-wider font-medium">{option1Label}</p>
               <p className={`text-sm ${
                 item.winner === 'commercial' ? 'text-dark-text-primary font-medium' : 'text-dark-text-secondary'
               }`}>
@@ -39,7 +39,7 @@ const FeatureComparison = ({
             <div className={`p-3 rounded-lg ${
               item.winner === 'personal' ? 'bg-dark-accent-primary/8 border border-dark-accent-primary/15' : 'bg-dark-bg/40'
             }`}>
-              <p className="text-[11px] text-dark-text-muted mb-0.5 uppercase tracking-wider font-medium">{option2Label}</p>
+              <p className="text-xs text-dark-text-muted mb-0.5 uppercase tracking-wider font-medium">{option2Label}</p>
               <p className={`text-sm ${
                 item.winner === 'personal' ? 'text-dark-text-primary font-medium' : 'text-dark-text-secondary'
               }`}>

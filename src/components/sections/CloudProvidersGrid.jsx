@@ -25,7 +25,7 @@ const CloudProvidersGrid = ({
         >
           {provider.recommended && (
             <div className="absolute -top-2.5 left-1/2 -translate-x-1/2">
-              <span className="px-2.5 py-0.5 bg-gradient-to-r from-dark-accent-primary to-blue-500 text-white text-[10px] font-bold uppercase tracking-wider rounded-full">
+              <span className="px-2.5 py-0.5 bg-gradient-to-r from-dark-accent-primary to-blue-500 text-white text-xs font-bold uppercase tracking-wider rounded-full">
                 Recommended
               </span>
             </div>
@@ -42,11 +42,11 @@ const CloudProvidersGrid = ({
 
           <div className="space-y-2 mb-4">
             <div className="p-2.5">
-              <p className="text-[11px] text-dark-text-muted mb-0.5 uppercase tracking-wider font-medium">Specs</p>
+              <p className="text-xs text-dark-text-muted mb-0.5 uppercase tracking-wider font-medium">Specs</p>
               <p className="text-dark-text-secondary text-sm">{provider.specs}</p>
             </div>
             <div className="p-2.5">
-              <p className="text-[11px] text-dark-text-muted mb-0.5 uppercase tracking-wider font-medium">Locations</p>
+              <p className="text-xs text-dark-text-muted mb-0.5 uppercase tracking-wider font-medium">Locations</p>
               <p className="text-dark-text-secondary text-sm">{provider.locations}</p>
             </div>
           </div>

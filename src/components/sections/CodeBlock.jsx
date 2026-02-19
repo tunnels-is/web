@@ -212,7 +212,7 @@ const CodeBlock = ({
         <div className="flex items-center gap-3">
           <WindowDots />
           <span
-            className="font-mono text-[11px] tracking-wide"
+            className="font-mono text-xs tracking-wide"
             style={{ color: '#94a3b8' }}
           >
             {title ?? 'Code'}
@@ -221,7 +221,7 @@ const CodeBlock = ({
 
         {language && (
           <span
-            className="text-[10px] font-mono font-semibold tracking-widest px-2 py-0.5 rounded"
+            className="text-xs font-mono font-semibold tracking-widest px-2 py-0.5 rounded"
             style={{
               color: '#3b82f6',
               background: 'rgba(59, 130, 246, 0.1)',

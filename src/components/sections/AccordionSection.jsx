@@ -67,7 +67,7 @@ const AccordionItem = ({
 
         {/* Optional tag badge */}
         {item.tag && (
-          <span className="flex-shrink-0 px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wide text-[#3b82f6]">
+          <span className="flex-shrink-0 px-2 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wide text-[#3b82f6]">
             {item.tag}
           </span>
         )}

@@ -35,7 +35,7 @@ const StatsBanner = ({
               <div className="text-2xl md:text-3xl font-bold text-dark-text-primary mb-1 group-hover:text-dark-accent-primary transition-colors">
                 {stat.value}
               </div>
-              <div className="text-[11px] text-dark-text-muted uppercase tracking-widest font-medium">
+              <div className="text-xs text-dark-text-muted uppercase tracking-widest font-medium">
                 {stat.label}
               </div>
               {stat.description && (
@@ -65,7 +65,7 @@ const StatsBanner = ({
             <div className="text-xl md:text-2xl font-bold text-dark-text-primary mb-0.5">
               {stat.value}
             </div>
-            <div className="text-[11px] text-dark-text-muted uppercase tracking-widest font-medium">
+            <div className="text-xs text-dark-text-muted uppercase tracking-widest font-medium">
               {stat.label}
             </div>
           </motion.div>

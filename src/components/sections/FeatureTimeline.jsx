@@ -99,7 +99,7 @@ const StepContent = ({ step }) => {
               {step.providers.map((provider, idx) => (
                 <span
                   key={idx}
-                  className="px-2 py-0.5 bg-dark-accent-primary/8 border border-dark-accent-primary/15 text-dark-accent-primary text-[11px] font-medium rounded-full"
+                  className="px-2 py-0.5 bg-dark-accent-primary/8 border border-dark-accent-primary/15 text-dark-accent-primary text-xs font-medium rounded-full"
                 >
                   {provider}
                 </span>

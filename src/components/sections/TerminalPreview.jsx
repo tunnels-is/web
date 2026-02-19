@@ -22,7 +22,7 @@ const TerminalPreview = ({
         <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
         <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
         <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-        <span className="ml-2 text-[11px] text-dark-text-muted font-mono">terminal</span>
+        <span className="ml-2 text-xs text-dark-text-muted font-mono">terminal</span>
       </div>
       {/* Terminal content */}
       <div className="p-4 font-mono text-[13px] leading-relaxed space-y-1">

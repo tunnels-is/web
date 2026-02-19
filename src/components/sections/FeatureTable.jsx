@@ -16,14 +16,14 @@ const FeatureTable = ({
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className="overflow-hidden"
     >
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
+      <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+        <table className="w-full text-sm min-w-[400px]">
           <thead>
             <tr>
               {headers.map((header, index) => (
                 <th
                   key={index}
-                  className={`px-5 py-3 text-left text-[11px] font-semibold uppercase tracking-widest ${
+                  className={`px-3 sm:px-5 py-3 text-left text-xs font-semibold uppercase tracking-widest ${
                     index === 0 ? 'text-dark-text-primary' : 'text-dark-text-muted'
                   }`}
                 >
@@ -44,7 +44,7 @@ const FeatureTable = ({
                 {row.map((cell, cellIndex) => (
                   <td
                     key={cellIndex}
-                    className={`px-5 py-3.5 ${
+                    className={`px-3 sm:px-5 py-3 ${
                       cellIndex === 0
                         ? 'font-medium text-dark-text-primary'
                         : 'text-dark-text-secondary'

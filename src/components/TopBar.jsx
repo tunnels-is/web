@@ -72,7 +72,7 @@ const TopBar = () => {
     if (item.heading) {
       return (
         <div key={item.heading} className="px-3 pt-2 pb-1 first:pt-1">
-          <span className="text-[10px] font-semibold uppercase tracking-wider text-dark-text-muted">
+          <span className="text-xs font-semibold uppercase tracking-wider text-dark-text-muted">
             {item.heading}
           </span>
         </div>
@@ -113,7 +113,7 @@ const TopBar = () => {
     if (item.heading) {
       return (
         <div key={item.heading} className="px-3 pt-2 pb-0.5">
-          <span className="text-[10px] font-semibold uppercase tracking-wider text-dark-text-muted">
+          <span className="text-xs font-semibold uppercase tracking-wider text-dark-text-muted">
             {item.heading}
           </span>
         </div>
@@ -233,7 +233,7 @@ const TopBar = () => {
           <div className="hidden lg:flex items-center gap-2.5">
             <Link
               to="/download"
-              className="bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white text-[11px] font-medium py-1 px-2.5 rounded transition-colors"
+              className="bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white text-xs font-medium py-1.5 px-3 rounded transition-colors"
             >
               Download
             </Link>

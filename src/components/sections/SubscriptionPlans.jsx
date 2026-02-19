@@ -13,7 +13,7 @@ const SubscriptionPlans = ({ subscriptions }) => {
         >
           {plan.popular && (
             <div className="absolute -top-2.5 left-1/2 -translate-x-1/2">
-              <span className="bg-gradient-to-r from-dark-accent-primary to-blue-500 text-white px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider">
+              <span className="bg-gradient-to-r from-dark-accent-primary to-blue-500 text-white px-3 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider">
                 Most Popular
               </span>
             </div>
@@ -25,7 +25,7 @@ const SubscriptionPlans = ({ subscriptions }) => {
               <span className="text-dark-text-muted ml-1 text-xs">{plan.period}</span>
             </div>
             {plan.price !== "$8" && (
-              <p className="text-[11px] text-dark-text-muted line-through">$8/month</p>
+              <p className="text-xs text-dark-text-muted line-through">$8/month</p>
             )}
           </div>
           <ul className="space-y-2 mb-6">
