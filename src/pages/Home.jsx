@@ -5,13 +5,19 @@ import SectionHeader from '../components/ui/SectionHeader';
 import FeatureGrid from '../components/sections/FeatureGrid';
 import CTASection from '../components/sections/CTASection';
 import IllustratedSection from '../components/IllustratedSection';
-import FeatureSpotlight from '../components/sections/FeatureSpotlight';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { homeContent } from '../content/siteContent';
 import {
   SecureConnectionIllustration,
 } from '../components/illustrations';
+
+const MITBadge = () => (
+  <div className="text-center">
+    <div className="text-5xl md:text-7xl font-bold text-dark-accent-green leading-none tracking-tight">MIT</div>
+    <div className="text-sm text-dark-text-secondary mt-3 font-medium">Licensed</div>
+  </div>
+);
 
 const Home = () => {
   const [topicsRef, topicsVisible] = useScrollAnimation();
@@ -167,28 +173,27 @@ const Home = () => {
           "Audited open-source code"
         ]}
         illustration={SecureConnectionIllustration}
-        illustrationPosition="right"
+        illustrationPosition="left"
         illustrationSize="large"
         dark={false}
       />
 
-      {/* Feature Spotlight: Open Source */}
-      <ContentSection background="dark-surface">
-        <FeatureSpotlight
-          label="Open Source"
-          title="100% Open Source"
-          description="Every line of code is open for inspection. No hidden backdoors, no proprietary black boxes. You can audit, fork, and self-host with full confidence."
-          features={[
-            "MIT licensed - free forever",
-            "Active community development",
-            "Self-host or use managed service",
-            "Regular security reviews"
-          ]}
-          metric={{ value: "MIT", label: "Licensed" }}
-          accent="green"
-          position="left"
-        />
-      </ContentSection>
+      {/* Open Source */}
+      <IllustratedSection
+        subtitle="Open Source"
+        title="100% Open Source"
+        description="Every line of code is open for inspection. No hidden backdoors, no proprietary black boxes. You can audit, fork, and self-host with full confidence."
+        features={[
+          "MIT licensed - free forever",
+          "Active community development",
+          "Self-host or use managed service",
+          "Regular security reviews"
+        ]}
+        illustration={MITBadge}
+        illustrationPosition="left"
+        illustrationSize="small"
+        dark={true}
+      />
 
       {/* Explore Topics */}
       <ContentSection>

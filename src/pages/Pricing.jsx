@@ -6,9 +6,16 @@ import FreeFeaturesSection from '../components/sections/FreeFeaturesSection';
 import PricingFAQSection from '../components/sections/PricingFAQSection';
 import CTASection from '../components/sections/CTASection';
 import ComparisonCards from '../components/sections/ComparisonCards';
-import FeatureSpotlight from '../components/sections/FeatureSpotlight';
+import IllustratedSection from '../components/IllustratedSection';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
+
+const ZeroCostBadge = () => (
+  <div className="text-center">
+    <div className="text-5xl md:text-7xl font-bold text-dark-accent-tertiary leading-none tracking-tight">$0</div>
+    <div className="text-sm text-dark-text-secondary mt-3 font-medium">Self-host cost</div>
+  </div>
+);
 
 const Pricing = () => {
   const { hero, subscriptions, anonymousKey, freeFeatures, cta } = pricingContent;
@@ -75,23 +82,22 @@ const Pricing = () => {
         />
       </ContentSection>
 
-      {/* Feature Spotlight: Self-Hosted */}
-      <ContentSection>
-        <FeatureSpotlight
-          label="Self-Hosted"
-          title="Own Your Infrastructure"
-          description="Deploy on your own servers and pay nothing to us. Full control over your data, your network, and your costs."
-          features={[
-            "Run on your own hardware",
-            "No recurring fees required",
-            "Full data sovereignty",
-            "Commercial use allowed"
-          ]}
-          metric={{ value: "$0", label: "Self-host cost" }}
-          accent="teal"
-          position="left"
-        />
-      </ContentSection>
+      {/* Self-Hosted */}
+      <IllustratedSection
+        subtitle="Self-Hosted"
+        title="Own Your Infrastructure"
+        description="Deploy on your own servers and pay nothing to us. Full control over your data, your network, and your costs."
+        features={[
+          "Run on your own hardware",
+          "No recurring fees required",
+          "Full data sovereignty",
+          "Commercial use allowed"
+        ]}
+        illustration={ZeroCostBadge}
+        illustrationPosition="left"
+        illustrationSize="small"
+        dark={false}
+      />
 
       <CTASection
         title={cta.title}
