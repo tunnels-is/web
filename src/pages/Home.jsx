@@ -3,6 +3,7 @@ import HeroSimple from '../components/sections/HeroSimple';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
 import FeatureGrid from '../components/sections/FeatureGrid';
+import StatsBanner from '../components/sections/StatsBanner';
 import CTASection from '../components/sections/CTASection';
 import IllustratedSection from '../components/IllustratedSection';
 import { motion } from 'framer-motion';
@@ -24,7 +25,7 @@ const Home = () => {
   const [topicsRef, topicsVisible] = useScrollAnimation();
   const [useCasesRef, useCasesVisible] = useScrollAnimation();
   const {
-    hero, topicsSection, featuresSection, features, cta,
+    hero, topicsSection, featuresSection, features, cta, statsBanner,
     useCaseCards, highlights, environmentHeader,
     illustratedSecurity, illustratedOpenSource,
   } = homeContent;
@@ -32,27 +33,27 @@ const Home = () => {
   const useCaseIcons = [
     (
       <svg className="w-full h-full" viewBox="0 0 48 48" fill="none">
-        <rect x="8" y="6" width="32" height="36" rx="4" stroke="#3b82f6" strokeWidth="2" fill="#3b82f6" fillOpacity="0.1"/>
-        <circle cx="24" cy="22" r="6" stroke="#3b82f6" strokeWidth="2"/>
-        <path d="M16 36c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
+        <rect x="8" y="6" width="32" height="36" rx="4" stroke="#3b82f6" strokeWidth="2" fill="#3b82f6" fillOpacity="0.1" />
+        <circle cx="24" cy="22" r="6" stroke="#3b82f6" strokeWidth="2" />
+        <path d="M16 36c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
     (
       <svg className="w-full h-full" viewBox="0 0 48 48" fill="none">
-        <rect x="6" y="10" width="36" height="10" rx="2" stroke="#06b6d4" strokeWidth="2" fill="#06b6d4" fillOpacity="0.1"/>
-        <rect x="6" y="24" width="36" height="10" rx="2" stroke="#06b6d4" strokeWidth="2" fill="#06b6d4" fillOpacity="0.1"/>
-        <circle cx="12" cy="15" r="2" fill="#06b6d4"/>
-        <circle cx="12" cy="29" r="2" fill="#06b6d4"/>
-        <path d="M18 15h18M18 29h18" stroke="#06b6d4" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
-        <path d="M24 38v4M20 42h8" stroke="#06b6d4" strokeWidth="2" strokeLinecap="round"/>
+        <rect x="6" y="10" width="36" height="10" rx="2" stroke="#06b6d4" strokeWidth="2" fill="#06b6d4" fillOpacity="0.1" />
+        <rect x="6" y="24" width="36" height="10" rx="2" stroke="#06b6d4" strokeWidth="2" fill="#06b6d4" fillOpacity="0.1" />
+        <circle cx="12" cy="15" r="2" fill="#06b6d4" />
+        <circle cx="12" cy="29" r="2" fill="#06b6d4" />
+        <path d="M18 15h18M18 29h18" stroke="#06b6d4" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+        <path d="M24 38v4M20 42h8" stroke="#06b6d4" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
     (
       <svg className="w-full h-full" viewBox="0 0 48 48" fill="none">
-        <rect x="14" y="6" width="20" height="36" rx="2" stroke="#8b5cf6" strokeWidth="2" fill="#8b5cf6" fillOpacity="0.1"/>
-        <path d="M18 14h12M18 20h12M18 26h12M18 32h12" stroke="#8b5cf6" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
-        <rect x="6" y="18" width="8" height="24" rx="1" stroke="#8b5cf6" strokeWidth="2" fill="#8b5cf6" fillOpacity="0.05"/>
-        <rect x="34" y="18" width="8" height="24" rx="1" stroke="#8b5cf6" strokeWidth="2" fill="#8b5cf6" fillOpacity="0.05"/>
+        <rect x="14" y="6" width="20" height="36" rx="2" stroke="#8b5cf6" strokeWidth="2" fill="#8b5cf6" fillOpacity="0.1" />
+        <path d="M18 14h12M18 20h12M18 26h12M18 32h12" stroke="#8b5cf6" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+        <rect x="6" y="18" width="8" height="24" rx="1" stroke="#8b5cf6" strokeWidth="2" fill="#8b5cf6" fillOpacity="0.05" />
+        <rect x="34" y="18" width="8" height="24" rx="1" stroke="#8b5cf6" strokeWidth="2" fill="#8b5cf6" fillOpacity="0.05" />
       </svg>
     ),
   ];
@@ -68,6 +69,7 @@ const Home = () => {
         highlights={highlights}
       />
 
+
       {/* Features Section */}
       <ContentSection>
         <SectionHeader
@@ -77,7 +79,6 @@ const Home = () => {
         <FeatureGrid
           features={features}
           columns={4}
-          cardStyle="elevated"
         />
       </ContentSection>
 

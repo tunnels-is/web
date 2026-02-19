@@ -1,4 +1,5 @@
 const SectionHeader = ({
+  label,
   title,
   subtitle,
   alignment = 'center',
@@ -22,15 +23,26 @@ const SectionHeader = ({
 
   return (
     <div className={`mb-10 ${alignmentClass} ${className}`}>
-      {alignment === 'center' && (
-        <div className="flex justify-center mb-4">
-          <div className="accent-line" />
+      {label ? (
+        <div className="mb-3">
+          <span className="inline-flex items-center gap-2 text-dark-accent-primary text-xs font-semibold uppercase tracking-widest">
+            <span className="w-5 h-px bg-dark-accent-primary" />
+            {label}
+          </span>
         </div>
-      )}
-      {alignment === 'left' && (
-        <div className="mb-4">
-          <div className="accent-line" />
-        </div>
+      ) : (
+        <>
+          {alignment === 'center' && (
+            <div className="flex justify-center mb-4">
+              <div className="accent-line" />
+            </div>
+          )}
+          {alignment === 'left' && (
+            <div className="mb-4">
+              <div className="accent-line" />
+            </div>
+          )}
+        </>
       )}
       <h2 className={`${titleSizeClass} font-bold mb-3 tracking-tight`}>
         {title}

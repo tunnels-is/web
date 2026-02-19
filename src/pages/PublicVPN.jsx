@@ -10,6 +10,7 @@ import TerminalPreview from '../components/sections/TerminalPreview';
 import HorizontalSteps from '../components/sections/HorizontalSteps';
 import { publicVPNContent } from '../content/siteContent';
 import { PrivacyShieldIllustration } from '../components/illustrations';
+import RelatedPages from '../components/sections/RelatedPages';
 
 const PublicVPN = () => {
   const content = publicVPNContent;
@@ -43,7 +44,6 @@ const PublicVPN = () => {
         <FeatureGrid
           features={content.benefits}
           columns={3}
-          cardStyle="elevated"
         />
       </ContentSection>
 
@@ -112,6 +112,8 @@ const PublicVPN = () => {
           columns={2}
         />
       </ContentSection>
+
+      <RelatedPages pages={content.relatedPages} />
 
       {/* CTA */}
       <CTASection

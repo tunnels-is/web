@@ -11,6 +11,8 @@ import StatsBanner from '../components/sections/StatsBanner';
 import GradientCallout from '../components/sections/GradientCallout';
 import BentoGrid from '../components/sections/BentoGrid';
 import FeatureTable from '../components/sections/FeatureTable';
+import MidPageCTA from '../components/sections/MidPageCTA';
+import RelatedPages from '../components/sections/RelatedPages';
 import { iotNetworksContent } from '../content/siteContent';
 import {
   IoTNetworkIllustration,
@@ -22,7 +24,7 @@ const IoTNetworks = () => {
     securitySection, architectureSection,
     setupSection, setupSteps, faqSection, faqs, finalCTA, ctaCards,
     statsBanner, illustratedConnectivity, architectureBentoItems,
-    securityTable, encryptionCallout,
+    securityTable, encryptionCallout, relatedPages,
   } = iotNetworksContent;
 
   return (
@@ -54,7 +56,6 @@ const IoTNetworks = () => {
         <FeatureGrid
           features={benefits}
           columns={3}
-          cardStyle="gradient-border"
         />
       </ContentSection>
 
@@ -80,6 +81,8 @@ const IoTNetworks = () => {
           columns={3}
         />
       </ContentSection>
+
+      <MidPageCTA />
 
       {/* Architecture Section — BentoGrid */}
       <ContentSection background="dark-surface">
@@ -108,23 +111,21 @@ const IoTNetworks = () => {
         </div>
       </ContentSection>
 
-      {/* Encryption GradientCallout */}
+      {/* Security Callout */}
       <ContentSection background="dark-surface">
-        <GradientCallout
-          accent="teal"
-          icon={
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-full h-full">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-            </svg>
-          }
-          title={encryptionCallout.title}
-          description={encryptionCallout.description}
-          features={encryptionCallout.features}
-        />
+        <div className="max-w-4xl mx-auto">
+          <GradientCallout
+            variant="banner"
+            accent="teal"
+            title={encryptionCallout.title}
+            description={encryptionCallout.description}
+            button={{ text: "Learn about Security", href: "/security", primary: true }}
+          />
+        </div>
       </ContentSection>
 
       {/* Setup Guide */}
-      <ContentSection background="gradient">
+      <ContentSection background="dark-surface">
         <SectionHeader
           title={setupSection.title}
           subtitle={setupSection.subtitle}
@@ -146,6 +147,8 @@ const IoTNetworks = () => {
           <FAQSection faqs={faqs} />
         </div>
       </ContentSection>
+
+      <RelatedPages pages={relatedPages} />
 
       {/* Final CTA */}
       <CTASection

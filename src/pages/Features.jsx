@@ -7,6 +7,7 @@ import IllustratedSection from '../components/IllustratedSection';
 import StatsBanner from '../components/sections/StatsBanner';
 import BentoGrid from '../components/sections/BentoGrid';
 import TerminalPreview from '../components/sections/TerminalPreview';
+import RelatedPages from '../components/sections/RelatedPages';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { motion } from 'framer-motion';
 import { featuresContent } from '../content/siteContent';
@@ -14,21 +15,13 @@ import {
   EncryptionIllustration,
 } from '../components/illustrations';
 
-const { openSourceBadge: _osBadge } = featuresContent;
-const OpenSourceBadge = () => (
-  <div className="text-center">
-    <div className="text-5xl md:text-7xl font-bold text-dark-accent-green leading-none tracking-tight">{_osBadge.title}</div>
-    <div className="text-sm text-dark-text-secondary mt-3 font-medium">{_osBadge.subtitle}</div>
-  </div>
-);
-
 const Features = () => {
   const [ref1, isVisible1] = useScrollAnimation();
 
   const {
     hero, basicFeatures, advancedFeatures, cta,
     performanceStats, terminalPreview, bentoExtraFeatures,
-    illustratedSecurity, illustratedOpenSource,
+    illustratedSecurity, relatedPages,
   } = featuresContent;
 
   const basicFeaturesData = basicFeatures.features;
@@ -122,17 +115,7 @@ const Features = () => {
         )}
       </ContentSection>
 
-      {/* Open Source */}
-      <IllustratedSection
-        subtitle={illustratedOpenSource.subtitle}
-        title={illustratedOpenSource.title}
-        description={illustratedOpenSource.description}
-        features={illustratedOpenSource.features}
-        illustration={OpenSourceBadge}
-        illustrationPosition="left"
-        illustrationSize="small"
-        dark={true}
-      />
+      <RelatedPages pages={relatedPages} />
 
       {/* CTA Section */}
       <CTASection

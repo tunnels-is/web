@@ -1,29 +1,28 @@
 import HeroSimple from '../components/sections/HeroSimple';
 import FeatureGrid from '../components/sections/FeatureGrid';
 import StaggeredGrid from '../components/sections/StaggeredGrid';
-import TechnicalFeaturesSection from '../components/sections/TechnicalFeaturesSection';
 import FeatureTimeline from '../components/sections/FeatureTimeline';
 import FeatureComparison from '../components/sections/FeatureComparison';
 import PricingHighlight from '../components/sections/PricingHighlight';
-import CloudProvidersGrid from '../components/sections/CloudProvidersGrid';
 import FAQSection from '../components/sections/FAQSection';
 import CTASection from '../components/sections/CTASection';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
 import IllustratedSection from '../components/IllustratedSection';
+import MidPageCTA from '../components/sections/MidPageCTA';
+import RelatedPages from '../components/sections/RelatedPages';
+import GradientCallout from '../components/sections/GradientCallout';
 import { KeyIcon, LightbulbIcon } from '../components/ui/Icons';
 import { personalVPNContent } from '../content/siteContent';
 import { PrivacyShieldIllustration } from '../components/illustrations';
-import ComparisonCards from '../components/sections/ComparisonCards';
-import QuoteHighlight from '../components/sections/QuoteHighlight';
 
 const PersonalVPN = () => {
   const {
     hero, benefitsSection, benefits, useCasesSection, useCases,
-    technicalSection, technicalFeatures, setupSection, setupSteps,
-    comparisonSection, comparison, privacyHighlight, cloudProvidersSection,
-    cloudProviders, faqSection, faqs, finalCTA, ctaCards,
-    illustratedPrivacy, accessSection, quoteHighlight, proTipLabel
+    setupSection, setupSteps,
+    comparisonSection, comparison, privacyHighlight,
+    faqSection, faqs, finalCTA, ctaCards,
+    illustratedPrivacy, relatedPages,
   } = personalVPNContent;
 
 
@@ -48,7 +47,6 @@ const PersonalVPN = () => {
         <FeatureGrid
           features={benefits}
           columns={3}
-          cardStyle="gradient-border"
         />
       </ContentSection>
 
@@ -75,19 +73,10 @@ const PersonalVPN = () => {
         />
       </ContentSection>
 
-      {/* Technical Features */}
-      <ContentSection background="gradient">
-        <SectionHeader
-          title={technicalSection.title}
-          subtitle={technicalSection.subtitle}
-        />
-        <TechnicalFeaturesSection
-          categories={technicalFeatures}
-        />
-      </ContentSection>
+      <MidPageCTA />
 
       {/* Setup Guide */}
-      <ContentSection>
+      <ContentSection background="dark-surface">
         <SectionHeader
           title={setupSection.title}
           subtitle={setupSection.subtitle}
@@ -99,23 +88,23 @@ const PersonalVPN = () => {
         </div>
       </ContentSection>
 
-      {/* Global Access: ComparisonCards */}
+      {/* Technical brief callout */}
       <ContentSection>
-        <SectionHeader
-          title={accessSection.title}
-          subtitle={accessSection.subtitle}
-        />
-        <ComparisonCards
-          dividerLabel={accessSection.dividerLabel}
-          leftCard={accessSection.leftCard}
-          rightCard={accessSection.rightCard}
-        />
+        <div className="max-w-4xl mx-auto">
+          <GradientCallout
+            variant="banner"
+            accent="blue"
+            icon={<LightbulbIcon />}
+            title="Built on Modern Technology"
+            description="Tunnels uses a custom UDP protocol with post-quantum encryption, delivering both speed and security."
+            button={{ text: "View Technical Details", href: "/technical", primary: true }}
+          />
+        </div>
       </ContentSection>
 
       {/* Comparison Section */}
       <ContentSection background="dark-surface" id="comparison">
         <div className="relative">
-
           <div className="relative">
             <SectionHeader
               title={comparisonSection.title}
@@ -153,34 +142,6 @@ const PersonalVPN = () => {
         highlights={privacyHighlight.highlights}
       />
 
-      {/* Deploy Anywhere: QuoteHighlight */}
-      <ContentSection>
-        <QuoteHighlight
-          quote={quoteHighlight.quote}
-          author={quoteHighlight.author}
-          role={quoteHighlight.role}
-          accent="blue"
-          variant="large"
-        />
-      </ContentSection>
-
-      {/* Cloud Providers */}
-      <ContentSection background="dark-bg">
-        <SectionHeader
-          title={cloudProvidersSection.title}
-          subtitle={cloudProvidersSection.subtitle}
-        />
-        <CloudProvidersGrid
-          providers={cloudProviders}
-        />
-        <div className="mt-8 text-center p-5 transition-colors">
-          <p className="text-sm text-dark-text-secondary">
-            <span className="text-dark-accent-primary font-semibold">{proTipLabel}</span>
-            {" "}{cloudProvidersSection.proTip}
-          </p>
-        </div>
-      </ContentSection>
-
       {/* FAQ Section */}
       <ContentSection background="dark-surface">
         <div className="max-w-5xl mx-auto">
@@ -191,6 +152,8 @@ const PersonalVPN = () => {
           <FAQSection faqs={faqs} />
         </div>
       </ContentSection>
+
+      <RelatedPages pages={relatedPages} />
 
       {/* Final CTA */}
       <CTASection

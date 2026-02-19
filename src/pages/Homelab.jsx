@@ -9,13 +9,13 @@ import BentoGrid from '../components/sections/BentoGrid';
 import GradientCallout from '../components/sections/GradientCallout';
 import HorizontalSteps from '../components/sections/HorizontalSteps';
 import StatsBanner from '../components/sections/StatsBanner';
-import SplitContent from '../components/sections/SplitContent';
+import MidPageCTA from '../components/sections/MidPageCTA';
+import RelatedPages from '../components/sections/RelatedPages';
 import { homelabContent } from '../content/siteContent';
 import {
   SelfHostedIllustration,
-  DNSFlowIllustration,
 } from '../components/illustrations';
-import { LightbulbIcon, ShieldCheckIcon } from '../components/ui/Icons';
+import { LightbulbIcon } from '../components/ui/Icons';
 
 const Homelab = () => {
   const {
@@ -27,11 +27,6 @@ const Homelab = () => {
     useCasesSection,
     useCases,
     dnsSection,
-    dnsFeatures,
-    technicalSection,
-    technicalHighlights,
-    hardwareSection,
-    hardwareOptions,
     ctaSection,
     ctaCards,
     statsBanner,
@@ -39,8 +34,7 @@ const Homelab = () => {
     bentoHighlight,
     illustratedSelfHosted,
     terminalPreview,
-    illustratedDNS,
-    hardwareFeatures,
+    relatedPages,
   } = homelabContent;
 
   return (
@@ -56,7 +50,7 @@ const Homelab = () => {
         quickStats={hero.quickStats}
       />
 
-      {/* Stats banner - quick facts at a glance */}
+      {/* Stats banner */}
       <ContentSection background="dark-surface" padding="small">
         <StatsBanner
           variant="default"
@@ -64,7 +58,7 @@ const Homelab = () => {
         />
       </ContentSection>
 
-      {/* Benefits - BentoGrid (asymmetric, replaces first FeatureGrid) */}
+      {/* Benefits - BentoGrid */}
       <ContentSection>
         <SectionHeader
           title={benefitsSection.title}
@@ -98,7 +92,9 @@ const Homelab = () => {
         illustrationSize="large"
       />
 
-      {/* Setup Steps - HorizontalSteps replaces FeatureTimeline */}
+      <MidPageCTA />
+
+      {/* Setup Steps */}
       <ContentSection background="dark-surface">
         <SectionHeader
           title={setupSection.title}
@@ -110,7 +106,7 @@ const Homelab = () => {
         />
       </ContentSection>
 
-      {/* Terminal Preview - shows actual install commands */}
+      {/* Terminal Preview */}
       <ContentSection>
         <TerminalPreview
           title={terminalPreview.title}
@@ -121,7 +117,7 @@ const Homelab = () => {
         />
       </ContentSection>
 
-      {/* Use Cases - FeatureGrid (1 of max 2 kept) */}
+      {/* Use Cases */}
       <ContentSection background="dark-surface">
         <SectionHeader
           title={useCasesSection.title}
@@ -130,92 +126,24 @@ const Homelab = () => {
         <FeatureGrid
           features={useCases}
           columns={3}
-          cardStyle="elevated"
         />
       </ContentSection>
 
-      {/* DNS Features - IllustratedSection (2 of max 2 kept) */}
-      <IllustratedSection
-        subtitle={illustratedDNS.subtitle}
-        title={illustratedDNS.title}
-        description={illustratedDNS.description}
-        features={illustratedDNS.features}
-        illustration={DNSFlowIllustration}
-        illustrationPosition="right"
-        illustrationSize="large"
-        dark={false}
-      />
-
-      {/* DNS details + GradientCallout replacing the old info box */}
+      {/* DNS brief callout */}
       <ContentSection>
-        <SectionHeader
-          title={dnsSection.title}
-          subtitle={dnsSection.subtitle}
-        />
-        <FeatureGrid
-          features={dnsFeatures}
-          columns={2}
-          cardStyle="glass"
-        />
-        <div className="mt-8">
+        <div className="max-w-4xl mx-auto">
           <GradientCallout
             variant="banner"
             accent="teal"
             icon={<LightbulbIcon />}
             title={dnsSection.infoBox.title}
             description={dnsSection.infoBox.description}
+            button={{ text: "Learn about DNS", href: "/dns", primary: true }}
           />
         </div>
       </ContentSection>
 
-      {/* Technical Highlights - BentoGrid default layout (replaces second FeatureGrid) */}
-      <ContentSection background="dark-surface">
-        <SectionHeader
-          title={technicalSection.title}
-          subtitle={technicalSection.subtitle}
-        />
-        <BentoGrid
-          layout="default"
-          items={technicalHighlights}
-        />
-      </ContentSection>
-
-      {/* Hardware - SplitContent with stacked cards */}
-      <ContentSection>
-        <SplitContent
-          title={hardwareSection.title}
-          description={hardwareSection.subtitle}
-          position="right"
-          accent="green"
-          features={hardwareFeatures}
-          cards={[
-            {
-              icon: hardwareOptions[0].icon,
-              title: hardwareOptions[0].title,
-              description: hardwareOptions[0].description,
-            },
-            {
-              icon: hardwareOptions[1].icon,
-              title: hardwareOptions[1].title,
-              description: hardwareOptions[1].description,
-            },
-            {
-              icon: hardwareOptions[2].icon,
-              title: hardwareOptions[2].title,
-              description: hardwareOptions[2].description,
-            },
-          ]}
-        />
-        <div className="mt-8">
-          <GradientCallout
-            variant="banner"
-            accent="green"
-            icon={<ShieldCheckIcon />}
-            title={hardwareSection.proTipTitle}
-            description={hardwareSection.proTip}
-          />
-        </div>
-      </ContentSection>
+      <RelatedPages pages={relatedPages} />
 
       {/* CTA */}
       <CTASection

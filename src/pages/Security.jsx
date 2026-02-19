@@ -10,6 +10,7 @@ import GradientCallout from '../components/sections/GradientCallout';
 import BentoGrid from '../components/sections/BentoGrid';
 import { securityContent } from '../content/siteContent';
 import { SecurityIllustration } from '../components/illustrations';
+import RelatedPages from '../components/sections/RelatedPages';
 
 const Security = () => {
   const content = securityContent;
@@ -24,8 +25,13 @@ const Security = () => {
         buttons={content.hero.buttons}
       />
 
+      {/* Security stats strip */}
+      <ContentSection background="dark-surface" padding="small">
+        <StatsBanner stats={content.securityStats} variant="default" />
+      </ContentSection>
+
       {/* Security feature overview cards */}
-      <ContentSection background="dark-surface">
+      <ContentSection>
         <SectionHeader
           title={content.featuresSection.title}
           subtitle={content.featuresSection.subtitle}
@@ -33,13 +39,7 @@ const Security = () => {
         <FeatureGrid
           features={content.securityFeatures}
           columns={3}
-          cardStyle="elevated"
         />
-      </ContentSection>
-
-      {/* Security stats strip */}
-      <ContentSection>
-        <StatsBanner stats={content.securityStats} variant="card" />
       </ContentSection>
 
       {/* Security at every layer — one illustrated section kept */}
@@ -93,6 +93,8 @@ const Security = () => {
           />
         </div>
       </ContentSection>
+
+      <RelatedPages pages={content.relatedPages} />
 
       <CTASection
         title={content.cta.title}

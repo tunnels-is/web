@@ -9,6 +9,8 @@ import BentoGrid from '../components/sections/BentoGrid';
 import GradientCallout from '../components/sections/GradientCallout';
 import HorizontalSteps from '../components/sections/HorizontalSteps';
 import IllustratedSection from '../components/IllustratedSection';
+import MidPageCTA from '../components/sections/MidPageCTA';
+import RelatedPages from '../components/sections/RelatedPages';
 import { officeNetworksContent } from '../content/siteContent';
 import {
   OfficeNetworkIllustration,
@@ -31,6 +33,7 @@ const OfficeNetworks = () => {
     scenariosHeader,
     accessControlCallout,
     illustratedSecurity,
+    relatedPages,
   } = officeNetworksContent;
 
   return (
@@ -47,12 +50,12 @@ const OfficeNetworks = () => {
       <ContentSection background="dark-surface" padding="small">
         <StatsBanner
           stats={quickStats}
-          variant="card"
+          variant="default"
         />
       </ContentSection>
 
       {/* Benefits Grid */}
-      <ContentSection background="transparent">
+      <ContentSection>
         <SectionHeader
           title={benefitsSection.title}
           subtitle={benefitsSection.subtitle}
@@ -60,7 +63,6 @@ const OfficeNetworks = () => {
         <FeatureGrid
           features={benefits}
           columns={3}
-          cardStyle="elevated"
         />
       </ContentSection>
 
@@ -86,7 +88,7 @@ const OfficeNetworks = () => {
       </ContentSection>
 
       {/* Terminal Preview: Internal DNS + Access */}
-      <ContentSection background="transparent">
+      <ContentSection>
         <TerminalPreview
           title={terminalPreview.title}
           description={terminalPreview.description}
@@ -106,14 +108,16 @@ const OfficeNetworks = () => {
       </ContentSection>
 
       {/* Access Control Callout */}
-      <ContentSection background="transparent">
-        <GradientCallout
-          title={accessControlCallout.title}
-          description={accessControlCallout.description}
-          features={accessControlCallout.features}
-          accent="teal"
-          variant="default"
-        />
+      <ContentSection>
+        <div className="max-w-4xl mx-auto">
+          <GradientCallout
+            variant="banner"
+            accent="teal"
+            title={accessControlCallout.title}
+            description={accessControlCallout.description}
+            button={{ text: "Learn about Security", href: "/security", primary: true }}
+          />
+        </div>
       </ContentSection>
 
       {/* Illustrated: Zero Trust Security */}
@@ -126,6 +130,10 @@ const OfficeNetworks = () => {
         illustrationPosition="left"
         illustrationSize="large"
       />
+
+      <MidPageCTA />
+
+      <RelatedPages pages={relatedPages} />
 
       {/* CTA Section */}
       <CTASection

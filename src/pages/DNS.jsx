@@ -10,6 +10,7 @@ import SplitContent from '../components/sections/SplitContent';
 import StatsBanner from '../components/sections/StatsBanner';
 import { dnsContent } from '../content/siteContent';
 import { DNSFlowIllustration } from '../components/illustrations';
+import RelatedPages from '../components/sections/RelatedPages';
 
 const deviceCardIcons = [
   (
@@ -51,7 +52,7 @@ const DNS = () => {
 
       {/* Stats Banner */}
       <ContentSection padding="small">
-        <StatsBanner stats={dnsContent.dnsStats} variant="card" />
+        <StatsBanner stats={dnsContent.dnsStats} variant="default" />
       </ContentSection>
 
       {/* Feature Grid */}
@@ -64,7 +65,6 @@ const DNS = () => {
           <FeatureGrid
             features={dnsContent.dnsFeatures}
             columns={3}
-            cardStyle="elevated"
           />
         </div>
       </ContentSection>
@@ -122,6 +122,8 @@ const DNS = () => {
           accent="teal"
         />
       </ContentSection>
+
+      <RelatedPages pages={dnsContent.relatedPages} />
 
       <CTASection
         title={dnsContent.cta.title}

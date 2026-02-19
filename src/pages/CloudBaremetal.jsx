@@ -10,6 +10,8 @@ import BentoGrid from '../components/sections/BentoGrid';
 import TerminalPreview from '../components/sections/TerminalPreview';
 import FeatureTable from '../components/sections/FeatureTable';
 import GradientCallout from '../components/sections/GradientCallout';
+import MidPageCTA from '../components/sections/MidPageCTA';
+import RelatedPages from '../components/sections/RelatedPages';
 import { cloudBaremetalContent } from '../content/siteContent';
 import { MultiServerIllustration } from '../components/illustrations';
 
@@ -18,7 +20,7 @@ const CloudBaremetal = () => {
     hero, benefitsSection, benefits, architecture, useCases, performance,
     illustratedArchitecture, architectureBentoExtras, deployHeader,
     terminalPreview, deploymentsHeader, infrastructureHeader,
-    deploymentTable, zeroTrustCallout, ctaSection
+    deploymentTable, zeroTrustCallout, ctaSection, relatedPages
   } = cloudBaremetalContent;
 
   return (
@@ -35,7 +37,7 @@ const CloudBaremetal = () => {
       <ContentSection background="dark-surface">
         <StatsBanner
           stats={performance.stats}
-          variant="card"
+          variant="default"
         />
       </ContentSection>
 
@@ -48,7 +50,6 @@ const CloudBaremetal = () => {
         <FeatureGrid
           features={benefits}
           columns={3}
-          cardStyle="elevated"
         />
       </ContentSection>
 
@@ -63,6 +64,8 @@ const CloudBaremetal = () => {
         illustrationSize="large"
         dark={false}
       />
+
+      <MidPageCTA />
 
       {/* Architecture BentoGrid */}
       <ContentSection background="dark-surface">
@@ -149,21 +152,20 @@ const CloudBaremetal = () => {
         />
       </ContentSection>
 
-      {/* Zero Trust Security: GradientCallout */}
+      {/* Security Callout */}
       <ContentSection background="dark-surface">
-        <GradientCallout
-          accent="teal"
-          title={zeroTrustCallout.title}
-          description={zeroTrustCallout.description}
-          features={zeroTrustCallout.features}
-          button={zeroTrustCallout.button}
-          icon={
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-          }
-        />
+        <div className="max-w-4xl mx-auto">
+          <GradientCallout
+            variant="banner"
+            accent="teal"
+            title={zeroTrustCallout.title}
+            description={zeroTrustCallout.description}
+            button={{ text: "Learn about Security", href: "/security", primary: true }}
+          />
+        </div>
       </ContentSection>
+
+      <RelatedPages pages={relatedPages} />
 
       {/* CTA Section */}
       <CTASection

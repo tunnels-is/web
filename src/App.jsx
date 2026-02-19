@@ -16,6 +16,8 @@ import IoTNetworks from './pages/IoTNetworks';
 import LanOverWan from './pages/LanOverWan';
 import PublicVPN from './pages/PublicVPN';
 import Security from './pages/Security';
+import Technical from './pages/Technical';
+import NotFound from './pages/NotFound';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -44,7 +46,8 @@ function App() {
           <Route path="/office" element={<OfficeNetworks />} />
           <Route path="/lan-over-wan" element={<LanOverWan />} />
           <Route path="/personal-vpn" element={<PersonalVPN />} />
-          <Route path="*" element={<Home />} />
+          <Route path="/technical" element={<Technical />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </Router>

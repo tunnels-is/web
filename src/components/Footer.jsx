@@ -6,23 +6,24 @@ const Footer = () => {
 
   const footerSections = [
     {
-      title: 'Products',
+      title: 'Product',
       links: [
         { label: 'Features', path: '/features' },
-        { label: 'DNS Security', path: '/dns' },
         { label: 'Security', path: '/security' },
-        { label: 'Enterprise', path: '/enterprise' },
+        { label: 'DNS', path: '/dns' },
+        { label: 'Technical', path: '/technical' },
         { label: 'Download', path: '/download' },
         { label: 'Pricing', path: '/pricing' },
       ]
     },
     {
-      title: 'Use Cases',
+      title: 'Solutions',
       links: [
-        { label: 'Homelab', path: '/homelab' },
         { label: 'Personal VPN', path: '/personal-vpn' },
+        { label: 'Homelab', path: '/homelab' },
         { label: 'Public VPN', path: '/public' },
         { label: 'Office Networks', path: '/office' },
+        { label: 'Enterprise', path: '/enterprise' },
         { label: 'IoT Networks', path: '/iot' },
         { label: 'Cloud & Baremetal', path: '/cloud' },
         { label: 'LAN over WAN', path: '/lan-over-wan' },
@@ -33,7 +34,14 @@ const Footer = () => {
       links: [
         { label: 'Documentation', path: 'https://docs.tunnels.is', external: true },
         { label: 'GitHub', path: 'https://github.com/tunnels-is', external: true },
+        { label: 'Discord', path: 'https://discord.com/invite/7Ts3PCnCd9', external: true },
+      ]
+    },
+    {
+      title: 'Company',
+      links: [
         { label: 'Free & Open Source', path: '/free-and-opensource' },
+        { label: 'Contact', path: 'mailto:support@tunnels.is', external: true },
       ]
     },
   ];
@@ -48,8 +56,19 @@ const Footer = () => {
   return (
     <footer className="border-t border-dark-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* CTA Row */}
+        <div className="py-6 border-b border-dark-border/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-dark-text-secondary font-medium">Get started with Tunnels</p>
+          <Link
+            to="/download"
+            className="bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white text-sm font-medium py-2 px-5 rounded transition-colors"
+          >
+            Download
+          </Link>
+        </div>
+
         {/* Main Footer Content */}
-        <div className="py-10 grid grid-cols-2 md:grid-cols-5 gap-8">
+        <div className="py-10 grid grid-cols-2 md:grid-cols-6 gap-8">
           {/* Brand Column */}
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-3">

@@ -31,7 +31,7 @@ export const homeContent = {
     description: "A modern networking solution that connects you to multiple networks at once, with built-in security and privacy features",
     buttons: [
       { text: "Download Now", href: "/download", primary: true },
-      { text: "Explore Features", href: "/features", teal: true }
+      { text: "Explore Features", href: "/features" }
     ]
   },
 
@@ -137,6 +137,13 @@ export const homeContent = {
     title: "Open Source",
     subtitle: "Licensed",
   },
+
+  statsBanner: [
+    { label: "Encryption", value: "256-bit" },
+    { label: "Protocol", value: "Custom UDP" },
+    { label: "License", value: "Open Source" },
+    { label: "Self-Host", value: "Free" },
+  ],
 
   illustratedOpenSource: {
     subtitle: "Open Source",
@@ -475,6 +482,12 @@ export const homelabContent = {
     "As little as 512 MB RAM required",
     "Minimal CPU overhead",
     "Works inside Docker and VMs",
+  ],
+
+  relatedPages: [
+    { title: "Personal VPN", description: "Secure your internet and access your network from anywhere.", path: "/personal-vpn" },
+    { title: "DNS Security", description: "Built-in DNS protection with daily threat list updates.", path: "/dns" },
+    { title: "LAN over WAN", description: "Connect devices across locations as if on the same network.", path: "/lan-over-wan" },
   ],
 };
 
@@ -925,7 +938,12 @@ export const personalVPNContent = {
     role: "How it works"
   },
 
-  proTipLabel: "Pro Tip:"
+  proTipLabel: "Pro Tip:",
+
+  relatedPages: [
+    { title: "Public VPN", description: "Access managed VPN servers with no setup required.", path: "/public" },
+    { title: "Homelab", description: "Self-host your VPN and access your homelab remotely.", path: "/homelab" },
+  ],
 };
 
 // ============================================================================
@@ -939,7 +957,7 @@ export const featuresContent = {
     description: "Tunnels provides a comprehensive suite of networking and security features designed for individuals and enterprises alike.",
     buttons: [
       { text: "Download Now", href: "/download", primary: true },
-      { text: "View Pricing", href: "/pricing", teal: true }
+      { text: "View Pricing", href: "/pricing" }
     ]
   },
 
@@ -1137,6 +1155,11 @@ export const featuresContent = {
       "Self-host or use managed service",
     ],
   },
+
+  relatedPages: [
+    { title: "Technical Details", description: "Deep dive into protocols, encryption, and architecture.", path: "/technical" },
+    { title: "Download", description: "Get Tunnels for your platform.", path: "/download" },
+  ],
 };
 
 // ============================================================================
@@ -1401,7 +1424,12 @@ export const pricingContent = {
       { text: "Download Now", href: "/download", primary: true },
       { text: "Contact Sales", href: "mailto:support@tunnels.is", primary: false }
     ]
-  }
+  },
+
+  relatedPages: [
+    { title: "Download", description: "Get Tunnels for your platform.", path: "/download" },
+    { title: "Features", description: "Explore the full feature set.", path: "/features" },
+  ],
 };
 
 // ============================================================================
@@ -1578,6 +1606,11 @@ export const technicalContent = {
     lan: 'LAN Networks',
     routing: 'Advanced Routing',
   },
+
+  relatedPages: [
+    { title: "Features", description: "See the full feature overview.", path: "/features" },
+    { title: "Security", description: "Learn about our security architecture.", path: "/security" },
+  ],
 };
 
 // ============================================================================
@@ -1593,7 +1626,7 @@ export const dnsContent = {
     showScrollIndicator: false,
     buttons: [
       { text: "Download Free", href: "/download", primary: true },
-      { text: "Learn More", href: "#features", teal: true }
+      { text: "Learn More", href: "#features" }
     ]
   },
 
@@ -1753,6 +1786,11 @@ export const dnsContent = {
     "Configurations sync automatically on connect",
     "Perfect for development and testing environments",
   ],
+
+  relatedPages: [
+    { title: "Security", description: "Learn about our security architecture.", path: "/security" },
+    { title: "Homelab", description: "Self-host your VPN with built-in DNS management.", path: "/homelab" },
+  ],
 };
 
 // ============================================================================
@@ -1869,7 +1907,12 @@ export const freeOpenSourceContent = {
       { text: "Download Now", href: "/download", primary: true },
       { text: "View Source Code", href: "https://github.com/tunnels-is", primary: false }
     ]
-  }
+  },
+
+  relatedPages: [
+    { title: "Features", description: "Explore the full feature set.", path: "/features" },
+    { title: "Security", description: "Learn about our security architecture.", path: "/security" },
+  ],
 };
 
 // ============================================================================
@@ -2060,7 +2103,12 @@ export const enterpriseContent = {
       "Active community vulnerability reporting",
       "Self-host for maximum control"
     ]
-  }
+  },
+
+  relatedPages: [
+    { title: "Office Networks", description: "Connect multiple office locations securely.", path: "/office" },
+    { title: "Cloud & Baremetal", description: "Deploy on cloud providers or dedicated servers.", path: "/cloud" },
+  ],
 };
 
 // ============================================================================
@@ -2352,7 +2400,12 @@ export const cloudBaremetalContent = {
       { text: "Download & Get Started", href: "/download", primary: true },
       { text: "View Documentation", href: "https://docs.tunnels.is/docs", primary: false }
     ]
-  }
+  },
+
+  relatedPages: [
+    { title: "Office Networks", description: "Connect multiple office locations securely.", path: "/office" },
+    { title: "Enterprise", description: "Scale across teams with centralized management.", path: "/enterprise" },
+  ],
 };
 
 // ============================================================================
@@ -2556,6 +2609,11 @@ export const officeNetworksContent = {
       'Real-time connection monitoring',
     ],
   },
+
+  relatedPages: [
+    { title: "Enterprise", description: "Scale across teams with centralized management.", path: "/enterprise" },
+    { title: "Cloud & Baremetal", description: "Deploy on cloud providers or dedicated servers.", path: "/cloud" },
+  ],
 };
 
 // ============================================================================
@@ -2870,7 +2928,12 @@ export const iotNetworksContent = {
       button: { text: "View Documentation", href: "https://docs.tunnels.is/docs", primary: false },
       highlighted: false
     }
-  ]
+  ],
+
+  relatedPages: [
+    { title: "LAN over WAN", description: "Connect devices across locations as if on the same network.", path: "/lan-over-wan" },
+    { title: "Homelab", description: "Self-host your VPN with built-in DNS management.", path: "/homelab" },
+  ],
 };
 
 // ============================================================================
@@ -2885,7 +2948,7 @@ export const lanOverWanContent = {
     description: "Bridge isolated local networks across the internet. Create a unified network spanning multiple physical locations with end-to-end encryption.",
     buttons: [
       { text: "Get Started", href: "/download", primary: true },
-      { text: "View Docs", href: "https://docs.tunnels.is/docs", teal: true }
+      { text: "View Docs", href: "https://docs.tunnels.is/docs" }
     ],
     quickStats: [
       { value: "Low", label: "Added Latency" },
@@ -3056,7 +3119,12 @@ export const lanOverWanContent = {
       { text: "Download Free", href: "/download", primary: true },
       { text: "Read Documentation", href: "https://docs.tunnels.is/docs" }
     ]
-  }
+  },
+
+  relatedPages: [
+    { title: "Homelab", description: "Self-host your VPN with built-in DNS management.", path: "/homelab" },
+    { title: "IoT Networks", description: "Manage IoT devices securely across locations.", path: "/iot" },
+  ],
 };
 
 // ============================================================================
@@ -3071,7 +3139,7 @@ export const publicVPNContent = {
     description: "Create your own public VPN service. Route internet traffic through servers you control with full privacy and no third-party access to your data.",
     buttons: [
       { text: "Get Started", href: "/download", primary: true },
-      { text: "Setup Guide", href: "https://docs.tunnels.is/docs", teal: true }
+      { text: "Setup Guide", href: "https://docs.tunnels.is/docs" }
     ],
     quickStats: [
       { value: "100%", label: "Self-Hosted" },
@@ -3271,7 +3339,12 @@ export const publicVPNContent = {
       { text: "Download Free", href: "/download", primary: true },
       { text: "Read Documentation", href: "https://docs.tunnels.is/docs" }
     ]
-  }
+  },
+
+  relatedPages: [
+    { title: "Personal VPN", description: "Secure your internet and access your network from anywhere.", path: "/personal-vpn" },
+    { title: "Cloud & Baremetal", description: "Deploy on cloud providers or dedicated servers.", path: "/cloud" },
+  ],
 };
 
 // ============================================================================
@@ -3286,7 +3359,7 @@ export const securityContent = {
     description: "Tunnels is designed from the ground up with security as the primary concern. Open source, auditable, and using only proven cryptographic primitives.",
     buttons: [
       { text: "View Source", href: "https://github.com/tunnels-is", primary: true },
-      { text: "Security Docs", href: "https://docs.tunnels.is/docs", teal: true }
+      { text: "Security Docs", href: "https://docs.tunnels.is/docs" }
     ]
   },
 
@@ -3453,7 +3526,12 @@ export const securityContent = {
       { text: "Download Free", href: "/download", primary: true },
       { text: "Read Security Docs", href: "https://docs.tunnels.is/docs" }
     ]
-  }
+  },
+
+  relatedPages: [
+    { title: "Technical Details", description: "Deep dive into protocols, encryption, and architecture.", path: "/technical" },
+    { title: "Features", description: "See the full feature overview.", path: "/features" },
+  ],
 };
 
 // Export all content as default for convenient importing

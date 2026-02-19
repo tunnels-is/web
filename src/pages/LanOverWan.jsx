@@ -8,6 +8,8 @@ import SectionHeader from '../components/ui/SectionHeader';
 import IllustratedSection from '../components/IllustratedSection';
 import StatsBanner from '../components/sections/StatsBanner';
 import TerminalPreview from '../components/sections/TerminalPreview';
+import MidPageCTA from '../components/sections/MidPageCTA';
+import RelatedPages from '../components/sections/RelatedPages';
 import { lanOverWanContent } from '../content/siteContent';
 import { LANOverWANIllustration } from '../components/illustrations';
 
@@ -43,7 +45,6 @@ const LanOverWan = () => {
         <FeatureGrid
           features={content.benefits}
           columns={3}
-          cardStyle="elevated"
         />
       </ContentSection>
 
@@ -57,6 +58,8 @@ const LanOverWan = () => {
         illustrationPosition="right"
         illustrationSize="large"
       />
+
+      <MidPageCTA />
 
       {/* Architecture Section */}
       <ContentSection background="dark-surface">
@@ -136,6 +139,8 @@ const LanOverWan = () => {
           <FeatureTimeline steps={content.setupSteps} />
         </div>
       </ContentSection>
+
+      <RelatedPages pages={content.relatedPages} />
 
       {/* CTA */}
       <CTASection

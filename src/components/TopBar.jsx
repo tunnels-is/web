@@ -33,41 +33,122 @@ const TopBar = () => {
   }, []);
 
   const navLinks = [
-    { path: '/', label: 'Home' },
     {
-      label: 'Products',
+      label: 'Product',
       dropdown: [
+        { heading: 'Platform' },
         { path: '/features', label: 'Features' },
-        { path: '/dns', label: 'DNS Security' },
         { path: '/security', label: 'Security' },
-        { path: '/enterprise', label: 'Enterprise' },
+        { path: '/technical', label: 'Technical' },
+        { path: '/dns', label: 'DNS' },
+        { heading: 'About' },
+        { path: '/free-and-opensource', label: 'Free & Open Source' },
+        { path: 'https://github.com/tunnels-is', label: 'GitHub', external: true },
       ]
     },
     {
-      label: 'Use Cases',
+      label: 'Solutions',
       dropdown: [
-        { path: '/homelab', label: 'Homelab' },
+        { heading: 'Personal' },
         { path: '/personal-vpn', label: 'Personal VPN' },
+        { path: '/homelab', label: 'Homelab' },
         { path: '/public', label: 'Public VPN' },
+        { heading: 'Business' },
         { path: '/office', label: 'Office Networks' },
+        { path: '/enterprise', label: 'Enterprise' },
         { path: '/iot', label: 'IoT Networks' },
         { path: '/cloud', label: 'Cloud & Baremetal' },
         { path: '/lan-over-wan', label: 'LAN over WAN' },
       ]
     },
     { path: '/pricing', label: 'Pricing' },
-    {
-      label: 'Learn More',
-      dropdown: [
-        { path: '/free-and-opensource', label: 'Free & Open Source' },
-        { path: 'https://docs.tunnels.is', label: 'Documentation', external: true },
-        { path: 'https://github.com/tunnels-is', label: 'GitHub', external: true },
-      ]
-    },
+    { path: 'https://docs.tunnels.is', label: 'Docs', external: true },
   ];
 
   const isActivePath = (path) => location.pathname === path;
-  const isActiveGroup = (items) => items?.some(item => location.pathname === item.path);
+  const isActiveGroup = (items) => items?.some(item => item.path && location.pathname === item.path);
+
+  const renderDropdownItem = (item) => {
+    if (item.heading) {
+      return (
+        <div key={item.heading} className="px-3 pt-2 pb-1 first:pt-1">
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-dark-text-muted">
+            {item.heading}
+          </span>
+        </div>
+      );
+    }
+    if (item.external) {
+      return (
+        <a
+          key={item.path}
+          href={item.path}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-between px-3 py-2 text-[13px] text-dark-text-secondary hover:text-dark-text-primary hover:bg-dark-elevated/60 transition-all duration-150"
+        >
+          {item.label}
+          <svg className="w-3 h-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+          </svg>
+        </a>
+      );
+    }
+    return (
+      <Link
+        key={item.path}
+        to={item.path}
+        className={`block px-3 py-2 text-[13px] transition-all duration-150 ${
+          isActivePath(item.path)
+            ? 'text-dark-accent-primary bg-dark-accent-primary/8'
+            : 'text-dark-text-secondary hover:text-dark-text-primary hover:bg-dark-elevated/60'
+        }`}
+      >
+        {item.label}
+      </Link>
+    );
+  };
+
+  const renderMobileDropdownItem = (item) => {
+    if (item.heading) {
+      return (
+        <div key={item.heading} className="px-3 pt-2 pb-0.5">
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-dark-text-muted">
+            {item.heading}
+          </span>
+        </div>
+      );
+    }
+    if (item.external) {
+      return (
+        <a
+          key={item.path}
+          href={item.path}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-3 py-1.5 text-[13px] text-dark-text-muted hover:text-dark-text-primary rounded-md"
+        >
+          {item.label}
+          <svg className="w-3 h-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+          </svg>
+        </a>
+      );
+    }
+    return (
+      <Link
+        key={item.path}
+        to={item.path}
+        className={`block px-3 py-1.5 text-[13px] rounded-md ${
+          isActivePath(item.path)
+            ? 'text-dark-accent-primary'
+            : 'text-dark-text-muted hover:text-dark-text-primary'
+        }`}
+      >
+        {item.label}
+      </Link>
+    );
+  };
 
   return (
     <nav
@@ -113,39 +194,25 @@ const TopBar = () => {
                         className="absolute top-full left-0 mt-1.5 w-48 bg-dark-surface/95 backdrop-blur-xl rounded-lg border border-dark-border shadow-2xl shadow-black/40 overflow-hidden"
                       >
                         <div className="py-1">
-                          {link.dropdown.map((item) => (
-                            item.external ? (
-                              <a
-                                key={item.path}
-                                href={item.path}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center justify-between px-3 py-2 text-[13px] text-dark-text-secondary hover:text-dark-text-primary hover:bg-dark-elevated/60 transition-all duration-150"
-                              >
-                                {item.label}
-                                <svg className="w-3 h-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-                                </svg>
-                              </a>
-                            ) : (
-                              <Link
-                                key={item.path}
-                                to={item.path}
-                                className={`block px-3 py-2 text-[13px] transition-all duration-150 ${
-                                  isActivePath(item.path)
-                                    ? 'text-dark-accent-primary bg-dark-accent-primary/8'
-                                    : 'text-dark-text-secondary hover:text-dark-text-primary hover:bg-dark-elevated/60'
-                                }`}
-                              >
-                                {item.label}
-                              </Link>
-                            )
-                          ))}
+                          {link.dropdown.map(renderDropdownItem)}
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
+              ) : link.external ? (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative px-3 py-1.5 rounded-md text-[13px] font-medium transition-all duration-150 text-dark-text-secondary hover:text-dark-text-primary inline-flex items-center gap-1"
+                >
+                  {link.label}
+                  <svg className="w-3 h-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                  </svg>
+                </a>
               ) : (
                 <Link
                   key={link.path}
@@ -164,16 +231,6 @@ const TopBar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-2.5">
-            <a
-              href="https://github.com/tunnels-is"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1.5 rounded-md text-dark-text-muted hover:text-dark-text-secondary transition-colors"
-            >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-            </a>
             <Link
               to="/download"
               className="bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white text-[11px] font-medium py-1 px-2.5 rounded transition-colors"
@@ -231,38 +288,24 @@ const TopBar = () => {
                           transition={{ duration: 0.15 }}
                           className="pl-3 space-y-0.5"
                         >
-                          {link.dropdown.map((item) => (
-                            item.external ? (
-                              <a
-                                key={item.path}
-                                href={item.path}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-3 py-1.5 text-[13px] text-dark-text-muted hover:text-dark-text-primary rounded-md"
-                              >
-                                {item.label}
-                                <svg className="w-3 h-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-                                </svg>
-                              </a>
-                            ) : (
-                              <Link
-                                key={item.path}
-                                to={item.path}
-                                className={`block px-3 py-1.5 text-[13px] rounded-md ${
-                                  isActivePath(item.path)
-                                    ? 'text-dark-accent-primary'
-                                    : 'text-dark-text-muted hover:text-dark-text-primary'
-                                }`}
-                              >
-                                {item.label}
-                              </Link>
-                            )
-                          ))}
+                          {link.dropdown.map(renderMobileDropdownItem)}
                         </motion.div>
                       )}
                     </AnimatePresence>
                   </div>
+                ) : link.external ? (
+                  <a
+                    key={link.path}
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-2 text-[13px] font-medium text-dark-text-secondary hover:text-dark-text-primary rounded-md"
+                  >
+                    {link.label}
+                    <svg className="w-3 h-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                    </svg>
+                  </a>
                 ) : (
                   <Link
                     key={link.path}

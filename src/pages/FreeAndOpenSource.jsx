@@ -7,6 +7,7 @@ import StatsBanner from '../components/sections/StatsBanner';
 import GradientCallout from '../components/sections/GradientCallout';
 import { freeOpenSourceContent } from '../content/siteContent';
 import { SecurityIllustration } from '../components/illustrations';
+import RelatedPages from '../components/sections/RelatedPages';
 
 const FreeAndOpenSource = () => {
   const {
@@ -18,6 +19,7 @@ const FreeAndOpenSource = () => {
     community,
     socialLinks,
     cta,
+    relatedPages,
   } = freeOpenSourceContent;
 
   return (
@@ -30,7 +32,7 @@ const FreeAndOpenSource = () => {
 
       <ContentSection>
         <StatsBanner
-          variant="card"
+          variant="default"
           stats={statsBanner}
         />
       </ContentSection>
@@ -99,6 +101,8 @@ const FreeAndOpenSource = () => {
           ))}
         </div>
       </ContentSection>
+
+      <RelatedPages pages={relatedPages} />
 
       <CTASection
         title={cta.title}

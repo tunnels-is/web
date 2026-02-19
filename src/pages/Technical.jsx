@@ -1,5 +1,6 @@
 import HeroSimple from '../components/sections/HeroSimple';
 import ContentSection from '../components/sections/ContentSection';
+import SectionHeader from '../components/ui/SectionHeader';
 import CTASection from '../components/sections/CTASection';
 import IllustratedSection from '../components/IllustratedSection';
 import TerminalPreview from '../components/sections/TerminalPreview';
@@ -12,6 +13,7 @@ import {
   EncryptionIllustration,
   GlobalNetworkIllustration,
 } from '../components/illustrations';
+import RelatedPages from '../components/sections/RelatedPages';
 
 const Technical = () => {
   const {
@@ -26,6 +28,7 @@ const Technical = () => {
     illustratedEncryption,
     natCalloutFeatures,
     sectionLabels,
+    relatedPages,
   } = technicalContent;
 
   return (
@@ -41,7 +44,7 @@ const Technical = () => {
       <ContentSection background="dark-surface" padding="normal">
         <StatsBanner
           stats={performanceStats}
-          variant="card"
+          variant="default"
         />
       </ContentSection>
 
@@ -60,18 +63,12 @@ const Technical = () => {
       {/* Encryption & Security — FeatureTable */}
       <ContentSection background="dark-surface" padding="normal">
         <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <span className="inline-flex items-center gap-2 text-dark-accent-primary text-xs font-semibold uppercase tracking-widest mb-3">
-              <span className="w-5 h-px bg-dark-accent-primary" />
-              {sectionLabels.encryption}
-            </span>
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
-              {sections[1].title}
-            </h2>
-            <p className="text-sm text-dark-text-secondary leading-relaxed max-w-2xl">
-              {sections[1].description}
-            </p>
-          </div>
+          <SectionHeader
+            label={sectionLabels.encryption}
+            title={sections[1].title}
+            subtitle={sections[1].description}
+            alignment="left"
+          />
           <FeatureTable
             headers={encryptionTable.headers}
             rows={encryptionTable.rows}
@@ -81,7 +78,7 @@ const Technical = () => {
       </ContentSection>
 
       {/* Terminal Preview — Routing and Tunnel Commands */}
-      <ContentSection background="transparent" padding="normal">
+      <ContentSection padding="normal">
         <TerminalPreview
           title={terminalPreview.title}
           description={terminalPreview.description}
@@ -93,18 +90,12 @@ const Technical = () => {
 
       {/* LAN Networks — BentoGrid */}
       <ContentSection background="dark-surface" padding="normal">
-        <div className="mb-8">
-          <span className="inline-flex items-center gap-2 text-dark-accent-primary text-xs font-semibold uppercase tracking-widest mb-3">
-            <span className="w-5 h-px bg-dark-accent-primary" />
-            {sectionLabels.lan}
-          </span>
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
-            {sections[2].title}
-          </h2>
-          <p className="text-sm text-dark-text-secondary leading-relaxed max-w-2xl">
-            {sections[2].description}
-          </p>
-        </div>
+        <SectionHeader
+          label={sectionLabels.lan}
+          title={sections[2].title}
+          subtitle={sections[2].description}
+          alignment="left"
+        />
         <BentoGrid
           items={lanBentoItems}
           layout="featured"
@@ -124,18 +115,12 @@ const Technical = () => {
 
       {/* Abstract NAT — GradientCallout */}
       <ContentSection background="dark-surface" padding="normal">
-        <div className="mb-8">
-          <span className="inline-flex items-center gap-2 text-dark-accent-primary text-xs font-semibold uppercase tracking-widest mb-3">
-            <span className="w-5 h-px bg-dark-accent-primary" />
-            {sectionLabels.routing}
-          </span>
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
-            {sections[3].title}
-          </h2>
-          <p className="text-sm text-dark-text-secondary leading-relaxed max-w-2xl mb-8">
-            {sections[3].description}
-          </p>
-        </div>
+        <SectionHeader
+          label={sectionLabels.routing}
+          title={sections[3].title}
+          subtitle={sections[3].description}
+          alignment="left"
+        />
         <GradientCallout
           title={sections[4].title}
           description={sections[4].description}
@@ -144,6 +129,8 @@ const Technical = () => {
           features={natCalloutFeatures}
         />
       </ContentSection>
+
+      <RelatedPages pages={relatedPages} />
 
       {/* CTA Section */}
       <CTASection

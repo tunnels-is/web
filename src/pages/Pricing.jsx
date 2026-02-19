@@ -1,4 +1,5 @@
 import { pricingContent } from '../content/siteContent';
+import RelatedPages from '../components/sections/RelatedPages';
 import PricingHero from '../components/sections/PricingHero';
 import SubscriptionPlans from '../components/sections/SubscriptionPlans';
 import AnonymousLicenseCard from '../components/sections/AnonymousLicenseCard';
@@ -19,7 +20,7 @@ const ZeroCostBadge = () => (
 );
 
 const Pricing = () => {
-  const { hero, subscriptions, anonymousKey, freeFeatures, cta, comparisonSection, comparisonCards, illustratedSelfHosted } = pricingContent;
+  const { hero, subscriptions, anonymousKey, freeFeatures, faq, cta, comparisonSection, comparisonCards, illustratedSelfHosted, relatedPages } = pricingContent;
 
   return (
     <div className="min-h-screen">
@@ -29,19 +30,9 @@ const Pricing = () => {
         tagline={hero.tagline}
       />
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <AnonymousLicenseCard
-          title={anonymousKey.title}
-          description={anonymousKey.description}
-          price={anonymousKey.price}
-          period={anonymousKey.period}
-          url={anonymousKey.url}
-        />
-      </section>
-
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <ContentSection>
         <SubscriptionPlans subscriptions={subscriptions} />
-      </section>
+      </ContentSection>
 
       <FreeFeaturesSection
         title={freeFeatures.title}
@@ -62,6 +53,16 @@ const Pricing = () => {
         />
       </ContentSection>
 
+      <ContentSection>
+        <AnonymousLicenseCard
+          title={anonymousKey.title}
+          description={anonymousKey.description}
+          price={anonymousKey.price}
+          period={anonymousKey.period}
+          url={anonymousKey.url}
+        />
+      </ContentSection>
+
       {/* Self-Hosted */}
       <IllustratedSection
         subtitle={illustratedSelfHosted.subtitle}
@@ -73,6 +74,13 @@ const Pricing = () => {
         illustrationSize="small"
         dark={false}
       />
+
+      <PricingFAQSection
+        title={faq.title}
+        questions={faq.questions}
+      />
+
+      <RelatedPages pages={relatedPages} />
 
       <CTASection
         title={cta.title}

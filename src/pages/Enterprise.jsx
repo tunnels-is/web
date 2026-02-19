@@ -8,6 +8,8 @@ import StatsBanner from '../components/sections/StatsBanner';
 import BentoGrid from '../components/sections/BentoGrid';
 import GradientCallout from '../components/sections/GradientCallout';
 import FeatureTable from '../components/sections/FeatureTable';
+import MidPageCTA from '../components/sections/MidPageCTA';
+import RelatedPages from '../components/sections/RelatedPages';
 import { enterpriseContent } from '../content/siteContent';
 import {
   EnterpriseIllustration,
@@ -16,11 +18,11 @@ import {
 
 const Enterprise = () => {
   const {
-    hero, benefits, management, security, cta,
+    hero, benefits, management, cta,
     heroButtons, enterpriseStats, benefitsHeader,
     managementItems, accessControlHeader, accessControlRows,
     accessControlTableConfig, illustratedScale, zeroTrustCallout,
-    illustratedTransparency
+    illustratedTransparency, relatedPages
   } = enterpriseContent;
 
   return (
@@ -35,7 +37,7 @@ const Enterprise = () => {
 
       {/* Enterprise Stats */}
       <ContentSection padding="small">
-        <StatsBanner stats={enterpriseStats} variant="card" />
+        <StatsBanner stats={enterpriseStats} variant="default" />
       </ContentSection>
 
       {/* Benefits */}
@@ -44,7 +46,7 @@ const Enterprise = () => {
           title={benefitsHeader.title}
           subtitle={benefitsHeader.subtitle}
         />
-        <FeatureGrid features={benefits} columns={3} cardStyle="elevated" />
+        <FeatureGrid features={benefits} columns={3} />
       </ContentSection>
 
       {/* Illustrated: Enterprise Scale */}
@@ -83,21 +85,15 @@ const Enterprise = () => {
 
       {/* Security Callout */}
       <ContentSection background="dark-surface">
-        <SectionHeader
-          title={security.title}
-          subtitle={security.description1}
-        />
-        <GradientCallout
-          title={zeroTrustCallout.title}
-          description={zeroTrustCallout.description}
-          features={zeroTrustCallout.features}
-          accent="teal"
-          icon={
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-            </svg>
-          }
-        />
+        <div className="max-w-4xl mx-auto">
+          <GradientCallout
+            variant="banner"
+            accent="teal"
+            title={zeroTrustCallout.title}
+            description={zeroTrustCallout.description}
+            button={{ text: "Learn about Security", href: "/security", primary: true }}
+          />
+        </div>
       </ContentSection>
 
       {/* Illustrated: Security */}
@@ -110,6 +106,10 @@ const Enterprise = () => {
         illustrationPosition="left"
         illustrationSize="large"
       />
+
+      <MidPageCTA />
+
+      <RelatedPages pages={relatedPages} />
 
       {/* CTA Section */}
       <CTASection
