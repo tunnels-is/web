@@ -35,26 +35,26 @@ const HeroWithWaves = ({
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         >
           {badge && (
-            <div className="inline-flex items-center gap-2 px-6 py-3 glass-effect rounded-full mb-8">
+            <div className="inline-flex items-center gap-2 px-6 py-3 glass-effect rounded-full mb-6">
               <span className="text-dark-accent-primary font-semibold">{badge}</span>
             </div>
           )}
 
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             {title}
           </h1>
 
           {subtitle && (
-            <h2 className="text-2xl md:text-4xl font-semibold text-dark-text-secondary mb-8 leading-snug">
+            <h2 className="text-2xl md:text-4xl font-semibold text-dark-text-secondary mb-6 leading-snug">
               {subtitle}
             </h2>
           )}
 
           {description && (
-            <p className="text-xl md:text-2xl text-dark-text-secondary mb-12 max-w-4xl mx-auto leading-snug">
+            <p className="text-lg md:text-xl text-dark-text-secondary mb-10 max-w-4xl mx-auto leading-snug">
               {description}
             </p>
           )}
@@ -65,8 +65,8 @@ const HeroWithWaves = ({
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.08, ease: [0.4, 0, 0.2, 1] }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            transition={{ duration: 0.3, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row gap-3 justify-center items-center"
           >
             {buttons.map((button, index) => (
               <a
@@ -74,8 +74,8 @@ const HeroWithWaves = ({
                 href={button.href}
                 className={
                   button.primary
-                    ? "group px-10 py-5 bg-dark-accent-primary hover:bg-dark-accent-secondary text-white text-lg font-semibold rounded-xl transition-all duration-150 relative overflow-hidden shadow-lg shadow-dark-accent-primary/20 hover:shadow-dark-accent-primary/40 active:opacity-90"
-                    : "px-10 py-5 bg-dark-surface hover:bg-dark-elevated hover:border-dark-accent-primary/50 text-dark-text-primary text-lg font-semibold rounded-xl transition-all duration-150 border border-transparent active:opacity-90"
+                    ? "group px-10 py-5 bg-dark-accent-primary hover:bg-dark-accent-secondary text-white text-base font-semibold rounded-xl transition-all duration-150 relative overflow-hidden shadow-lg shadow-dark-accent-primary/20 hover:shadow-dark-accent-primary/40 active:opacity-90"
+                    : "px-10 py-5 bg-dark-surface hover:bg-dark-elevated hover:border-dark-accent-primary/50 text-dark-text-primary text-base font-semibold rounded-xl transition-all duration-150 border border-transparent active:opacity-90"
                 }
               >
                 <span className="relative z-10">{button.text}</span>
@@ -92,16 +92,16 @@ const HeroWithWaves = ({
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
-            className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+            transition={{ duration: 0.3, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
           >
             {quickStats.map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.25, delay: 0.2 + index * 0.03, ease: [0.4, 0, 0.2, 1] }}
-                className="glass-effect p-6 rounded-xl group hover:border-dark-accent-primary/30 border border-transparent transition-colors duration-150"
+                transition={{ duration: 0.25, delay: 0.2 + index * 0.03, ease: [0.16, 1, 0.3, 1] }}
+                className="glass-effect p-5 rounded-xl group hover:border-dark-accent-primary/30 border border-transparent transition-colors duration-150"
               >
                 <div className="text-4xl font-bold mb-2 transition-colors duration-150 group-hover:text-dark-accent-primary">{stat.value}</div>
                 <div className="text-dark-text-muted text-sm uppercase tracking-wider transition-colors duration-150 group-hover:text-dark-text-secondary">{stat.label}</div>

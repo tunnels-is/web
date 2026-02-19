@@ -18,34 +18,34 @@ const PricingHighlight = ({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="text-center text-white"
         >
           {icon && (
-            <div className="flex justify-center mb-6">{icon}</div>
+            <div className="flex justify-center mb-4">{icon}</div>
           )}
 
-          <h2 className="text-3xl md:text-5xl font-bold mb-5 tracking-tight">{title}</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 tracking-tight">{title}</h2>
 
           {description && (
-            <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-90">
+            <p className="text-base md:text-lg mb-10 max-w-3xl mx-auto opacity-90">
               {description}
             </p>
           )}
 
           {highlights.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-4xl mx-auto mt-10">
               {highlights.map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 12 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="bg-white/10 backdrop-blur-sm p-6 rounded-xl"
+                  transition={{ duration: 0.3, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                  className="bg-white/10 backdrop-blur-sm p-5 rounded-xl"
                 >
-                  <h3 className="text-lg font-bold mb-1.5">{item.title}</h3>
+                  <h3 className="text-base font-bold mb-1.5">{item.title}</h3>
                   <p className="text-sm opacity-85">{item.description}</p>
                 </motion.div>
               ))}

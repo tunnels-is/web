@@ -10,31 +10,31 @@ const HeroSimple = ({
   quickStats = [],
 }) => {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden hero-gradient">
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden hero-gradient">
       {/* Banner art background */}
       <HeroBannerArt />
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
           {badge && (
-            <div className="inline-block mb-6">
-              <span className="px-4 py-1.5 bg-dark-accent-primary/10 rounded-full text-dark-accent-primary font-medium text-sm">
+            <div className="inline-block mb-5">
+              <span className="px-3.5 py-1 bg-dark-accent-primary/8 border border-dark-accent-primary/20 rounded-full text-dark-accent-primary font-medium text-xs tracking-wide">
                 {badge}
               </span>
             </div>
           )}
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-tight leading-[1.1]">
             {title}
           </h1>
 
           {subtitle && (
-            <p className="text-lg sm:text-xl md:text-2xl font-medium text-dark-text-secondary mb-4 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl font-medium text-dark-text-secondary mb-3 max-w-2xl mx-auto leading-relaxed">
               {subtitle}
             </p>
           )}
@@ -42,10 +42,10 @@ const HeroSimple = ({
 
         {description && (
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.05, ease: [0.4, 0, 0.2, 1] }}
-            className="text-base sm:text-lg text-dark-text-muted mb-10 max-w-2xl mx-auto leading-relaxed"
+            transition={{ duration: 0.5, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}
+            className="text-sm sm:text-base text-dark-text-muted mb-8 max-w-xl mx-auto leading-relaxed"
           >
             {description}
           </motion.p>
@@ -54,16 +54,16 @@ const HeroSimple = ({
         {/* Buttons */}
         {buttons.length > 0 && (
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
-            className="flex flex-col sm:flex-row gap-3 justify-center items-center"
+            transition={{ duration: 0.5, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row gap-2.5 justify-center items-center"
           >
             {buttons.map((button, index) => (
               <a
                 key={index}
                 href={button.href}
-                className={button.primary ? 'btn-primary px-8 py-3.5 text-base' : 'btn-secondary px-8 py-3.5 text-base'}
+                className={button.primary ? 'btn-primary px-6 py-2.5 text-sm' : 'btn-secondary px-6 py-2.5 text-sm'}
               >
                 {button.text}
               </a>
@@ -74,20 +74,23 @@ const HeroSimple = ({
         {/* Quick Stats */}
         {quickStats.length > 0 && (
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
-            className="mt-16 flex flex-wrap justify-center gap-12"
+            transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-12 flex flex-wrap justify-center gap-10"
           >
             {quickStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-dark-text-primary mb-1">{stat.value}</div>
-                <div className="text-dark-text-muted text-xs uppercase tracking-wider font-medium">{stat.label}</div>
+                <div className="text-2xl md:text-3xl font-bold text-dark-text-primary mb-0.5">{stat.value}</div>
+                <div className="text-dark-text-muted text-[11px] uppercase tracking-widest font-medium">{stat.label}</div>
               </div>
             ))}
           </motion.div>
         )}
       </div>
+
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-bg to-transparent pointer-events-none" />
     </section>
   );
 };

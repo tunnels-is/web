@@ -25,7 +25,7 @@ const FeatureShowcaseBento = ({
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="grid grid-cols-1 lg:grid-cols-12 gap-6 auto-rows-auto"
       >
         {imagePosition === 'right' ? (
@@ -33,8 +33,8 @@ const FeatureShowcaseBento = ({
             {/* Content Section - Takes up left side */}
             <div className="lg:col-span-5 space-y-6">
               {/* Title Card */}
-              <div className="bg-dark-surface p-8 rounded-2xl h-full flex flex-col justify-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <div className="h-full flex flex-col justify-center">
+                <h2 className="text-2xl md:text-3xl font-bold mb-3">
                   {title}
                 </h2>
                 {descriptions.map((description, index) => (
@@ -48,7 +48,7 @@ const FeatureShowcaseBento = ({
               {features.length > 0 && (
                 <div className="grid grid-cols-1 gap-4">
                   {features.slice(0, 2).map((feature, index) => (
-                    <div key={index} className="bg-dark-surface p-6 rounded-xl hover:bg-dark-elevated transition-colors">
+                    <div key={index} className="p-5 transition-colors">
                       <div className="flex items-start space-x-3">
                         <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-dark-accent-primary flex items-center justify-center">
                           <span className="text-white font-bold">✓</span>
@@ -66,7 +66,7 @@ const FeatureShowcaseBento = ({
 
             {/* Image Section - Takes up right side, spans more rows */}
             <div className="lg:col-span-7 lg:row-span-2">
-              <div className="bg-dark-surface p-4 rounded-2xl h-full">
+              <div className="h-full">
                 <div className="relative h-full min-h-[400px] lg:min-h-[600px] rounded-xl overflow-hidden">
                   <img
                     src={image}
@@ -81,7 +81,7 @@ const FeatureShowcaseBento = ({
           <>
             {/* Image Section - Takes up left side, spans more rows */}
             <div className="lg:col-span-7 lg:row-span-2">
-              <div className="bg-dark-surface p-4 rounded-2xl h-full">
+              <div className="h-full">
                 <div className="relative h-full min-h-[400px] lg:min-h-[600px] rounded-xl overflow-hidden">
                   <img
                     src={image}
@@ -95,8 +95,8 @@ const FeatureShowcaseBento = ({
             {/* Content Section - Takes up right side */}
             <div className="lg:col-span-5 space-y-6">
               {/* Title Card */}
-              <div className="bg-dark-surface p-8 rounded-2xl h-full flex flex-col justify-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <div className="h-full flex flex-col justify-center">
+                <h2 className="text-2xl md:text-3xl font-bold mb-3">
                   {title}
                 </h2>
                 {descriptions.map((description, index) => (
@@ -110,7 +110,7 @@ const FeatureShowcaseBento = ({
               {features.length > 0 && (
                 <div className="grid grid-cols-1 gap-4">
                   {features.slice(0, 2).map((feature, index) => (
-                    <div key={index} className="bg-dark-surface p-6 rounded-xl hover:bg-dark-elevated transition-colors">
+                    <div key={index} className="p-5 transition-colors">
                       <div className="flex items-start space-x-3">
                         <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-dark-accent-primary flex items-center justify-center">
                           <span className="text-white font-bold">✓</span>

@@ -25,16 +25,16 @@ const FeatureShowcaseSpotlight = ({
       <motion.div
         initial={{ opacity: 0 }}
         animate={isVisible ? { opacity: 1 } : {}}
-        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
         className="max-w-5xl mx-auto"
       >
         {imagePosition === 'top' ? (
           <>
             {/* Image Spotlight */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.35, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+              transition={{ duration: 0.35, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="mb-16 md:mb-24 relative"
             >
               {/* Spotlight glow effect */}
@@ -64,9 +64,9 @@ const FeatureShowcaseSpotlight = ({
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.3, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
+                transition={{ duration: 0.3, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
                   {title}
                 </h2>
               </motion.div>
@@ -75,11 +75,11 @@ const FeatureShowcaseSpotlight = ({
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.3, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+                transition={{ duration: 0.3, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                 className="space-y-6"
               >
                 {descriptions.map((description, index) => (
-                  <p key={index} className="text-xl md:text-2xl text-dark-text-secondary leading-relaxed font-light">
+                  <p key={index} className="text-lg md:text-xl text-dark-text-secondary leading-relaxed font-light">
                     {description}
                   </p>
                 ))}
@@ -90,13 +90,13 @@ const FeatureShowcaseSpotlight = ({
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.3, delay: 0.25, ease: [0.4, 0, 0.2, 1] }}
-                  className="flex flex-wrap justify-center gap-6 pt-8"
+                  transition={{ duration: 0.3, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                  className="flex flex-wrap justify-center gap-3 pt-8"
                 >
                   {features.map((feature, index) => (
                     <div
                       key={index}
-                      className="flex items-center space-x-2 px-6 py-3 rounded-full bg-dark-bg/30 border border-dark-border hover:border-dark-accent-primary transition-colors"
+                      className="flex items-center space-x-2 px-6 py-3 rounded-full bg-dark-accent-primary/8 border border-dark-accent-primary/15 hover:border-dark-accent-primary transition-colors"
                     >
                       <div className="w-1.5 h-1.5 rounded-full bg-dark-accent-primary"></div>
                       <span className="text-white font-medium text-sm">{feature.title}</span>
@@ -114,9 +114,9 @@ const FeatureShowcaseSpotlight = ({
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.3, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                transition={{ duration: 0.3, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
                   {title}
                 </h2>
               </motion.div>
@@ -125,11 +125,11 @@ const FeatureShowcaseSpotlight = ({
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.3, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
+                transition={{ duration: 0.3, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
                 className="space-y-6"
               >
                 {descriptions.map((description, index) => (
-                  <p key={index} className="text-xl md:text-2xl text-dark-text-secondary leading-relaxed font-light">
+                  <p key={index} className="text-lg md:text-xl text-dark-text-secondary leading-relaxed font-light">
                     {description}
                   </p>
                 ))}
@@ -140,13 +140,13 @@ const FeatureShowcaseSpotlight = ({
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.3, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-                  className="flex flex-wrap justify-center gap-6 pt-8"
+                  transition={{ duration: 0.3, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                  className="flex flex-wrap justify-center gap-3 pt-8"
                 >
                   {features.map((feature, index) => (
                     <div
                       key={index}
-                      className="flex items-center space-x-2 px-6 py-3 rounded-full bg-dark-bg/30 border border-dark-border hover:border-dark-accent-primary transition-colors"
+                      className="flex items-center space-x-2 px-6 py-3 rounded-full bg-dark-accent-primary/8 border border-dark-accent-primary/15 hover:border-dark-accent-primary transition-colors"
                     >
                       <div className="w-1.5 h-1.5 rounded-full bg-dark-accent-primary"></div>
                       <span className="text-white font-medium text-sm">{feature.title}</span>
@@ -158,9 +158,9 @@ const FeatureShowcaseSpotlight = ({
 
             {/* Image Spotlight */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.35, delay: 0.25, ease: [0.4, 0, 0.2, 1] }}
+              transition={{ duration: 0.35, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
               className="relative"
             >
               {/* Spotlight glow effect */}

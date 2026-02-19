@@ -25,20 +25,20 @@ const FeatureShowcaseFloating = ({
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="relative"
       >
         {/* Content Background Section */}
-        <div className={`bg-dark-surface rounded-2xl p-8 md:p-12 ${
+        <div className={`bg-dark-surface rounded-2xl p-6 md:p-12 ${
           imagePosition === 'right' ? 'md:pr-[45%]' : 'md:pl-[45%]'
         }`}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
             {title}
           </h2>
 
-          <div className="space-y-4 mb-8">
+          <div className="space-y-4 mb-6">
             {descriptions.map((description, index) => (
-              <p key={index} className="text-lg text-dark-text-secondary leading-relaxed">
+              <p key={index} className="text-base text-dark-text-secondary leading-relaxed">
                 {description}
               </p>
             ))}
@@ -66,7 +66,7 @@ const FeatureShowcaseFloating = ({
         <motion.div
           initial={{ opacity: 0, x: imagePosition === 'right' ? 24 : -24 }}
           animate={isVisible ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.35, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 0.35, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className={`relative md:absolute ${
             imagePosition === 'right'
               ? 'md:right-8 lg:right-12'

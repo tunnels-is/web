@@ -61,27 +61,27 @@ const FeatureShowcaseOverlaySidePanel = ({
               imagePosition === 'right'
                 ? 'border-l rounded-l-3xl'
                 : 'border-r rounded-r-3xl'
-            } shadow-2xl p-8 md:p-10 lg:p-12 flex flex-col justify-center`}
+            } shadow-2xl p-6 md:p-10 lg:p-12 flex flex-col justify-center`}
           >
             {/* Title */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.6 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight"
             >
               {title}
             </motion.h2>
 
             {/* Descriptions */}
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-6">
               {descriptions.map((description, index) => (
                 <motion.p
                   key={index}
                   initial={{ opacity: 0, y: 10 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-                  className="text-base md:text-lg text-white/80 leading-relaxed"
+                  className="text-base text-white/80 leading-relaxed"
                 >
                   {description}
                 </motion.p>

@@ -5,14 +5,13 @@ import AnonymousLicenseCard from '../components/sections/AnonymousLicenseCard';
 import FreeFeaturesSection from '../components/sections/FreeFeaturesSection';
 import PricingFAQSection from '../components/sections/PricingFAQSection';
 import CTASection from '../components/sections/CTASection';
-import IllustratedSection from '../components/IllustratedSection';
-import {
-  OpenSourceIllustration,
-  SelfHostedIllustration,
-} from '../components/illustrations';
+import ComparisonCards from '../components/sections/ComparisonCards';
+import FeatureSpotlight from '../components/sections/FeatureSpotlight';
+import ContentSection from '../components/sections/ContentSection';
+import SectionHeader from '../components/ui/SectionHeader';
 
 const Pricing = () => {
-  const { hero, subscriptions, anonymousKey, freeFeatures, faq, cta } = pricingContent;
+  const { hero, subscriptions, anonymousKey, freeFeatures, cta } = pricingContent;
 
   return (
     <div className="min-h-screen">
@@ -42,38 +41,57 @@ const Pricing = () => {
         features={freeFeatures.features}
       />
 
-      {/* Illustrated: Free Forever */}
-      <IllustratedSection
-        subtitle="No Hidden Costs"
-        title="Open Source = Free Forever"
-        description="All core features are available in our open-source version. No artificial limitations, no feature paywalls. Self-host and use every feature for free."
-        features={[
-          "Full VPN functionality included",
-          "Unlimited devices and connections",
-          "No bandwidth restrictions",
-          "Community support on Discord"
-        ]}
-        illustration={OpenSourceIllustration}
-        illustrationPosition="right"
-        illustrationSize="large"
-      />
+      {/* Comparison: Commercial VPNs vs Tunnels */}
+      <ContentSection background="dark-surface">
+        <SectionHeader
+          title="Why Pay More?"
+          subtitle="Compare Tunnels to commercial VPN services"
+        />
+        <ComparisonCards
+          dividerLabel="vs"
+          leftCard={{
+            title: "Commercial VPNs",
+            subtitle: "$5-15/month",
+            items: [
+              "Monthly subscription required",
+              "Limited device connections",
+              "Their servers, their rules",
+              "Closed-source software",
+              "Trust their no-logs claims"
+            ]
+          }}
+          rightCard={{
+            title: "Tunnels",
+            subtitle: "Free forever",
+            accent: "green",
+            items: [
+              "No recurring fees",
+              "Unlimited devices",
+              "Your server, your control",
+              "100% open source",
+              "Verify — don't trust"
+            ]
+          }}
+        />
+      </ContentSection>
 
-      {/* Illustrated: Self-Host */}
-      <IllustratedSection
-        subtitle="Own Your Infrastructure"
-        title="Self-Host for Complete Control"
-        description="Deploy on your own servers and pay nothing to us. Full control over your data, your network, and your costs. The subscription is optional support."
-        features={[
-          "Run on your own hardware",
-          "No recurring fees required",
-          "Full data sovereignty",
-          "Commercial use allowed"
-        ]}
-        illustration={SelfHostedIllustration}
-        illustrationPosition="left"
-        illustrationSize="large"
-        dark={false}
-      />
+      {/* Feature Spotlight: Self-Hosted */}
+      <ContentSection>
+        <FeatureSpotlight
+          label="Self-Hosted"
+          title="Own Your Infrastructure"
+          description="Deploy on your own servers and pay nothing to us. Full control over your data, your network, and your costs."
+          features={[
+            "Run on your own hardware",
+            "No recurring fees required",
+            "Full data sovereignty",
+            "Commercial use allowed"
+          ]}
+          metric={{ value: "$0", label: "Self-host cost" }}
+          accent="teal"
+          position="left"
+        />
+      </ContentSection>
 
       <CTASection
         title={cta.title}

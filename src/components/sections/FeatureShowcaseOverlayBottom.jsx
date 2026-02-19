@@ -43,22 +43,22 @@ const FeatureShowcaseOverlayBottom = ({
         </motion.div>
 
         {/* Overlaying Content - Bottom Portion */}
-        <div className="absolute inset-x-0 bottom-0 z-10 p-8 md:p-12 lg:p-16">
+        <div className="absolute inset-x-0 bottom-0 z-10 p-6 md:p-12 lg:p-16">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="max-w-5xl"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
               {title}
             </h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-end">
               {/* Descriptions */}
               <div className="space-y-4">
                 {descriptions.map((description, index) => (
-                  <p key={index} className="text-lg md:text-xl text-white/90 leading-relaxed">
+                  <p key={index} className="text-base md:text-lg text-white/90 leading-relaxed">
                     {description}
                   </p>
                 ))}
@@ -70,7 +70,7 @@ const FeatureShowcaseOverlayBottom = ({
                   initial={{ opacity: 0, y: 30 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="backdrop-blur-md bg-white/5 p-6 md:p-8 rounded-2xl border border-white/10"
+                  className="backdrop-blur-md bg-white/5 p-5 md:p-6 rounded-2xl border border-white/10"
                 >
                   <div className="space-y-4">
                     {features.map((feature, index) => (

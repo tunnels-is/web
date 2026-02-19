@@ -9,11 +9,11 @@ const FeatureCard = ({
   const text = content || description;
 
   return (
-    <div className="group p-6 rounded-xl bg-dark-card hover:bg-dark-elevated transition-all duration-200">
+    <div className="group p-5 transition-all duration-200">
       {icon && (
-        <div className="w-12 h-12 mb-4">{icon}</div>
+        <div className="w-10 h-10 mb-3">{icon}</div>
       )}
-      <h3 className="text-lg font-semibold mb-2 text-dark-text-primary group-hover:text-dark-accent-primary transition-colors">
+      <h3 className="text-base font-semibold mb-1.5 text-dark-text-primary group-hover:text-dark-accent-primary transition-colors">
         {title}
       </h3>
       <p className="text-dark-text-secondary text-sm leading-relaxed">

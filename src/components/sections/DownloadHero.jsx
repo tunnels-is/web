@@ -3,27 +3,28 @@ import { motion } from 'framer-motion';
 const DownloadHero = ({ title, subtitle, version }) => {
   return (
     <section className="relative overflow-hidden hero-gradient">
-      <div className="absolute inset-0 opacity-[0.03]" style={{
+      <div className="absolute inset-0 opacity-[0.02]" style={{
         backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
         backgroundSize: '40px 40px'
       }} />
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 text-center">
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-14 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 tracking-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight">
             {title}
           </h1>
-          <p className="text-base text-dark-text-secondary mb-2">
+          <p className="text-sm text-dark-text-secondary mb-1.5">
             Latest version: <span className="text-dark-accent-primary font-semibold">v{version}</span>
           </p>
-          <p className="text-lg text-dark-text-secondary max-w-2xl mx-auto">
+          <p className="text-sm text-dark-text-secondary max-w-xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         </motion.div>
       </div>
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-dark-bg to-transparent pointer-events-none" />
     </section>
   );
 };

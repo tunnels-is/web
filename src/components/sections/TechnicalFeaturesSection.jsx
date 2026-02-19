@@ -10,16 +10,16 @@ const TechnicalFeaturesSection = ({
   const gridClass = columns === 1 ? 'grid-cols-1' : 'grid-cols-1 lg:grid-cols-2';
 
   return (
-    <div ref={ref} className={`grid ${gridClass} gap-5`}>
+    <div ref={ref} className={`grid ${gridClass} gap-3`}>
       {categories.map((category, categoryIndex) => (
         <motion.div
           key={categoryIndex}
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.3, delay: categoryIndex * 0.08 }}
-          className="p-6 rounded-xl bg-dark-card"
+          transition={{ duration: 0.3, delay: categoryIndex * 0.08, ease: [0.16, 1, 0.3, 1] }}
+          className="p-5 transition-colors"
         >
-          <h3 className="text-xl font-bold mb-6">{category.category}</h3>
+          <h3 className="text-base font-bold mb-4">{category.category}</h3>
 
           <div className="space-y-4">
             {category.features.map((feature, featureIndex) => (

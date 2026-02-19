@@ -46,25 +46,25 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-dark-surface">
+    <footer className="border-t border-dark-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-12 grid grid-cols-2 md:grid-cols-5 gap-8">
+        <div className="py-10 grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand Column */}
           <div className="col-span-2">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 bg-dark-accent-primary rounded-lg flex items-center justify-center">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
-                  <path d="M12 2L12 22M2 12L22 12M5 5L19 19M19 5L5 19" opacity="0.6"/>
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-6 h-6 rounded-md bg-gradient-to-br from-dark-accent-primary to-dark-accent-tertiary flex items-center justify-center">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
+                  <path d="M12 2L12 22M2 12L22 12" opacity="0.7"/>
                   <circle cx="12" cy="12" r="3" fill="white" stroke="none"/>
                 </svg>
               </div>
-              <span className="text-lg font-bold text-dark-text-primary">Tunnels</span>
+              <span className="text-base font-bold text-dark-text-primary tracking-tight">Tunnels</span>
             </div>
-            <p className="text-dark-text-secondary text-sm leading-relaxed mb-6 max-w-sm">
-              Modern networking that connects you to multiple networks at once. VPN, LAN, DNS security, and more — open source and free to self-host.
+            <p className="text-dark-text-muted text-xs leading-relaxed mb-5 max-w-xs">
+              Modern networking that connects you to multiple networks at once. VPN, LAN, DNS security, and more.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-2">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
@@ -73,7 +73,7 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-lg bg-dark-elevated flex items-center justify-center text-dark-text-muted hover:text-dark-accent-primary transition-colors"
+                    className="w-8 h-8 rounded-lg flex items-center justify-center text-dark-text-muted hover:text-dark-accent-primary transition-all duration-150"
                     aria-label={social.name}
                   >
                     <IconComponent />
@@ -86,10 +86,10 @@ const Footer = () => {
           {/* Link Columns */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h4 className="text-sm font-semibold text-dark-text-primary mb-4">
+              <h4 className="text-xs font-semibold text-dark-text-primary mb-3 uppercase tracking-wider">
                 {section.title}
               </h4>
-              <ul className="space-y-2.5">
+              <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.label}>
                     {link.external ? (
@@ -97,14 +97,14 @@ const Footer = () => {
                         href={link.path}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-dark-text-muted hover:text-dark-text-primary transition-colors"
+                        className="text-xs text-dark-text-muted hover:text-dark-text-secondary transition-colors"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         to={link.path}
-                        className="text-sm text-dark-text-muted hover:text-dark-text-primary transition-colors"
+                        className="text-xs text-dark-text-muted hover:text-dark-text-secondary transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -117,14 +117,14 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-dark-text-muted text-xs">
+        <div className="py-5 border-t border-dark-border/30 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="text-dark-text-muted text-[11px]">
             &copy; {currentYear} Tunnels. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5">
             <a
               href="mailto:support@tunnels.is"
-              className="text-dark-text-muted hover:text-dark-text-primary text-xs transition-colors"
+              className="text-dark-text-muted hover:text-dark-text-secondary text-[11px] transition-colors"
             >
               Contact
             </a>
@@ -132,7 +132,7 @@ const Footer = () => {
               href="https://github.com/tunnels-is"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-dark-text-muted hover:text-dark-text-primary text-xs transition-colors"
+              className="text-dark-text-muted hover:text-dark-text-secondary text-[11px] transition-colors"
             >
               Open Source
             </a>

@@ -13,11 +13,9 @@ import SectionHeader from '../components/ui/SectionHeader';
 import IllustratedSection from '../components/IllustratedSection';
 import { KeyIcon, LightbulbIcon } from '../components/ui/Icons';
 import { personalVPNContent } from '../content/siteContent';
-import {
-  PrivacyShieldIllustration,
-  GlobalNetworkIllustration,
-  CloudIllustration,
-} from '../components/illustrations';
+import { PrivacyShieldIllustration } from '../components/illustrations';
+import ComparisonCards from '../components/sections/ComparisonCards';
+import QuoteHighlight from '../components/sections/QuoteHighlight';
 
 const PersonalVPN = () => {
   const {
@@ -105,22 +103,35 @@ const PersonalVPN = () => {
         </div>
       </ContentSection>
 
-      {/* Illustrated: Global Access */}
-      <IllustratedSection
-        subtitle="Worldwide Connectivity"
-        title="Access Your Network Anywhere"
-        description="Travel the world while your devices stay connected to home. Access local resources, stream your media, and work securely from any location."
-        features={[
-          "Connect from any country",
-          "Bypass geo-restrictions to your own content",
-          "Secure access on public WiFi",
-          "Low latency connections worldwide"
-        ]}
-        illustration={GlobalNetworkIllustration}
-        illustrationPosition="left"
-        illustrationSize="large"
-        dark={false}
-      />
+      {/* Global Access: ComparisonCards */}
+      <ContentSection>
+        <SectionHeader
+          title="Access Your Network Anywhere"
+          subtitle="Worldwide Connectivity"
+        />
+        <ComparisonCards
+          dividerLabel="vs"
+          leftCard={{
+            title: "Without Tunnels",
+            items: [
+              "Exposed on public WiFi",
+              "Geo-blocked from your own content",
+              "ISP monitors your traffic",
+              "Complex port forwarding"
+            ]
+          }}
+          rightCard={{
+            title: "With Tunnels",
+            accent: "teal",
+            items: [
+              "Encrypted on any network",
+              "Access your content anywhere",
+              "Zero visibility to ISP",
+              "Zero-config remote access"
+            ]
+          }}
+        />
+      </ContentSection>
 
       {/* Comparison Section */}
       <ContentSection background="dark-surface" id="comparison">
@@ -136,13 +147,13 @@ const PersonalVPN = () => {
             />
 
             {/* Summary Card */}
-            <div className="mt-8 p-6 rounded-xl bg-dark-accent-primary/10">
+            <div className="mt-8 p-5 rounded-xl bg-dark-accent-primary/10">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 flex-shrink-0">
+                <div className="w-10 h-10 flex-shrink-0">
                   <LightbulbIcon />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-dark-accent-primary mb-1">
+                  <h4 className="text-base font-bold text-dark-accent-primary mb-1">
                     {comparisonSection.bottomLine.title}
                   </h4>
                   <p className="text-sm text-dark-text-secondary leading-relaxed">
@@ -163,21 +174,16 @@ const PersonalVPN = () => {
         highlights={privacyHighlight.highlights}
       />
 
-      {/* Illustrated: Deploy Anywhere */}
-      <IllustratedSection
-        subtitle="Flexible Deployment"
-        title="Host on Any Cloud or Hardware"
-        description="Deploy your personal VPN server anywhere - from a $5/month VPS to your own Raspberry Pi at home. No vendor lock-in, complete portability."
-        features={[
-          "Works on all major cloud providers",
-          "Run on your own hardware",
-          "Docker and bare-metal support",
-          "Migrate between providers easily"
-        ]}
-        illustration={CloudIllustration}
-        illustrationPosition="right"
-        illustrationSize="large"
-      />
+      {/* Deploy Anywhere: QuoteHighlight */}
+      <ContentSection>
+        <QuoteHighlight
+          quote="I moved away from commercial VPNs two years ago. Running my own Tunnels server on a $5 VPS gives me better performance, real privacy, and I know exactly what's happening with my traffic."
+          author="Self-Hosted Community"
+          role="Tunnels User"
+          accent="blue"
+          variant="large"
+        />
+      </ContentSection>
 
       {/* Cloud Providers */}
       <ContentSection background="dark-bg">
@@ -188,7 +194,7 @@ const PersonalVPN = () => {
         <CloudProvidersGrid
           providers={cloudProviders}
         />
-        <div className="mt-8 text-center p-5 rounded-xl bg-dark-card">
+        <div className="mt-8 text-center p-5 transition-colors">
           <p className="text-sm text-dark-text-secondary">
             <span className="text-dark-accent-primary font-semibold">Pro Tip:</span>
             {" "}{cloudProvidersSection.proTip}

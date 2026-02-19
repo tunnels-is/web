@@ -146,15 +146,51 @@ const HeroBannerArt = () => {
     { x: [920, 1000, 1000, 1050, 1050], y: [700, 700, 745, 745, 580], dur: 10, delay: 3.5, color: '#3b82f6' },
   ];
 
-  // --- Horizontal scan lines ---
-  const scanLines = [
-    { y: 90,  delay: 0,  dur: 18, color: '#3b82f6' },
-    { y: 220, delay: 8,  dur: 20, color: '#06b6d4' },
-    { y: 340, delay: 4,  dur: 22, color: '#60a5fa' },
-    { y: 480, delay: 12, dur: 16, color: '#3b82f6' },
-    { y: 580, delay: 2,  dur: 19, color: '#06b6d4' },
-    { y: 710, delay: 9,  dur: 17, color: '#60a5fa' },
-  ];
+  // --- Moving sweep lines that traverse the full banner ---
+  // Each line is a path; a short dash segment animates along it via strokeDashoffset
+  const sweepLines = (() => {
+    const defs = [
+      // Diagonal — top-left to bottom-right
+      { d: 'M-200,-50 L1400,850', dur: 8, delay: 0, color: '#3b82f6', w: 0.5 },
+      { d: 'M-200,100 L1400,950', dur: 10, delay: 3, color: '#06b6d4', w: 0.4 },
+      { d: 'M-200,250 L1400,1100', dur: 9, delay: 7, color: '#60a5fa', w: 0.5 },
+      { d: 'M-200,-150 L1400,700', dur: 11, delay: 1.5, color: '#10b981', w: 0.3 },
+      // Diagonal — top-right to bottom-left
+      { d: 'M1400,-50 L-200,850', dur: 9, delay: 5, color: '#60a5fa', w: 0.5 },
+      { d: 'M1400,150 L-200,1000', dur: 10, delay: 2, color: '#3b82f6', w: 0.4 },
+      { d: 'M1400,-200 L-200,650', dur: 8, delay: 9, color: '#06b6d4', w: 0.5 },
+      { d: 'M1400,300 L-200,1150', dur: 11, delay: 6, color: '#3b82f6', w: 0.3 },
+      // Vertical — top to bottom
+      { d: 'M150,-100 L150,900', dur: 7, delay: 0.5, color: '#06b6d4', w: 0.4 },
+      { d: 'M450,-100 L450,900', dur: 8, delay: 4, color: '#3b82f6', w: 0.3 },
+      { d: 'M750,-100 L750,900', dur: 7.5, delay: 8, color: '#60a5fa', w: 0.4 },
+      { d: 'M1050,-100 L1050,900', dur: 9, delay: 2.5, color: '#06b6d4', w: 0.3 },
+      // Vertical — bottom to top
+      { d: 'M300,900 L300,-100', dur: 8, delay: 6, color: '#3b82f6', w: 0.3 },
+      { d: 'M600,900 L600,-100', dur: 7, delay: 1, color: '#10b981', w: 0.4 },
+      { d: 'M900,900 L900,-100', dur: 8.5, delay: 4.5, color: '#60a5fa', w: 0.3 },
+      // Horizontal — left to right
+      { d: 'M-200,200 L1400,200', dur: 6, delay: 0, color: '#3b82f6', w: 0.3 },
+      { d: 'M-200,500 L1400,500', dur: 7, delay: 3.5, color: '#06b6d4', w: 0.4 },
+      { d: 'M-200,700 L1400,700', dur: 6.5, delay: 7, color: '#60a5fa', w: 0.3 },
+      // Horizontal — right to left
+      { d: 'M1400,100 L-200,100', dur: 7, delay: 1.5, color: '#06b6d4', w: 0.3 },
+      { d: 'M1400,400 L-200,400', dur: 6, delay: 5.5, color: '#3b82f6', w: 0.4 },
+      { d: 'M1400,650 L-200,650', dur: 7.5, delay: 9, color: '#10b981', w: 0.3 },
+      // Steep diagonals
+      { d: 'M300,-100 L500,900', dur: 6, delay: 2, color: '#3b82f6', w: 0.4 },
+      { d: 'M700,900 L900,-100', dur: 7, delay: 5, color: '#06b6d4', w: 0.4 },
+      { d: 'M500,-100 L300,900', dur: 6.5, delay: 8, color: '#60a5fa', w: 0.3 },
+      { d: 'M1000,-100 L800,900', dur: 7, delay: 0.5, color: '#3b82f6', w: 0.3 },
+    ];
+    // Pre-compute path lengths for dash animation
+    return defs.map(l => {
+      const parts = l.d.match(/-?\d+/g).map(Number);
+      const dx = parts[2] - parts[0], dy = parts[3] - parts[1];
+      const len = Math.sqrt(dx * dx + dy * dy);
+      return { ...l, len, seg: len * 0.15 };
+    });
+  })();
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -165,7 +201,7 @@ const HeroBannerArt = () => {
         style={{
           width: 500, height: 500, top: '10%', left: '-5%',
           background: 'radial-gradient(circle, #3b82f6 0%, transparent 70%)',
-          opacity: 0.04,
+          opacity: 0.03,
         }}
         animate={{ scale: [1, 1.15, 1], y: [0, 30, 0] }}
         transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
@@ -175,7 +211,7 @@ const HeroBannerArt = () => {
         style={{
           width: 450, height: 450, top: '60%', right: '-5%',
           background: 'radial-gradient(circle, #06b6d4 0%, transparent 70%)',
-          opacity: 0.035,
+          opacity: 0.025,
         }}
         animate={{ scale: [1.1, 1, 1.1], y: [0, -25, 0] }}
         transition={{ duration: 26, repeat: Infinity, ease: 'easeInOut' }}
@@ -185,7 +221,7 @@ const HeroBannerArt = () => {
         style={{
           width: 400, height: 400, bottom: '5%', left: '30%',
           background: 'radial-gradient(circle, #6366f1 0%, transparent 70%)',
-          opacity: 0.03,
+          opacity: 0.02,
         }}
         animate={{ scale: [1, 1.2, 1], x: [0, 20, 0] }}
         transition={{ duration: 28, repeat: Infinity, ease: 'easeInOut' }}
@@ -195,7 +231,7 @@ const HeroBannerArt = () => {
         style={{
           width: 350, height: 350, top: '5%', right: '25%',
           background: 'radial-gradient(circle, #10b981 0%, transparent 70%)',
-          opacity: 0.025,
+          opacity: 0.018,
         }}
         animate={{ scale: [1.1, 1, 1.1], y: [0, 15, 0] }}
         transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
@@ -219,7 +255,7 @@ const HeroBannerArt = () => {
         </defs>
 
         {/* Subtle dot grid */}
-        <rect width="1200" height="800" fill="url(#dotGrid)" opacity="0.35" />
+        <rect width="1200" height="800" fill="url(#dotGrid)" opacity="0.25" />
 
         {/* === Circuit board traces === */}
         {circuitTraces.map((trace, i) => (
@@ -233,7 +269,7 @@ const HeroBannerArt = () => {
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{
               pathLength: [0, 1, 1, 0],
-              opacity: [0, 0.25, 0.25, 0],
+              opacity: [0, 0.18, 0.18, 0],
             }}
             transition={{
               duration: trace.dur,
@@ -250,12 +286,13 @@ const HeroBannerArt = () => {
           <g key={`node_${i}`}>
             <motion.circle
               cx={node.x} cy={node.y}
-              r={node.r * 2}
+              r={node.r * 3}
               fill="none"
               stroke={node.color}
               strokeWidth="0.4"
+              style={{ transformOrigin: `${node.x}px ${node.y}px` }}
               animate={{
-                r: [node.r * 1.5, node.r * 5, node.r * 1.5],
+                scale: [0.5, 1.7, 0.5],
                 opacity: [0.25, 0, 0.25],
               }}
               transition={{
@@ -270,9 +307,10 @@ const HeroBannerArt = () => {
               r={node.r}
               fill={node.color}
               filter="url(#glow)"
+              style={{ transformOrigin: `${node.x}px ${node.y}px` }}
               animate={{
                 opacity: [0.35, 0.7, 0.35],
-                r: [node.r * 0.8, node.r * 1.15, node.r * 0.8],
+                scale: [0.8, 1.15, 0.8],
               }}
               transition={{
                 duration: 3 + (i % 4),
@@ -309,24 +347,23 @@ const HeroBannerArt = () => {
           />
         ))}
 
-        {/* === Horizontal scan lines === */}
-        {scanLines.map((sl, i) => (
-          <motion.line
-            key={`scan_${i}`}
-            x1={0} y1={sl.y}
-            x2={1200} y2={sl.y}
+        {/* === Moving sweep lines across the entire banner === */}
+        {sweepLines.map((sl, i) => (
+          <motion.path
+            key={`sweep_${i}`}
+            d={sl.d}
+            fill="none"
             stroke={sl.color}
-            strokeWidth="0.4"
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: [0, 0.12, 0.12, 0],
-            }}
+            strokeWidth={sl.w}
+            strokeLinecap="round"
+            opacity={0.15}
+            strokeDasharray={`${sl.seg} ${sl.len}`}
+            animate={{ strokeDashoffset: [sl.len + sl.seg, -(sl.len + sl.seg)] }}
             transition={{
               duration: sl.dur,
               repeat: Infinity,
-              ease: 'easeInOut',
+              ease: 'linear',
               delay: sl.delay,
-              times: [0, 0.1, 0.9, 1],
             }}
           />
         ))}
@@ -367,9 +404,10 @@ const HeroBannerArt = () => {
             cx={dot.x} cy={dot.y}
             r={1}
             fill={dot.c}
+            style={{ transformOrigin: `${dot.x}px ${dot.y}px` }}
             animate={{
               opacity: [0.1, 0.5, 0.1],
-              r: [0.8, 1.3, 0.8],
+              scale: [0.8, 1.3, 0.8],
             }}
             transition={{
               duration: 2 + (i % 4) * 0.7,

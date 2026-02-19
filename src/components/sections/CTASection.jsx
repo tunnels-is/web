@@ -13,28 +13,31 @@ const CTASection = ({
 
   if (layout === 'centered') {
     return (
-      <section ref={ref} className={`py-16 md:py-24 ${className}`}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section ref={ref} className={`py-14 md:py-20 ${className}`}>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-            className="p-10 md:p-14 rounded-2xl"
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="p-8 md:p-12"
           >
+            <div className="flex justify-center mb-4">
+              <div className="accent-line" />
+            </div>
             <h2 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight">
               {title}
             </h2>
             {description && (
-              <p className="text-dark-text-secondary text-base mb-8 max-w-xl mx-auto">
+              <p className="text-dark-text-secondary text-sm mb-7 max-w-lg mx-auto leading-relaxed">
                 {description}
               </p>
             )}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex flex-col sm:flex-row gap-2.5 justify-center">
               {buttons.map((button, index) => (
                 <a
                   key={index}
                   href={button.href}
-                  className={button.primary ? 'btn-primary px-8 py-3' : 'btn-secondary px-8 py-3'}
+                  className={button.primary ? 'btn-primary px-6 py-2.5 text-sm' : 'btn-secondary px-6 py-2.5 text-sm'}
                 >
                   {button.text}
                 </a>
@@ -50,47 +53,50 @@ const CTASection = ({
     const gridClass = layout === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 lg:grid-cols-2';
 
     return (
-      <section ref={ref} className={`py-16 md:py-24 ${className}`}>
+      <section ref={ref} className={`py-14 md:py-20 ${className}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {title && (
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-              className="text-center mb-12"
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="text-center mb-10"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">{title}</h2>
+              <div className="flex justify-center mb-4">
+                <div className="accent-line" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight">{title}</h2>
               {description && (
-                <p className="text-lg text-dark-text-secondary max-w-3xl mx-auto">{description}</p>
+                <p className="text-sm text-dark-text-secondary max-w-2xl mx-auto leading-relaxed">{description}</p>
               )}
             </motion.div>
           )}
 
-          <div className={`grid ${gridClass} gap-5`}>
+          <div className={`grid ${gridClass} gap-3`}>
             {cards.map((card, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.3, delay: index * 0.05, ease: [0.4, 0, 0.2, 1] }}
-                className="group p-8 rounded-xl bg-dark-card hover:bg-dark-elevated transition-all duration-200"
+                transition={{ duration: 0.35, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
+                className="group p-6 transition-all duration-200"
               >
                 {card.icon && (
-                  <div className="w-14 h-14 mb-5">{card.icon}</div>
+                  <div className="w-12 h-12 mb-4">{card.icon}</div>
                 )}
-                <h3 className={`text-xl font-bold mb-3 transition-colors ${
+                <h3 className={`text-lg font-bold mb-2 transition-colors ${
                   card.highlighted ? 'text-dark-accent-primary' : 'text-dark-text-primary group-hover:text-dark-accent-primary'
                 }`}>
                   {card.title}
                 </h3>
-                <p className="text-dark-text-secondary text-sm mb-5 leading-relaxed">
+                <p className="text-dark-text-secondary text-sm mb-4 leading-relaxed">
                   {card.description}
                 </p>
                 {card.features && (
-                  <ul className="space-y-2.5 mb-6">
+                  <ul className="space-y-2 mb-5">
                     {card.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2.5 text-dark-text-secondary text-sm">
-                        <svg className="w-4 h-4 text-dark-accent-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <li key={idx} className="flex items-center gap-2 text-dark-text-secondary text-sm">
+                        <svg className="w-3.5 h-3.5 text-dark-accent-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         <span>{feature}</span>
@@ -101,7 +107,7 @@ const CTASection = ({
                 {card.button && (
                   <a
                     href={card.button.href}
-                    className={card.button.primary ? 'btn-primary w-full text-center py-3' : 'btn-secondary w-full text-center py-3'}
+                    className={card.button.primary ? 'btn-primary w-full text-center py-2.5 text-sm' : 'btn-secondary w-full text-center py-2.5 text-sm'}
                   >
                     {card.button.text}
                   </a>

@@ -4,18 +4,60 @@ import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
 import CTASection from '../components/sections/CTASection';
 import IllustratedSection from '../components/IllustratedSection';
-import { motion } from 'framer-motion';
-import useScrollAnimation from '../hooks/useScrollAnimation';
+import StatsBanner from '../components/sections/StatsBanner';
+import FeatureTable from '../components/sections/FeatureTable';
+import GradientCallout from '../components/sections/GradientCallout';
+import BentoGrid from '../components/sections/BentoGrid';
 import { securityContent } from '../content/siteContent';
-import {
-  SecurityIllustration,
-  EncryptionIllustration,
-  OpenSourceIllustration,
-} from '../components/illustrations';
+import { SecurityIllustration } from '../components/illustrations';
 
 const Security = () => {
-  const [cryptoRef, cryptoVisible] = useScrollAnimation();
   const content = securityContent;
+
+  const cryptoTableHeaders = ['Algorithm', 'Type', 'Purpose', 'Post-Quantum'];
+  const cryptoTableRows = [
+    ['ChaCha20-Poly1305', 'Stream cipher + AEAD', 'Default tunnel encryption', false],
+    ['AES-256-GCM', 'Block cipher + AEAD', 'Hardware-accelerated encryption', false],
+    ['AES-128-GCM', 'Block cipher + AEAD', 'Resource-constrained environments', false],
+    ['X25519 + ML-KEM-1024', 'Hybrid key exchange', 'Session key establishment', true],
+    ['BLAKE2b', 'Cryptographic hash', 'Data integrity verification', false],
+  ];
+
+  const practicesBentoItems = [
+    {
+      title: 'Perfect Forward Secrecy',
+      description:
+        'Session keys are ephemeral and derived fresh for every connection. Compromising one session cannot expose past or future traffic — each handshake produces independent keying material.',
+      features: [
+        'Ephemeral session keys per connection',
+        'No long-lived symmetric secrets',
+        'Past sessions remain protected',
+      ],
+      highlight: 'Ephemeral key generation',
+    },
+    {
+      title: 'Authenticated Encryption',
+      description:
+        'Every encrypted payload carries an authentication tag. Any modification — even a single flipped bit — is detected and the packet is rejected before it can cause harm.',
+    },
+    {
+      title: 'Secure Key Exchange',
+      description:
+        'Keys are negotiated using modern elliptic curve and post-quantum primitives, making interception attacks computationally infeasible today and tomorrow.',
+    },
+    {
+      title: 'Memory-Safe Implementation',
+      description:
+        'Written entirely in Go, a garbage-collected, memory-safe language. Buffer overflows and use-after-free vulnerabilities are eliminated by design.',
+    },
+  ];
+
+  const securityStats = [
+    { value: '256-bit', label: 'Key strength', description: 'Maximum symmetric key size' },
+    { value: 'PQ-safe', label: 'Key exchange', description: 'ML-KEM-1024 hybrid handshake' },
+    { value: '100%', label: 'Open source', description: 'Every line publicly auditable' },
+    { value: 'Zero', label: 'Logging', description: 'No connection data retained' },
+  ];
 
   return (
     <div className="min-h-screen">
@@ -27,6 +69,7 @@ const Security = () => {
         buttons={content.hero.buttons}
       />
 
+      {/* Security feature overview cards */}
       <ContentSection background="dark-surface">
         <SectionHeader
           title={content.featuresSection.title}
@@ -39,108 +82,70 @@ const Security = () => {
         />
       </ContentSection>
 
+      {/* Security stats strip */}
+      <ContentSection>
+        <StatsBanner stats={securityStats} variant="card" />
+      </ContentSection>
+
+      {/* Security at every layer — one illustrated section kept */}
       <IllustratedSection
         subtitle="Defense in Depth"
         title="Security at Every Layer"
-        description="From the protocol level to application design, every component is built with security as the primary concern. No compromises, no shortcuts."
+        description="From the protocol level to application design, every component is built with security as the primary concern. No compromises, no shortcuts, and no implicit trust between any two parts of the system."
         features={[
-          "Zero-trust network design",
-          "Mutual authentication required",
-          "Minimal attack surface",
-          "Regular security audits"
+          'Zero-trust network design',
+          'Mutual authentication on every connection',
+          'Minimal attack surface by default',
+          'Regular third-party security audits',
         ]}
         illustration={SecurityIllustration}
         illustrationPosition="right"
         illustrationSize="large"
       />
 
-      <ContentSection>
-        <div ref={cryptoRef}>
-          <SectionHeader
-            title={content.cryptographySection.title}
-            subtitle={content.cryptographySection.subtitle}
+      {/* Cryptography — FeatureTable */}
+      <ContentSection background="dark-surface">
+        <SectionHeader
+          title={content.cryptographySection.title}
+          subtitle={content.cryptographySection.subtitle}
+        />
+        <div className="max-w-4xl mx-auto">
+          <FeatureTable
+            headers={cryptoTableHeaders}
+            rows={cryptoTableRows}
+            caption="All primitives are implemented through Go's standard crypto libraries and audited third-party packages. No custom cryptography."
           />
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={cryptoVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto"
-          >
-            {content.encryptionTypes.map((crypto, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 12 }}
-                animate={cryptoVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.3, delay: index * 0.06 }}
-                className="p-6 rounded-xl bg-dark-card hover:bg-dark-elevated transition-colors"
-              >
-                <h3 className="text-lg font-bold text-dark-accent-primary mb-2">{crypto.name}</h3>
-                <p className="text-dark-text-secondary text-sm leading-relaxed">{crypto.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </ContentSection>
 
-      <IllustratedSection
-        subtitle="Modern Cryptography"
-        title="Encrypted by Default"
-        description="All traffic is encrypted end-to-end using modern cryptographic primitives. A minimal codebase means a smaller attack surface and easier auditing than legacy VPN protocols."
-        features={[
-          "End-to-end encrypted tunnels",
-          "Zero-knowledge architecture",
-          "Minimal attack surface",
-          "Open source and auditable"
-        ]}
-        illustration={EncryptionIllustration}
-        illustrationPosition="left"
-        illustrationSize="large"
-        dark={false}
-      />
-
-      <ContentSection background="dark-surface">
+      {/* Security practices — BentoGrid featured layout */}
+      <ContentSection>
         <SectionHeader
           title={content.practicesSection.title}
           subtitle={content.practicesSection.subtitle}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
-          {content.practices.map((practice, index) => (
-            <div key={index} className="p-6 rounded-xl bg-dark-card hover:bg-dark-elevated transition-colors">
-              <h3 className="text-base font-semibold text-dark-text-primary mb-2">{practice.title}</h3>
-              <p className="text-dark-text-secondary text-sm leading-relaxed">{practice.description}</p>
-            </div>
-          ))}
-        </div>
+        <BentoGrid items={practicesBentoItems} layout="featured" />
       </ContentSection>
 
-      <IllustratedSection
-        subtitle="Transparent & Verifiable"
-        title="100% Open Source Code"
-        description="Every line of our code is available for inspection. Security researchers, enterprises, and individuals can verify our claims and audit our implementation."
-        features={[
-          "Full source code on GitHub",
-          "MIT license - free forever",
-          "Community security reviews",
-          "Bug bounty program"
-        ]}
-        illustration={OpenSourceIllustration}
-        illustrationPosition="right"
-        illustrationSize="large"
-      />
-
-      <ContentSection>
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight">{content.openSourceSection.title}</h2>
-          <p className="text-base text-dark-text-secondary mb-4">{content.openSourceSection.description}</p>
-          <p className="text-dark-text-muted text-sm mb-6">{content.openSourceSection.subDescription}</p>
-          <a
-            href={content.openSourceSection.buttonUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary px-8 py-3"
-          >
-            {content.openSourceSection.buttonText}
-          </a>
+      {/* Open source — GradientCallout */}
+      <ContentSection background="dark-surface">
+        <div className="max-w-4xl mx-auto">
+          <GradientCallout
+            accent="green"
+            title={content.openSourceSection.title}
+            description={content.openSourceSection.description}
+            features={[
+              'Full source code on GitHub under MIT license',
+              'No hidden code, no backdoors, no black boxes',
+              content.openSourceSection.subDescription,
+              'Community security reviews welcome',
+            ]}
+            button={{
+              text: content.openSourceSection.buttonText,
+              href: content.openSourceSection.buttonUrl,
+              primary: true,
+            }}
+          />
         </div>
       </ContentSection>
 

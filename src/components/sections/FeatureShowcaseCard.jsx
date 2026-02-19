@@ -21,9 +21,9 @@ const FeatureShowcaseCard = ({
   return (
     <div ref={ref} className="max-w-4xl mx-auto">
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="bg-dark-surface rounded-2xl overflow-hidden"
       >
         {/* Image Section */}
@@ -38,14 +38,14 @@ const FeatureShowcaseCard = ({
         </div>
 
         {/* Content Section */}
-        <div className="p-8 md:p-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <div className="p-6 md:p-12">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
             {title}
           </h2>
 
-          <div className="space-y-4 mb-8">
+          <div className="space-y-4 mb-6">
             {descriptions.map((description, index) => (
-              <p key={index} className="text-lg text-dark-text-secondary leading-relaxed">
+              <p key={index} className="text-base text-dark-text-secondary leading-relaxed">
                 {description}
               </p>
             ))}

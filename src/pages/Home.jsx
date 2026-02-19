@@ -5,12 +5,12 @@ import SectionHeader from '../components/ui/SectionHeader';
 import FeatureGrid from '../components/sections/FeatureGrid';
 import CTASection from '../components/sections/CTASection';
 import IllustratedSection from '../components/IllustratedSection';
+import FeatureSpotlight from '../components/sections/FeatureSpotlight';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { homeContent } from '../content/siteContent';
 import {
   SecureConnectionIllustration,
-  OpenSourceIllustration,
 } from '../components/illustrations';
 
 const Home = () => {
@@ -62,7 +62,6 @@ const Home = () => {
     },
   ];
 
-  // Key highlights - suzko-style feature highlights
   const highlights = [
     { title: 'Multi-Network', desc: 'Connect to multiple networks simultaneously' },
     { title: 'DNS Security', desc: 'Built-in threat blocking with daily updates' },
@@ -82,20 +81,20 @@ const Home = () => {
         buttons={hero.buttons}
       />
 
-      {/* Key Highlights - suzko-style compact feature bar */}
-      <section className="bg-dark-surface/50">
-        <div ref={highlightsRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Key Highlights - compact feature bar */}
+      <section>
+        <div ref={highlightsRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {highlights.map((item, index) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 8 }}
                 animate={highlightsVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.3, delay: index * 0.04 }}
+                transition={{ duration: 0.3, delay: index * 0.03 }}
                 className="text-center"
               >
-                <h3 className="text-sm font-semibold text-dark-text-primary mb-1">{item.title}</h3>
-                <p className="text-xs text-dark-text-muted">{item.desc}</p>
+                <h3 className="text-[13px] font-semibold text-dark-text-primary mb-0.5">{item.title}</h3>
+                <p className="text-[11px] text-dark-text-muted leading-snug">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -115,37 +114,37 @@ const Home = () => {
         />
       </ContentSection>
 
-      {/* Use Cases - suzko-style service cards */}
+      {/* Use Cases */}
       <ContentSection background="dark-surface">
         <div ref={useCasesRef}>
           <SectionHeader
             title="Built for Every Environment"
             subtitle="From personal devices to enterprise infrastructure"
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {useCaseCards.map((card, index) => (
               <motion.div
                 key={card.title}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={useCasesVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
+                transition={{ duration: 0.35, delay: index * 0.04 }}
               >
                 <Link
                   to={card.path}
-                  className="block p-6 rounded-xl bg-dark-card hover:bg-dark-elevated transition-all duration-200 group"
+                  className="block p-5 transition-all duration-200 group"
                 >
-                  <div className="w-12 h-12 mb-4">
+                  <div className="w-10 h-10 mb-3">
                     {card.icon}
                   </div>
-                  <h3 className="text-lg font-semibold text-dark-text-primary mb-2 group-hover:text-dark-accent-primary transition-colors">
+                  <h3 className="text-base font-semibold text-dark-text-primary mb-1.5 group-hover:text-dark-accent-primary transition-colors">
                     {card.title}
                   </h3>
-                  <p className="text-dark-text-secondary text-sm leading-relaxed mb-4">
+                  <p className="text-dark-text-secondary text-sm leading-relaxed mb-3">
                     {card.description}
                   </p>
-                  <span className="text-dark-accent-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  <span className="text-dark-accent-primary text-xs font-medium inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">
                     Learn more
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                       <path d="M9 5l7 7-7 7" />
                     </svg>
                   </span>
@@ -173,30 +172,32 @@ const Home = () => {
         dark={false}
       />
 
-      {/* Illustrated: Open Source */}
-      <IllustratedSection
-        subtitle="Transparent & Auditable"
-        title="100% Open Source"
-        description="Every line of code is open for inspection. No hidden backdoors, no proprietary black boxes. You can audit, fork, and self-host with full confidence."
-        features={[
-          "MIT licensed - free forever",
-          "Active community development",
-          "Self-host or use managed service",
-          "Regular security reviews"
-        ]}
-        illustration={OpenSourceIllustration}
-        illustrationPosition="left"
-        illustrationSize="large"
-      />
+      {/* Feature Spotlight: Open Source */}
+      <ContentSection background="dark-surface">
+        <FeatureSpotlight
+          label="Open Source"
+          title="100% Open Source"
+          description="Every line of code is open for inspection. No hidden backdoors, no proprietary black boxes. You can audit, fork, and self-host with full confidence."
+          features={[
+            "MIT licensed - free forever",
+            "Active community development",
+            "Self-host or use managed service",
+            "Regular security reviews"
+          ]}
+          metric={{ value: "MIT", label: "Licensed" }}
+          accent="green"
+          position="left"
+        />
+      </ContentSection>
 
       {/* Explore Topics */}
-      <ContentSection background="dark-surface">
+      <ContentSection>
         <div ref={topicsRef}>
           <SectionHeader
             title={topicsSection.title}
             subtitle={topicsSection.subtitle}
           />
-          <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
+          <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
             {topicsSection.topics.map((topic, index) => (
               <motion.a
                 key={topic.path}
@@ -205,8 +206,8 @@ const Home = () => {
                 rel={topic.external ? "noopener noreferrer" : undefined}
                 initial={{ opacity: 0 }}
                 animate={topicsVisible ? { opacity: 1 } : {}}
-                transition={{ duration: 0.25, delay: index * 0.03 }}
-                className="px-5 py-2.5 bg-dark-card rounded-lg text-sm font-medium text-dark-text-secondary hover:text-dark-accent-primary hover:bg-dark-elevated transition-all duration-150"
+                transition={{ duration: 0.2, delay: index * 0.02 }}
+                className="px-4 py-2 text-xs font-medium text-dark-text-secondary hover:text-dark-accent-primary transition-all duration-150"
               >
                 {topic.label}
               </motion.a>

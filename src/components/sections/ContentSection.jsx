@@ -18,10 +18,10 @@ const ContentSection = ({
   }[background] || '';
 
   const paddingClasses = {
-    'small': 'py-12 md:py-16',
-    'normal': 'py-16 md:py-24',
-    'large': 'py-24 md:py-32'
-  }[padding] || 'py-16 md:py-24';
+    'small': 'py-10 md:py-14',
+    'normal': 'py-14 md:py-20',
+    'large': 'py-20 md:py-28'
+  }[padding] || 'py-14 md:py-20';
 
   const content = (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,9 +40,9 @@ const ContentSection = ({
   return (
     <section ref={ref} className={`${backgroundClasses} ${paddingClasses} ${className}`}>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       >
         {content}
       </motion.div>

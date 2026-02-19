@@ -4,7 +4,6 @@ import useScrollAnimation from '../../hooks/useScrollAnimation';
 const FeatureGrid = ({
   features = [],
   columns = 3,
-  cardStyle = 'elevated',
 }) => {
   const [ref, isVisible] = useScrollAnimation();
 
@@ -15,28 +14,24 @@ const FeatureGrid = ({
   }[columns] || 'md:grid-cols-2 lg:grid-cols-3';
 
   return (
-    <div ref={ref} className={`grid grid-cols-1 ${columnClass} gap-5`}>
+    <div ref={ref} className={`grid grid-cols-1 ${columnClass} gap-3`}>
       {features.map((feature, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.3, delay: index * 0.04, ease: [0.4, 0, 0.2, 1] }}
-          className={`group p-6 rounded-xl transition-all duration-200 ${
-            cardStyle === 'glass'
-              ? 'bg-dark-card/50 hover:bg-dark-card'
-              : 'bg-dark-card hover:bg-dark-elevated'
-          }`}
+          transition={{ duration: 0.35, delay: index * 0.03, ease: [0.16, 1, 0.3, 1] }}
+          className="group p-5 transition-all duration-200"
         >
           {/* Icon */}
           {feature.icon && (
-            <div className="w-12 h-12 mb-4">
+            <div className="w-10 h-10 mb-3">
               {feature.icon}
             </div>
           )}
 
           {/* Title */}
-          <h3 className="text-lg font-semibold mb-2 text-dark-text-primary group-hover:text-dark-accent-primary transition-colors">
+          <h3 className="text-base font-semibold mb-1.5 text-dark-text-primary group-hover:text-dark-accent-primary transition-colors">
             {feature.title}
           </h3>
 
@@ -47,11 +42,9 @@ const FeatureGrid = ({
 
           {/* Scenario (if exists) */}
           {feature.scenario && (
-            <div className="mt-4 p-3 rounded-lg bg-dark-bg/50">
-              <p className="text-xs text-dark-text-muted italic">
-                {feature.scenario}
-              </p>
-            </div>
+            <p className="mt-3 text-xs text-dark-text-muted italic leading-relaxed">
+              {feature.scenario}
+            </p>
           )}
         </motion.div>
       ))}

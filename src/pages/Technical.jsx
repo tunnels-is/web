@@ -1,45 +1,110 @@
 import HeroSimple from '../components/sections/HeroSimple';
 import ContentSection from '../components/sections/ContentSection';
-import SectionHeader from '../components/ui/SectionHeader';
 import CTASection from '../components/sections/CTASection';
 import IllustratedSection from '../components/IllustratedSection';
+import TerminalPreview from '../components/sections/TerminalPreview';
+import FeatureTable from '../components/sections/FeatureTable';
+import GradientCallout from '../components/sections/GradientCallout';
+import StatsBanner from '../components/sections/StatsBanner';
+import BentoGrid from '../components/sections/BentoGrid';
 import { technicalContent } from '../content/siteContent';
 import {
   EncryptionIllustration,
-  LANOverWANIllustration,
   GlobalNetworkIllustration,
 } from '../components/illustrations';
 
 const Technical = () => {
   const { hero, sections, cta } = technicalContent;
 
+  const performanceStats = [
+    { value: 'WireGuard', label: 'Protocol Base', description: 'Modern, minimal kernel-level VPN protocol' },
+    { value: '3', label: 'Cipher Suites', description: 'AES-128-GCM, AES-256-GCM, ChaCha20-Poly1305' },
+    { value: 'Post-Quantum', label: 'Key Exchange', description: 'X25519 + ML-KEM-1024 hybrid support' },
+    { value: 'Any→Any', label: 'IP Routing', description: 'Fully abstracted from underlying networks' },
+  ];
+
+  const encryptionTableHeaders = ['Algorithm', 'Type', 'Key Size', 'Use Case'];
+  const encryptionTableRows = [
+    ['AES-128-GCM', 'AEAD Cipher', '128-bit', 'High-throughput environments'],
+    ['AES-256-GCM', 'AEAD Cipher', '256-bit', 'Maximum security workloads'],
+    ['ChaCha20-Poly1305', 'AEAD Cipher', '256-bit', 'Mobile and low-power devices'],
+    ['X25519 + ML-KEM-1024', 'Hybrid Handshake', '255-bit + post-quantum', 'Future-proof key exchange'],
+    ['Elliptic Curve P521', 'ECDH Handshake', '521-bit', 'FIPS-compatible deployments'],
+  ];
+
+  const terminalLines = [
+    { type: 'comment', text: 'Connect to a VPN server and apply split routes' },
+    { type: 'command', text: 'tunnels connect --server us-east-1.example.com' },
+    { type: 'success', text: 'Connected. Handshake complete (X25519 + ML-KEM-1024)' },
+    { type: 'empty' },
+    { type: 'comment', text: 'Add a custom route for a specific subnet' },
+    { type: 'command', text: 'tunnels route add 192.168.10.0/24 --via vpn0' },
+    { type: 'success', text: 'Route 192.168.10.0/24 → vpn0 added' },
+    { type: 'empty' },
+    { type: 'comment', text: 'List active tunnels and their status' },
+    { type: 'command', text: 'tunnels list' },
+    { type: 'output', text: 'vpn0   us-east-1   ↑ 12.4 MB  ↓ 38.1 MB   active' },
+    { type: 'output', text: 'lan0   office-net  ↑  2.1 MB  ↓  9.8 MB   active' },
+    { type: 'empty' },
+    { type: 'comment', text: 'Apply a NAT translation rule' },
+    { type: 'command', text: 'tunnels nat add --src 10.0.0.5 --dst 172.16.0.5' },
+    { type: 'success', text: 'NAT rule created: 10.0.0.5 → 172.16.0.5' },
+  ];
+
+  const lanBentoItems = [
+    {
+      title: 'Isolated LAN Networks',
+      description: 'Create virtual LAN segments that span the internet. Each LAN lives on a single server and is fully isolated from other networks — perfect for IoT devices, file servers, databases, and services requiring strict access controls.',
+      features: [
+        'Full Layer 2 emulation',
+        'Broadcast domain support',
+        'VLAN-like traffic isolation',
+        'No cross-network IP conflicts',
+      ],
+      highlight: 'Ideal for IoT and internal services',
+    },
+    {
+      title: 'Advanced Routing',
+      description: 'Define custom routes server-side or directly in the device config. Routes are abstracted from the underlying network — any IP can be forwarded to any VPN or LAN.',
+    },
+    {
+      title: 'Split Tunneling',
+      description: 'Route only specific subnets through Tunnels while leaving other traffic on the default path. Apply different rules per interface or per connection.',
+    },
+    {
+      title: 'Dynamic Route Application',
+      description: 'Routes can be pushed from the server automatically when a device connects, removing the need for per-device manual configuration.',
+    },
+  ];
+
   return (
     <div className="min-h-screen">
+
       {/* Hero Section */}
       <HeroSimple
         title={hero.title}
         description={hero.description}
       />
 
-      {/* Public Routable VPN Section */}
-      <ContentSection background="dark-surface">
-        <SectionHeader
-          title={sections[0].title}
-          subtitle={sections[0].description}
-          titleSize="medium"
+      {/* Performance Stats */}
+      <ContentSection background="dark-surface" padding="normal">
+        <StatsBanner
+          stats={performanceStats}
+          variant="card"
         />
       </ContentSection>
 
-      {/* Illustrated: Global VPN */}
+      {/* Public Routable VPN — IllustratedSection 1 of 2 */}
       <IllustratedSection
-        subtitle="Worldwide Access"
-        title="Public Routable VPN"
-        description="Deploy VPN servers anywhere in the world. Each server gets a public IP, allowing direct access from any location without complex NAT traversal."
+        subtitle="Public Routable VPN"
+        title={sections[0].title}
+        description={sections[0].description}
         features={[
-          "Direct public IP routing",
-          "No NAT traversal needed",
-          "Global server deployment",
-          "Automatic failover support"
+          'Direct public IP routing',
+          'No NAT traversal needed',
+          'Global server deployment',
+          'Automatic failover support',
+          'Split route tunneling across multiple servers',
         ]}
         illustration={GlobalNetworkIllustration}
         illustrationPosition="right"
@@ -47,117 +112,109 @@ const Technical = () => {
         dark={false}
       />
 
-      {/* Encryption Section */}
-      <ContentSection background="dark-surface">
-        <SectionHeader
-          title={sections[1].title}
-          subtitle={sections[1].description}
-          titleSize="medium"
-        />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="bg-dark-elevated p-6 rounded-xl">
-            <h3 className="text-xl font-semibold text-dark-accent-primary mb-4">Encryption Types</h3>
-            <ul className="space-y-3 text-dark-text-secondary">
-              {sections[1].encryptionTypes.map((type, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-dark-accent-tertiary mr-2">•</span>
-                  {type}
-                </li>
-              ))}
-            </ul>
+      {/* Encryption & Security — FeatureTable */}
+      <ContentSection background="dark-surface" padding="normal">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-8">
+            <span className="inline-flex items-center gap-2 text-dark-accent-primary text-xs font-semibold uppercase tracking-widest mb-3">
+              <span className="w-5 h-px bg-dark-accent-primary" />
+              Encryption and Security
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
+              {sections[1].title}
+            </h2>
+            <p className="text-sm text-dark-text-secondary leading-relaxed max-w-2xl">
+              {sections[1].description}
+            </p>
           </div>
-          <div className="bg-dark-elevated p-6 rounded-xl">
-            <h3 className="text-xl font-semibold text-dark-accent-primary mb-4">Handshake Types</h3>
-            <ul className="space-y-3 text-dark-text-secondary">
-              {sections[1].handshakeTypes.map((type, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-dark-accent-tertiary mr-2">•</span>
-                  {type}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FeatureTable
+            headers={encryptionTableHeaders}
+            rows={encryptionTableRows}
+            caption={sections[1].details}
+          />
         </div>
-        {sections[1].details && (
-          <p className="text-lg text-dark-text-secondary text-center mt-8 max-w-3xl mx-auto">
-            {sections[1].details}
-          </p>
-        )}
       </ContentSection>
 
-      {/* Illustrated: Encryption */}
+      {/* Terminal Preview — Routing and Tunnel Commands */}
+      <ContentSection background="transparent" padding="normal">
+        <TerminalPreview
+          title="Simple, Powerful CLI"
+          description="Connect to servers, define routes, manage LAN networks, and apply NAT rules — all from a single unified interface. Server-side configurations are pushed to devices automatically on connect."
+          features={[
+            'Connect to multiple VPN servers simultaneously',
+            'Add and remove routes at runtime',
+            'Apply NAT translations between any IPs',
+            'Inspect live tunnel throughput per interface',
+          ]}
+          lines={terminalLines}
+          position="right"
+        />
+      </ContentSection>
+
+      {/* LAN Networks — BentoGrid */}
+      <ContentSection background="dark-surface" padding="normal">
+        <div className="mb-8">
+          <span className="inline-flex items-center gap-2 text-dark-accent-primary text-xs font-semibold uppercase tracking-widest mb-3">
+            <span className="w-5 h-px bg-dark-accent-primary" />
+            LAN Networks
+          </span>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
+            {sections[2].title}
+          </h2>
+          <p className="text-sm text-dark-text-secondary leading-relaxed max-w-2xl">
+            {sections[2].description}
+          </p>
+        </div>
+        <BentoGrid
+          items={lanBentoItems}
+          layout="featured"
+        />
+      </ContentSection>
+
+      {/* Encryption — IllustratedSection 2 of 2 */}
       <IllustratedSection
         subtitle="Military-Grade Security"
         title="End-to-End Encryption"
-        description="All traffic is encrypted using modern cryptographic primitives. ChaCha20-Poly1305 provides authenticated encryption with excellent performance on all platforms."
+        description="All traffic is encrypted using modern cryptographic primitives. ChaCha20-Poly1305 provides authenticated encryption with excellent performance on all platforms, including mobile and embedded devices."
         features={[
-          "ChaCha20-Poly1305 AEAD",
-          "Curve25519 key exchange",
-          "BLAKE2s for hashing",
-          "Perfect forward secrecy"
+          'ChaCha20-Poly1305 AEAD',
+          'Curve25519 key exchange',
+          'BLAKE2s for hashing',
+          'Perfect forward secrecy',
+          'Post-quantum hybrid option',
         ]}
         illustration={EncryptionIllustration}
         illustrationPosition="left"
         illustrationSize="large"
       />
 
-      {/* LAN Networks Section */}
-      <ContentSection background="dark-surface">
-        <SectionHeader
-          title={sections[2].title}
-          subtitle={sections[2].description}
-          titleSize="medium"
-        />
-      </ContentSection>
-
-      {/* Illustrated: LAN over WAN */}
-      <IllustratedSection
-        subtitle="Layer 2 Connectivity"
-        title="Isolated LAN Networks"
-        description="Create isolated virtual LANs that span across the internet. Perfect for connecting branch offices or segmenting network traffic by department or function."
-        features={[
-          "Full Layer 2 emulation",
-          "Broadcast domain support",
-          "VLAN-like isolation",
-          "No IP conflicts possible"
-        ]}
-        illustration={LANOverWANIllustration}
-        illustrationPosition="right"
-        illustrationSize="large"
-        dark={false}
-      />
-
-      {/* Advanced Routing Section */}
-      <ContentSection background="dark-surface">
-        <SectionHeader
-          title={sections[3].title}
-          subtitle={sections[3].description}
-          titleSize="medium"
-        />
-      </ContentSection>
-
-      {/* Illustrated: Encryption */}
-      <IllustratedSection
-        subtitle="Modern Encryption"
-        title="Secure by Design"
-        description="Tunnels uses modern cryptographic primitives and a minimal, auditable codebase. Strong security with high performance on all platforms."
-        features={[
-          "End-to-end encrypted tunnels",
-          "Minimal attack surface",
-          "Open source and auditable",
-          "Cross-platform support"
-        ]}
-        illustration={EncryptionIllustration}
-        illustrationPosition="left"
-        illustrationSize="large"
-      />
-
-      {/* Abstract NAT Section */}
-      <ContentSection background="dark-surface">
-        <SectionHeader
+      {/* Abstract NAT — GradientCallout */}
+      <ContentSection background="dark-surface" padding="normal">
+        <div className="mb-8">
+          <span className="inline-flex items-center gap-2 text-dark-accent-primary text-xs font-semibold uppercase tracking-widest mb-3">
+            <span className="w-5 h-px bg-dark-accent-primary" />
+            Advanced Routing
+          </span>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
+            {sections[3].title}
+          </h2>
+          <p className="text-sm text-dark-text-secondary leading-relaxed max-w-2xl mb-8">
+            {sections[3].description}
+          </p>
+        </div>
+        <GradientCallout
           title={sections[4].title}
-          subtitle={sections[4].description}
-          titleSize="medium"
+          description={sections[4].description}
+          accent="teal"
+          variant="default"
+          features={[
+            'Translate any IP to any other IP',
+            'Fully abstracted from underlying networks',
+            'Works across VPN and LAN simultaneously',
+            'Resolves IP conflicts in large environments',
+            'Server-side or device-side configuration',
+            'No kernel-level changes required',
+          ]}
         />
       </ContentSection>
 

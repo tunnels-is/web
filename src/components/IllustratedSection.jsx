@@ -16,15 +16,15 @@ const IllustratedSection = ({
   const [ref, isVisible] = useScrollAnimation(0.1);
 
   const sizeClasses = {
-    small: 'w-64 h-64',
-    medium: 'w-80 h-80',
-    large: 'w-96 h-96',
+    small: 'w-56 h-56',
+    medium: 'w-72 h-72',
+    large: 'w-80 h-80',
   };
 
   const illustrationSizes = {
-    small: { width: 256, height: 256 },
-    medium: { width: 320, height: 320 },
-    large: { width: 384, height: 384 },
+    small: { width: 224, height: 224 },
+    medium: { width: 288, height: 288 },
+    large: { width: 320, height: 320 },
   };
 
   const contentOrder = illustrationPosition === 'left' ? 'order-2' : 'order-1';
@@ -33,44 +33,45 @@ const IllustratedSection = ({
   return (
     <section
       ref={ref}
-      className={`py-16 md:py-24 ${dark ? 'bg-dark-surface' : ''} ${className}`}
+      className={`py-14 md:py-20 ${dark ? 'bg-dark-surface' : ''} ${className}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Content Side */}
           <motion.div
             className={`flex-1 ${contentOrder}`}
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
             {subtitle && (
-              <span className="text-dark-accent-primary text-sm font-semibold uppercase tracking-wider mb-3 block">
+              <span className="inline-flex items-center gap-2 text-dark-accent-primary text-xs font-semibold uppercase tracking-widest mb-3">
+                <span className="w-5 h-px bg-dark-accent-primary" />
                 {subtitle}
               </span>
             )}
             {title && (
-              <h2 className="text-2xl md:text-3xl font-bold text-dark-text-primary mb-4 tracking-tight">
+              <h2 className="text-2xl md:text-3xl font-bold text-dark-text-primary mb-3 tracking-tight">
                 {title}
               </h2>
             )}
             {description && (
-              <p className="text-dark-text-secondary text-base mb-6 leading-relaxed">
+              <p className="text-dark-text-secondary text-sm mb-5 leading-relaxed max-w-lg">
                 {description}
               </p>
             )}
             {features.length > 0 && (
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {features.map((feature, index) => (
                   <motion.li
                     key={index}
-                    className="flex items-start gap-3"
+                    className="flex items-start gap-2.5"
                     initial={{ opacity: 0 }}
                     animate={isVisible ? { opacity: 1 } : {}}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    transition={{ duration: 0.3, delay: index * 0.04 }}
                   >
                     <svg
-                      className="w-5 h-5 text-dark-accent-green mt-0.5 flex-shrink-0"
+                      className="w-4 h-4 text-dark-accent-green mt-0.5 flex-shrink-0"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -78,7 +79,7 @@ const IllustratedSection = ({
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth={2}
+                        strokeWidth={2.5}
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
@@ -94,9 +95,9 @@ const IllustratedSection = ({
           {Illustration && (
             <motion.div
               className={`flex-1 flex justify-center ${illustrationOrder}`}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
             >
               <div className={sizeClasses[illustrationSize]}>
                 <Illustration

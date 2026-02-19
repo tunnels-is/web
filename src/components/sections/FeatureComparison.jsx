@@ -9,29 +9,26 @@ const FeatureComparison = ({
   const [ref, isVisible] = useScrollAnimation();
 
   return (
-    <div ref={ref} className="space-y-3">
+    <div ref={ref} className="space-y-2">
       {comparisonItems.map((item, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.25, delay: index * 0.04 }}
-          className="rounded-xl bg-dark-card overflow-hidden transition-all"
+          transition={{ duration: 0.25, delay: index * 0.03 }}
+          className="overflow-hidden transition-all duration-200"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-5 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 items-center">
             <div className="md:col-span-1">
-              <h3 className="text-base font-semibold text-dark-text-primary flex items-center gap-2">
-                {(item.winner === 'personal' || item.winner === 'commercial') && (
-                  <span className="text-lg">*</span>
-                )}
+              <h3 className="text-sm font-semibold text-dark-text-primary flex items-center gap-2">
                 {item.feature}
               </h3>
             </div>
 
-            <div className={`p-4 rounded-lg ${
-              item.winner === 'commercial' ? 'bg-dark-accent-secondary/10' : 'bg-dark-bg/50'
+            <div className={`p-3 rounded-lg ${
+              item.winner === 'commercial' ? 'bg-dark-accent-secondary/8 border border-dark-accent-secondary/15' : 'bg-dark-bg/40'
             }`}>
-              <p className="text-xs text-dark-text-muted mb-1 uppercase tracking-wider">{option1Label}</p>
+              <p className="text-[11px] text-dark-text-muted mb-0.5 uppercase tracking-wider font-medium">{option1Label}</p>
               <p className={`text-sm ${
                 item.winner === 'commercial' ? 'text-dark-text-primary font-medium' : 'text-dark-text-secondary'
               }`}>
@@ -39,10 +36,10 @@ const FeatureComparison = ({
               </p>
             </div>
 
-            <div className={`p-4 rounded-lg ${
-              item.winner === 'personal' ? 'bg-dark-accent-primary/10' : 'bg-dark-bg/50'
+            <div className={`p-3 rounded-lg ${
+              item.winner === 'personal' ? 'bg-dark-accent-primary/8 border border-dark-accent-primary/15' : 'bg-dark-bg/40'
             }`}>
-              <p className="text-xs text-dark-text-muted mb-1 uppercase tracking-wider">{option2Label}</p>
+              <p className="text-[11px] text-dark-text-muted mb-0.5 uppercase tracking-wider font-medium">{option2Label}</p>
               <p className={`text-sm ${
                 item.winner === 'personal' ? 'text-dark-text-primary font-medium' : 'text-dark-text-secondary'
               }`}>

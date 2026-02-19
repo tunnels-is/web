@@ -6,10 +6,10 @@ const AllReleasesSection = ({ description, buttonText, url }) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="text-center"
       >
-        <p className="text-dark-text-secondary text-sm mb-4">{description}</p>
+        <p className="text-dark-text-secondary text-sm mb-3">{description}</p>
         <a
           href={url}
           target="_blank"

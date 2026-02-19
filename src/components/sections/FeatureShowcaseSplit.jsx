@@ -25,26 +25,26 @@ const FeatureShowcaseSplit = ({
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="relative bg-dark-surface rounded-3xl overflow-hidden min-h-[600px]"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
           {imagePosition === 'right' ? (
             <>
               {/* Content Section */}
-              <div className="relative z-10 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+              <div className="relative z-10 p-6 md:p-12 lg:p-16 flex flex-col justify-center">
                 <motion.div
                   initial={{ opacity: 0, x: -16 }}
                   animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.3, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                  transition={{ duration: 0.3, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-4">
                     {title}
                   </h2>
 
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-4 mb-6">
                     {descriptions.map((description, index) => (
-                      <p key={index} className="text-lg text-dark-text-secondary leading-relaxed">
+                      <p key={index} className="text-base text-dark-text-secondary leading-relaxed">
                         {description}
                       </p>
                     ))}
@@ -57,7 +57,7 @@ const FeatureShowcaseSplit = ({
                           key={index}
                           initial={{ opacity: 0, x: -12 }}
                           animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                          transition={{ duration: 0.25, delay: 0.15 + index * 0.04, ease: [0.4, 0, 0.2, 1] }}
+                          transition={{ duration: 0.25, delay: 0.15 + index * 0.04, ease: [0.16, 1, 0.3, 1] }}
                           className="flex items-center space-x-3 p-3 rounded-lg hover:bg-dark-bg/20 transition-colors duration-150"
                         >
                           <div className="flex-shrink-0 w-2 h-2 rounded-full bg-dark-accent-primary"></div>
@@ -75,7 +75,7 @@ const FeatureShowcaseSplit = ({
                 <motion.div
                   initial={{ opacity: 0, scale: 1.03 }}
                   animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.35, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
+                  transition={{ duration: 0.35, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
                   className="absolute inset-0"
                   style={{
                     clipPath: 'polygon(0 0, 100% 0, 100% 100%, 8% 100%)'
@@ -97,7 +97,7 @@ const FeatureShowcaseSplit = ({
                 <motion.div
                   initial={{ opacity: 0, scale: 1.03 }}
                   animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.35, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
+                  transition={{ duration: 0.35, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
                   className="absolute inset-0"
                   style={{
                     clipPath: 'polygon(0 0, 92% 0, 100% 100%, 0 100%)'
@@ -112,19 +112,19 @@ const FeatureShowcaseSplit = ({
               </div>
 
               {/* Content Section */}
-              <div className="relative z-10 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+              <div className="relative z-10 p-6 md:p-12 lg:p-16 flex flex-col justify-center">
                 <motion.div
                   initial={{ opacity: 0, x: 16 }}
                   animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.3, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                  transition={{ duration: 0.3, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-4">
                     {title}
                   </h2>
 
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-4 mb-6">
                     {descriptions.map((description, index) => (
-                      <p key={index} className="text-lg text-dark-text-secondary leading-relaxed">
+                      <p key={index} className="text-base text-dark-text-secondary leading-relaxed">
                         {description}
                       </p>
                     ))}
@@ -137,7 +137,7 @@ const FeatureShowcaseSplit = ({
                           key={index}
                           initial={{ opacity: 0, x: 12 }}
                           animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                          transition={{ duration: 0.25, delay: 0.15 + index * 0.04, ease: [0.4, 0, 0.2, 1] }}
+                          transition={{ duration: 0.25, delay: 0.15 + index * 0.04, ease: [0.16, 1, 0.3, 1] }}
                           className="flex items-center space-x-3 p-3 rounded-lg hover:bg-dark-bg/20 transition-colors duration-150"
                         >
                           <div className="flex-shrink-0 w-2 h-2 rounded-full bg-dark-accent-primary"></div>

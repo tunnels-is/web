@@ -48,10 +48,10 @@ const FeatureShowcaseOverlayDiagonal = ({
             initial={{ opacity: 0, x: -50, y: -30 }}
             animate={isVisible ? { opacity: 1, x: 0, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="w-full max-w-4xl p-8 md:p-12 lg:p-16"
+            className="w-full max-w-4xl p-6 md:p-12 lg:p-16"
           >
             {/* Title - Large and prominent */}
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               {title}
             </h2>
 
@@ -63,10 +63,10 @@ const FeatureShowcaseOverlayDiagonal = ({
                   initial={{ opacity: 0, x: -30 }}
                   animate={isVisible ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                  className="backdrop-blur-sm bg-white/5 p-6 rounded-xl border border-white/10 max-w-2xl"
+                  className="backdrop-blur-sm bg-white/5 p-5 rounded-xl border border-white/10 max-w-2xl"
                   style={{ marginLeft: `${index * 2}rem` }}
                 >
-                  <p className="text-lg text-white/90 leading-relaxed">
+                  <p className="text-base text-white/90 leading-relaxed">
                     {description}
                   </p>
                 </motion.div>
@@ -75,14 +75,14 @@ const FeatureShowcaseOverlayDiagonal = ({
 
             {/* Features in staggered diagonal cards */}
             {features.length > 0 && (
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {features.map((feature, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: -40, y: 20 }}
                     animate={isVisible ? { opacity: 1, x: 0, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-                    className="backdrop-blur-md bg-white/10 p-5 rounded-lg border border-white/20 inline-block hover:bg-white/15 transition-colors"
+                    className="backdrop-blur-md bg-dark-accent-primary/8 border border-dark-accent-primary/15 p-5 rounded-lg inline-block hover:bg-white/15 transition-colors"
                     style={{ marginLeft: `${index * 1.5}rem` }}
                   >
                     <div className="flex items-center space-x-3">

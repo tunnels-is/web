@@ -75,30 +75,30 @@ const HeroWithGradients = ({
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           {badge && (
-            <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-dark-accent-primary/20 rounded-full text-dark-accent-primary font-semibold text-sm">
+            <div className="inline-block mb-4">
+              <span className="px-4 py-2 bg-dark-accent-primary/8 border border-dark-accent-primary/15 rounded-full text-dark-accent-primary font-semibold text-sm">
                 {badge}
               </span>
             </div>
           )}
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             {title}
           </h1>
 
           {subtitle && (
-            <h2 className="text-2xl md:text-4xl font-semibold text-dark-text-secondary mb-8">
+            <h2 className="text-2xl md:text-4xl font-semibold text-dark-text-secondary mb-6">
               {subtitle}
             </h2>
           )}
 
           {description && (
-            <p className="text-xl md:text-2xl text-dark-text-secondary mb-12 max-w-4xl mx-auto leading-snug">
+            <p className="text-lg md:text-xl text-dark-text-secondary mb-10 max-w-4xl mx-auto leading-snug">
               {description}
             </p>
           )}
@@ -107,10 +107,10 @@ const HeroWithGradients = ({
         {/* Buttons */}
         {buttons.length > 0 && (
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row gap-3 justify-center items-center"
           >
             {buttons.map((button, index) => (
               <motion.a
@@ -133,10 +133,10 @@ const HeroWithGradients = ({
         {/* Quick Stats */}
         {quickStats.length > 0 && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-16 flex flex-wrap justify-center gap-8"
+            transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-14 flex flex-wrap justify-center gap-6"
           >
             {quickStats.map((stat, index) => (
               <div key={index} className="text-center">

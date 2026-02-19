@@ -1,19 +1,6 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
-/**
- * IllustratedSection - A section with content on one side and illustration on the other
- *
- * @param {string} title - Section title
- * @param {string} subtitle - Section subtitle (optional)
- * @param {string|Array} description - Description text or array of paragraphs
- * @param {Array} features - Array of feature items with title and description (optional)
- * @param {React.Component} illustration - Illustration component
- * @param {string} illustrationPosition - 'left' or 'right' (default: 'right')
- * @param {string} illustrationSize - 'small', 'medium', 'large' (default: 'medium')
- * @param {React.Node} children - Additional content (optional)
- * @param {string} className - Additional CSS classes
- */
 const IllustratedSection = ({
   title,
   subtitle,
@@ -41,8 +28,8 @@ const IllustratedSection = ({
         <motion.h2
           initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-          className="text-3xl md:text-4xl font-bold mb-4 text-dark-text-primary"
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="text-2xl md:text-3xl font-bold mb-3 text-dark-text-primary tracking-tight"
         >
           {title}
         </motion.h2>
@@ -52,8 +39,8 @@ const IllustratedSection = ({
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.3, delay: 0.05, ease: [0.4, 0, 0.2, 1] }}
-          className="text-xl text-dark-accent-primary mb-6"
+          transition={{ duration: 0.4, delay: 0.04, ease: [0.16, 1, 0.3, 1] }}
+          className="text-base text-dark-accent-primary mb-4 font-medium"
         >
           {subtitle}
         </motion.p>
@@ -64,8 +51,8 @@ const IllustratedSection = ({
           key={index}
           initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.3, delay: 0.1 + index * 0.05, ease: [0.4, 0, 0.2, 1] }}
-          className="text-lg text-dark-text-secondary mb-4 leading-relaxed"
+          transition={{ duration: 0.4, delay: 0.08 + index * 0.04, ease: [0.16, 1, 0.3, 1] }}
+          className="text-sm text-dark-text-secondary mb-3 leading-relaxed"
         >
           {desc}
         </motion.p>
@@ -75,15 +62,15 @@ const IllustratedSection = ({
         <motion.ul
           initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.3, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
-          className="space-y-4 mt-6"
+          transition={{ duration: 0.4, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+          className="space-y-3 mt-4"
         >
           {features.map((feature, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <svg className="w-6 h-6 text-dark-accent-tertiary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <li key={index} className="flex items-start gap-2.5">
+              <svg className="w-4 h-4 text-dark-accent-tertiary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <div>
+              <div className="text-sm">
                 <span className="font-semibold text-dark-text-primary">{feature.title}</span>
                 {feature.description && (
                   <span className="text-dark-text-secondary"> - {feature.description}</span>
@@ -100,9 +87,9 @@ const IllustratedSection = ({
 
   const illustrationSection = Illustration && (
     <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
+      initial={{ opacity: 0, scale: 0.97 }}
       animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.4, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+      transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
       className={`flex-1 flex items-center justify-center ${sizeClasses[illustrationSize]}`}
     >
       <Illustration className="w-full h-auto" />
@@ -110,7 +97,7 @@ const IllustratedSection = ({
   );
 
   return (
-    <div ref={ref} className={`flex flex-col lg:flex-row gap-12 items-center ${className}`}>
+    <div ref={ref} className={`flex flex-col lg:flex-row gap-10 items-center ${className}`}>
       {illustrationPosition === 'left' ? (
         <>
           {illustrationSection}

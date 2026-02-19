@@ -43,7 +43,7 @@ const FeatureShowcaseOverlayCenter = ({
         </motion.div>
 
         {/* Centered Content Card */}
-        <div className="absolute inset-0 flex items-center justify-center p-6 md:p-12">
+        <div className="absolute inset-0 flex items-center justify-center p-5 md:p-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             animate={isVisible ? { opacity: 1, scale: 1, y: 0 } : {}}
@@ -51,21 +51,21 @@ const FeatureShowcaseOverlayCenter = ({
             className="relative max-w-3xl w-full"
           >
             {/* Main Glass Card */}
-            <div className="backdrop-blur-xl bg-dark-bg/60 p-8 md:p-12 rounded-3xl border border-white/20 shadow-2xl">
+            <div className="backdrop-blur-xl bg-dark-bg/60 p-6 md:p-12 rounded-3xl border border-white/20 shadow-2xl">
               {/* Title */}
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center leading-tight">
                 {title}
               </h2>
 
               {/* Descriptions */}
-              <div className="space-y-4 mb-8 text-center">
+              <div className="space-y-4 mb-6 text-center">
                 {descriptions.map((description, index) => (
                   <motion.p
                     key={index}
                     initial={{ opacity: 0, y: 10 }}
                     animate={isVisible ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                    className="text-lg md:text-xl text-white/90 leading-relaxed"
+                    className="text-base md:text-lg text-white/90 leading-relaxed"
                   >
                     {description}
                   </motion.p>
@@ -78,9 +78,9 @@ const FeatureShowcaseOverlayCenter = ({
                   initial={{ opacity: 0, y: 20 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.7, delay: 0.8 }}
-                  className="pt-8 border-t border-white/20"
+                  className="pt-6 border-t border-white/20"
                 >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {features.map((feature, index) => (
                       <div
                         key={index}

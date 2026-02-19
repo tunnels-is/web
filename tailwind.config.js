@@ -13,29 +13,32 @@ export default {
       },
       colors: {
         dark: {
-          bg: '#0a0a0a',
-          surface: '#121212',
-          elevated: '#1e1e1e',
-          border: '#2a2a2a',
+          bg: '#06090f',
+          surface: '#0c1019',
+          elevated: '#141a27',
+          card: '#0f1520',
+          border: '#1a2435',
+          'border-light': '#243049',
           text: {
-            primary: '#ffffff',
-            secondary: '#a0a0a0',
-            muted: '#666666',
+            primary: '#edf2f7',
+            secondary: '#8b9ab5',
+            muted: '#4a5568',
           },
           accent: {
-            primary: '#3b82f6',      // Blue
-            secondary: '#60a5fa',    // Light Blue
-            tertiary: '#06b6d4',     // Teal/Cyan
+            primary: '#3b82f6',
+            secondary: '#60a5fa',
+            tertiary: '#06b6d4',
+            green: '#10b981',
           }
         }
       },
       animation: {
-        'fade-in': 'fadeIn 0.6s ease-out',
-        'slide-up': 'slideUp 0.6s ease-out',
-        'slide-down': 'slideDown 0.6s ease-out',
-        'slide-left': 'slideLeft 0.6s ease-out',
-        'slide-right': 'slideRight 0.6s ease-out',
-        'scale-in': 'scaleIn 0.4s ease-out',
+        'fade-in': 'fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-up': 'slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-down': 'slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-left': 'slideLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-right': 'slideRight 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+        'scale-in': 'scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
       },
       keyframes: {
         fadeIn: {
@@ -43,23 +46,23 @@ export default {
           '100%': { opacity: '1' },
         },
         slideUp: {
-          '0%': { transform: 'translateY(30px)', opacity: '0' },
+          '0%': { transform: 'translateY(12px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
         slideDown: {
-          '0%': { transform: 'translateY(-30px)', opacity: '0' },
+          '0%': { transform: 'translateY(-12px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
         slideLeft: {
-          '0%': { transform: 'translateX(30px)', opacity: '0' },
+          '0%': { transform: 'translateX(12px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
         slideRight: {
-          '0%': { transform: 'translateX(-30px)', opacity: '0' },
+          '0%': { transform: 'translateX(-12px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
         scaleIn: {
-          '0%': { transform: 'scale(0.9)', opacity: '0' },
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
       },

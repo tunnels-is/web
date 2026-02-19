@@ -25,24 +25,24 @@ const FeatureShowcaseOverlayCorner = ({
       <motion.div
         initial={{ opacity: 0 }}
         animate={isVisible ? { opacity: 1 } : {}}
-        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
         className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center min-h-[600px]"
       >
         {imagePosition === 'right' ? (
           <>
             {/* Left Side - Partial Content */}
-            <div className="lg:col-span-6 p-8 md:p-12 lg:pr-0 relative z-20">
+            <div className="lg:col-span-6 p-6 md:p-12 lg:pr-0 relative z-20">
               <motion.div
                 initial={{ opacity: 0, x: -16 }}
                 animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.3, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                transition={{ duration: 0.3, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                   {title}
                 </h2>
 
                 {descriptions.length > 0 && (
-                  <p className="text-xl text-dark-text-secondary leading-relaxed mb-8">
+                  <p className="text-lg text-dark-text-secondary leading-relaxed mb-6">
                     {descriptions[0]}
                   </p>
                 )}
@@ -50,13 +50,13 @@ const FeatureShowcaseOverlayCorner = ({
 
               {/* Floating Content Card - Overlaps with image */}
               <motion.div
-                initial={{ opacity: 0, y: 16, scale: 0.97 }}
+                initial={{ opacity: 0, y: 12, scale: 0.97 }}
                 animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
-                transition={{ duration: 0.35, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-                className="bg-dark-surface p-8 rounded-2xl lg:mr-[-25%] relative"
+                transition={{ duration: 0.35, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="p-6 lg:mr-[-25%] relative transition-colors"
               >
                 {descriptions.length > 1 && (
-                  <p className="text-dark-text-secondary leading-relaxed mb-6">
+                  <p className="text-dark-text-secondary leading-relaxed mb-4">
                     {descriptions[1]}
                   </p>
                 )}
@@ -91,7 +91,7 @@ const FeatureShowcaseOverlayCorner = ({
               <motion.div
                 initial={{ opacity: 0, x: 24, scale: 1.02 }}
                 animate={isVisible ? { opacity: 1, x: 0, scale: 1 } : {}}
-                transition={{ duration: 0.4, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                transition={{ duration: 0.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl"
               >
                 <img
@@ -109,7 +109,7 @@ const FeatureShowcaseOverlayCorner = ({
               <motion.div
                 initial={{ opacity: 0, x: -24, scale: 1.02 }}
                 animate={isVisible ? { opacity: 1, x: 0, scale: 1 } : {}}
-                transition={{ duration: 0.4, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                transition={{ duration: 0.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl"
               >
                 <img
@@ -121,18 +121,18 @@ const FeatureShowcaseOverlayCorner = ({
             </div>
 
             {/* Right Side - Partial Content */}
-            <div className="lg:col-span-6 p-8 md:p-12 lg:pl-0 relative z-20 order-1 lg:order-2">
+            <div className="lg:col-span-6 p-6 md:p-12 lg:pl-0 relative z-20 order-1 lg:order-2">
               <motion.div
                 initial={{ opacity: 0, x: 16 }}
                 animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.3, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                transition={{ duration: 0.3, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                   {title}
                 </h2>
 
                 {descriptions.length > 0 && (
-                  <p className="text-xl text-dark-text-secondary leading-relaxed mb-8">
+                  <p className="text-lg text-dark-text-secondary leading-relaxed mb-6">
                     {descriptions[0]}
                   </p>
                 )}
@@ -140,13 +140,13 @@ const FeatureShowcaseOverlayCorner = ({
 
               {/* Floating Content Card - Overlaps with image */}
               <motion.div
-                initial={{ opacity: 0, y: 16, scale: 0.97 }}
+                initial={{ opacity: 0, y: 12, scale: 0.97 }}
                 animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
-                transition={{ duration: 0.35, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-                className="bg-dark-surface p-8 rounded-2xl lg:ml-[-25%] relative"
+                transition={{ duration: 0.35, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="p-6 lg:ml-[-25%] relative transition-colors"
               >
                 {descriptions.length > 1 && (
-                  <p className="text-dark-text-secondary leading-relaxed mb-6">
+                  <p className="text-dark-text-secondary leading-relaxed mb-4">
                     {descriptions[1]}
                   </p>
                 )}
