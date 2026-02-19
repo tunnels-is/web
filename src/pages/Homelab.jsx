@@ -33,7 +33,14 @@ const Homelab = () => {
     hardwareSection,
     hardwareOptions,
     ctaSection,
-    ctaCards
+    ctaCards,
+    statsBanner,
+    bentoFeatures,
+    bentoHighlight,
+    illustratedSelfHosted,
+    terminalPreview,
+    illustratedDNS,
+    hardwareFeatures,
   } = homelabContent;
 
   return (
@@ -53,12 +60,7 @@ const Homelab = () => {
       <ContentSection background="dark-surface" padding="small">
         <StatsBanner
           variant="default"
-          stats={[
-            { value: "~15 min", label: "Setup Time" },
-            { value: "$0", label: "Cost" },
-            { value: "1", label: "Server Needed" },
-            { value: "3+", label: "Platforms Supported" },
-          ]}
+          stats={statsBanner}
         />
       </ContentSection>
 
@@ -73,13 +75,8 @@ const Homelab = () => {
           items={[
             {
               ...benefits[0],
-              features: [
-                "Zero cloud dependencies",
-                "No recurring subscription costs",
-                "Complete data ownership",
-                "Works offline when internet is down",
-              ],
-              highlight: "True digital sovereignty",
+              features: bentoFeatures,
+              highlight: bentoHighlight,
             },
             benefits[1],
             benefits[2],
@@ -92,15 +89,10 @@ const Homelab = () => {
 
       {/* Illustrated: Self-Hosted Control */}
       <IllustratedSection
-        subtitle="Complete Ownership"
-        title="Your Infrastructure, Your Rules"
-        description="Run everything on your own hardware. No cloud dependencies, no subscription fees, no data leaving your network. True digital sovereignty for your homelab."
-        features={[
-          "Zero cloud dependencies",
-          "No recurring subscription costs",
-          "Complete data ownership",
-          "Works offline when internet is down",
-        ]}
+        subtitle={illustratedSelfHosted.subtitle}
+        title={illustratedSelfHosted.title}
+        description={illustratedSelfHosted.description}
+        features={illustratedSelfHosted.features}
         illustration={SelfHostedIllustration}
         illustrationPosition="right"
         illustrationSize="large"
@@ -121,31 +113,11 @@ const Homelab = () => {
       {/* Terminal Preview - shows actual install commands */}
       <ContentSection>
         <TerminalPreview
-          title="Up and Running in Minutes"
-          description="A single command installs everything. No complex configuration, no networking expertise required. Just run the installer and your homelab is connected."
+          title={terminalPreview.title}
+          description={terminalPreview.description}
           position="right"
-          features={[
-            "One-line installation script",
-            "Auto-detects your environment",
-            "Pre-configured for common setups",
-            "Detailed logs for troubleshooting",
-          ]}
-          lines={[
-            { type: 'comment', text: 'Download and run the installer' },
-            { type: 'command', text: 'wget https://tunnels.is/install.sh && sudo bash install.sh' },
-            { type: 'output', text: 'Detecting system architecture...' },
-            { type: 'output', text: 'Found: linux/amd64' },
-            { type: 'success', text: 'Tunnels server installed successfully' },
-            { type: 'empty', text: '' },
-            { type: 'comment', text: 'Start and enable the service' },
-            { type: 'command', text: 'sudo systemctl enable --now tunnels' },
-            { type: 'success', text: 'Service started: tunnels.service' },
-            { type: 'empty', text: '' },
-            { type: 'comment', text: 'Check server status' },
-            { type: 'command', text: 'sudo systemctl status tunnels' },
-            { type: 'info', text: '● tunnels.service - Tunnels VPN Server' },
-            { type: 'success', text: '   Active: active (running)' },
-          ]}
+          features={terminalPreview.features}
+          lines={terminalPreview.lines}
         />
       </ContentSection>
 
@@ -164,15 +136,10 @@ const Homelab = () => {
 
       {/* DNS Features - IllustratedSection (2 of max 2 kept) */}
       <IllustratedSection
-        subtitle="Local Resolution"
-        title="Private DNS for Your Network"
-        description="Access your services by name instead of IP addresses. Tunnels provides automatic DNS resolution for all your connected devices and services."
-        features={[
-          "home.lan resolves to your server",
-          "Split-horizon DNS support",
-          "Automatic service discovery",
-          "Works with Pi-hole and AdGuard",
-        ]}
+        subtitle={illustratedDNS.subtitle}
+        title={illustratedDNS.title}
+        description={illustratedDNS.description}
+        features={illustratedDNS.features}
         illustration={DNSFlowIllustration}
         illustrationPosition="right"
         illustrationSize="large"
@@ -220,12 +187,7 @@ const Homelab = () => {
           description={hardwareSection.subtitle}
           position="right"
           accent="green"
-          features={[
-            "Runs on ARM and x86 architectures",
-            "As little as 512 MB RAM required",
-            "Minimal CPU overhead",
-            "Works inside Docker and VMs",
-          ]}
+          features={hardwareFeatures}
           cards={[
             {
               icon: hardwareOptions[0].icon,
@@ -249,7 +211,7 @@ const Homelab = () => {
             variant="banner"
             accent="green"
             icon={<ShieldCheckIcon />}
-            title="Pro Tip"
+            title={hardwareSection.proTipTitle}
             description={hardwareSection.proTip}
           />
         </div>

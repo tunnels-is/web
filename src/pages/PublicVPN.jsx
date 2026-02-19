@@ -30,12 +30,7 @@ const PublicVPN = () => {
       <ContentSection background="dark-surface">
         <StatsBanner
           variant="default"
-          stats={[
-            { value: "0 Logs", label: "No Third-Party Logging" },
-            { value: "100%", label: "Encrypted Traffic" },
-            { value: "Your Server", label: "Full Infrastructure Control" },
-            { value: "< 5 min", label: "Setup Time" },
-          ]}
+          stats={content.statsBanner}
         />
       </ContentSection>
 
@@ -54,15 +49,10 @@ const PublicVPN = () => {
 
       {/* Illustrated: Privacy */}
       <IllustratedSection
-        subtitle="True Privacy"
-        title="Browse Without Being Watched"
-        description="When you need to access the public internet privately, route your traffic through your own server. No third-party VPN provider sees your data."
-        features={[
-          "Your own server, your own IP",
-          "No logs by third parties",
-          "Full control over exit location",
-          "No bandwidth throttling"
-        ]}
+        subtitle={content.illustratedPrivacy.subtitle}
+        title={content.illustratedPrivacy.title}
+        description={content.illustratedPrivacy.description}
+        features={content.illustratedPrivacy.features}
         illustration={PrivacyShieldIllustration}
         illustrationPosition="right"
         illustrationSize="large"
@@ -71,29 +61,11 @@ const PublicVPN = () => {
       {/* Terminal Preview: Global Reach */}
       <ContentSection background="dark-surface">
         <TerminalPreview
-          title="Exit Points Anywhere"
-          description="Deploy your VPN server in any region for optimal performance. Choose locations based on your needs — close to you for speed, or in specific countries for access."
-          features={[
-            "50+ global cloud regions",
-            "Choose your IP location",
-            "Sub-100ms latency options",
-            "Multiple redundant servers"
-          ]}
+          title={content.terminalPreview.title}
+          description={content.terminalPreview.description}
+          features={content.terminalPreview.features}
           position="right"
-          lines={[
-            { type: "comment", text: "Deploy a VPN server in Frankfurt" },
-            { type: "command", text: "doctl compute droplet create vpn-eu-fra \\" },
-            { type: "output", text: "  --region fra1 --size s-1vcpu-1gb \\" },
-            { type: "output", text: "  --image ubuntu-22-04-x64" },
-            { type: "empty" },
-            { type: "success", text: "Droplet created: 49.12.xx.xx (Frankfurt)" },
-            { type: "empty" },
-            { type: "comment", text: "Install Tunnels server" },
-            { type: "command", text: "curl -fsSL https://get.tunnels.is | sh" },
-            { type: "empty" },
-            { type: "success", text: "Tunnels server installed and running" },
-            { type: "info", text: "Listening on :443 — ready for connections" },
-          ]}
+          lines={content.terminalPreview.lines}
         />
       </ContentSection>
 
@@ -120,31 +92,11 @@ const PublicVPN = () => {
       {/* Horizontal Steps: Easy Deployment */}
       <ContentSection background="dark-surface">
         <SectionHeader
-          title="Deploy in Minutes"
-          subtitle="Get your public VPN server running in under 5 minutes with one-command deployment scripts that work with all major cloud providers."
+          title={content.deployHeader.title}
+          subtitle={content.deployHeader.subtitle}
         />
         <HorizontalSteps
-          steps={[
-            {
-              title: "Deploy a Cloud Server",
-              description: "Spin up a VPS on any cloud provider in your preferred location. Even the smallest instance works.",
-              command: "doctl compute droplet create vpn-server"
-            },
-            {
-              title: "Install Tunnels Server",
-              description: "Download and run the Tunnels server binary. Single command deployment with auto-configured firewall rules.",
-              command: "curl -fsSL https://get.tunnels.is | sh"
-            },
-            {
-              title: "Configure Public Routing",
-              description: "Enable NAT and configure your server to route traffic to the internet. Free SSL certificates included.",
-              command: "tunnels enable-nat --auto"
-            },
-            {
-              title: "Connect & Browse",
-              description: "Connect your devices and enjoy a secure, private connection to the internet with automatic updates available."
-            }
-          ]}
+          steps={content.deploySteps}
           variant="default"
         />
       </ContentSection>

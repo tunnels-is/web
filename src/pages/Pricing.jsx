@@ -10,15 +10,16 @@ import IllustratedSection from '../components/IllustratedSection';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
 
+const { zeroCostBadge: _zcBadge } = pricingContent;
 const ZeroCostBadge = () => (
   <div className="text-center">
-    <div className="text-5xl md:text-7xl font-bold text-dark-accent-tertiary leading-none tracking-tight">$0</div>
-    <div className="text-sm text-dark-text-secondary mt-3 font-medium">Self-host cost</div>
+    <div className="text-5xl md:text-7xl font-bold text-dark-accent-tertiary leading-none tracking-tight">{_zcBadge.value}</div>
+    <div className="text-sm text-dark-text-secondary mt-3 font-medium">{_zcBadge.label}</div>
   </div>
 );
 
 const Pricing = () => {
-  const { hero, subscriptions, anonymousKey, freeFeatures, cta } = pricingContent;
+  const { hero, subscriptions, anonymousKey, freeFeatures, cta, comparisonSection, comparisonCards, illustratedSelfHosted } = pricingContent;
 
   return (
     <div className="min-h-screen">
@@ -51,48 +52,22 @@ const Pricing = () => {
       {/* Comparison: Commercial VPNs vs Tunnels */}
       <ContentSection background="dark-surface">
         <SectionHeader
-          title="Why Pay More?"
-          subtitle="Compare Tunnels to commercial VPN services"
+          title={comparisonSection.title}
+          subtitle={comparisonSection.subtitle}
         />
         <ComparisonCards
-          dividerLabel="vs"
-          leftCard={{
-            title: "Commercial VPNs",
-            subtitle: "$5-15/month",
-            items: [
-              "Monthly subscription required",
-              "Limited device connections",
-              "Their servers, their rules",
-              "Closed-source software",
-              "Trust their no-logs claims"
-            ]
-          }}
-          rightCard={{
-            title: "Tunnels",
-            subtitle: "Free forever",
-            accent: "green",
-            items: [
-              "No recurring fees",
-              "Unlimited devices",
-              "Your server, your control",
-              "100% open source",
-              "Verify — don't trust"
-            ]
-          }}
+          dividerLabel={comparisonCards.dividerLabel}
+          leftCard={comparisonCards.leftCard}
+          rightCard={comparisonCards.rightCard}
         />
       </ContentSection>
 
       {/* Self-Hosted */}
       <IllustratedSection
-        subtitle="Self-Hosted"
-        title="Own Your Infrastructure"
-        description="Deploy on your own servers and pay nothing to us. Full control over your data, your network, and your costs."
-        features={[
-          "Run on your own hardware",
-          "No recurring fees required",
-          "Full data sovereignty",
-          "Commercial use allowed"
-        ]}
+        subtitle={illustratedSelfHosted.subtitle}
+        title={illustratedSelfHosted.title}
+        description={illustratedSelfHosted.description}
+        features={illustratedSelfHosted.features}
         illustration={ZeroCostBadge}
         illustrationPosition="left"
         illustrationSize="small"

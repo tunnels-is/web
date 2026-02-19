@@ -22,7 +22,8 @@ const PersonalVPN = () => {
     hero, benefitsSection, benefits, useCasesSection, useCases,
     technicalSection, technicalFeatures, setupSection, setupSteps,
     comparisonSection, comparison, privacyHighlight, cloudProvidersSection,
-    cloudProviders, faqSection, faqs, finalCTA, ctaCards
+    cloudProviders, faqSection, faqs, finalCTA, ctaCards,
+    illustratedPrivacy, accessSection, quoteHighlight, proTipLabel
   } = personalVPNContent;
 
 
@@ -53,15 +54,10 @@ const PersonalVPN = () => {
 
       {/* Illustrated: Privacy Protection */}
       <IllustratedSection
-        subtitle="Zero Trust Architecture"
-        title="Your Privacy, Protected"
-        description="Unlike commercial VPNs, your data never touches third-party servers. Every packet is encrypted end-to-end, and only you hold the keys."
-        features={[
-          "No logs policy - we can't see your traffic",
-          "You control the encryption keys",
-          "No third-party data access",
-          "Open-source and auditable"
-        ]}
+        subtitle={illustratedPrivacy.subtitle}
+        title={illustratedPrivacy.title}
+        description={illustratedPrivacy.description}
+        features={illustratedPrivacy.features}
         illustration={PrivacyShieldIllustration}
         illustrationPosition="right"
         illustrationSize="large"
@@ -106,30 +102,13 @@ const PersonalVPN = () => {
       {/* Global Access: ComparisonCards */}
       <ContentSection>
         <SectionHeader
-          title="Access Your Network Anywhere"
-          subtitle="Worldwide Connectivity"
+          title={accessSection.title}
+          subtitle={accessSection.subtitle}
         />
         <ComparisonCards
-          dividerLabel="vs"
-          leftCard={{
-            title: "Without Tunnels",
-            items: [
-              "Exposed on public WiFi",
-              "Geo-blocked from your own content",
-              "ISP monitors your traffic",
-              "Complex port forwarding"
-            ]
-          }}
-          rightCard={{
-            title: "With Tunnels",
-            accent: "teal",
-            items: [
-              "Encrypted on any network",
-              "Access your content anywhere",
-              "Zero visibility to ISP",
-              "Zero-config remote access"
-            ]
-          }}
+          dividerLabel={accessSection.dividerLabel}
+          leftCard={accessSection.leftCard}
+          rightCard={accessSection.rightCard}
         />
       </ContentSection>
 
@@ -177,9 +156,9 @@ const PersonalVPN = () => {
       {/* Deploy Anywhere: QuoteHighlight */}
       <ContentSection>
         <QuoteHighlight
-          quote="I moved away from commercial VPNs two years ago. Running my own Tunnels server on a $5 VPS gives me better performance, real privacy, and I know exactly what's happening with my traffic."
-          author="Self-Hosted Community"
-          role="Tunnels User"
+          quote={quoteHighlight.quote}
+          author={quoteHighlight.author}
+          role={quoteHighlight.role}
           accent="blue"
           variant="large"
         />
@@ -196,7 +175,7 @@ const PersonalVPN = () => {
         />
         <div className="mt-8 text-center p-5 transition-colors">
           <p className="text-sm text-dark-text-secondary">
-            <span className="text-dark-accent-primary font-semibold">Pro Tip:</span>
+            <span className="text-dark-accent-primary font-semibold">{proTipLabel}</span>
             {" "}{cloudProvidersSection.proTip}
           </p>
         </div>

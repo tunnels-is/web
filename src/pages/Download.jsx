@@ -11,7 +11,7 @@ import {
 } from '../components/illustrations';
 
 const Download = () => {
-  const { version, hero, platforms, allReleasesSection, quickStart, whatsIncluded, helpSection } = downloadContent;
+  const { version, hero, platforms, allReleasesSection, quickStart, whatsIncluded, helpSection, illustratedPlatforms } = downloadContent;
 
   return (
     <div className="min-h-screen">
@@ -28,15 +28,10 @@ const Download = () => {
 
       {/* Illustrated: Cross-Platform */}
       <IllustratedSection
-        subtitle="Universal Support"
-        title="Run Anywhere"
-        description="Native applications for every major platform. Whether you're on desktop, server, or mobile - tunnels runs natively without emulation or compatibility layers."
-        features={[
-          "Native Windows, macOS, Linux apps",
-          "iOS and Android mobile clients",
-          "Docker containers available",
-          "ARM and x86 architecture support"
-        ]}
+        subtitle={illustratedPlatforms.subtitle}
+        title={illustratedPlatforms.title}
+        description={illustratedPlatforms.description}
+        features={illustratedPlatforms.features}
         illustration={DownloadIllustration}
         illustrationPosition="right"
         illustrationSize="large"

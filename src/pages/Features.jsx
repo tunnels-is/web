@@ -14,40 +14,25 @@ import {
   EncryptionIllustration,
 } from '../components/illustrations';
 
-const MITBadge = () => (
+const { openSourceBadge: _osBadge } = featuresContent;
+const OpenSourceBadge = () => (
   <div className="text-center">
-    <div className="text-5xl md:text-7xl font-bold text-dark-accent-green leading-none tracking-tight">MIT</div>
-    <div className="text-sm text-dark-text-secondary mt-3 font-medium">Licensed</div>
+    <div className="text-5xl md:text-7xl font-bold text-dark-accent-green leading-none tracking-tight">{_osBadge.title}</div>
+    <div className="text-sm text-dark-text-secondary mt-3 font-medium">{_osBadge.subtitle}</div>
   </div>
 );
 
 const Features = () => {
   const [ref1, isVisible1] = useScrollAnimation();
 
-  const { hero, basicFeatures, advancedFeatures, cta } = featuresContent;
+  const {
+    hero, basicFeatures, advancedFeatures, cta,
+    performanceStats, terminalPreview, bentoExtraFeatures,
+    illustratedSecurity, illustratedOpenSource,
+  } = featuresContent;
 
   const basicFeaturesData = basicFeatures.features;
   const advancedFeaturesData = advancedFeatures.features;
-
-  const performanceStats = [
-    { value: '10+ Gbps', label: 'Throughput' },
-    { value: '<1ms', label: 'Latency' },
-    { value: 'Minimal', label: 'CPU Usage' },
-    { value: 'All', label: 'Platforms' },
-  ];
-
-  const terminalLines = [
-    { type: 'comment', text: 'Connect to your private network' },
-    { type: 'command', text: 'tunnels connect --network mycompany' },
-    { type: 'success', text: 'Connected to mycompany (3 peers)' },
-    { type: 'empty' },
-    { type: 'comment', text: 'Check connection status' },
-    { type: 'command', text: 'tunnels status' },
-    { type: 'info', text: 'Network: mycompany' },
-    { type: 'info', text: 'Peers: 3 connected' },
-    { type: 'info', text: 'Latency: 0.8ms avg' },
-    { type: 'output', text: 'DNS: secure (1.2M domains blocked)' },
-  ];
 
   // Create bento items from first few advanced features
   const bentoItems = advancedFeaturesData.slice(0, 5).map((f, i) => ({
@@ -55,8 +40,8 @@ const Features = () => {
     description: f.description || f.content,
     icon: f.icon,
     ...(i === 0 ? {
-      features: ['Multi-network simultaneous connections', 'Automatic failover', 'Load balancing'],
-      highlight: 'Core Feature'
+      features: bentoExtraFeatures.features,
+      highlight: bentoExtraFeatures.highlight,
     } : {})
   }));
 
@@ -98,15 +83,10 @@ const Features = () => {
 
       {/* Illustrated: Encryption */}
       <IllustratedSection
-        subtitle="Modern Encryption"
-        title="Secure by Design"
-        description="Tunnels uses modern cryptographic primitives and a minimal codebase to deliver strong security with exceptional performance."
-        features={[
-          "End-to-end encrypted tunnels",
-          "Lightweight, auditable codebase",
-          "Zero-knowledge architecture",
-          "Cross-platform support"
-        ]}
+        subtitle={illustratedSecurity.subtitle}
+        title={illustratedSecurity.title}
+        description={illustratedSecurity.description}
+        features={illustratedSecurity.features}
         illustration={EncryptionIllustration}
         illustrationPosition="right"
         illustrationSize="large"
@@ -116,15 +96,10 @@ const Features = () => {
       {/* Terminal: How it works */}
       <ContentSection background="dark-surface">
         <TerminalPreview
-          title="Simple, Powerful CLI"
-          description="Get connected in seconds with an intuitive command-line interface. No complex configuration files, no manual key exchange — just connect and go."
-          features={[
-            "Single binary, zero dependencies",
-            "Auto-discovery of network peers",
-            "Built-in DNS security",
-            "Real-time connection monitoring"
-          ]}
-          lines={terminalLines}
+          title={terminalPreview.title}
+          description={terminalPreview.description}
+          features={terminalPreview.features}
+          lines={terminalPreview.lines}
           position="right"
         />
       </ContentSection>
@@ -149,16 +124,11 @@ const Features = () => {
 
       {/* Open Source */}
       <IllustratedSection
-        subtitle="Open Source"
-        title="100% Open Source"
-        description="Every line of Tunnels is open for inspection, audit, and contribution. No black boxes, no hidden telemetry. Fork it, self-host it, trust it."
-        features={[
-          "MIT licensed — free forever",
-          "Active community on GitHub",
-          "Regular security audits",
-          "Self-host or use managed service"
-        ]}
-        illustration={MITBadge}
+        subtitle={illustratedOpenSource.subtitle}
+        title={illustratedOpenSource.title}
+        description={illustratedOpenSource.description}
+        features={illustratedOpenSource.features}
+        illustration={OpenSourceBadge}
         illustrationPosition="left"
         illustrationSize="small"
         dark={true}

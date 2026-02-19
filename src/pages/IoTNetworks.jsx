@@ -20,7 +20,9 @@ const IoTNetworks = () => {
   const {
     hero, benefitsSection, benefits, useCasesSection, useCases,
     securitySection, architectureSection,
-    setupSection, setupSteps, faqSection, faqs, finalCTA, ctaCards
+    setupSection, setupSteps, faqSection, faqs, finalCTA, ctaCards,
+    statsBanner, illustratedConnectivity, architectureBentoItems,
+    securityTable, encryptionCallout,
   } = iotNetworksContent;
 
   return (
@@ -39,12 +41,7 @@ const IoTNetworks = () => {
       <ContentSection background="dark-surface">
         <StatsBanner
           variant="default"
-          stats={[
-            { value: "65K+", label: "Devices per Server" },
-            { value: "Zero Trust", label: "Authentication" },
-            { value: "<1ms", label: "Tunnel Overhead" },
-            { value: "Any Protocol", label: "TCP, UDP & More" },
-          ]}
+          stats={statsBanner}
         />
       </ContentSection>
 
@@ -63,15 +60,10 @@ const IoTNetworks = () => {
 
       {/* Illustrated: Secure IoT Mesh */}
       <IllustratedSection
-        subtitle="Mesh Connectivity"
-        title="Connect All Your IoT Devices"
-        description="Create a secure mesh network for your IoT infrastructure. Every device communicates through encrypted tunnels, isolated from the public internet."
-        features={[
-          "Zero-trust device authentication",
-          "Automatic mesh routing",
-          "Works with any IoT protocol",
-          "No open ports on devices"
-        ]}
+        subtitle={illustratedConnectivity.subtitle}
+        title={illustratedConnectivity.title}
+        description={illustratedConnectivity.description}
+        features={illustratedConnectivity.features}
         illustration={IoTNetworkIllustration}
         illustrationPosition="right"
         illustrationSize="large"
@@ -97,31 +89,7 @@ const IoTNetworks = () => {
         />
         <BentoGrid
           layout="featured"
-          items={[
-            {
-              title: "Tunnels Server",
-              description: "A single server manages your entire IoT fleet — handling authentication, device registry, IP assignment, and encrypted routing between all connected devices.",
-              features: [
-                "Runs on any Linux system",
-                "Built-in DHCP for automatic IP assignment",
-                "Centralized admin dashboard",
-                "Scales to 65,535 concurrent devices",
-              ],
-              highlight: "One server, unlimited deployments",
-            },
-            {
-              title: "IoT Clients",
-              description: "Lightweight CLI client installs on any device. Sensors, cameras, gateways, and edge nodes connect with a single token — no GUI required.",
-            },
-            {
-              title: "Network Segmentation",
-              description: "Group devices into isolated subnets. Each segment gets its own access rules, keeping IoT traffic separate from other network traffic.",
-            },
-            {
-              title: "Encrypted Tunnels",
-              description: "Every packet travels through an AES-256-GCM encrypted tunnel. Devices communicate securely regardless of the underlying network.",
-            },
-          ]}
+          items={architectureBentoItems}
         />
       </ContentSection>
 
@@ -133,16 +101,9 @@ const IoTNetworks = () => {
         />
         <div className="max-w-4xl mx-auto">
           <FeatureTable
-            headers={["Security Feature", "Description", "Enabled by Default"]}
-            rows={[
-              ["Strong Encryption", "AES-256-GCM with X25519 + ML-KEM hybrid key exchange", true],
-              ["Device Authentication", "Token-based headless auth — no interactive login required", true],
-              ["Access Control Groups", "Per-group policies controlling which devices can talk to each other", true],
-              ["Per-Device Firewall", "Configurable firewall rules blocking unwanted traffic per device", true],
-              ["Perfect Forward Secrecy", "Ephemeral session keys ensure past sessions can't be decrypted", true],
-              ["Network Isolation", "IoT traffic isolated from main network via separate subnets", true],
-            ]}
-            caption="All security features are active out of the box — no additional configuration required."
+            headers={securityTable.headers}
+            rows={securityTable.rows}
+            caption={securityTable.caption}
           />
         </div>
       </ContentSection>
@@ -156,14 +117,9 @@ const IoTNetworks = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
           }
-          title="Encryption for Every Packet"
-          description="All IoT data is encrypted at the device level before transmission. Even if network traffic is intercepted, your data remains completely unreadable. AES-256-GCM with post-quantum key exchange protects every byte from sensor to server."
-          features={[
-            "AES-256-GCM encryption standard",
-            "Per-device unique session keys",
-            "Perfect forward secrecy",
-            "Post-quantum ML-KEM key exchange",
-          ]}
+          title={encryptionCallout.title}
+          description={encryptionCallout.description}
+          features={encryptionCallout.features}
         />
       </ContentSection>
 

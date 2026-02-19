@@ -12,68 +12,49 @@ import {
   SecureConnectionIllustration,
 } from '../components/illustrations';
 
-const MITBadge = () => (
+const { openSourceBadge: _osBadge } = homeContent;
+const OpenSourceBadge = () => (
   <div className="text-center">
-    <div className="text-5xl md:text-7xl font-bold text-dark-accent-green leading-none tracking-tight">MIT</div>
-    <div className="text-sm text-dark-text-secondary mt-3 font-medium">Licensed</div>
+    <div className="text-5xl md:text-7xl font-bold text-dark-accent-green leading-none tracking-tight">{_osBadge.title}</div>
+    <div className="text-sm text-dark-text-secondary mt-3 font-medium">{_osBadge.subtitle}</div>
   </div>
 );
 
 const Home = () => {
   const [topicsRef, topicsVisible] = useScrollAnimation();
   const [useCasesRef, useCasesVisible] = useScrollAnimation();
-  const { hero, topicsSection, featuresSection, features, cta } = homeContent;
+  const {
+    hero, topicsSection, featuresSection, features, cta,
+    useCaseCards, highlights, environmentHeader,
+    illustratedSecurity, illustratedOpenSource,
+  } = homeContent;
 
-  const useCaseCards = [
-    {
-      title: 'Personal VPN',
-      description: 'Secure your internet connection and access your home network from anywhere.',
-      path: '/personal-vpn',
-      icon: (
-        <svg className="w-full h-full" viewBox="0 0 48 48" fill="none">
-          <rect x="8" y="6" width="32" height="36" rx="4" stroke="#3b82f6" strokeWidth="2" fill="#3b82f6" fillOpacity="0.1"/>
-          <circle cx="24" cy="22" r="6" stroke="#3b82f6" strokeWidth="2"/>
-          <path d="M16 36c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
-        </svg>
-      ),
-    },
-    {
-      title: 'Homelab',
-      description: 'Self-host your VPN and securely access your homelab from anywhere in the world.',
-      path: '/homelab',
-      icon: (
-        <svg className="w-full h-full" viewBox="0 0 48 48" fill="none">
-          <rect x="6" y="10" width="36" height="10" rx="2" stroke="#06b6d4" strokeWidth="2" fill="#06b6d4" fillOpacity="0.1"/>
-          <rect x="6" y="24" width="36" height="10" rx="2" stroke="#06b6d4" strokeWidth="2" fill="#06b6d4" fillOpacity="0.1"/>
-          <circle cx="12" cy="15" r="2" fill="#06b6d4"/>
-          <circle cx="12" cy="29" r="2" fill="#06b6d4"/>
-          <path d="M18 15h18M18 29h18" stroke="#06b6d4" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
-          <path d="M24 38v4M20 42h8" stroke="#06b6d4" strokeWidth="2" strokeLinecap="round"/>
-        </svg>
-      ),
-    },
-    {
-      title: 'Enterprise',
-      description: 'Scale across teams and offices with centralized management and access control.',
-      path: '/enterprise',
-      icon: (
-        <svg className="w-full h-full" viewBox="0 0 48 48" fill="none">
-          <rect x="14" y="6" width="20" height="36" rx="2" stroke="#8b5cf6" strokeWidth="2" fill="#8b5cf6" fillOpacity="0.1"/>
-          <path d="M18 14h12M18 20h12M18 26h12M18 32h12" stroke="#8b5cf6" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
-          <rect x="6" y="18" width="8" height="24" rx="1" stroke="#8b5cf6" strokeWidth="2" fill="#8b5cf6" fillOpacity="0.05"/>
-          <rect x="34" y="18" width="8" height="24" rx="1" stroke="#8b5cf6" strokeWidth="2" fill="#8b5cf6" fillOpacity="0.05"/>
-        </svg>
-      ),
-    },
-  ];
-
-  const highlights = [
-    { title: 'Multi-Network', desc: 'Connect to multiple networks simultaneously' },
-    { title: 'DNS Security', desc: 'Built-in threat blocking with daily updates' },
-    { title: 'Open Source', desc: 'Fully transparent, auditable code' },
-    { title: 'Self-Hosted', desc: 'Run on your own infrastructure' },
-    { title: 'Cross-Platform', desc: 'Windows, macOS, Linux, and more' },
-    { title: 'Encrypted', desc: 'End-to-end encrypted tunnels by default' },
+  const useCaseIcons = [
+    (
+      <svg className="w-full h-full" viewBox="0 0 48 48" fill="none">
+        <rect x="8" y="6" width="32" height="36" rx="4" stroke="#3b82f6" strokeWidth="2" fill="#3b82f6" fillOpacity="0.1"/>
+        <circle cx="24" cy="22" r="6" stroke="#3b82f6" strokeWidth="2"/>
+        <path d="M16 36c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    ),
+    (
+      <svg className="w-full h-full" viewBox="0 0 48 48" fill="none">
+        <rect x="6" y="10" width="36" height="10" rx="2" stroke="#06b6d4" strokeWidth="2" fill="#06b6d4" fillOpacity="0.1"/>
+        <rect x="6" y="24" width="36" height="10" rx="2" stroke="#06b6d4" strokeWidth="2" fill="#06b6d4" fillOpacity="0.1"/>
+        <circle cx="12" cy="15" r="2" fill="#06b6d4"/>
+        <circle cx="12" cy="29" r="2" fill="#06b6d4"/>
+        <path d="M18 15h18M18 29h18" stroke="#06b6d4" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
+        <path d="M24 38v4M20 42h8" stroke="#06b6d4" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    ),
+    (
+      <svg className="w-full h-full" viewBox="0 0 48 48" fill="none">
+        <rect x="14" y="6" width="20" height="36" rx="2" stroke="#8b5cf6" strokeWidth="2" fill="#8b5cf6" fillOpacity="0.1"/>
+        <path d="M18 14h12M18 20h12M18 26h12M18 32h12" stroke="#8b5cf6" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
+        <rect x="6" y="18" width="8" height="24" rx="1" stroke="#8b5cf6" strokeWidth="2" fill="#8b5cf6" fillOpacity="0.05"/>
+        <rect x="34" y="18" width="8" height="24" rx="1" stroke="#8b5cf6" strokeWidth="2" fill="#8b5cf6" fillOpacity="0.05"/>
+      </svg>
+    ),
   ];
 
   return (
@@ -104,8 +85,8 @@ const Home = () => {
       <ContentSection background="dark-surface">
         <div ref={useCasesRef}>
           <SectionHeader
-            title="Built for Every Environment"
-            subtitle="From personal devices to enterprise infrastructure"
+            title={environmentHeader.title}
+            subtitle={environmentHeader.subtitle}
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {useCaseCards.map((card, index) => (
@@ -120,7 +101,7 @@ const Home = () => {
                   className="block p-5 transition-all duration-200 group"
                 >
                   <div className="w-10 h-10 mb-3">
-                    {card.icon}
+                    {useCaseIcons[index]}
                   </div>
                   <h3 className="text-base font-semibold text-dark-text-primary mb-1.5 group-hover:text-dark-accent-primary transition-colors">
                     {card.title}
@@ -143,15 +124,10 @@ const Home = () => {
 
       {/* Illustrated: Secure Connections */}
       <IllustratedSection
-        subtitle="End-to-End Security"
-        title="Encrypted by Default"
-        description="Every connection is protected with modern cryptography. Your data travels through encrypted tunnels with zero-knowledge architecture."
-        features={[
-          "AES-256 encryption for all traffic",
-          "Perfect forward secrecy",
-          "No logs, no tracking, no metadata",
-          "Audited open-source code"
-        ]}
+        subtitle={illustratedSecurity.subtitle}
+        title={illustratedSecurity.title}
+        description={illustratedSecurity.description}
+        features={illustratedSecurity.features}
         illustration={SecureConnectionIllustration}
         illustrationPosition="left"
         illustrationSize="large"
@@ -160,16 +136,11 @@ const Home = () => {
 
       {/* Open Source */}
       <IllustratedSection
-        subtitle="Open Source"
-        title="100% Open Source"
-        description="Every line of code is open for inspection. No hidden backdoors, no proprietary black boxes. You can audit, fork, and self-host with full confidence."
-        features={[
-          "MIT licensed - free forever",
-          "Active community development",
-          "Self-host or use managed service",
-          "Regular security reviews"
-        ]}
-        illustration={MITBadge}
+        subtitle={illustratedOpenSource.subtitle}
+        title={illustratedOpenSource.title}
+        description={illustratedOpenSource.description}
+        features={illustratedOpenSource.features}
+        illustration={OpenSourceBadge}
         illustrationPosition="left"
         illustrationSize="small"
         dark={true}

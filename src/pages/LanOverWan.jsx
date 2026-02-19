@@ -30,12 +30,7 @@ const LanOverWan = () => {
       <ContentSection background="dark-surface" padding="small">
         <StatsBanner
           variant="default"
-          stats={[
-            { value: "<1ms", label: "Latency Overhead" },
-            { value: "10+ Gbps", label: "Throughput" },
-            { value: "Layer 2", label: "Connectivity" },
-            { value: "Any Location", label: "Site Support" },
-          ]}
+          stats={content.statsBanner}
         />
       </ContentSection>
 
@@ -54,15 +49,10 @@ const LanOverWan = () => {
 
       {/* Illustrated: Virtual LAN */}
       <IllustratedSection
-        subtitle="Seamless Integration"
-        title="One Network, Any Location"
-        description="Connect multiple physical locations as if they were on the same local network. File shares, printers, and services work exactly as they would in a single office."
-        features={[
-          "Layer 2 connectivity across sites",
-          "Full broadcast domain support",
-          "No IP conflicts with smart routing",
-          "Seamless failover between paths",
-        ]}
+        subtitle={content.illustratedIntegration.subtitle}
+        title={content.illustratedIntegration.title}
+        description={content.illustratedIntegration.description}
+        features={content.illustratedIntegration.features}
         illustration={LANOverWANIllustration}
         illustrationPosition="right"
         illustrationSize="large"
@@ -117,29 +107,10 @@ const LanOverWan = () => {
       <ContentSection>
         <TerminalPreview
           position="left"
-          title="High Speed, LAN Simplicity"
-          description="Built on a high-performance protocol, your LAN-over-WAN connections achieve near-native speeds with minimal latency overhead."
-          features={[
-            "Sub-millisecond latency overhead",
-            "10+ Gbps throughput capable",
-            "Efficient CPU utilization",
-            "Automatic path optimization",
-          ]}
-          lines={[
-            { type: "comment", text: "Deploy Tunnels server on primary site" },
-            { type: "command", text: "tunnels server start --lan-bridge eth0" },
-            { type: "success", text: "Server listening on :51820" },
-            { type: "success", text: "LAN bridge active on 192.168.1.0/24" },
-            { type: "empty" },
-            { type: "comment", text: "Connect a remote site" },
-            { type: "command", text: "tunnels connect --route 192.168.2.0/24" },
-            { type: "info", text: "Establishing encrypted tunnel..." },
-            { type: "success", text: "Tunnel up — RTT 0.8ms" },
-            { type: "empty" },
-            { type: "comment", text: "Verify cross-site connectivity" },
-            { type: "command", text: "ping 192.168.2.50" },
-            { type: "output", text: "64 bytes from 192.168.2.50: time=0.9ms" },
-          ]}
+          title={content.terminalPreview.title}
+          description={content.terminalPreview.description}
+          features={content.terminalPreview.features}
+          lines={content.terminalPreview.lines}
         />
       </ContentSection>
 
