@@ -43,7 +43,7 @@ const PricingHighlight = ({
                   initial={{ opacity: 0, y: 12 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/15"
+                  className="bg-white/10 backdrop-blur-sm p-6 rounded-xl"
                 >
                   <h3 className="text-lg font-bold mb-1.5">{item.title}</h3>
                   <p className="text-sm opacity-85">{item.description}</p>

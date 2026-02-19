@@ -17,7 +17,7 @@ const TechnicalFeaturesSection = ({
           initial={{ opacity: 0, y: 16 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.3, delay: categoryIndex * 0.08 }}
-          className="p-6 rounded-xl bg-dark-card border border-dark-border"
+          className="p-6 rounded-xl bg-dark-card"
         >
           <h3 className="text-xl font-bold mb-6">{category.category}</h3>
 

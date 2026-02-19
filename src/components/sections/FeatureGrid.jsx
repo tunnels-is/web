@@ -22,10 +22,10 @@ const FeatureGrid = ({
           initial={{ opacity: 0, y: 16 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.3, delay: index * 0.04, ease: [0.4, 0, 0.2, 1] }}
-          className={`group p-6 rounded-xl border transition-all duration-200 ${
+          className={`group p-6 rounded-xl transition-all duration-200 ${
             cardStyle === 'glass'
-              ? 'bg-dark-card/50 border-dark-border hover:border-dark-border-light hover:bg-dark-card'
-              : 'bg-dark-card border-dark-border hover:border-dark-border-light hover:bg-dark-elevated'
+              ? 'bg-dark-card/50 hover:bg-dark-card'
+              : 'bg-dark-card hover:bg-dark-elevated'
           }`}
         >
           {/* Icon */}
@@ -47,7 +47,7 @@ const FeatureGrid = ({
 
           {/* Scenario (if exists) */}
           {feature.scenario && (
-            <div className="mt-4 p-3 rounded-lg bg-dark-bg/50 border-l-2 border-dark-accent-primary/40">
+            <div className="mt-4 p-3 rounded-lg bg-dark-bg/50">
               <p className="text-xs text-dark-text-muted italic">
                 {feature.scenario}
               </p>

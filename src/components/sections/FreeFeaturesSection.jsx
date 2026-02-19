@@ -16,7 +16,7 @@ const FreeFeaturesSection = ({ title, description, features }) => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {features.map((feature, index) => (
-            <div key={index} className="p-6 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-colors">
+            <div key={index} className="p-6 rounded-xl bg-dark-card hover:bg-dark-elevated transition-colors">
               <h3 className="text-lg font-semibold text-dark-accent-primary mb-2">
                 {feature.title}
               </h3>

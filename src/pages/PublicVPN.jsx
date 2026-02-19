@@ -26,7 +26,6 @@ const PublicVPN = () => {
         description={content.hero.description}
         buttons={content.hero.buttons}
         quickStats={content.hero.quickStats}
-        showGeometricShapes={true}
       />
 
       {/* Benefits Section */}
@@ -95,7 +94,7 @@ const PublicVPN = () => {
         />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {content.providers.map((provider, index) => (
-            <div key={index} className="p-5 rounded-xl bg-dark-card border border-dark-border text-center">
+            <div key={index} className="p-5 rounded-xl bg-dark-card text-center">
               <h3 className="text-base font-bold text-dark-text-primary mb-1">{provider.name}</h3>
               <p className="text-xl font-bold text-dark-accent-primary mb-1">{provider.price}</p>
               <p className="text-dark-text-muted text-xs">{provider.region}</p>

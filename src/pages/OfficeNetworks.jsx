@@ -24,7 +24,6 @@ const OfficeNetworks = () => {
         subtitle={hero.subtitle}
         description={hero.description}
         buttons={hero.buttons}
-        showNetworkLines={true}
       />
 
       {/* Benefits Section */}

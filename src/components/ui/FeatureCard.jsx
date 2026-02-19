@@ -9,7 +9,7 @@ const FeatureCard = ({
   const text = content || description;
 
   return (
-    <div className="group p-6 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-all duration-200">
+    <div className="group p-6 rounded-xl bg-dark-card hover:bg-dark-elevated transition-all duration-200">
       {icon && (
         <div className="w-12 h-12 mb-4">{icon}</div>
       )}

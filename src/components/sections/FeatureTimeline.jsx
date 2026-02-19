@@ -63,7 +63,7 @@ const FeatureTimeline = ({
 
 const StepContent = ({ step, index, position = "right" }) => {
   return (
-    <div className="p-5 rounded-xl bg-dark-card border border-dark-border">
+    <div className="p-5 rounded-xl bg-dark-card">
       <h3 className="text-lg font-bold text-dark-text-primary mb-2">
         {step.title}
       </h3>
@@ -74,7 +74,7 @@ const StepContent = ({ step, index, position = "right" }) => {
       {(step.command || step.specs || step.details || step.providers) && (
         <div className="space-y-3">
           {step.command && (
-            <div className="bg-dark-bg/60 p-3 rounded-lg border border-dark-border">
+            <div className="bg-dark-bg/60 p-3 rounded-lg">
               <div className="flex items-start gap-2">
                 <svg className="w-4 h-4 text-dark-accent-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -100,7 +100,7 @@ const StepContent = ({ step, index, position = "right" }) => {
               {step.providers.map((provider, idx) => (
                 <span
                   key={idx}
-                  className="px-2.5 py-0.5 bg-dark-accent-primary/10 text-dark-accent-primary text-xs font-medium rounded-full border border-dark-accent-primary/20"
+                  className="px-2.5 py-0.5 bg-dark-accent-primary/10 text-dark-accent-primary text-xs font-medium rounded-full"
                 >
                   {provider}
                 </span>

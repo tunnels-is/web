@@ -114,7 +114,7 @@ const TopBar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 4 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute top-full left-0 mt-1 w-52 bg-dark-surface border border-dark-border rounded-lg shadow-xl shadow-black/20 overflow-hidden"
+                        className="absolute top-full left-0 mt-1 w-52 bg-dark-surface rounded-lg shadow-xl shadow-black/30 overflow-hidden"
                       >
                         {link.dropdown.map((item) => (
                           item.external ? (
@@ -199,7 +199,7 @@ const TopBar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden bg-dark-surface border-t border-dark-border"
+            className="lg:hidden bg-dark-surface"
           >
             <div className="px-4 py-3 space-y-1 max-h-[80vh] overflow-y-auto">
               {navLinks.map((link, idx) => (
@@ -269,7 +269,7 @@ const TopBar = () => {
                   </Link>
                 )
               ))}
-              <div className="pt-3 border-t border-dark-border">
+              <div className="pt-3">
                 <Link to="/download" className="btn-primary w-full text-center text-sm py-2.5">
                   Download
                 </Link>

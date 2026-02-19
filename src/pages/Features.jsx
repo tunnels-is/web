@@ -29,7 +29,6 @@ const Features = () => {
         subtitle={hero.subtitle}
         description={hero.description}
         buttons={hero.buttons}
-        showNetworkLines={true}
       />
 
       {/* Basic Features */}

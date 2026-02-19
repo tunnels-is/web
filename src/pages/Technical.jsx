@@ -20,7 +20,6 @@ const Technical = () => {
       <HeroSimple
         title={hero.title}
         description={hero.description}
-        showNetworkLines={true}
       />
 
       {/* Public Routable VPN Section */}

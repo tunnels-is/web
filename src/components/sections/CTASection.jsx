@@ -19,7 +19,7 @@ const CTASection = ({
             initial={{ opacity: 0, y: 16 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-            className="p-10 md:p-14 rounded-2xl bg-dark-card border border-dark-border"
+            className="p-10 md:p-14 rounded-2xl bg-dark-card"
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight">
               {title}
@@ -73,7 +73,7 @@ const CTASection = ({
                 initial={{ opacity: 0, y: 16 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.3, delay: index * 0.05, ease: [0.4, 0, 0.2, 1] }}
-                className="group p-8 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-all duration-200"
+                className="group p-8 rounded-xl bg-dark-card hover:bg-dark-elevated transition-all duration-200"
               >
                 {card.icon && (
                   <div className="w-14 h-14 mb-5">{card.icon}</div>

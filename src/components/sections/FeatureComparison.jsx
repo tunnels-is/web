@@ -16,13 +16,7 @@ const FeatureComparison = ({
           initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.25, delay: index * 0.04 }}
-          className={`rounded-xl bg-dark-card border overflow-hidden transition-all ${
-            item.winner === 'personal'
-              ? 'border-dark-accent-primary/40'
-              : item.winner === 'commercial'
-              ? 'border-dark-accent-secondary/40'
-              : 'border-dark-border'
-          }`}
+          className="rounded-xl bg-dark-card overflow-hidden transition-all"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-5 items-center">
             <div className="md:col-span-1">

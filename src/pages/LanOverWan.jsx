@@ -28,7 +28,6 @@ const LanOverWan = () => {
         description={content.hero.description}
         buttons={content.hero.buttons}
         quickStats={content.hero.quickStats}
-        showGeometricShapes={true}
       />
 
       {/* Benefits Section */}

@@ -7,7 +7,7 @@ const DownloadHelpSection = ({ title, description, buttons }) => {
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="p-10 rounded-2xl bg-dark-card border border-dark-border text-center max-w-3xl mx-auto"
+        className="p-10 rounded-2xl bg-dark-card text-center max-w-3xl mx-auto"
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight">
           {title}

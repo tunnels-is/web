@@ -80,11 +80,10 @@ const Home = () => {
         subtitle={hero.subtitle}
         description={hero.description}
         buttons={hero.buttons}
-        showNetworkLines={true}
       />
 
       {/* Key Highlights - suzko-style compact feature bar */}
-      <section className="border-y border-dark-border bg-dark-surface/50">
+      <section className="bg-dark-surface/50">
         <div ref={highlightsRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {highlights.map((item, index) => (
@@ -133,7 +132,7 @@ const Home = () => {
               >
                 <Link
                   to={card.path}
-                  className="block p-6 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-all duration-200 group"
+                  className="block p-6 rounded-xl bg-dark-card hover:bg-dark-elevated transition-all duration-200 group"
                 >
                   <div className="w-12 h-12 mb-4">
                     {card.icon}
@@ -207,7 +206,7 @@ const Home = () => {
                 initial={{ opacity: 0 }}
                 animate={topicsVisible ? { opacity: 1 } : {}}
                 transition={{ duration: 0.25, delay: index * 0.03 }}
-                className="px-5 py-2.5 bg-dark-card border border-dark-border rounded-lg text-sm font-medium text-dark-text-secondary hover:text-dark-accent-primary hover:border-dark-border-light transition-all duration-150"
+                className="px-5 py-2.5 bg-dark-card rounded-lg text-sm font-medium text-dark-text-secondary hover:text-dark-accent-primary hover:bg-dark-elevated transition-all duration-150"
               >
                 {topic.label}
               </motion.a>

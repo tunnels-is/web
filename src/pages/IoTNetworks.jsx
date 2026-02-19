@@ -35,8 +35,6 @@ const IoTNetworks = () => {
         description={hero.description}
         buttons={hero.buttons}
         quickStats={hero.quickStats}
-        showGeometricShapes={true}
-        showRadialGlow={false}
       />
 
       {/* Benefits Section */}

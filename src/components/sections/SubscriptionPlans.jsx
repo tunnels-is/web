@@ -9,10 +9,10 @@ const SubscriptionPlans = ({ subscriptions }) => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.08, duration: 0.3 }}
-          className={`relative p-7 rounded-xl border transition-all ${
+          className={`relative p-7 rounded-xl transition-all ${
             plan.popular
-              ? 'border-dark-accent-primary bg-dark-card shadow-lg shadow-dark-accent-primary/10'
-              : 'border-dark-border bg-dark-card hover:border-dark-border-light'
+              ? 'bg-dark-card shadow-lg shadow-dark-accent-primary/10 ring-1 ring-dark-accent-primary/30'
+              : 'bg-dark-card hover:bg-dark-elevated'
           }`}
         >
           {plan.popular && (

@@ -18,7 +18,6 @@ const DNS = () => {
         title={dnsContent.hero.title}
         subtitle={dnsContent.hero.subtitle}
         description={dnsContent.hero.description}
-        showNetworkLines={dnsContent.hero.showNetworkLines}
         buttons={dnsContent.hero.buttons}
       />
 
@@ -58,7 +57,7 @@ const DNS = () => {
           subtitle="Configure DNS on your tunnels server"
         />
         <div className="max-w-4xl mx-auto">
-          <div className="p-6 rounded-xl bg-dark-card border border-dark-border">
+          <div className="p-6 rounded-xl bg-dark-card">
             <p className="text-dark-text-secondary text-sm leading-relaxed mb-3">{dnsContent.serverDNS.description1}</p>
             <p className="text-dark-text-secondary text-sm leading-relaxed">{dnsContent.serverDNS.description2}</p>
           </div>
@@ -86,7 +85,7 @@ const DNS = () => {
           subtitle="Automatic configuration for connected devices"
         />
         <div className="max-w-4xl mx-auto">
-          <div className="p-6 rounded-xl bg-dark-card border border-dark-border">
+          <div className="p-6 rounded-xl bg-dark-card">
             <p className="text-dark-text-secondary text-sm leading-relaxed mb-3">{dnsContent.deviceDNS.description1}</p>
             <p className="text-dark-text-secondary text-sm leading-relaxed">{dnsContent.deviceDNS.description2}</p>
           </div>

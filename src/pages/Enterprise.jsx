@@ -22,7 +22,6 @@ const Enterprise = () => {
         title={hero.title}
         subtitle={hero.subtitle}
         description={hero.description}
-        showNetworkLines={true}
       />
 
       {/* Benefits Section */}

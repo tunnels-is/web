@@ -20,7 +20,6 @@ const FreeAndOpenSource = () => {
         buttons={[
           { text: "View on GitHub", href: "https://github.com/tunnels-is", primary: true }
         ]}
-        showNetworkLines={true}
       />
 
       <ContentSection background="dark-surface">
@@ -35,7 +34,7 @@ const FreeAndOpenSource = () => {
             { title: 'Freedom', text1: 'You\'re free to use Tunnels however you want - personally, commercially, or modify it to fit your specific needs. No licensing restrictions.', text2: 'Deploy it on your own infrastructure, integrate it with your systems, and maintain complete control over your networking solution.' },
             { title: 'Trust', text1: 'In the world of VPNs and networking, trust is everything. Open source allows you to verify our claims and build that trust through transparency.', text2: 'Security experts can audit the code, and the community can vouch for the integrity of the project.' },
           ].map((item, index) => (
-            <div key={index} className="p-6 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-colors">
+            <div key={index} className="p-6 rounded-xl bg-dark-card hover:bg-dark-elevated transition-colors">
               <h3 className="text-lg font-semibold text-dark-accent-primary mb-3">{item.title}</h3>
               <p className="text-dark-text-secondary text-sm leading-relaxed mb-3">{item.text1}</p>
               <p className="text-dark-text-secondary text-sm leading-relaxed">{item.text2}</p>
@@ -87,7 +86,7 @@ const FreeAndOpenSource = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-6 rounded-xl text-center bg-dark-card border border-dark-border hover:border-dark-border-light transition-colors group"
+              className="p-6 rounded-xl text-center bg-dark-card hover:bg-dark-elevated transition-colors group"
             >
               <div className="w-12 h-12 mb-3 mx-auto flex items-center justify-center text-dark-text-muted group-hover:text-dark-accent-primary transition-colors">
                 <div className="transform scale-[2.5] flex items-center justify-center">{social.icon}</div>

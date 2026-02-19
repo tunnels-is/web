@@ -25,7 +25,6 @@ const Security = () => {
         subtitle={content.hero.subtitle}
         description={content.hero.description}
         buttons={content.hero.buttons}
-        showNetworkLines={true}
       />
 
       <ContentSection background="dark-surface">
@@ -73,7 +72,7 @@ const Security = () => {
                 initial={{ opacity: 0, y: 12 }}
                 animate={cryptoVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.3, delay: index * 0.06 }}
-                className="p-6 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-colors"
+                className="p-6 rounded-xl bg-dark-card hover:bg-dark-elevated transition-colors"
               >
                 <h3 className="text-lg font-bold text-dark-accent-primary mb-2">{crypto.name}</h3>
                 <p className="text-dark-text-secondary text-sm leading-relaxed">{crypto.description}</p>
@@ -106,7 +105,7 @@ const Security = () => {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
           {content.practices.map((practice, index) => (
-            <div key={index} className="p-6 rounded-xl bg-dark-card border border-dark-border border-l-2 border-l-dark-accent-primary hover:border-dark-border-light transition-colors">
+            <div key={index} className="p-6 rounded-xl bg-dark-card hover:bg-dark-elevated transition-colors">
               <h3 className="text-base font-semibold text-dark-text-primary mb-2">{practice.title}</h3>
               <p className="text-dark-text-secondary text-sm leading-relaxed">{practice.description}</p>
             </div>

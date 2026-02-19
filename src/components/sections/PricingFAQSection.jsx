@@ -13,7 +13,7 @@ const PricingFAQSection = ({ title, questions }) => {
         </h2>
         <div className="space-y-4 max-w-3xl mx-auto">
           {questions.map((item, index) => (
-            <div key={index} className="p-6 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-colors">
+            <div key={index} className="p-6 rounded-xl bg-dark-card hover:bg-dark-elevated transition-colors">
               <h3 className="text-base font-semibold mb-2">{item.question}</h3>
               <p className="text-dark-text-secondary text-sm leading-relaxed">
                 {item.answer}

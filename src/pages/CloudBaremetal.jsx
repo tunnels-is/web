@@ -24,7 +24,6 @@ const CloudBaremetal = () => {
         subtitle={hero.subtitle}
         description={hero.description}
         buttons={hero.buttons}
-        showNetworkLines={true}
       />
 
       {/* Benefits Section */}
@@ -129,7 +128,7 @@ const CloudBaremetal = () => {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {deploymentOptions.map((option, index) => (
-            <div key={index} className="p-6 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-colors">
+            <div key={index} className="p-6 rounded-xl bg-dark-card hover:bg-dark-elevated transition-colors">
               <h3 className="text-lg font-bold text-dark-accent-primary mb-2">{option.platform}</h3>
               <p className="text-dark-text-secondary text-sm mb-4">{option.description}</p>
               <ul className="space-y-2">

@@ -21,7 +21,7 @@ const StaggeredGrid = ({
           initial={{ opacity: 0, y: 16 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.3, delay: index * 0.04 }}
-          className="group p-6 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-all duration-200"
+          className="group p-6 rounded-xl bg-dark-card hover:bg-dark-elevated transition-all duration-200"
         >
           {item.icon && (
             <div className="w-12 h-12 mb-4">{item.icon}</div>
@@ -36,7 +36,7 @@ const StaggeredGrid = ({
           </p>
 
           {item.scenario && (
-            <div className="p-3 rounded-lg bg-dark-bg/50 border-l-2 border-dark-accent-primary/40">
+            <div className="p-3 rounded-lg bg-dark-bg/50">
               <p className="text-xs text-dark-text-muted italic">
                 {item.scenario}
               </p>

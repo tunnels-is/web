@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import NetworkLines from '../animations/NetworkLines';
+import HeroBannerArt from '../HeroBannerArt';
 
 const HeroSimple = ({
   badge,
@@ -8,25 +8,11 @@ const HeroSimple = ({
   description,
   buttons = [],
   quickStats = [],
-  showNetworkLines = false,
 }) => {
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden hero-gradient">
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
-        backgroundSize: '40px 40px'
-      }} />
-
-      {/* Network Lines Animation */}
-      {showNetworkLines && (
-        <div className="absolute inset-0">
-          <NetworkLines opacity={0.06} />
-        </div>
-      )}
-
-      {/* Gradient orb */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-dark-accent-primary/[0.04] rounded-full blur-[100px]" />
+      {/* Banner art background */}
+      <HeroBannerArt />
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -37,7 +23,7 @@ const HeroSimple = ({
         >
           {badge && (
             <div className="inline-block mb-6">
-              <span className="px-4 py-1.5 bg-dark-accent-primary/10 rounded-full text-dark-accent-primary font-medium text-sm border border-dark-accent-primary/20">
+              <span className="px-4 py-1.5 bg-dark-accent-primary/10 rounded-full text-dark-accent-primary font-medium text-sm">
                 {badge}
               </span>
             </div>

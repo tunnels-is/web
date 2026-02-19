@@ -21,10 +21,10 @@ const CloudProvidersGrid = ({
           initial={{ opacity: 0, y: 16 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.3, delay: index * 0.05 }}
-          className={`group relative p-6 rounded-xl border transition-all duration-200 ${
+          className={`group relative p-6 rounded-xl transition-all duration-200 ${
             provider.recommended
-              ? 'border-dark-accent-primary bg-dark-card shadow-md shadow-dark-accent-primary/10'
-              : 'border-dark-border bg-dark-card hover:border-dark-border-light'
+              ? 'bg-dark-card shadow-md shadow-dark-accent-primary/10 ring-1 ring-dark-accent-primary/30'
+              : 'bg-dark-card hover:bg-dark-elevated'
           }`}
         >
           {provider.recommended && (

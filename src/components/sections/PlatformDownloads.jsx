@@ -34,7 +34,7 @@ const PlatformDownloads = ({ platforms, version }) => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.08, duration: 0.3 }}
-            className="p-7 rounded-xl bg-dark-card border border-dark-border hover:border-dark-border-light transition-all group"
+            className="p-7 rounded-xl bg-dark-card hover:bg-dark-elevated transition-all group"
           >
             <div className="text-dark-accent-primary mb-5 flex justify-center group-hover:text-dark-accent-secondary transition-colors">
               {platform.icon}

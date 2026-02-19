@@ -13,7 +13,7 @@ const QuickStartSection = ({ title, steps }) => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {steps.map((step, index) => (
-            <div key={index} className="text-center p-6 rounded-xl bg-dark-card border border-dark-border">
+            <div key={index} className="text-center p-6 rounded-xl bg-dark-card">
               <div className="w-12 h-12 bg-dark-accent-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-lg font-bold text-white">{step.number}</span>
               </div>

@@ -46,7 +46,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-dark-surface border-t border-dark-border">
+    <footer className="bg-dark-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-12 grid grid-cols-2 md:grid-cols-5 gap-8">
@@ -73,7 +73,7 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-lg bg-dark-elevated border border-dark-border flex items-center justify-center text-dark-text-muted hover:text-dark-accent-primary hover:border-dark-border-light transition-colors"
+                    className="w-9 h-9 rounded-lg bg-dark-elevated flex items-center justify-center text-dark-text-muted hover:text-dark-accent-primary transition-colors"
                     aria-label={social.name}
                   >
                     <IconComponent />
@@ -117,7 +117,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-dark-border flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-dark-text-muted text-xs">
             &copy; {currentYear} Tunnels. All rights reserved.
           </p>

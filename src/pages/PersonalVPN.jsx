@@ -38,8 +38,6 @@ const PersonalVPN = () => {
         description={hero.description}
         buttons={hero.buttons}
         quickStats={hero.quickStats}
-        showGeometricShapes={true}
-        showRadialGlow={false}
       />
 
       {/* Benefits Section */}
@@ -138,7 +136,7 @@ const PersonalVPN = () => {
             />
 
             {/* Summary Card */}
-            <div className="mt-8 p-6 rounded-xl bg-dark-accent-primary/10 border border-dark-accent-primary/20">
+            <div className="mt-8 p-6 rounded-xl bg-dark-accent-primary/10">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 flex-shrink-0">
                   <LightbulbIcon />
@@ -190,7 +188,7 @@ const PersonalVPN = () => {
         <CloudProvidersGrid
           providers={cloudProviders}
         />
-        <div className="mt-8 text-center p-5 rounded-xl bg-dark-card border border-dark-border">
+        <div className="mt-8 text-center p-5 rounded-xl bg-dark-card">
           <p className="text-sm text-dark-text-secondary">
             <span className="text-dark-accent-primary font-semibold">Pro Tip:</span>
             {" "}{cloudProvidersSection.proTip}
