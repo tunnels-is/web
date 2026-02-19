@@ -21,7 +21,6 @@ const MITBadge = () => (
 
 const Home = () => {
   const [topicsRef, topicsVisible] = useScrollAnimation();
-  const [highlightsRef, highlightsVisible] = useScrollAnimation();
   const [useCasesRef, useCasesVisible] = useScrollAnimation();
   const { hero, topicsSection, featuresSection, features, cta } = homeContent;
 
@@ -85,27 +84,8 @@ const Home = () => {
         subtitle={hero.subtitle}
         description={hero.description}
         buttons={hero.buttons}
+        highlights={highlights}
       />
-
-      {/* Key Highlights - compact feature bar */}
-      <section>
-        <div ref={highlightsRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {highlights.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 8 }}
-                animate={highlightsVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.3, delay: index * 0.03 }}
-                className="text-center"
-              >
-                <h3 className="text-[13px] font-semibold text-dark-text-primary mb-0.5">{item.title}</h3>
-                <p className="text-[11px] text-dark-text-muted leading-snug">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Features Section */}
       <ContentSection>

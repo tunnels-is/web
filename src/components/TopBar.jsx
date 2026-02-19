@@ -80,14 +80,8 @@ const TopBar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-dark-accent-primary to-dark-accent-tertiary flex items-center justify-center">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
-                <path d="M12 2L12 22M2 12L22 12" opacity="0.7"/>
-                <circle cx="12" cy="12" r="3" fill="white" stroke="none"/>
-              </svg>
-            </div>
-            <span className="text-base font-bold text-dark-text-primary tracking-tight">Tunnels</span>
+          <Link to="/" className="flex items-center">
+            <span className="text-base font-bold tracking-tight"><span className="text-dark-accent-primary">T</span><span className="text-dark-text-primary">unnels</span></span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -182,7 +176,7 @@ const TopBar = () => {
             </a>
             <Link
               to="/download"
-              className="btn-primary text-[13px] py-1.5 px-4"
+              className="bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white text-[11px] font-medium py-1 px-2.5 rounded transition-colors"
             >
               Download
             </Link>

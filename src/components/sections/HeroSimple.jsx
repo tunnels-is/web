@@ -8,14 +8,15 @@ const HeroSimple = ({
   description,
   buttons = [],
   quickStats = [],
+  highlights = [],
 }) => {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden hero-gradient">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
       {/* Banner art background */}
       <HeroBannerArt />
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 pb-20">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 pb-20 -mt-[10vh]">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -87,10 +88,40 @@ const HeroSimple = ({
             ))}
           </motion.div>
         )}
+
       </div>
 
+      {/* Highlights stripe */}
+      {highlights.length > 0 && (
+        <div className="absolute bottom-[10%] left-0 right-0 z-10 bg-white/[0.015] border-y border-white/[0.03]">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
+            >
+              {highlights.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.2 + index * 0.03 }}
+                  className="text-center"
+                >
+                  <div className="text-[17px] font-semibold text-dark-text-primary mb-1">{item.title}</div>
+                  <div className="text-[13px] text-dark-text-muted leading-snug">{item.desc}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      )}
+
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-bg to-transparent pointer-events-none" />
+      {highlights.length === 0 && (
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-bg to-transparent pointer-events-none" />
+      )}
     </section>
   );
 };
