@@ -74,8 +74,8 @@ export const homeContent = {
       icon: <LayersIcon />,
     },
     {
-      title: 'Enterprise Ready',
-      description: 'Scales from individuals to enterprise deployments',
+      title: 'Scalable',
+      description: 'Deploy for personal use or team environments',
       icon: <BuildingIcon />,
     },
   ],
@@ -96,7 +96,7 @@ export const homeContent = {
 
 export const homelabContent = {
   hero: {
-    badge: "Perfect for Self-Hosters",
+    badge: "Ideal for Self-Hosters",
     title: "Homelab VPN",
     subtitle: "Self-Hosted VPN for Your Home Network",
     description: "Deploy a single server and securely access your homelab from anywhere. Built-in DNS management, ad blocking, and straightforward setup.",
@@ -105,7 +105,7 @@ export const homelabContent = {
       { text: "View Documentation", href: "/", primary: false }
     ],
     quickStats: [
-      { label: "Setup Time", value: "5 min" },
+      { label: "Setup Time", value: "~15 min" },
       { label: "Cost", value: "$0" },
       { label: "Complexity", value: "Low" }
     ]
@@ -138,9 +138,9 @@ export const homelabContent = {
       icon: <BoltIcon />
     },
     {
-      title: "Multi-Device Support",
-      description: "Connect laptops and desktops - all your devices with a single server.",
-      icon: <DevicesIcon />
+      title: "Desktop Support",
+      description: "Connect Windows, macOS, and Linux computers with a single server.",
+      icon: <MonitorIcon />
     },
     {
       title: "Cost Effective",
@@ -186,7 +186,7 @@ export const homelabContent = {
   ],
 
   useCasesSection: {
-    title: "Perfect For Your Setup",
+    title: "Common Homelab Uses",
     subtitle: "Whatever you're running in your homelab, Tunnels makes it accessible"
   },
 
@@ -268,12 +268,12 @@ export const homelabContent = {
     },
     {
       title: "Custom UDP Protocol",
-      description: "Lightweight, fast VPN protocol with ChaCha20-Poly1305 encryption",
+      description: "Lightweight VPN protocol with ChaCha20-Poly1305, AES-256-GCM, or AES-128-GCM encryption",
       icon: <BoltIcon />
     },
     {
-      title: "IPv4 Networking",
-      description: "Full IPv4 support for reliable connectivity",
+      title: "IPv4 VPN Tunneling",
+      description: "VPN data plane uses IPv4 for reliable connectivity",
       icon: <NetworkGlobeIcon />
     },
     {
@@ -319,7 +319,7 @@ export const homelabContent = {
       title: "Download & Install",
       description: "Get the Tunnels server and client applications. Free for 24 hours trial, then affordable pricing for continued use.",
       features: [
-        "Server for Linux (all distributions)",
+        "Server for Linux only (requires root privileges)",
         "Clients for Windows, macOS, and Linux",
         "Installation guides and documentation",
         "Community support"
@@ -402,15 +402,15 @@ export const personalVPNContent = {
       gradient: "from-dark-accent-secondary to-dark-accent-primary"
     },
     {
-      title: "Multi-Device",
-      description: "Connect all your computers - laptops and desktops. Multiple simultaneous connections per user.",
-      icon: <DevicesIcon />,
+      title: "Desktop Platforms",
+      description: "Connect your Windows, macOS, and Linux computers. Multiple simultaneous connections per user.",
+      icon: <MonitorIcon />,
       gradient: "from-dark-accent-tertiary to-dark-accent-secondary"
     }
   ],
 
   useCasesSection: {
-    title: "Perfect For Every Scenario",
+    title: "Common Scenarios",
     subtitle: "From coffee shops to corporate networks, your personal VPN has you covered"
   },
 
@@ -454,15 +454,15 @@ export const personalVPNContent = {
   ],
 
   technicalSection: {
-    title: "Enterprise-Grade Technology",
-    subtitle: "Built on battle-tested protocols with modern security practices"
+    title: "Secure Technology Stack",
+    subtitle: "Built with modern cryptography and security best practices"
   },
 
   technicalFeatures: [
     {
       category: "Security",
       features: [
-        { name: "Custom UDP Protocol", detail: "Modern VPN protocol with X25519 key exchange and ChaCha20-Poly1305 encryption" },
+        { name: "Custom UDP Protocol", detail: "VPN protocol with X25519 + ML-KEM-1024 key exchange and multiple encryption options (ChaCha20-Poly1305, AES-256-GCM, AES-128-GCM)" },
         { name: "ChaCha20 Encryption", detail: "Modern, strong encryption for all your traffic" },
         { name: "Perfect Forward Secrecy", detail: "Each session has unique keys - past traffic stays secure" },
         { name: "No Logs, Guaranteed", detail: "Your server doesn't log because you configured it not to" }
@@ -481,9 +481,9 @@ export const personalVPNContent = {
       category: "Performance",
       features: [
         { name: "Low Latency", detail: "Minimal protocol overhead for fast connections" },
-        { name: "Full Bandwidth", detail: "Modern servers handle gigabit speeds easily" },
-        { name: "Automatic Reconnect", detail: "Seamless reconnection when switching networks" },
-        { name: "Battery Efficient", detail: "Lightweight protocol optimized for efficiency" }
+        { name: "Full Bandwidth", detail: "Utilize your server's full network bandwidth without artificial limits" },
+        { name: "Automatic Reconnect", detail: "Automatic reconnection within 45 seconds when network changes" },
+        { name: "Lightweight Protocol", detail: "Minimal overhead with efficient connection handling" }
       ]
     },
     {
@@ -528,8 +528,8 @@ export const personalVPNContent = {
       step: "04",
       title: "Install Client Apps",
       description: "Download the Tunnels client for your devices from the official website.",
-      command: "Available for desktop platforms",
-      specs: "Windows, macOS, and Linux"
+      command: "Desktop clients only (no mobile apps)",
+      specs: "Windows, macOS, and Linux desktop applications"
     },
     {
       step: "05",
@@ -601,10 +601,10 @@ export const personalVPNContent = {
   ],
 
   privacyHighlight: {
-    title: "Zero Knowledge. Zero Logs.",
-    titleLine2: "Zero Compromise.",
+    title: "Your Server. Your Rules.",
+    titleLine2: "Your Privacy.",
     description: "With your own server, you don't need to trust a privacy policy.",
-    descriptionBold: "You write the rules.",
+    descriptionBold: "You control everything.",
     highlights: [
       {
         title: "No Logging",
@@ -702,7 +702,7 @@ export const personalVPNContent = {
     },
     {
       q: "How many devices can connect simultaneously?",
-      a: "A basic $5/month server can easily handle 10-20 simultaneous connections. For larger families, upgrade to a $10-20/month server with more bandwidth allocation."
+      a: "A basic $5/month server can handle 10-20 simultaneous connections for typical use, though performance depends on traffic patterns. For larger groups, consider a $10-20/month server with more resources."
     },
     {
       q: "What happens if my server goes down?",
@@ -722,8 +722,8 @@ export const personalVPNContent = {
       title: "Get Started Now",
       description: "Download the Tunnels server and client. Free 24-hour trial to test everything. After that, just $5-10/month for your cloud server.",
       features: [
-        "Server installer for Linux",
-        "Clients for desktop platforms",
+        "Server for Linux only",
+        "Desktop clients (no mobile apps)",
         "Complete setup documentation",
         "Community support via Discord",
         "Free forever updates"
@@ -904,7 +904,7 @@ export const downloadContent = {
 
   hero: {
     title: "Download Tunnels",
-    subtitle: "Download, extract, and run. Available for Windows, macOS, and Linux. Windows requires WinTUN driver."
+    subtitle: "Download, extract, and run. Desktop clients for Windows, macOS, and Linux. No mobile apps. Windows requires WinTUN driver."
   },
 
   platforms: [
@@ -1119,12 +1119,13 @@ export const technicalContent = {
       description: "Tunnels implements modern cryptographic protocols and handshaking procedures.",
       details: "Authentication and Authorization use a combination of user/password and certificates. Every step of the encryption and handshake process is handled by Golang standard library methods - we do not hand-roll our own encryption schemes or functions.",
       encryptionTypes: [
-        "AES-128 / AES-256",
+        "AES-128-GCM",
+        "AES-256-GCM",
         "ChaCha20-Poly1305"
       ],
       handshakeTypes: [
-        "Elliptic Curve P521",
-        "X25519"
+        "X25519 + ML-KEM-1024 (post-quantum hybrid)",
+        "Elliptic Curve P521"
       ]
     },
     {
@@ -1315,7 +1316,7 @@ export const enterpriseContent = {
   hero: {
     title: "Tunnels For Large Networks",
     subtitle: "Lightweight design for big scale",
-    description: "Built from the ground up to handle enterprise-scale networking with minimal overhead and maximum security."
+    description: "Built from the ground up to handle large-scale networking with minimal overhead and strong security."
   },
 
   images: {
@@ -1423,7 +1424,7 @@ export const cloudBaremetalContent = {
 
   benefitsSection: {
     title: "Built for Scale & Reliability",
-    subtitle: "Architectural benefits that give you enterprise-grade capabilities without the enterprise complexity"
+    subtitle: "Architectural benefits that give you scalable capabilities without unnecessary complexity"
   },
 
   benefits: [
@@ -1433,8 +1434,8 @@ export const cloudBaremetalContent = {
       icon: <GlobeIcon />
     },
     {
-      title: "High Availability",
-      description: "Redundant server architecture ensures continuous service even if individual nodes experience issues.",
+      title: "Multi-Server Resilience",
+      description: "Deploy multiple VPN servers so users can switch if one becomes unavailable.",
       icon: <BoltIcon />
     },
     {
@@ -1545,19 +1546,19 @@ export const cloudBaremetalContent = {
     title: "Built for Performance",
     stats: [
       {
-        value: "Thousands",
-        label: "Concurrent Users",
-        description: "Scale by deploying multiple VPN servers"
+        value: "65,535",
+        label: "Max Clients/Server",
+        description: "Per-server limit, scale with additional servers"
       },
       {
-        value: "Fast",
-        label: "Auth Latency",
-        description: "Efficient signature verification on VPN servers"
+        value: "Efficient",
+        label: "Auth Verification",
+        description: "Signature-based auth without database lookups"
       },
       {
-        value: "High",
-        label: "Availability",
-        description: "Redundant multi-server architecture for reliability"
+        value: "Resilient",
+        label: "Architecture",
+        description: "Multi-server deployment for redundancy"
       }
     ]
   },
@@ -1692,13 +1693,13 @@ export const iotNetworksContent = {
     badge: "Secure Your Connected Devices",
     title: "IoT Networks",
     subtitle: "Connect and Secure Your Device Fleet",
-    description: "Manage thousands of IoT devices from a single dashboard. Secure remote access to sensors, cameras, and smart devices with enterprise-grade encryption and centralized control.",
+    description: "Manage your IoT device fleet from a single dashboard. Secure remote access to sensors, cameras, and smart devices with strong encryption and centralized control.",
     buttons: [
       { text: "Get Started Free", href: "/download", primary: true },
       { text: "View Documentation", href: "https://docs.tunnels.is/docs", primary: false }
     ],
     quickStats: [
-      { value: "Thousands", label: "Devices" },
+      { value: "Up to 65K", label: "Devices/Server" },
       { value: "Secure", label: "By Default" },
       { value: "Simple", label: "Config" }
     ]
@@ -1749,7 +1750,7 @@ export const iotNetworksContent = {
   ],
 
   useCasesSection: {
-    title: "Perfect For Your IoT Setup",
+    title: "IoT Use Cases",
     subtitle: "From smart homes to industrial deployments, Tunnels handles it all"
   },
 
@@ -1793,8 +1794,8 @@ export const iotNetworksContent = {
   ],
 
   securitySection: {
-    title: "Enterprise-Grade Security",
-    subtitle: "Modern cryptography designed for long-term IoT deployments"
+    title: "Strong Security",
+    subtitle: "Modern cryptography with post-quantum readiness for long-term IoT deployments"
   },
 
   securityFeatures: [
@@ -1869,7 +1870,7 @@ export const iotNetworksContent = {
   faqs: [
     {
       q: "How many devices can I connect?",
-      a: "Tunnels is designed to scale. A single server can handle thousands of concurrent device connections. For larger deployments, add additional VPN servers to distribute the load."
+      a: "A single server can handle up to 65,535 concurrent device connections (protocol limit). For larger deployments, add additional VPN servers to distribute the load."
     },
     {
       q: "Do devices need a lot of resources to run the client?",
@@ -1905,7 +1906,7 @@ export const iotNetworksContent = {
       title: "Get Started Now",
       description: "Download Tunnels server and client. Free 24-hour trial to test with your devices.",
       features: [
-        "Server for Linux (all distributions)",
+        "Server for Linux only (requires root privileges)",
         "CLI client for IoT devices",
         "GUI client for management",
         "Complete setup documentation"
@@ -1944,9 +1945,9 @@ export const lanOverWanContent = {
       { text: "View Docs", href: "https://docs.tunnels.is/docs", teal: true }
     ],
     quickStats: [
-      { value: "<10ms", label: "Added Latency" },
+      { value: "Low", label: "Added Latency" },
       { value: "AES-256", label: "Encryption" },
-      { value: "Unlimited", label: "Sites" }
+      { value: "Multiple", label: "Sites" }
     ]
   },
 
@@ -2246,7 +2247,7 @@ export const securityContent = {
     },
     {
       title: "Modern Cryptography",
-      description: "Uses ChaCha20-Poly1305 and AES-256-GCM encryption with Curve25519 key exchange.",
+      description: "Uses ChaCha20-Poly1305, AES-256-GCM, and AES-128-GCM encryption with X25519 + ML-KEM-1024 hybrid key exchange.",
       icon: <KeyIcon />,
       color: "secondary"
     },
@@ -2282,9 +2283,10 @@ export const securityContent = {
   },
 
   encryptionTypes: [
-    { name: "ChaCha20-Poly1305", description: "High-speed stream cipher with authentication" },
+    { name: "ChaCha20-Poly1305", description: "High-speed stream cipher with authentication (default)" },
     { name: "AES-256-GCM", description: "Industry standard block cipher with authentication" },
-    { name: "Curve25519", description: "Elliptic curve Diffie-Hellman key exchange" },
+    { name: "AES-128-GCM", description: "Fast authenticated encryption for resource-constrained environments" },
+    { name: "X25519 + ML-KEM-1024", description: "Post-quantum hybrid key exchange for future-proof security" },
     { name: "BLAKE2b", description: "Fast cryptographic hash function" }
   ],
 
