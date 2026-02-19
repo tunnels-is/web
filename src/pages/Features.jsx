@@ -8,7 +8,7 @@ import useScrollAnimation from '../hooks/useScrollAnimation';
 import { motion } from 'framer-motion';
 import { featuresContent } from '../content/siteContent';
 import {
-  WireGuardIllustration,
+  EncryptionIllustration,
   SpeedIllustration,
 } from '../components/illustrations';
 
@@ -52,18 +52,18 @@ const Features = () => {
         </div>
       </ContentSection>
 
-      {/* Illustrated: WireGuard Foundation */}
+      {/* Illustrated: Encryption */}
       <IllustratedSection
-        subtitle="Modern Protocol"
-        title="Built on WireGuard"
-        description="tunnels leverages WireGuard's modern cryptography and minimal codebase. This gives you state-of-the-art security with exceptional performance."
+        subtitle="Modern Encryption"
+        title="Secure by Design"
+        description="Tunnels uses modern cryptographic primitives and a minimal codebase to deliver strong security with exceptional performance."
         features={[
-          "ChaCha20 encryption",
-          "Only ~4,000 lines of code",
-          "Formally verified cryptography",
-          "Built into Linux kernel"
+          "End-to-end encrypted tunnels",
+          "Lightweight, auditable codebase",
+          "Zero-knowledge architecture",
+          "Cross-platform support"
         ]}
-        illustration={WireGuardIllustration}
+        illustration={EncryptionIllustration}
         illustrationPosition="right"
         illustrationSize="large"
         dark={false}
@@ -73,7 +73,7 @@ const Features = () => {
       <IllustratedSection
         subtitle="Blazing Fast"
         title="Performance First"
-        description="Experience near-native network performance. WireGuard's efficient design means minimal CPU overhead and maximum throughput on any hardware."
+        description="Experience near-native network performance. An efficient design means minimal CPU overhead and maximum throughput on any hardware."
         features={[
           "10+ Gbps throughput",
           "Sub-millisecond latency",

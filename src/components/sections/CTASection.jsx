@@ -19,7 +19,7 @@ const CTASection = ({
             initial={{ opacity: 0, y: 16 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-            className="p-10 md:p-14 rounded-2xl bg-dark-card"
+            className="p-10 md:p-14 rounded-2xl"
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight">
               {title}

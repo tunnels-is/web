@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 const HeroBannerArt = () => {
-  // --- Network nodes spread across the entire viewport (avoid center where text lives) ---
+  // --- Network nodes spread across the viewport (avoid center where text lives) ---
   const nodes = [
     // Top edge
     { x: 65,   y: 45,   r: 2.5, color: '#3b82f6' },
@@ -42,43 +42,68 @@ const HeroBannerArt = () => {
     { x: 920,  y: 700,  r: 2,   color: '#60a5fa' },
   ];
 
-  // --- Circuit-board style paths (right-angle L-shaped and Z-shaped traces) ---
-  // Each path connects two nodes via orthogonal segments
+  // --- Circuit-board style paths — lots of right-angle traces everywhere ---
   const circuitTraces = [
     // Top-left region
     { d: 'M 65 45 L 65 160 L 150 160', color: '#3b82f6', delay: 0, dur: 12 },
     { d: 'M 195 28 L 195 140 L 280 140 L 280 200', color: '#60a5fa', delay: 2, dur: 14 },
     { d: 'M 150 140 L 40 140 L 40 160', color: '#06b6d4', delay: 5, dur: 10 },
     { d: 'M 370 55 L 370 140 L 280 140', color: '#06b6d4', delay: 3, dur: 11 },
+    { d: 'M 65 45 L 195 45 L 195 28', color: '#3b82f6', delay: 8, dur: 9 },
+    { d: 'M 150 160 L 150 200 L 280 200', color: '#60a5fa', delay: 11, dur: 10 },
     // Top-right region
     { d: 'M 880 25 L 880 130 L 950 130', color: '#10b981', delay: 1, dur: 13 },
     { d: 'M 1020 52 L 1020 130 L 950 130', color: '#3b82f6', delay: 4, dur: 12 },
     { d: 'M 1150 35 L 1150 150 L 1160 150', color: '#06b6d4', delay: 6, dur: 10 },
     { d: 'M 950 130 L 1070 130 L 1070 240', color: '#60a5fa', delay: 2.5, dur: 14 },
+    { d: 'M 720 48 L 720 130 L 880 130 L 880 25', color: '#60a5fa', delay: 7, dur: 16 },
+    { d: 'M 1020 52 L 1150 52 L 1150 35', color: '#06b6d4', delay: 10, dur: 9 },
     // Left side vertical
     { d: 'M 40 160 L 55 160 L 55 320', color: '#06b6d4', delay: 7, dur: 15 },
     { d: 'M 55 320 L 35 320 L 35 480', color: '#3b82f6', delay: 1.5, dur: 13 },
     { d: 'M 35 480 L 50 480 L 50 640', color: '#60a5fa', delay: 4.5, dur: 11 },
     { d: 'M 50 640 L 70 640 L 70 750', color: '#06b6d4', delay: 8, dur: 12 },
     { d: 'M 130 580 L 50 580 L 50 640', color: '#60a5fa', delay: 3, dur: 10 },
+    { d: 'M 55 320 L 130 320 L 130 580', color: '#3b82f6', delay: 9.5, dur: 18 },
     // Right side vertical
     { d: 'M 1160 150 L 1140 150 L 1140 310', color: '#60a5fa', delay: 0.5, dur: 14 },
     { d: 'M 1140 310 L 1165 310 L 1165 470', color: '#3b82f6', delay: 3.5, dur: 12 },
     { d: 'M 1165 470 L 1145 470 L 1145 620', color: '#06b6d4', delay: 6.5, dur: 13 },
     { d: 'M 1145 620 L 1155 620 L 1155 760', color: '#3b82f6', delay: 9, dur: 11 },
     { d: 'M 1050 580 L 1145 580 L 1145 620', color: '#3b82f6', delay: 2, dur: 10 },
+    { d: 'M 1140 310 L 1050 310 L 1050 580', color: '#06b6d4', delay: 7.5, dur: 17 },
     // Bottom region
     { d: 'M 70 750 L 180 750 L 180 770', color: '#3b82f6', delay: 5.5, dur: 12 },
     { d: 'M 180 770 L 350 770 L 350 755', color: '#60a5fa', delay: 1, dur: 14 },
     { d: 'M 350 755 L 510 755 L 510 775', color: '#06b6d4', delay: 7.5, dur: 11 },
+    { d: 'M 510 775 L 680 775 L 680 760', color: '#3b82f6', delay: 10.5, dur: 12 },
     { d: 'M 680 760 L 850 760 L 850 745', color: '#60a5fa', delay: 3, dur: 13 },
     { d: 'M 850 745 L 1000 745 L 1000 770', color: '#06b6d4', delay: 8.5, dur: 10 },
     { d: 'M 1000 770 L 1155 770 L 1155 760', color: '#3b82f6', delay: 4, dur: 12 },
     { d: 'M 250 680 L 350 680 L 350 755', color: '#3b82f6', delay: 6, dur: 11 },
     { d: 'M 920 700 L 850 700 L 850 745', color: '#60a5fa', delay: 2, dur: 13 },
-    // Cross traces (horizontal spanning)
+    // Long cross traces (span larger areas)
     { d: 'M 280 200 L 280 220 L 130 220 L 130 580', color: '#06b6d4', delay: 0, dur: 18 },
     { d: 'M 1070 240 L 1070 260 L 1050 260 L 1050 580', color: '#3b82f6', delay: 5, dur: 17 },
+    { d: 'M 370 55 L 540 55 L 540 32', color: '#3b82f6', delay: 6.5, dur: 8 },
+    { d: 'M 540 32 L 720 32 L 720 48', color: '#60a5fa', delay: 12, dur: 9 },
+    // Diagonal-ish stepped traces (staircase pattern)
+    { d: 'M 150 160 L 220 160 L 220 220 L 280 220', color: '#3b82f6', delay: 4, dur: 11 },
+    { d: 'M 950 130 L 1020 130 L 1020 200 L 1070 200 L 1070 240', color: '#60a5fa', delay: 1, dur: 13 },
+    { d: 'M 250 680 L 180 680 L 180 750 L 70 750', color: '#06b6d4', delay: 9, dur: 14 },
+    { d: 'M 920 700 L 1000 700 L 1000 745 L 1050 745 L 1050 580', color: '#3b82f6', delay: 3.5, dur: 18 },
+    // Additional inner-edge traces
+    { d: 'M 280 200 L 280 320 L 130 320', color: '#60a5fa', delay: 13, dur: 12 },
+    { d: 'M 1070 240 L 1070 310 L 1050 310', color: '#06b6d4', delay: 11, dur: 11 },
+    { d: 'M 130 580 L 250 580 L 250 680', color: '#3b82f6', delay: 14, dur: 13 },
+    { d: 'M 1050 580 L 920 580 L 920 700', color: '#60a5fa', delay: 0.5, dur: 14 },
+    // Short horizontal linking traces
+    { d: 'M 370 140 L 540 140 L 540 55', color: '#10b981', delay: 8, dur: 10 },
+    { d: 'M 720 130 L 720 48', color: '#3b82f6', delay: 5, dur: 7 },
+    { d: 'M 350 680 L 510 680 L 510 775', color: '#06b6d4', delay: 7, dur: 12 },
+    { d: 'M 680 760 L 680 700 L 920 700', color: '#3b82f6', delay: 11.5, dur: 15 },
+    { d: 'M 850 745 L 850 700', color: '#60a5fa', delay: 6, dur: 6 },
+    { d: 'M 350 755 L 250 755 L 250 680', color: '#3b82f6', delay: 2.5, dur: 10 },
   ];
 
   // --- Data packets that travel along traces ---
@@ -100,48 +125,36 @@ const HeroBannerArt = () => {
     { x: [35, 35, 50, 50],    y: [480, 480, 640, 640], dur: 8,  delay: 10,  color: '#60a5fa' },
     { x: [1165, 1165, 1145, 1145], y: [470, 470, 620, 620], dur: 8, delay: 11, color: '#06b6d4' },
     { x: [1000, 1155, 1155],  y: [770, 770, 760],      dur: 6,  delay: 3,   color: '#3b82f6' },
-  ];
-
-  // --- Floating geometric shapes (scattered, no center) ---
-  const shapes = [
-    // Hexagons
-    { type: 'hex', x: 120, y: 100, size: 22, opacity: 0.06, dur: 20, drift: -8 },
-    { type: 'hex', x: 1080, y: 170, size: 28, opacity: 0.05, dur: 24, drift: 10 },
-    { type: 'hex', x: 200, y: 700, size: 18, opacity: 0.07, dur: 18, drift: -6 },
-    { type: 'hex', x: 980, y: 680, size: 24, opacity: 0.05, dur: 22, drift: 8 },
-    // Diamonds (rotated squares)
-    { type: 'diamond', x: 300, y: 120, size: 16, opacity: 0.08, dur: 16, drift: -10 },
-    { type: 'diamond', x: 900, y: 80, size: 20, opacity: 0.06, dur: 19, drift: 7 },
-    { type: 'diamond', x: 80, y: 450, size: 14, opacity: 0.07, dur: 21, drift: -5 },
-    { type: 'diamond', x: 1120, y: 500, size: 18, opacity: 0.06, dur: 17, drift: 9 },
-    { type: 'diamond', x: 160, y: 650, size: 12, opacity: 0.08, dur: 15, drift: -7 },
-    { type: 'diamond', x: 1040, y: 700, size: 15, opacity: 0.06, dur: 23, drift: 6 },
-    // Small circles
-    { type: 'ring', x: 220, y: 350, size: 12, opacity: 0.06, dur: 14, drift: -4 },
-    { type: 'ring', x: 980, y: 400, size: 16, opacity: 0.05, dur: 18, drift: 6 },
-    { type: 'ring', x: 100, y: 250, size: 10, opacity: 0.07, dur: 12, drift: -8 },
-    { type: 'ring', x: 1100, y: 350, size: 14, opacity: 0.06, dur: 16, drift: 5 },
-    // Brackets / tech shapes
-    { type: 'bracket', x: 340, y: 680, size: 20, opacity: 0.06, dur: 20, drift: -6 },
-    { type: 'bracket', x: 860, y: 100, size: 24, opacity: 0.05, dur: 22, drift: 8 },
+    // Additional packets on new traces
+    { x: [370, 540, 540],     y: [55, 55, 32],         dur: 5,  delay: 6.5, color: '#3b82f6' },
+    { x: [540, 720, 720],     y: [32, 32, 48],         dur: 5,  delay: 12,  color: '#60a5fa' },
+    { x: [720, 720, 880, 880], y: [48, 130, 130, 25],  dur: 8,  delay: 7,   color: '#60a5fa' },
+    { x: [150, 220, 220, 280], y: [160, 160, 220, 220], dur: 6, delay: 4,   color: '#3b82f6' },
+    { x: [55, 130, 130],      y: [320, 320, 580],      dur: 9,  delay: 9.5, color: '#3b82f6' },
+    { x: [1140, 1050, 1050],  y: [310, 310, 580],      dur: 9,  delay: 7.5, color: '#06b6d4' },
+    { x: [130, 250, 250],     y: [580, 580, 680],      dur: 6,  delay: 14,  color: '#3b82f6' },
+    { x: [1050, 920, 920],    y: [580, 580, 700],      dur: 6,  delay: 0.5, color: '#60a5fa' },
+    { x: [680, 680, 920],     y: [760, 700, 700],      dur: 7,  delay: 11.5, color: '#3b82f6' },
+    { x: [350, 510, 510],     y: [755, 755, 775],      dur: 6,  delay: 7.5, color: '#06b6d4' },
+    { x: [510, 680, 680],     y: [775, 775, 760],      dur: 6,  delay: 10.5, color: '#3b82f6' },
+    { x: [280, 280, 130],     y: [200, 320, 320],      dur: 6,  delay: 13,  color: '#60a5fa' },
+    { x: [1070, 1070, 1050],  y: [240, 310, 310],      dur: 5,  delay: 11,  color: '#06b6d4' },
+    { x: [370, 540, 540],     y: [140, 140, 55],       dur: 6,  delay: 8,   color: '#10b981' },
+    { x: [350, 250, 250],     y: [755, 755, 680],      dur: 6,  delay: 2.5, color: '#3b82f6' },
+    { x: [850, 850],          y: [745, 700],            dur: 3,  delay: 6,   color: '#60a5fa' },
+    { x: [250, 180, 180, 70], y: [680, 680, 750, 750], dur: 8,  delay: 9,   color: '#06b6d4' },
+    { x: [920, 1000, 1000, 1050, 1050], y: [700, 700, 745, 745, 580], dur: 10, delay: 3.5, color: '#3b82f6' },
   ];
 
   // --- Horizontal scan lines ---
   const scanLines = [
-    { y: 120, delay: 0,  dur: 18, color: '#3b82f6' },
-    { y: 340, delay: 6,  dur: 22, color: '#06b6d4' },
-    { y: 560, delay: 3,  dur: 20, color: '#60a5fa' },
-    { y: 710, delay: 10, dur: 16, color: '#3b82f6' },
+    { y: 90,  delay: 0,  dur: 18, color: '#3b82f6' },
+    { y: 220, delay: 8,  dur: 20, color: '#06b6d4' },
+    { y: 340, delay: 4,  dur: 22, color: '#60a5fa' },
+    { y: 480, delay: 12, dur: 16, color: '#3b82f6' },
+    { y: 580, delay: 2,  dur: 19, color: '#06b6d4' },
+    { y: 710, delay: 9,  dur: 17, color: '#60a5fa' },
   ];
-
-  const hexPath = (cx, cy, r) => {
-    const pts = [];
-    for (let i = 0; i < 6; i++) {
-      const angle = (Math.PI / 180) * (60 * i - 30);
-      pts.push(`${cx + r * Math.cos(angle)},${cy + r * Math.sin(angle)}`);
-    }
-    return `M ${pts.join(' L ')} Z`;
-  };
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -205,7 +218,7 @@ const HeroBannerArt = () => {
           </pattern>
         </defs>
 
-        {/* Subtle dot grid across entire viewport */}
+        {/* Subtle dot grid */}
         <rect width="1200" height="800" fill="url(#dotGrid)" opacity="0.35" />
 
         {/* === Circuit board traces === */}
@@ -235,7 +248,6 @@ const HeroBannerArt = () => {
         {/* === Network nodes with pulse rings === */}
         {nodes.map((node, i) => (
           <g key={`node_${i}`}>
-            {/* Sonar pulse */}
             <motion.circle
               cx={node.x} cy={node.y}
               r={node.r * 2}
@@ -253,7 +265,6 @@ const HeroBannerArt = () => {
                 delay: i * 0.4,
               }}
             />
-            {/* Core dot */}
             <motion.circle
               cx={node.x} cy={node.y}
               r={node.r}
@@ -290,95 +301,13 @@ const HeroBannerArt = () => {
               repeat: Infinity,
               ease: 'linear',
               delay: pkt.delay,
-              times: pkt.x.length === 3
+              times: pkt.x.length <= 3
                 ? [0, 0.1, 0.9, 1]
                 : [0, 0.08, 0.92, 1],
             }}
             style={{ filter: `drop-shadow(0 0 3px ${pkt.color})` }}
           />
         ))}
-
-        {/* === Floating geometric shapes === */}
-        {shapes.map((s, i) => {
-          if (s.type === 'hex') {
-            return (
-              <motion.path
-                key={`shape_${i}`}
-                d={hexPath(s.x, s.y, s.size)}
-                fill="none"
-                stroke="#60a5fa"
-                strokeWidth="0.8"
-                opacity={s.opacity}
-                animate={{
-                  y: [0, s.drift, 0],
-                  opacity: [s.opacity, s.opacity * 1.5, s.opacity],
-                }}
-                transition={{ duration: s.dur, repeat: Infinity, ease: 'easeInOut' }}
-              />
-            );
-          }
-          if (s.type === 'diamond') {
-            return (
-              <motion.rect
-                key={`shape_${i}`}
-                x={s.x - s.size / 2}
-                y={s.y - s.size / 2}
-                width={s.size}
-                height={s.size}
-                fill="none"
-                stroke="#3b82f6"
-                strokeWidth="0.7"
-                opacity={s.opacity}
-                transform={`rotate(45 ${s.x} ${s.y})`}
-                animate={{
-                  y: [0, s.drift, 0],
-                  opacity: [s.opacity, s.opacity * 1.4, s.opacity],
-                }}
-                transition={{ duration: s.dur, repeat: Infinity, ease: 'easeInOut' }}
-              />
-            );
-          }
-          if (s.type === 'ring') {
-            return (
-              <motion.circle
-                key={`shape_${i}`}
-                cx={s.x}
-                cy={s.y}
-                r={s.size}
-                fill="none"
-                stroke="#06b6d4"
-                strokeWidth="0.7"
-                opacity={s.opacity}
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [s.opacity, s.opacity * 1.6, s.opacity],
-                }}
-                transition={{ duration: s.dur, repeat: Infinity, ease: 'easeInOut' }}
-              />
-            );
-          }
-          if (s.type === 'bracket') {
-            // Tech bracket shape: ⌐ or ⌐¬
-            const half = s.size / 2;
-            return (
-              <motion.path
-                key={`shape_${i}`}
-                d={`M ${s.x - half} ${s.y + half} L ${s.x - half} ${s.y - half} L ${s.x + half} ${s.y - half}`}
-                fill="none"
-                stroke="#60a5fa"
-                strokeWidth="0.8"
-                strokeLinecap="round"
-                opacity={s.opacity}
-                animate={{
-                  y: [0, s.drift, 0],
-                  opacity: [s.opacity, s.opacity * 1.5, s.opacity],
-                }}
-                transition={{ duration: s.dur, repeat: Infinity, ease: 'easeInOut' }}
-              />
-            );
-          }
-          return null;
-        })}
 
         {/* === Horizontal scan lines === */}
         {scanLines.map((sl, i) => (
@@ -402,12 +331,15 @@ const HeroBannerArt = () => {
           />
         ))}
 
-        {/* === Small junction crosshairs at some intersections === */}
+        {/* === Junction crosshairs at intersections === */}
         {[
           { x: 150, y: 160 }, { x: 280, y: 140 }, { x: 280, y: 200 },
           { x: 950, y: 130 }, { x: 1070, y: 240 }, { x: 130, y: 580 },
           { x: 1050, y: 580 }, { x: 350, y: 755 }, { x: 850, y: 745 },
-          { x: 1000, y: 770 }, { x: 180, y: 770 },
+          { x: 1000, y: 770 }, { x: 180, y: 770 }, { x: 280, y: 320 },
+          { x: 1050, y: 310 }, { x: 250, y: 680 }, { x: 920, y: 700 },
+          { x: 510, y: 775 }, { x: 680, y: 760 }, { x: 540, y: 55 },
+          { x: 720, y: 130 }, { x: 370, y: 140 },
         ].map((jn, i) => (
           <motion.g
             key={`jn_${i}`}
@@ -419,7 +351,7 @@ const HeroBannerArt = () => {
           </motion.g>
         ))}
 
-        {/* === Tiny blinking status dots scattered everywhere === */}
+        {/* === Tiny blinking status dots === */}
         {[
           { x: 110, y: 78, c: '#10b981' }, { x: 310, y: 90, c: '#3b82f6' },
           { x: 800, y: 65, c: '#06b6d4' }, { x: 1090, y: 95, c: '#10b981' },
@@ -448,7 +380,7 @@ const HeroBannerArt = () => {
           />
         ))}
 
-        {/* === Dashed orbit arcs in corners === */}
+        {/* === Dashed arcs in corners === */}
         <motion.path
           d="M 40 40 Q 200 10 360 60"
           fill="none" stroke="#3b82f6" strokeWidth="0.5" strokeDasharray="4 6"

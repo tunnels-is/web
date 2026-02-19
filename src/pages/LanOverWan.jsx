@@ -121,8 +121,8 @@ const LanOverWan = () => {
       {/* Illustrated: High Performance */}
       <IllustratedSection
         subtitle="Enterprise Performance"
-        title="WireGuard Speed, LAN Simplicity"
-        description="Built on WireGuard's high-performance protocol, your LAN-over-WAN connections achieve near-native speeds with minimal latency overhead."
+        title="High Speed, LAN Simplicity"
+        description="Built on a high-performance protocol, your LAN-over-WAN connections achieve near-native speeds with minimal latency overhead."
         features={[
           "Sub-millisecond latency overhead",
           "10+ Gbps throughput capable",

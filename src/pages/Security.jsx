@@ -9,7 +9,7 @@ import useScrollAnimation from '../hooks/useScrollAnimation';
 import { securityContent } from '../content/siteContent';
 import {
   SecurityIllustration,
-  WireGuardIllustration,
+  EncryptionIllustration,
   OpenSourceIllustration,
 } from '../components/illustrations';
 
@@ -84,15 +84,15 @@ const Security = () => {
 
       <IllustratedSection
         subtitle="Modern Cryptography"
-        title="Built on WireGuard"
-        description="We chose WireGuard for its simplicity, speed, and security. Just ~4,000 lines of code means a smaller attack surface and easier auditing than legacy VPN protocols."
+        title="Encrypted by Default"
+        description="All traffic is encrypted end-to-end using modern cryptographic primitives. A minimal codebase means a smaller attack surface and easier auditing than legacy VPN protocols."
         features={[
-          "ChaCha20 symmetric encryption",
-          "Curve25519 key exchange",
-          "BLAKE2s hashing",
-          "Poly1305 authentication"
+          "End-to-end encrypted tunnels",
+          "Zero-knowledge architecture",
+          "Minimal attack surface",
+          "Open source and auditable"
         ]}
-        illustration={WireGuardIllustration}
+        illustration={EncryptionIllustration}
         illustrationPosition="left"
         illustrationSize="large"
         dark={false}

@@ -149,7 +149,7 @@ const PersonalVPNIllustration = ({ className = "", width = 400, height = 300 }) 
         <text fill="#14b8a6" fontSize="10" fontFamily="monospace" opacity="0.6">AES-256</text>
       </g>
       <g transform="translate(240, 95)">
-        <text fill="#14b8a6" fontSize="10" fontFamily="monospace" opacity="0.6">WireGuard</text>
+        <text fill="#14b8a6" fontSize="10" fontFamily="monospace" opacity="0.6">Encrypted</text>
       </g>
     </svg>
   );

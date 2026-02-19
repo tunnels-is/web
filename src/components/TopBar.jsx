@@ -78,14 +78,8 @@ const TopBar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-dark-accent-primary rounded-lg flex items-center justify-center">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
-                <path d="M12 2L12 22M2 12L22 12M5 5L19 19M19 5L5 19" opacity="0.6"/>
-                <circle cx="12" cy="12" r="3" fill="white" stroke="none"/>
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-dark-text-primary">Tunnels</span>
+          <Link to="/" className="flex items-center">
+            <span className="text-xl font-bold text-dark-text-primary"><span className="text-dark-accent-primary">T</span>unnels</span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -8,7 +8,6 @@ import {
   EncryptionIllustration,
   LANOverWANIllustration,
   GlobalNetworkIllustration,
-  WireGuardIllustration,
 } from '../components/illustrations';
 
 const Technical = () => {
@@ -137,18 +136,18 @@ const Technical = () => {
         />
       </ContentSection>
 
-      {/* Illustrated: WireGuard Foundation */}
+      {/* Illustrated: Encryption */}
       <IllustratedSection
-        subtitle="Modern Protocol"
-        title="Built on WireGuard"
-        description="Tunnels leverages WireGuard's modern cryptography and minimal codebase. State-of-the-art security with exceptional performance on all platforms."
+        subtitle="Modern Encryption"
+        title="Secure by Design"
+        description="Tunnels uses modern cryptographic primitives and a minimal, auditable codebase. Strong security with high performance on all platforms."
         features={[
-          "~4,000 lines of code",
-          "Formally verified crypto",
-          "Built into Linux kernel",
+          "End-to-end encrypted tunnels",
+          "Minimal attack surface",
+          "Open source and auditable",
           "Cross-platform support"
         ]}
-        illustration={WireGuardIllustration}
+        illustration={EncryptionIllustration}
         illustrationPosition="left"
         illustrationSize="large"
       />

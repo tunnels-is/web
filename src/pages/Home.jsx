@@ -69,7 +69,7 @@ const Home = () => {
     { title: 'Open Source', desc: 'Fully transparent, auditable code' },
     { title: 'Self-Hosted', desc: 'Run on your own infrastructure' },
     { title: 'Cross-Platform', desc: 'Windows, macOS, Linux, and more' },
-    { title: 'WireGuard', desc: 'Built on modern, efficient cryptography' },
+    { title: 'Encrypted', desc: 'End-to-end encrypted tunnels by default' },
   ];
 
   return (
@@ -160,7 +160,7 @@ const Home = () => {
       <IllustratedSection
         subtitle="End-to-End Security"
         title="Encrypted by Default"
-        description="Every connection is protected with WireGuard's modern cryptography. Your data travels through encrypted tunnels with zero-knowledge architecture."
+        description="Every connection is protected with modern cryptography. Your data travels through encrypted tunnels with zero-knowledge architecture."
         features={[
           "AES-256 encryption for all traffic",
           "Perfect forward secrecy",
