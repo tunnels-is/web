@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { GitHubIcon, DiscordIcon, TwitterIcon, RedditIcon } from './SocialIcons';
 
 const TopBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -230,7 +231,26 @@ const TopBar = () => {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-2.5">
+          <div className="hidden lg:flex items-center gap-3">
+            <div className="flex items-center gap-1">
+              {[
+                { icon: GitHubIcon, url: 'https://github.com/tunnels-is', name: 'GitHub' },
+                { icon: DiscordIcon, url: 'https://discord.com/invite/7Ts3PCnCd9', name: 'Discord' },
+                { icon: TwitterIcon, url: 'https://x.com/tunnels_is', name: 'Twitter' },
+                { icon: RedditIcon, url: 'https://www.reddit.com/r/tunnels_is/', name: 'Reddit' },
+              ].map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-7 h-7 flex items-center justify-center text-dark-text-muted hover:text-dark-text-primary transition-colors [&_svg]:w-4 [&_svg]:h-4"
+                  aria-label={social.name}
+                >
+                  <social.icon />
+                </a>
+              ))}
+            </div>
             <Link
               to="/download"
               className="bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white text-xs font-medium py-1.5 px-3 rounded transition-colors"
