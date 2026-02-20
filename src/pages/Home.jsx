@@ -82,8 +82,34 @@ const Home = () => {
         />
       </ContentSection>
 
-      {/* Use Cases */}
+      {/* Explore Topics */}
       <ContentSection background="dark-surface">
+        <div ref={topicsRef}>
+          <SectionHeader
+            title={topicsSection.title}
+            subtitle={topicsSection.subtitle}
+          />
+          <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
+            {topicsSection.topics.map((topic, index) => (
+              <motion.a
+                key={topic.path}
+                href={topic.path}
+                target={topic.external ? "_blank" : undefined}
+                rel={topic.external ? "noopener noreferrer" : undefined}
+                initial={{ opacity: 0 }}
+                animate={topicsVisible ? { opacity: 1 } : {}}
+                transition={{ duration: 0.2, delay: index * 0.02 }}
+                className="px-4 py-2 text-xs font-medium text-dark-text-secondary hover:text-dark-accent-primary transition-all duration-150"
+              >
+                {topic.label}
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </ContentSection>
+
+      {/* Use Cases */}
+      <ContentSection>
         <div ref={useCasesRef}>
           <SectionHeader
             title={environmentHeader.title}
@@ -146,32 +172,6 @@ const Home = () => {
         illustrationSize="small"
         dark={true}
       />
-
-      {/* Explore Topics */}
-      <ContentSection>
-        <div ref={topicsRef}>
-          <SectionHeader
-            title={topicsSection.title}
-            subtitle={topicsSection.subtitle}
-          />
-          <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
-            {topicsSection.topics.map((topic, index) => (
-              <motion.a
-                key={topic.path}
-                href={topic.path}
-                target={topic.external ? "_blank" : undefined}
-                rel={topic.external ? "noopener noreferrer" : undefined}
-                initial={{ opacity: 0 }}
-                animate={topicsVisible ? { opacity: 1 } : {}}
-                transition={{ duration: 0.2, delay: index * 0.02 }}
-                className="px-4 py-2 text-xs font-medium text-dark-text-secondary hover:text-dark-accent-primary transition-all duration-150"
-              >
-                {topic.label}
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </ContentSection>
 
       {/* CTA Section */}
       <CTASection
