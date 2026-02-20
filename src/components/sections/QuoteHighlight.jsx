@@ -86,7 +86,7 @@ const QuoteHighlight = ({
                 {author}
               </p>
               {role && (
-                <p className="text-xs text-dark-text-muted mt-0.5">{role}</p>
+                <p className="text-xs text-dark-text-secondary mt-0.5">{role}</p>
               )}
             </div>
 
@@ -161,7 +161,7 @@ const QuoteHighlight = ({
         <div className="mt-1">
           <p className="text-sm font-semibold text-dark-text-primary">{author}</p>
           {role && (
-            <p className="text-xs text-dark-text-muted mt-0.5">{role}</p>
+            <p className="text-xs text-dark-text-secondary mt-0.5">{role}</p>
           )}
         </div>
       </motion.div>

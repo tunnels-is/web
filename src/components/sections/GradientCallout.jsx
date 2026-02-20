@@ -53,7 +53,7 @@ const GradientCallout = ({
           )}
           <div className="flex-1">
             <h3 className="text-lg font-bold text-dark-text-primary mb-1.5">{title}</h3>
-            <p className="text-sm text-dark-text-secondary leading-relaxed">{description}</p>
+            <p className="text-sm text-dark-text-primary/70 leading-relaxed">{description}</p>
           </div>
           {button && (
             <a
@@ -81,7 +81,7 @@ const GradientCallout = ({
           <div className={`w-10 h-10 mb-4 ${colors.text}`}>{icon}</div>
         )}
         <h3 className="text-xl font-bold text-dark-text-primary mb-2">{title}</h3>
-        <p className="text-sm text-dark-text-secondary leading-relaxed mb-5 max-w-2xl">{description}</p>
+        <p className="text-sm text-dark-text-primary/70 leading-relaxed mb-5 max-w-2xl">{description}</p>
 
         {features.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-5">

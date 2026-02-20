@@ -96,7 +96,7 @@ const FreeAndOpenSource = () => {
                 <div className="transform scale-[2.5] flex items-center justify-center">{social.icon}</div>
               </div>
               <h3 className="text-base font-semibold text-dark-text-primary mb-1 group-hover:text-dark-accent-primary transition-colors">{social.name}</h3>
-              <p className="text-dark-text-muted text-xs">{social.desc}</p>
+              <p className="text-dark-text-secondary text-xs">{social.desc}</p>
             </a>
           ))}
         </div>

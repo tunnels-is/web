@@ -92,7 +92,7 @@ const HeroWithGradients = ({
           </h1>
 
           {subtitle && (
-            <h2 className="text-2xl md:text-4xl font-semibold text-dark-text-secondary mb-6">
+            <h2 className="text-2xl md:text-4xl font-semibold text-dark-text-primary/70 mb-6">
               {subtitle}
             </h2>
           )}
@@ -141,7 +141,7 @@ const HeroWithGradients = ({
             {quickStats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl font-bold mb-1">{stat.value}</div>
-                <div className="text-dark-text-muted text-sm">{stat.label}</div>
+                <div className="text-dark-text-secondary text-sm">{stat.label}</div>
               </div>
             ))}
           </motion.div>

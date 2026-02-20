@@ -40,7 +40,7 @@ const PlatformDownloads = ({ platforms, version }) => {
               {platform.icon}
             </div>
             <h3 className="text-lg font-bold text-center mb-1">{platform.name}</h3>
-            <p className="text-dark-text-muted text-xs text-center mb-4">
+            <p className="text-dark-text-secondary text-xs text-center mb-4">
               Version {version} {platform.fileType}
             </p>
             <a

@@ -19,7 +19,7 @@ const DownloadHero = ({ title, subtitle, version }) => {
           <p className="text-sm text-dark-text-secondary mb-1.5">
             Latest version: <span className="text-dark-accent-primary font-semibold">v{version}</span>
           </p>
-          <p className="text-sm text-dark-text-secondary max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm text-dark-text-primary/70 max-w-xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         </motion.div>

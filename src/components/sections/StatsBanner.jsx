@@ -20,7 +20,7 @@ const StatsBanner = ({
             className="text-center mb-8"
           >
             {title && <h2 className="text-2xl md:text-3xl font-bold mb-2 tracking-tight">{title}</h2>}
-            {subtitle && <p className="text-sm text-dark-text-secondary max-w-xl mx-auto">{subtitle}</p>}
+            {subtitle && <p className="text-sm text-dark-text-primary/70 max-w-xl mx-auto">{subtitle}</p>}
           </motion.div>
         )}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

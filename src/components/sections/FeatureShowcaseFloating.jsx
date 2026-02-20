@@ -38,7 +38,7 @@ const FeatureShowcaseFloating = ({
 
           <div className="space-y-4 mb-6">
             {descriptions.map((description, index) => (
-              <p key={index} className="text-base text-dark-text-secondary leading-relaxed">
+              <p key={index} className="text-base text-dark-text-primary/70 leading-relaxed">
                 {description}
               </p>
             ))}

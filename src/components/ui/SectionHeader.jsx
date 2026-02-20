@@ -48,7 +48,7 @@ const SectionHeader = ({
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-sm md:text-base text-dark-text-secondary leading-relaxed ${maxWidthClass}`}>
+        <p className={`text-sm md:text-base text-dark-text-primary/70 leading-relaxed ${maxWidthClass}`}>
           {subtitle}
         </p>
       )}

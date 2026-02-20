@@ -87,7 +87,7 @@ const FeatureShowcaseMagazine = ({
                 initial={{ opacity: 0, y: 8 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.25, delay: 0.2 + index * 0.04, ease: [0.16, 1, 0.3, 1] }}
-                className="text-lg md:text-xl text-dark-text-secondary leading-relaxed mb-4 font-light"
+                className="text-lg md:text-xl text-dark-text-primary/70 leading-relaxed mb-4 font-light"
               >
                 {description}
               </motion.p>

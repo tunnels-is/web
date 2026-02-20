@@ -38,7 +38,7 @@ const FeatureShowcaseBento = ({
                   {title}
                 </h2>
                 {descriptions.map((description, index) => (
-                  <p key={index} className="text-dark-text-secondary leading-relaxed mb-4 last:mb-0">
+                  <p key={index} className="text-dark-text-primary/70 leading-relaxed mb-4 last:mb-0">
                     {description}
                   </p>
                 ))}
@@ -100,7 +100,7 @@ const FeatureShowcaseBento = ({
                   {title}
                 </h2>
                 {descriptions.map((description, index) => (
-                  <p key={index} className="text-dark-text-secondary leading-relaxed mb-4 last:mb-0">
+                  <p key={index} className="text-dark-text-primary/70 leading-relaxed mb-4 last:mb-0">
                     {description}
                   </p>
                 ))}

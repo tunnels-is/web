@@ -79,7 +79,7 @@ const FeatureShowcaseSpotlight = ({
                 className="space-y-6"
               >
                 {descriptions.map((description, index) => (
-                  <p key={index} className="text-lg md:text-xl text-dark-text-secondary leading-relaxed font-light">
+                  <p key={index} className="text-lg md:text-xl text-dark-text-primary/70 leading-relaxed font-light">
                     {description}
                   </p>
                 ))}
@@ -129,7 +129,7 @@ const FeatureShowcaseSpotlight = ({
                 className="space-y-6"
               >
                 {descriptions.map((description, index) => (
-                  <p key={index} className="text-lg md:text-xl text-dark-text-secondary leading-relaxed font-light">
+                  <p key={index} className="text-lg md:text-xl text-dark-text-primary/70 leading-relaxed font-light">
                     {description}
                   </p>
                 ))}

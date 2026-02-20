@@ -37,7 +37,7 @@ const HeroSimple = ({
           </h1>
 
           {subtitle && (
-            <p className="text-base sm:text-lg md:text-xl font-medium text-dark-text-secondary mb-3 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl font-medium text-dark-text-primary/70 mb-3 max-w-2xl mx-auto leading-relaxed">
               {subtitle}
             </p>
           )}
@@ -48,7 +48,7 @@ const HeroSimple = ({
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}
-            className="text-sm sm:text-base text-dark-text-muted mb-8 max-w-xl mx-auto leading-relaxed"
+            className="text-sm sm:text-base text-dark-text-secondary mb-8 max-w-xl mx-auto leading-relaxed"
           >
             {description}
           </motion.p>
@@ -111,7 +111,7 @@ const HeroSimple = ({
                   className="text-center"
                 >
                   <div className="text-[17px] font-semibold text-dark-text-primary mb-1">{item.title}</div>
-                  <div className="text-[13px] text-dark-text-muted leading-snug">{item.desc}</div>
+                  <div className="text-[13px] text-dark-text-secondary leading-snug">{item.desc}</div>
                 </motion.div>
               ))}
             </motion.div>

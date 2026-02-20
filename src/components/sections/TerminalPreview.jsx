@@ -75,7 +75,7 @@ const TerminalPreview = ({
         <h2 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight">{title}</h2>
       )}
       {description && (
-        <p className="text-sm text-dark-text-secondary leading-relaxed mb-4 max-w-lg">{description}</p>
+        <p className="text-sm text-dark-text-primary/70 leading-relaxed mb-4 max-w-lg">{description}</p>
       )}
       {features.length > 0 && (
         <ul className="space-y-2.5">

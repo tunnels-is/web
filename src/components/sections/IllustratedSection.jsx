@@ -52,7 +52,7 @@ const IllustratedSection = ({
           initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4, delay: 0.08 + index * 0.04, ease: [0.16, 1, 0.3, 1] }}
-          className="text-sm text-dark-text-secondary mb-3 leading-relaxed"
+          className="text-sm text-dark-text-primary/70 mb-3 leading-relaxed"
         >
           {desc}
         </motion.p>

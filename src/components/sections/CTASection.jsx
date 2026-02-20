@@ -28,7 +28,7 @@ const CTASection = ({
               {title}
             </h2>
             {description && (
-              <p className="text-dark-text-secondary text-sm mb-7 max-w-lg mx-auto leading-relaxed">
+              <p className="text-dark-text-primary/70 text-sm mb-7 max-w-lg mx-auto leading-relaxed">
                 {description}
               </p>
             )}
@@ -67,7 +67,7 @@ const CTASection = ({
               </div>
               <h2 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight">{title}</h2>
               {description && (
-                <p className="text-sm text-dark-text-secondary max-w-2xl mx-auto leading-relaxed">{description}</p>
+                <p className="text-sm text-dark-text-primary/70 max-w-2xl mx-auto leading-relaxed">{description}</p>
               )}
             </motion.div>
           )}

@@ -58,7 +58,7 @@ const FeatureShowcase = ({
           ) : (
             <>
               {descriptions.map((description, index) => (
-                <p key={index} className="text-sm text-dark-text-secondary leading-relaxed mb-4">
+                <p key={index} className="text-sm text-dark-text-primary/70 leading-relaxed mb-4">
                   {description}
                 </p>
               ))}

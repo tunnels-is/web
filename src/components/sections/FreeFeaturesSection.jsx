@@ -11,7 +11,7 @@ const FreeFeaturesSection = ({ title, description, features }) => {
         <h2 className="text-2xl md:text-3xl font-bold mb-3 text-center tracking-tight">
           {title}
         </h2>
-        <p className="text-center text-dark-text-secondary text-base mb-10 max-w-2xl mx-auto">
+        <p className="text-center text-dark-text-primary/70 text-base mb-10 max-w-2xl mx-auto">
           {description}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

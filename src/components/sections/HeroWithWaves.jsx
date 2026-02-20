@@ -48,7 +48,7 @@ const HeroWithWaves = ({
           </h1>
 
           {subtitle && (
-            <h2 className="text-2xl md:text-4xl font-semibold text-dark-text-secondary mb-6 leading-snug">
+            <h2 className="text-2xl md:text-4xl font-semibold text-dark-text-primary/70 mb-6 leading-snug">
               {subtitle}
             </h2>
           )}
@@ -104,7 +104,7 @@ const HeroWithWaves = ({
                 className="glass-effect p-5 rounded-xl group hover:border-dark-accent-primary/30 border border-transparent transition-colors duration-150"
               >
                 <div className="text-4xl font-bold mb-2 transition-colors duration-150 group-hover:text-dark-accent-primary">{stat.value}</div>
-                <div className="text-dark-text-muted text-sm uppercase tracking-wider transition-colors duration-150 group-hover:text-dark-text-secondary">{stat.label}</div>
+                <div className="text-dark-text-secondary text-sm uppercase tracking-wider transition-colors duration-150 group-hover:text-dark-text-primary">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>

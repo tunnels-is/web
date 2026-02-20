@@ -36,7 +36,7 @@ const StaggeredGrid = ({
           </p>
 
           {item.scenario && (
-            <p className="text-xs text-dark-text-muted italic leading-relaxed">
+            <p className="text-xs text-dark-text-secondary italic leading-relaxed">
               {item.scenario}
             </p>
           )}

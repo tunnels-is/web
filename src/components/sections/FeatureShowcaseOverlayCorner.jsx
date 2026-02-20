@@ -42,7 +42,7 @@ const FeatureShowcaseOverlayCorner = ({
                 </h2>
 
                 {descriptions.length > 0 && (
-                  <p className="text-lg text-dark-text-secondary leading-relaxed mb-6">
+                  <p className="text-lg text-dark-text-primary/70 leading-relaxed mb-6">
                     {descriptions[0]}
                   </p>
                 )}
@@ -132,7 +132,7 @@ const FeatureShowcaseOverlayCorner = ({
                 </h2>
 
                 {descriptions.length > 0 && (
-                  <p className="text-lg text-dark-text-secondary leading-relaxed mb-6">
+                  <p className="text-lg text-dark-text-primary/70 leading-relaxed mb-6">
                     {descriptions[0]}
                   </p>
                 )}

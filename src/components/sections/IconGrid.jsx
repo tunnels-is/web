@@ -53,7 +53,7 @@ const IconGrid = ({
 
           {/* Optional description */}
           {item.description && (
-            <p className="mt-1 text-xs leading-snug text-dark-text-muted">
+            <p className="mt-1 text-xs leading-snug text-dark-text-secondary">
               {item.description}
             </p>
           )}

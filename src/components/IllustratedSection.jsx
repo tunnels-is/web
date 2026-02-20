@@ -65,7 +65,7 @@ const IllustratedSection = ({
         </h2>
       )}
       {description && (
-        <p className="text-dark-text-secondary text-sm mb-5 leading-relaxed max-w-lg">
+        <p className="text-dark-text-primary/70 text-sm mb-5 leading-relaxed max-w-lg">
           {description}
         </p>
       )}

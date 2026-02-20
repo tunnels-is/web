@@ -42,7 +42,7 @@ const FeatureGrid = ({
 
           {/* Scenario (if exists) */}
           {feature.scenario && (
-            <p className="mt-3 text-xs text-dark-text-muted italic leading-relaxed">
+            <p className="mt-3 text-xs text-dark-text-secondary italic leading-relaxed">
               {feature.scenario}
             </p>
           )}

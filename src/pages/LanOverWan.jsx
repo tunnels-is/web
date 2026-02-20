@@ -100,7 +100,7 @@ const LanOverWan = () => {
             ))}
           </div>
 
-          <p className="text-center text-dark-text-muted text-xs">
+          <p className="text-center text-dark-text-secondary text-xs">
             {content.architectureSection.footer}
           </p>
         </div>

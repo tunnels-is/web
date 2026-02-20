@@ -80,7 +80,7 @@ const Footer = () => {
               </div>
               <span className="text-base font-bold text-dark-text-primary tracking-tight">Tunnels</span>
             </div>
-            <p className="text-dark-text-muted text-xs leading-relaxed mb-5 max-w-xs">
+            <p className="text-dark-text-secondary text-xs leading-relaxed mb-5 max-w-xs">
               Modern networking that connects you to multiple networks at once. VPN, LAN, DNS security, and more.
             </p>
             <div className="flex gap-2">

@@ -80,7 +80,7 @@ const PublicVPN = () => {
             <div key={index} className="p-5 text-center transition-colors">
               <h3 className="text-base font-bold text-dark-text-primary mb-1">{provider.name}</h3>
               <p className="text-lg font-bold text-dark-accent-primary mb-1">{provider.price}</p>
-              <p className="text-dark-text-muted text-xs">{provider.region}</p>
+              <p className="text-dark-text-secondary text-xs">{provider.region}</p>
             </div>
           ))}
         </div>

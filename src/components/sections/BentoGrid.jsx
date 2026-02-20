@@ -21,7 +21,7 @@ const BentoGrid = ({
           {featured.icon && <div className="w-10 h-10 mb-4">{featured.icon}</div>}
           <div>
             <h3 className="text-lg font-bold text-dark-text-primary mb-2">{featured.title}</h3>
-            <p className="text-sm text-dark-text-secondary leading-relaxed mb-4">{featured.description}</p>
+            <p className="text-sm text-dark-text-primary/70 leading-relaxed mb-4">{featured.description}</p>
             {featured.features && (
               <ul className="space-y-2">
                 {featured.features.map((f, i) => (
