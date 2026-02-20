@@ -15,6 +15,8 @@ import {
   EnterpriseIllustration,
   SecurityIllustration,
 } from '../components/illustrations';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const Enterprise = () => {
   const {
@@ -27,6 +29,7 @@ const Enterprise = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/enterprise']} />
       {/* Hero Section */}
       <HeroSimple
         title={hero.title}

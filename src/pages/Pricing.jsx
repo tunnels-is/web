@@ -10,6 +10,8 @@ import ComparisonCards from '../components/sections/ComparisonCards';
 import IllustratedSection from '../components/IllustratedSection';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const { zeroCostBadge: _zcBadge } = pricingContent;
 const ZeroCostBadge = () => (
@@ -24,6 +26,7 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/pricing']} />
       <PricingHero
         title={hero.title}
         description={hero.description}

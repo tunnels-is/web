@@ -11,6 +11,8 @@ import StatsBanner from '../components/sections/StatsBanner';
 import { dnsContent } from '../content/siteContent';
 import { DNSFlowIllustration } from '../components/illustrations';
 import RelatedPages from '../components/sections/RelatedPages';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const deviceCardIcons = [
   (
@@ -43,6 +45,7 @@ const DNS = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/dns']} />
       <HeroSimple
         title={dnsContent.hero.title}
         subtitle={dnsContent.hero.subtitle}

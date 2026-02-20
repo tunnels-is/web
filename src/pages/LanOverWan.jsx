@@ -12,12 +12,15 @@ import MidPageCTA from '../components/sections/MidPageCTA';
 import RelatedPages from '../components/sections/RelatedPages';
 import { lanOverWanContent } from '../content/siteContent';
 import { LANOverWANIllustration } from '../components/illustrations';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const LanOverWan = () => {
   const content = lanOverWanContent;
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/lan-over-wan']} />
       {/* Hero Section */}
       <HeroSimple
         badge={content.hero.badge}

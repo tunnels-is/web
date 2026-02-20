@@ -8,6 +8,8 @@ import GradientCallout from '../components/sections/GradientCallout';
 import { freeOpenSourceContent } from '../content/siteContent';
 import { SecurityIllustration } from '../components/illustrations';
 import RelatedPages from '../components/sections/RelatedPages';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const FreeAndOpenSource = () => {
   const {
@@ -24,6 +26,7 @@ const FreeAndOpenSource = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/free-and-opensource']} />
       <HeroSimple
         title={hero.title}
         description={hero.description}

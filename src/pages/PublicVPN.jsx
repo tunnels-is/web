@@ -11,12 +11,15 @@ import HorizontalSteps from '../components/sections/HorizontalSteps';
 import { publicVPNContent } from '../content/siteContent';
 import { PrivacyShieldIllustration } from '../components/illustrations';
 import RelatedPages from '../components/sections/RelatedPages';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const PublicVPN = () => {
   const content = publicVPNContent;
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/public']} />
       {/* Hero Section */}
       <HeroSimple
         badge={content.hero.badge}

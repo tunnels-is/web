@@ -14,6 +14,8 @@ import {
   GlobalNetworkIllustration,
 } from '../components/illustrations';
 import RelatedPages from '../components/sections/RelatedPages';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const Technical = () => {
   const {
@@ -33,6 +35,7 @@ const Technical = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/technical']} />
 
       {/* Hero Section */}
       <HeroSimple

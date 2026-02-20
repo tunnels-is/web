@@ -15,6 +15,8 @@ import GradientCallout from '../components/sections/GradientCallout';
 import { KeyIcon, LightbulbIcon } from '../components/ui/Icons';
 import { personalVPNContent } from '../content/siteContent';
 import { PrivacyShieldIllustration } from '../components/illustrations';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const PersonalVPN = () => {
   const {
@@ -28,6 +30,7 @@ const PersonalVPN = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/personal-vpn']} />
       {/* Hero Section */}
       <HeroSimple
         badge={hero.badge}

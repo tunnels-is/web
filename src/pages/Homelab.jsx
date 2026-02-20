@@ -16,6 +16,8 @@ import {
   SelfHostedIllustration,
 } from '../components/illustrations';
 import { LightbulbIcon } from '../components/ui/Icons';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const Homelab = () => {
   const {
@@ -39,6 +41,7 @@ const Homelab = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/homelab']} />
 
       {/* Hero */}
       <HeroSimple

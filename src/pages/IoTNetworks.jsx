@@ -17,6 +17,8 @@ import { iotNetworksContent } from '../content/siteContent';
 import {
   IoTNetworkIllustration,
 } from '../components/illustrations';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const IoTNetworks = () => {
   const {
@@ -29,6 +31,7 @@ const IoTNetworks = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/iot']} />
       {/* Hero Section */}
       <HeroSimple
         badge={hero.badge}

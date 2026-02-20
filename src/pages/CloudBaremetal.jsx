@@ -14,6 +14,8 @@ import MidPageCTA from '../components/sections/MidPageCTA';
 import RelatedPages from '../components/sections/RelatedPages';
 import { cloudBaremetalContent } from '../content/siteContent';
 import { MultiServerIllustration } from '../components/illustrations';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const CloudBaremetal = () => {
   const {
@@ -25,6 +27,7 @@ const CloudBaremetal = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/cloud']} />
       {/* Hero Section */}
       <HeroSimple
         title={hero.title}

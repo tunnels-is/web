@@ -12,6 +12,8 @@ import { homeContent } from '../content/siteContent';
 import {
   SecureConnectionIllustration,
 } from '../components/illustrations';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const { openSourceBadge: _osBadge } = homeContent;
 const OpenSourceBadge = () => (
@@ -60,6 +62,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/']} />
       {/* Hero Section */}
       <HeroSimple
         title={hero.title}

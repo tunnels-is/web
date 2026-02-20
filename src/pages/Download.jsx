@@ -9,12 +9,15 @@ import IllustratedSection from '../components/IllustratedSection';
 import {
   DownloadIllustration,
 } from '../components/illustrations';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const Download = () => {
   const { version, hero, platforms, allReleasesSection, quickStart, whatsIncluded, helpSection, illustratedPlatforms } = downloadContent;
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/download']} />
       <DownloadHero
         title={hero.title}
         subtitle={hero.subtitle}

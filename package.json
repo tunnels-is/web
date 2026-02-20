@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "screenshot": "node scripts/screenshot.js",
-    "screenshot:quick": "node scripts/take-screenshot.js"
+    "screenshot:quick": "node scripts/take-screenshot.js",
+    "generate-assets": "node scripts/generate-assets.js"
   },
   "keywords": [
     "react",

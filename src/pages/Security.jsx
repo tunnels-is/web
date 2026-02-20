@@ -11,12 +11,15 @@ import BentoGrid from '../components/sections/BentoGrid';
 import { securityContent } from '../content/siteContent';
 import { SecurityIllustration } from '../components/illustrations';
 import RelatedPages from '../components/sections/RelatedPages';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const Security = () => {
   const content = securityContent;
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/security']} />
       <HeroSimple
         badge={content.hero.badge}
         title={content.hero.title}

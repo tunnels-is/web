@@ -16,6 +16,8 @@ import {
   OfficeNetworkIllustration,
   SecurityIllustration,
 } from '../components/illustrations';
+import SEO from '../components/SEO';
+import { seoData } from '../content/seoData';
 
 const OfficeNetworks = () => {
   const {
@@ -38,6 +40,7 @@ const OfficeNetworks = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO {...seoData['/office']} />
       {/* Hero Section */}
       <HeroSimple
         title={hero.title}
