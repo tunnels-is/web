@@ -58,7 +58,7 @@ const FeatureShowcase = ({
         className="relative"
       >
         {/* Full-width image */}
-        <div className="relative rounded-2xl overflow-hidden">
+        <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] shadow-[0_0_60px_-12px_rgba(79,140,255,0.15)]">
           <img
             src={image}
             alt={title}
@@ -74,7 +74,7 @@ const FeatureShowcase = ({
           className={`relative z-10 ${isLeft ? 'mr-auto lg:-ml-[20%]' : 'ml-auto lg:-mr-[20%]'} w-full sm:w-3/4 lg:w-2/5 -mt-[20%] sm:-mt-[15%] lg:-mt-[10%]`}
         >
           <div
-            className={`backdrop-blur-xl bg-dark-bg/75 border border-white/[0.06] rounded-2xl p-5 sm:p-6 shadow-2xl`}
+            className="backdrop-blur-xl bg-dark-bg/80 border border-white/[0.08] rounded-2xl p-5 sm:p-6 shadow-[0_8px_40px_-8px_rgba(0,0,0,0.6),0_0_24px_-4px_rgba(79,140,255,0.12)]"
           >
             <TextContent
               title={title}
