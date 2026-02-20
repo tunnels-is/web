@@ -2,3 +2,8 @@ User-agent: *
 Allow: /
 
 Sitemap: https://tunnels.is/sitemap.xml
+
+# LLM-specific content files
+# See https://llmstxt.org/ for specification
+# llms.txt: https://tunnels.is/llms.txt
+# llms-full.txt: https://tunnels.is/llms-full.txt

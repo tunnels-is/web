@@ -1,0 +1,41 @@
+# Tunnels
+
+> Tunnels is a free, open-source VPN and networking solution. It supports multi-network VPN connections, LAN over WAN, NAT traversal, built-in DNS security with daily threat list updates, DNS routing, and end-to-end encryption. Self-hosting is free with no paywalls or feature gates. Written in Go, fully auditable, and available on Windows, macOS, and Linux.
+
+Tunnels is designed for individuals, homelabs, enterprises, and IoT deployments. It uses ChaCha20-Poly1305, AES-256-GCM, and AES-128-GCM encryption with X25519 + ML-KEM-1024 hybrid key exchange. A single server can handle up to 65,535 concurrent connections.
+
+Pricing: Self-hosting is completely free. The public VPN network starts at $4/month (annual) with a 24-hour free trial, no credit card required.
+
+## Main Pages
+
+- [Features](https://tunnels.is/features): Complete networking and security suite overview
+- [Download](https://tunnels.is/download): Desktop clients for Windows, macOS, and Linux (v2.0.7)
+- [Pricing](https://tunnels.is/pricing): Free self-hosting, public VPN from $4/month
+- [Security](https://tunnels.is/security): Encryption, zero trust architecture, and open source auditing
+- [DNS Security](https://tunnels.is/dns): Built-in DNS server with threat blocking and routing
+- [Enterprise](https://tunnels.is/enterprise): Large-scale deployment with centralized management
+- [Free & Open Source](https://tunnels.is/free-and-opensource): Source code, licensing, and community
+
+## Use Cases
+
+- [Personal VPN](https://tunnels.is/personal-vpn): Run your own VPN instead of trusting a provider
+- [Homelab](https://tunnels.is/homelab): Self-host your VPN and access your homelab remotely
+- [Public VPN](https://tunnels.is/public): Create your own public VPN service
+- [Office Networks](https://tunnels.is/office): Connect remote employees to office resources
+- [Cloud & Baremetal](https://tunnels.is/cloud): Distributed VPN infrastructure with centralized auth
+- [IoT Networks](https://tunnels.is/iot): Secure IoT device fleet with encrypted remote access
+- [LAN over WAN](https://tunnels.is/lan-over-wan): Bridge local networks across the internet
+
+## Documentation & Community
+
+- [Documentation](https://docs.tunnels.is): Setup guides, API reference, and troubleshooting
+- [GitHub](https://github.com/tunnels-is): Source code and releases
+- [Discord](https://discord.com/invite/7Ts3PCnCd9): Community support and discussion
+- [X / Twitter](https://x.com/tunnels_is): Updates and announcements
+- [Reddit](https://www.reddit.com/r/tunnels_is/): Community discussion
+- [Support Email](mailto:support@tunnels.is): Direct support contact
+
+## Optional
+
+- [Technical Overview](https://tunnels.is/technical): Architecture, protocols, and system design
+- [All Releases](https://github.com/tunnels-is/tunnels/releases/latest): Download archives for all platforms

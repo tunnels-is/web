@@ -1,0 +1,168 @@
+# Tunnels
+
+> Tunnels is a free, open-source VPN and networking solution built in Go. It supports multi-network VPN connections, LAN over WAN, NAT traversal, built-in DNS security with daily threat list updates, DNS routing, and end-to-end encryption. Self-hosting is free with no paywalls or feature gates. Available on Windows, macOS, and Linux.
+
+Website: https://tunnels.is
+Documentation: https://docs.tunnels.is
+GitHub: https://github.com/tunnels-is
+Current Version: 2.0.7
+
+## Overview
+
+Tunnels is a modern networking solution that connects users to multiple networks simultaneously with built-in security and privacy features. It is fully open source, written in Go, and designed to be portable — download, extract, and run with no installer required.
+
+### Key Differentiators
+
+- **Free self-hosting**: All features are available at no cost when self-hosted. No paywalls, no feature gates.
+- **Multi-network VPN**: Connect to multiple VPN networks simultaneously with per-network DNS routing.
+- **Built-in DNS security**: Integrated DNS server with daily updated block lists, custom DNS records, DNS-over-HTTPS translation, and DNS leak prevention — works without an account.
+- **Portable**: No installation required. Download and run. Windows requires WinTUN driver for networking.
+- **Open source**: Entire codebase is publicly auditable on GitHub. Security through transparency.
+- **Post-quantum cryptography**: Uses ChaCha20-Poly1305, AES-256-GCM, and AES-128-GCM encryption with X25519 + ML-KEM-1024 hybrid key exchange.
+- **Zero trust architecture**: Every connection is authenticated. No implicit trust between components.
+- **Scalable**: A single server handles up to 65,535 concurrent connections.
+
+## Features
+
+### VPN & Networking
+- Connect to multiple VPN networks at once
+- LAN over WAN — bridge isolated local networks across the internet
+- NAT traversal for devices behind firewalls
+- Advanced routing with per-network configuration
+- TCP and UDP protocol support
+- Server-managed routing and IP assignment
+
+### DNS Security
+- Built-in DNS server/proxy with extensive blacklisting
+- Daily updated threat lists from trusted sources
+- Custom A and TXT DNS records with wildcard support
+- DNS routing across multiple connected networks
+- DNS-over-HTTPS (DoH) translation
+- DNS leak prevention (works without a Tunnels account)
+- Real-time DNS analytics and WHOIS lookup
+
+### Security
+- ChaCha20-Poly1305, AES-256-GCM, AES-128-GCM encryption
+- X25519 + ML-KEM-1024 hybrid key exchange (post-quantum resistant)
+- Zero trust architecture — every connection authenticated
+- No logging of user actions on the public VPN network
+- No tracking of any kind on the public network
+- Fully open source and auditable
+- Minimal dependencies, no third-party services
+
+### Privacy & Anonymity
+- Accounts can be created using usernames or UUIDs
+- Anonymous license keys for account top-ups
+- No logging, no tracking on the public network
+- Self-hosted deployments give complete data sovereignty
+
+## Pricing
+
+Self-hosting is completely free. The public VPN network requires a subscription:
+
+- **1 Month**: $8/month
+- **6 Months**: $6/month (25% savings)
+- **12 Months**: $4/month (50% savings)
+
+All plans include:
+- Public VPN network access
+- Money-back guarantee
+- Community or priority support
+- All basic features
+- 24-hour free trial, no credit card required
+
+## Download
+
+Current version: 2.0.7
+
+Available for:
+- **Windows** (.zip) — requires WinTUN driver
+- **macOS** (.tar.gz)
+- **Linux** (.tar.gz)
+
+Quick start: Download → Extract → Run. No installation needed.
+
+All releases: https://github.com/tunnels-is/tunnels/releases/latest
+
+## Use Cases
+
+### Personal VPN
+Run your own VPN server instead of trusting a commercial provider. Typically faster than shared commercial VPNs because you're not sharing bandwidth. Deploy on a $5-10/month cloud server for full control.
+
+### Homelab
+Self-host your VPN and securely access your homelab from anywhere. Built-in DNS management and ad blocking. Straightforward setup on any Linux system.
+
+### Enterprise & Office
+Enterprise-grade VPN with centralized management, access controls, and multi-server deployment. Connect remote employees to office resources. Company-wide configurations can be distributed as simple files. 24/7 support for enterprise clients. On-premise deployment available. No vendor lock-in.
+
+### Cloud & Baremetal
+Deploy distributed VPN infrastructure with centralized authentication. Scale globally with multiple servers managed from a single control plane.
+
+### IoT Networks
+Secure IoT device fleet with encrypted remote access. Token-based device authentication for headless operation. CLI mode for resource-constrained devices (Raspberry Pi, embedded Linux). Network segmentation with separate subnets and firewall rules. Bandwidth limits per device.
+
+### LAN over WAN
+Bridge isolated local networks across the internet. Create a unified network spanning multiple physical locations with end-to-end encryption.
+
+### Public VPN
+Create your own public VPN service. Route internet traffic through servers you control with full privacy and no third-party data access.
+
+## Frequently Asked Questions
+
+### General
+
+**Do I need technical knowledge to set this up?**
+Basic Linux command-line knowledge helps, but the guided setup process makes it straightforward. If you can SSH into a server and copy-paste commands, you can set up your VPN.
+
+**Is this legal?**
+Yes, running your own VPN server is completely legal in most countries. You're simply encrypting your own internet traffic through your own server.
+
+**How many devices can connect simultaneously?**
+A single server supports up to 65,535 concurrent connections (protocol limit). A basic $5/month server can handle 10-20 simultaneous connections for typical use.
+
+**What happens if my server goes down?**
+Your internet connection continues working normally — you just won't have VPN protection until the server is back up. Cloud providers typically have 99.9%+ uptime.
+
+### Pricing
+
+**What's the difference between plans?**
+All plans provide the same features and access to the public VPN network. Longer subscriptions offer better value with discounted monthly rates.
+
+**Can I create an account anonymously?**
+Yes. Accounts can be created using usernames or UUIDs, and topped up using anonymous license keys purchased separately.
+
+**Do you offer refunds?**
+Yes, all subscriptions include a money-back guarantee.
+
+**What payment methods do you accept?**
+All major credit cards through a secure payment processor. Anonymous license keys can be purchased separately.
+
+### IoT
+
+**Do devices need a lot of resources to run the client?**
+No. The Tunnels client has a CLI mode designed for resource-constrained devices. It runs efficiently on Raspberry Pi, embedded Linux systems, and other low-power hardware.
+
+**Can I isolate IoT devices from my main network?**
+Yes. Tunnels supports network segmentation with separate subnets and firewall rules.
+
+**How do devices authenticate without user interaction?**
+Devices use token-based authentication. Generate a device token from the admin interface, and the device authenticates automatically on startup.
+
+## Open Source
+
+Tunnels is free and open source. All features are available in the open source version with no paywalls. The source code is written in Go for a modern, auditable codebase.
+
+- Source code: https://github.com/tunnels-is
+- License: Free for personal and internal use. Commercial resale restricted.
+- Built with: Go
+- DNS protection: Free, no account required
+
+## Community & Support
+
+- Website: https://tunnels.is
+- Documentation: https://docs.tunnels.is
+- GitHub: https://github.com/tunnels-is
+- Discord: https://discord.com/invite/7Ts3PCnCd9
+- X / Twitter: https://x.com/tunnels_is
+- Reddit: https://www.reddit.com/r/tunnels_is/
+- Email: support@tunnels.is

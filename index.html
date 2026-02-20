@@ -152,6 +152,108 @@
       ]
     }
     </script>
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Tunnels",
+      "applicationCategory": "NetworkApplication",
+      "operatingSystem": "Windows, macOS, Linux",
+      "softwareVersion": "2.0.7",
+      "url": "https://tunnels.is/download",
+      "downloadUrl": "https://github.com/tunnels-is/tunnels/releases/latest",
+      "description": "Free, open-source VPN and networking solution with multi-network support, DNS security, LAN over WAN, and end-to-end encryption.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free to self-host. Public VPN network from $4/month."
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Tunnels",
+        "url": "https://tunnels.is"
+      },
+      "featureList": [
+        "Multi-network VPN connections",
+        "Built-in DNS security with daily threat list updates",
+        "LAN over WAN",
+        "NAT traversal",
+        "DNS routing across connected networks",
+        "ChaCha20-Poly1305 and AES-256-GCM encryption",
+        "Zero trust architecture",
+        "Open source and auditable"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Tunnels free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Self-hosting Tunnels is completely free with all features included and no paywalls. The public VPN network requires a subscription starting at $4/month with a 24-hour free trial, no credit card required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Tunnels open source?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Tunnels is fully open source with the entire codebase available on GitHub at https://github.com/tunnels-is. The code is written in Go and is publicly auditable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What platforms does Tunnels support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tunnels is available for Windows, macOS, and Linux. It is a portable application — just download, extract, and run. No installer required. Windows requires the WinTUN driver for networking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Tunnels compare to commercial VPN providers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unlike commercial VPNs, Tunnels is open source and free to self-host. You control your own server and data. It supports connecting to multiple VPN networks simultaneously, includes built-in DNS security, and uses modern encryption (ChaCha20-Poly1305, AES-256-GCM) with post-quantum key exchange."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I create an account anonymously?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Accounts can be created using usernames or UUIDs, and topped up using anonymous license keys purchased separately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many devices can connect to a single server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A single Tunnels server can handle up to 65,535 concurrent connections (protocol limit). For larger deployments, add additional VPN servers to distribute the load."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need technical knowledge to set up Tunnels?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Basic Linux command-line knowledge helps for server setup, but the guided setup process makes it straightforward. If you can SSH into a server and copy-paste commands, you can set up your own VPN."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="dark">
     <div id="root"></div>
