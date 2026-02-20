@@ -8,6 +8,7 @@ import StatsBanner from '../components/sections/StatsBanner';
 import BentoGrid from '../components/sections/BentoGrid';
 import GradientCallout from '../components/sections/GradientCallout';
 import FeatureTable from '../components/sections/FeatureTable';
+import FeatureShowcase from '../components/sections/FeatureShowcase';
 import MidPageCTA from '../components/sections/MidPageCTA';
 import RelatedPages from '../components/sections/RelatedPages';
 import { enterpriseContent } from '../content/siteContent';
@@ -24,7 +25,7 @@ const Enterprise = () => {
     heroButtons, enterpriseStats, benefitsHeader,
     managementItems, accessControlHeader, accessControlRows,
     accessControlTableConfig, illustratedScale, zeroTrustCallout,
-    illustratedTransparency, relatedPages
+    illustratedTransparency, relatedPages, settingsShowcase, monitoringShowcase
   } = enterpriseContent;
 
   return (
@@ -73,6 +74,17 @@ const Enterprise = () => {
         <BentoGrid items={managementItems} layout="featured" />
       </ContentSection>
 
+      {/* Settings Showcase */}
+      <ContentSection>
+        <FeatureShowcase
+          title={settingsShowcase.title}
+          descriptions={settingsShowcase.descriptions}
+          image={settingsShowcase.image}
+          imagePosition="right"
+          features={settingsShowcase.features}
+        />
+      </ContentSection>
+
       {/* Access Control - Feature Table */}
       <ContentSection>
         <SectionHeader
@@ -97,6 +109,17 @@ const Enterprise = () => {
             button={{ text: "Learn about Security", href: "/security", primary: true }}
           />
         </div>
+      </ContentSection>
+
+      {/* Monitoring Showcase */}
+      <ContentSection>
+        <FeatureShowcase
+          title={monitoringShowcase.title}
+          descriptions={monitoringShowcase.descriptions}
+          image={monitoringShowcase.image}
+          imagePosition="left"
+          features={monitoringShowcase.features}
+        />
       </ContentSection>
 
       {/* Illustrated: Security */}

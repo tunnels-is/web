@@ -15,6 +15,7 @@ import {
   EncryptionIllustration,
 } from '../components/illustrations';
 import SEO from '../components/SEO';
+import FeatureShowcase from '../components/sections/FeatureShowcase';
 import { seoData } from '../content/seoData';
 
 const Features = () => {
@@ -23,7 +24,7 @@ const Features = () => {
   const {
     hero, basicFeatures, advancedFeatures, cta,
     performanceStats, terminalPreview, bentoExtraFeatures,
-    illustratedSecurity, relatedPages,
+    illustratedSecurity, relatedPages, dnsShowcase,
   } = featuresContent;
 
   const basicFeaturesData = basicFeatures.features;
@@ -97,6 +98,17 @@ const Features = () => {
           features={terminalPreview.features}
           lines={terminalPreview.lines}
           position="right"
+        />
+      </ContentSection>
+
+      {/* DNS Management Showcase */}
+      <ContentSection>
+        <FeatureShowcase
+          title={dnsShowcase.title}
+          descriptions={dnsShowcase.descriptions}
+          image={dnsShowcase.image}
+          imagePosition="left"
+          features={dnsShowcase.features}
         />
       </ContentSection>
 

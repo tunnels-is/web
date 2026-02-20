@@ -3,7 +3,6 @@ import HeroSimple from '../components/sections/HeroSimple';
 import ContentSection from '../components/sections/ContentSection';
 import SectionHeader from '../components/ui/SectionHeader';
 import FeatureGrid from '../components/sections/FeatureGrid';
-import StatsBanner from '../components/sections/StatsBanner';
 import CTASection from '../components/sections/CTASection';
 import IllustratedSection from '../components/IllustratedSection';
 import { motion } from 'framer-motion';
@@ -13,6 +12,7 @@ import {
   SecureConnectionIllustration,
 } from '../components/illustrations';
 import SEO from '../components/SEO';
+import FeatureShowcase from '../components/sections/FeatureShowcase';
 import { seoData } from '../content/seoData';
 
 const { openSourceBadge: _osBadge } = homeContent;
@@ -27,9 +27,9 @@ const Home = () => {
   const [topicsRef, topicsVisible] = useScrollAnimation();
   const [useCasesRef, useCasesVisible] = useScrollAnimation();
   const {
-    hero, topicsSection, featuresSection, features, cta, statsBanner,
+    hero, topicsSection, featuresSection, features, cta,
     useCaseCards, highlights, environmentHeader,
-    illustratedSecurity, illustratedOpenSource,
+    illustratedSecurity, illustratedOpenSource, appShowcase,
   } = homeContent;
 
   const useCaseIcons = [
@@ -82,6 +82,17 @@ const Home = () => {
         <FeatureGrid
           features={features}
           columns={4}
+        />
+      </ContentSection>
+
+      {/* App Showcase */}
+      <ContentSection background="dark-surface">
+        <FeatureShowcase
+          title={appShowcase.title}
+          descriptions={appShowcase.descriptions}
+          image={appShowcase.image}
+          imagePosition="right"
+          features={appShowcase.features}
         />
       </ContentSection>
 

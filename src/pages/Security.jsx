@@ -10,6 +10,7 @@ import GradientCallout from '../components/sections/GradientCallout';
 import BentoGrid from '../components/sections/BentoGrid';
 import { securityContent } from '../content/siteContent';
 import { SecurityIllustration } from '../components/illustrations';
+import FeatureShowcase from '../components/sections/FeatureShowcase';
 import RelatedPages from '../components/sections/RelatedPages';
 import SEO from '../components/SEO';
 import { seoData } from '../content/seoData';
@@ -42,6 +43,17 @@ const Security = () => {
         <FeatureGrid
           features={content.securityFeatures}
           columns={3}
+        />
+      </ContentSection>
+
+      {/* DNS Blocking Showcase */}
+      <ContentSection background="dark-surface">
+        <FeatureShowcase
+          title={content.blockingShowcase.title}
+          descriptions={content.blockingShowcase.descriptions}
+          image={content.blockingShowcase.image}
+          imagePosition="right"
+          features={content.blockingShowcase.features}
         />
       </ContentSection>
 

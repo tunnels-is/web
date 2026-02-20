@@ -22,8 +22,18 @@ import { GitHubIcon, DiscordIcon, TwitterIcon, RedditIcon } from '../components/
 // ============================================================================
 
 export const homeContent = {
-  tempContent: {
-    img: "https://raw.githubusercontent.com/tunnels-is/media/master/new-website/banner-grid/1.png"
+  appShowcase: {
+    title: "Your Network, Simplified",
+    descriptions: [
+      "Manage tunnels, connect to servers around the world, and monitor your network — all from one clean interface.",
+    ],
+    image: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/tunnels-page.png",
+    features: [
+      { title: "Connect to multiple VPN servers simultaneously" },
+      { title: "Global server locations" },
+      { title: "One-click tunnel management with ChaCha20 encryption" },
+      { title: "Real-time connection monitoring" },
+    ],
   },
   hero: {
     title: "Tunnels",
@@ -1174,6 +1184,20 @@ export const featuresContent = {
     ],
   },
 
+  dnsShowcase: {
+    title: "Built-In DNS Management",
+    descriptions: [
+      "Configure DNS servers, manage block lists, and set up custom records — all from the Tunnels client. No separate tools needed.",
+    ],
+    image: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/dns-settings-page.png",
+    features: [
+      { title: "Configurable DNS resolvers" },
+      { title: "10 block list categories with millions of entries" },
+      { title: "Custom DNS records and whitelists" },
+      { title: "Secure DNS and logging options" },
+    ],
+  },
+
   relatedPages: [
     { title: "Technical Details", description: "Deep dive into protocols, encryption, and architecture.", path: "/technical" },
     { title: "Download", description: "Get Tunnels for your platform.", path: "/download" },
@@ -1647,8 +1671,36 @@ export const dnsContent = {
   },
 
   images: {
-    serverDNS: "https://raw.githubusercontent.com/tunnels-is/media/master/new-website/banner-grid/1.png",
-    deviceDNS: "https://raw.githubusercontent.com/tunnels-is/media/master/new-website/banner-grid/1.png"
+    serverDNS: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/dns-settings-page-with-block-enabled.png",
+    deviceDNS: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/dns-settings-page.png"
+  },
+
+  blockListShowcase: {
+    title: "One-Click Threat Blocking",
+    descriptions: [
+      "Enable curated block lists with a single click. Block ads, malware, cryptocurrency miners, surveillance trackers, and more across your entire network.",
+    ],
+    image: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/dns-settings-page-with-block-enabled.png",
+    features: [
+      { title: "10 curated block list categories" },
+      { title: "Over 3.8 million domains covered" },
+      { title: "Toggle categories on/off instantly" },
+      { title: "Custom whitelist support" },
+    ],
+  },
+
+  domainTrackingShowcase: {
+    title: "Domain Resolution Tracking",
+    descriptions: [
+      "See exactly which domains are being resolved across your network. Track query counts, first seen timestamps, and filter domains in real time.",
+    ],
+    image: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/resolved-domains-list.png",
+    features: [
+      { title: "Real-time resolved domain list" },
+      { title: "Blocked vs resolved domain views" },
+      { title: "Per-domain query counting" },
+      { title: "Instant domain filtering" },
+    ],
   },
 
   dnsFeatures: [
@@ -1943,8 +1995,36 @@ export const enterpriseContent = {
   },
 
   images: {
-    management: "https://raw.githubusercontent.com/tunnels-is/media/master/new-website/banner-grid/1.png",
-    security: "https://raw.githubusercontent.com/tunnels-is/media/master/new-website/banner-grid/1.png"
+    management: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/genera-settings.png",
+    security: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/logs-page.png"
+  },
+
+  settingsShowcase: {
+    title: "Full Configuration Control",
+    descriptions: [
+      "Configure every aspect of your deployment — from API endpoints and TLS certificates to logging levels, auto-updates, and network interfaces.",
+    ],
+    image: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/genera-settings.png",
+    features: [
+      { title: "API and TLS certificate management" },
+      { title: "Granular logging controls" },
+      { title: "Auto-update configuration" },
+      { title: "Network and system diagnostics" },
+    ],
+  },
+
+  monitoringShowcase: {
+    title: "Real-Time Activity Monitoring",
+    descriptions: [
+      "Monitor all DNS queries, blocked requests, and cache activity in real time with detailed, filterable logging.",
+    ],
+    image: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/logs-page.png",
+    features: [
+      { title: "Live DNS query stream" },
+      { title: "Blocked request visibility" },
+      { title: "DNS cache monitoring" },
+      { title: "Filterable log levels" },
+    ],
   },
 
   benefits: [
@@ -3559,6 +3639,19 @@ export const securityContent = {
       { text: "Download Free", href: "/download", primary: true },
       { text: "Read Security Docs", href: "https://docs.tunnels.is/docs" }
     ]
+  },
+
+  blockingShowcase: {
+    title: "DNS-Level Protection In Action",
+    descriptions: [
+      "See blocked domains in real time. Every malicious request caught at the DNS layer is one fewer threat reaching your network.",
+    ],
+    image: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/small-blocked-domains-list.png",
+    features: [
+      { title: "Real-time blocked domain tracking" },
+      { title: "Request counting per domain" },
+      { title: "First seen and last seen timestamps" },
+    ],
   },
 
   relatedPages: [

@@ -1,4 +1,5 @@
 import HeroSimple from '../components/sections/HeroSimple';
+import FeatureShowcase from '../components/sections/FeatureShowcase';
 import ContentSection from '../components/sections/ContentSection';
 import FeatureGrid from '../components/sections/FeatureGrid';
 import SectionHeader from '../components/ui/SectionHeader';
@@ -38,6 +39,8 @@ const deviceCardIcons = [
 ];
 
 const DNS = () => {
+  const { blockListShowcase, domainTrackingShowcase } = dnsContent;
+
   const deviceDNSCards = dnsContent.deviceDNSCards.map((card, i) => ({
     ...card,
     icon: deviceCardIcons[i],
@@ -70,6 +73,17 @@ const DNS = () => {
             columns={3}
           />
         </div>
+      </ContentSection>
+
+      {/* Block Lists Showcase */}
+      <ContentSection>
+        <FeatureShowcase
+          title={blockListShowcase.title}
+          descriptions={blockListShowcase.descriptions}
+          image={blockListShowcase.image}
+          imagePosition="right"
+          features={blockListShowcase.features}
+        />
       </ContentSection>
 
       {/* Illustrated: Private DNS / Flow */}
@@ -111,6 +125,17 @@ const DNS = () => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
             </svg>
           }
+        />
+      </ContentSection>
+
+      {/* Domain Tracking Showcase */}
+      <ContentSection background="dark-surface">
+        <FeatureShowcase
+          title={domainTrackingShowcase.title}
+          descriptions={domainTrackingShowcase.descriptions}
+          image={domainTrackingShowcase.image}
+          imagePosition="left"
+          features={domainTrackingShowcase.features}
         />
       </ContentSection>
 
