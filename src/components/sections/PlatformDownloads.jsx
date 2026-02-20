@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const PlatformDownloads = ({ platforms, version }) => {
+const PlatformDownloads = ({ platforms, version, loading }) => {
   const platformIcons = {
     "Windows": (
       <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
@@ -41,14 +41,20 @@ const PlatformDownloads = ({ platforms, version }) => {
             </div>
             <h3 className="text-lg font-bold text-center mb-1">{platform.name}</h3>
             <p className="text-dark-text-secondary text-xs text-center mb-4">
-              Version {version} {platform.fileType}
+              {loading || !version ? '...' : `Version ${version}`} {platform.fileType}
             </p>
-            <a
-              href={platform.downloadUrl}
-              className="btn-primary w-full text-center py-2 text-sm"
-            >
-              Download for {platform.name}
-            </a>
+            {loading || !version ? (
+              <span className="btn-primary w-full text-center py-2 text-sm opacity-50 pointer-events-none">
+                Loading...
+              </span>
+            ) : (
+              <a
+                href={platform.downloadUrl}
+                className="btn-primary w-full text-center py-2 text-sm"
+              >
+                Download for {platform.name}
+              </a>
+            )}
           </motion.div>
         ))}
       </div>

@@ -30,7 +30,7 @@ const TerminalIllustration = ({ className = "", width = 300, height = 200 }) => 
 
         {/* Terminal content */}
         <text x="15" y="50" fill="#64748b" fontSize="11" fontFamily="monospace">$</text>
-        <text x="28" y="50" fill="#14b8a6" fontSize="11" fontFamily="monospace">curl -fsSL install.sh | sh</text>
+        <text x="28" y="50" fill="#14b8a6" fontSize="11" fontFamily="monospace">curl -fsSL https://install.tunnels.is | sh</text>
 
         <text x="15" y="70" fill="#22c55e" fontSize="10" fontFamily="monospace">Installing tunnels...</text>
 

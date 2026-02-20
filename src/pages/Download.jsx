@@ -1,5 +1,7 @@
 import { downloadContent } from '../content/siteContent';
+import useLatestRelease from '../hooks/useLatestRelease';
 import DownloadHero from '../components/sections/DownloadHero';
+import AutoDownloadButton from '../components/sections/AutoDownloadButton';
 import PlatformDownloads from '../components/sections/PlatformDownloads';
 import AllReleasesSection from '../components/sections/AllReleasesSection';
 import QuickStartSection from '../components/sections/QuickStartSection';
@@ -13,7 +15,8 @@ import SEO from '../components/SEO';
 import { seoData } from '../content/seoData';
 
 const Download = () => {
-  const { version, hero, platforms, allReleasesSection, quickStart, whatsIncluded, helpSection, illustratedPlatforms } = downloadContent;
+  const { hero, platforms, allReleasesSection, quickStart, whatsIncluded, helpSection, illustratedPlatforms } = downloadContent;
+  const { version, loading } = useLatestRelease();
 
   return (
     <div className="min-h-screen">
@@ -22,11 +25,15 @@ const Download = () => {
         title={hero.title}
         subtitle={hero.subtitle}
         version={version}
+        loading={loading}
       />
+
+      <AutoDownloadButton version={version} loading={loading} />
 
       <PlatformDownloads
         platforms={platforms}
         version={version}
+        loading={loading}
       />
 
       {/* Illustrated: Cross-Platform */}

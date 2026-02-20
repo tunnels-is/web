@@ -227,25 +227,32 @@ export const homelabContent = {
       step: "1",
       title: "Install the Server",
       description: "Deploy Tunnels server on your homelab machine - supports any Linux system.",
-      command: "wget https://tunnels.is/install.sh && sudo bash install.sh",
+      command: "curl -fsSL https://install.tunnels.is | sudo bash",
       details: "Works on Raspberry Pi, Ubuntu, Debian, or any Linux distribution"
     },
     {
       step: "2",
+      title: "Initialize Configuration",
+      description: "Generate the database, config files, TLS certificates, and default admin user.",
+      command: "sudo tunnels --config",
+      details: "Required on first start to set up everything automatically"
+    },
+    {
+      step: "3",
       title: "Configure Server Settings",
       description: "Set up basic configuration for authentication and VPN access.",
       command: "Edit /etc/tunnels/config.json",
       details: "Configure APIIP, APIPort, and network settings"
     },
     {
-      step: "3",
+      step: "4",
       title: "Install the Client",
       description: "Download and install the Tunnels client on your devices.",
       command: "Download from tunnels.is/download",
       details: "Available for Windows, macOS, and Linux"
     },
     {
-      step: "4",
+      step: "5",
       title: "Connect & Configure",
       description: "Add your server to the client and connect to your homelab network.",
       command: "Click + to add server, enter your APIIP and APIPort",
@@ -449,10 +456,14 @@ export const homelabContent = {
     ],
     lines: [
       { type: 'comment', text: 'Download and run the installer' },
-      { type: 'command', text: 'wget https://tunnels.is/install.sh && sudo bash install.sh' },
+      { type: 'command', text: 'curl -fsSL https://install.tunnels.is | sudo bash' },
       { type: 'output', text: 'Detecting system architecture...' },
       { type: 'output', text: 'Found: linux/amd64' },
       { type: 'success', text: 'Tunnels server installed successfully' },
+      { type: 'empty', text: '' },
+      { type: 'comment', text: 'Initialize config, database, TLS certs and admin user' },
+      { type: 'command', text: 'sudo tunnels --config' },
+      { type: 'success', text: 'Configuration initialized' },
       { type: 'empty', text: '' },
       { type: 'comment', text: 'Start and enable the service' },
       { type: 'command', text: 'sudo systemctl enable --now tunnels' },
@@ -662,25 +673,32 @@ export const personalVPNContent = {
       step: "02",
       title: "Install Tunnels Server",
       description: "One command installs everything needed for your personal VPN server.",
-      command: "curl -sSL https://tunnels.is/install.sh | sudo bash",
+      command: "curl -fsSL https://install.tunnels.is | sudo bash",
       specs: "Works on Ubuntu, Debian, CentOS, Fedora, and more"
     },
     {
       step: "03",
+      title: "Initialize Configuration",
+      description: "Generate the database, config files, TLS certificates, and default admin user.",
+      command: "sudo tunnels --config",
+      specs: "Required on first start — sets up everything automatically"
+    },
+    {
+      step: "04",
       title: "Configure Your Server",
       description: "Set up authentication, network settings, and DNS configuration.",
       command: "sudo nano /etc/tunnels/config.json",
       specs: "Configure API port, VPN network range, DNS settings"
     },
     {
-      step: "04",
+      step: "05",
       title: "Install Client Apps",
       description: "Download the Tunnels client for your devices from the official website.",
       command: "Desktop clients only (no mobile apps)",
       specs: "Windows, macOS, and Linux desktop applications"
     },
     {
-      step: "05",
+      step: "06",
       title: "Connect & Enjoy",
       description: "Add your server to the client app and connect. Your personal VPN is ready!",
       command: "Enter your server IP and port, login with your credentials",
@@ -1167,8 +1185,6 @@ export const featuresContent = {
 // ============================================================================
 
 export const downloadContent = {
-  version: "2.0.7",
-
   hero: {
     title: "Download Tunnels",
     subtitle: "Download, extract, and run. Desktop clients for Windows, macOS, and Linux. No mobile apps. Windows requires WinTUN driver."
@@ -2342,20 +2358,24 @@ export const cloudBaremetalContent = {
       "Real-time monitoring across all nodes"
     ],
     lines: [
-      { type: "comment", text: "Install Tunnels server on control node" },
-      { type: "command", text: "wget https://tunnels.is/install.sh && sudo bash install.sh" },
-      { type: "success", text: "Tunnels server installed" },
+      { type: "comment", text: "Download and run the installer" },
+      { type: "command", text: "curl -fsSL https://install.tunnels.is | sudo bash" },
+      { type: "output", text: "Detecting system architecture..." },
+      { type: "output", text: "Found: linux/amd64" },
+      { type: "success", text: "Tunnels server installed successfully" },
       { type: "empty" },
-      { type: "comment", text: "Configure as control server in config.json" },
-      { type: "command", text: "sudo nano /etc/tunnels/config.json" },
-      { type: "info", text: "Set AUTH: true, VPN: true, define server tag and network" },
+      { type: "comment", text: "Initialize config, database, TLS certs and admin user" },
+      { type: "command", text: "sudo tunnels --config" },
+      { type: "success", text: "Configuration initialized" },
       { type: "empty" },
-      { type: "comment", text: "Start the server" },
-      { type: "command", text: "sudo systemctl start tunnels" },
-      { type: "success", text: "Control server running" },
+      { type: "comment", text: "Start and enable the service" },
+      { type: "command", text: "sudo systemctl enable --now tunnels" },
+      { type: "success", text: "Service started: tunnels.service" },
       { type: "empty" },
-      { type: "comment", text: "Repeat on additional VPN nodes in other regions" },
-      { type: "info", text: "Each VPN server registers with the control server" }
+      { type: "comment", text: "Check server status" },
+      { type: "command", text: "sudo systemctl status tunnels" },
+      { type: "info", text: "● tunnels.service - Tunnels VPN Server" },
+      { type: "success", text: "   Active: active (running)" },
     ]
   },
 
@@ -2504,7 +2524,7 @@ export const officeNetworksContent = {
     {
       title: 'Deploy Your Server',
       description: 'Install the Tunnels server on any Linux machine - cloud, VPS, or baremetal in your office.',
-      command: 'wget https://tunnels.is/install.sh && sudo bash install.sh',
+      command: 'curl -fsSL https://install.tunnels.is | sudo bash && sudo tunnels --config',
     },
     {
       title: 'Create User Groups',
@@ -3097,18 +3117,24 @@ export const lanOverWanContent = {
       "Configurable MTU and routing",
     ],
     lines: [
-      { type: "comment", text: "Install Tunnels server on primary site" },
-      { type: "command", text: "wget https://tunnels.is/install.sh && sudo bash install.sh" },
+      { type: "comment", text: "Download and run the installer" },
+      { type: "command", text: "curl -fsSL https://install.tunnels.is | sudo bash" },
+      { type: "output", text: "Detecting system architecture..." },
+      { type: "output", text: "Found: linux/amd64" },
       { type: "success", text: "Tunnels server installed successfully" },
       { type: "empty" },
-      { type: "comment", text: "Configure network routes in config.json" },
-      { type: "command", text: "sudo nano /etc/tunnels/config.json" },
-      { type: "info", text: "Define VPN network range and routes..." },
+      { type: "comment", text: "Initialize config, database, TLS certs and admin user" },
+      { type: "command", text: "sudo tunnels --config" },
+      { type: "success", text: "Configuration initialized" },
       { type: "empty" },
-      { type: "comment", text: "Connect remote client" },
-      { type: "command", text: "# Add server in client UI, connect to your server" },
-      { type: "success", text: "Connected to primary-site (10.0.0.1)" },
-      { type: "output", text: "ping 10.0.0.50 → 64 bytes: time=12.3ms" },
+      { type: "comment", text: "Start and enable the service" },
+      { type: "command", text: "sudo systemctl enable --now tunnels" },
+      { type: "success", text: "Service started: tunnels.service" },
+      { type: "empty" },
+      { type: "comment", text: "Check server status" },
+      { type: "command", text: "sudo systemctl status tunnels" },
+      { type: "info", text: "● tunnels.service - Tunnels VPN Server" },
+      { type: "success", text: "   Active: active (running)" },
     ],
   },
 
@@ -3291,17 +3317,24 @@ export const publicVPNContent = {
       "Multi-server deployments possible",
     ],
     lines: [
-      { type: "comment", text: "Deploy a VPS in your preferred region" },
-      { type: "command", text: "# Use DigitalOcean, Vultr, Hetzner, etc." },
-      { type: "empty" },
-      { type: "comment", text: "Install Tunnels server" },
-      { type: "command", text: "wget https://tunnels.is/install.sh && sudo bash install.sh" },
+      { type: "comment", text: "Download and run the installer" },
+      { type: "command", text: "curl -fsSL https://install.tunnels.is | sudo bash" },
+      { type: "output", text: "Detecting system architecture..." },
+      { type: "output", text: "Found: linux/amd64" },
       { type: "success", text: "Tunnels server installed successfully" },
       { type: "empty" },
-      { type: "comment", text: "Configure and start the server" },
-      { type: "command", text: "sudo nano /etc/tunnels/config.json" },
-      { type: "command", text: "sudo systemctl start tunnels" },
-      { type: "success", text: "Server running — ready for connections" },
+      { type: "comment", text: "Initialize config, database, TLS certs and admin user" },
+      { type: "command", text: "sudo tunnels --config" },
+      { type: "success", text: "Configuration initialized" },
+      { type: "empty" },
+      { type: "comment", text: "Start and enable the service" },
+      { type: "command", text: "sudo systemctl enable --now tunnels" },
+      { type: "success", text: "Service started: tunnels.service" },
+      { type: "empty" },
+      { type: "comment", text: "Check server status" },
+      { type: "command", text: "sudo systemctl status tunnels" },
+      { type: "info", text: "● tunnels.service - Tunnels VPN Server" },
+      { type: "success", text: "   Active: active (running)" },
     ],
   },
 
@@ -3319,7 +3352,7 @@ export const publicVPNContent = {
     {
       title: "Install Tunnels Server",
       description: "Download and install the Tunnels server with one command.",
-      command: "wget https://tunnels.is/install.sh && sudo bash install.sh",
+      command: "curl -fsSL https://install.tunnels.is | sudo bash && sudo tunnels --config",
     },
     {
       title: "Configure Routing",

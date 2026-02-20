@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const DownloadHero = ({ title, subtitle, version }) => {
+const DownloadHero = ({ title, subtitle, version, loading }) => {
   return (
     <section className="relative overflow-hidden hero-gradient">
       <div className="absolute inset-0 opacity-[0.02]" style={{
@@ -17,7 +17,10 @@ const DownloadHero = ({ title, subtitle, version }) => {
             {title}
           </h1>
           <p className="text-sm text-dark-text-secondary mb-1.5">
-            Latest version: <span className="text-dark-accent-primary font-semibold">v{version}</span>
+            Latest version: {loading || !version
+              ? <span className="text-dark-text-secondary/50">loading...</span>
+              : <span className="text-dark-accent-primary font-semibold">v{version}</span>
+            }
           </p>
           <p className="text-sm text-dark-text-primary/70 max-w-xl mx-auto leading-relaxed">
             {subtitle}
