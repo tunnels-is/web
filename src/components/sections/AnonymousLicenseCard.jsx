@@ -6,7 +6,7 @@ const AnonymousLicenseCard = ({ title, description, price, period, url }) => {
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-      className="p-6 max-w-2xl mx-auto transition-colors"
+      className="p-6 max-w-sm mx-auto transition-colors"
     >
       <div className="text-center mb-4">
         <h3 className="text-lg font-bold mb-2">{title}</h3>
@@ -20,7 +20,7 @@ const AnonymousLicenseCard = ({ title, description, price, period, url }) => {
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="btn-secondary block w-full max-w-sm mx-auto text-center py-2.5"
+        className="btn-primary w-full text-center py-2 text-sm block"
       >
         Purchase License Key
       </a>

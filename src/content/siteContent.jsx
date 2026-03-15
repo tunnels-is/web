@@ -27,7 +27,7 @@ export const homeContent = {
     descriptions: [
       "Manage tunnels, connect to servers around the world, and monitor your network — all from one clean interface.",
     ],
-    image: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/tunnels-page.png",
+    image: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/tunnels-page-multi-network.png",
     features: [
       { title: "Connect to multiple VPN servers simultaneously" },
       { title: "Global server locations" },
@@ -3657,6 +3657,7 @@ export const securityContent = {
   relatedPages: [
     { title: "Technical Details", description: "Deep dive into protocols, encryption, and architecture.", path: "/technical" },
     { title: "Features", description: "See the full feature overview.", path: "/features" },
+    { title: "DNS Protection", description: "Block threats at the DNS level with curated block lists.", path: "/dns" },
   ],
 };
 

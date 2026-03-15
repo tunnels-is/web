@@ -258,7 +258,8 @@ All heroes use either HeroSimple (abstract gradient background), PricingHero, or
 
 **D. Consider adding a "quick install" code snippet to the Home hero.** Something like:
 ```
-wget https://tunnels.is/install.sh && sudo bash install.sh
+curl -fsSL https://install.tunnels.is | sudo bash
+sudo tunnels --config
 ```
 This is a proven pattern for developer tools (Homebrew, Rust, Deno all do this) and immediately signals "this is easy to get started with."
 

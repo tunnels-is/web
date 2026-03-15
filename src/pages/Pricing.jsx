@@ -34,6 +34,16 @@ const Pricing = () => {
       />
 
       <ContentSection>
+        <AnonymousLicenseCard
+          title={anonymousKey.title}
+          description={anonymousKey.description}
+          price={anonymousKey.price}
+          period={anonymousKey.period}
+          url={anonymousKey.url}
+        />
+      </ContentSection>
+
+      <ContentSection background="dark-surface">
         <SubscriptionPlans subscriptions={subscriptions} />
       </ContentSection>
 
@@ -53,16 +63,6 @@ const Pricing = () => {
           dividerLabel={comparisonCards.dividerLabel}
           leftCard={comparisonCards.leftCard}
           rightCard={comparisonCards.rightCard}
-        />
-      </ContentSection>
-
-      <ContentSection>
-        <AnonymousLicenseCard
-          title={anonymousKey.title}
-          description={anonymousKey.description}
-          price={anonymousKey.price}
-          period={anonymousKey.period}
-          url={anonymousKey.url}
         />
       </ContentSection>
 

@@ -72,12 +72,10 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-6 h-6 rounded-md bg-gradient-to-br from-dark-accent-primary to-dark-accent-tertiary flex items-center justify-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
-                  <path d="M12 2L12 22M2 12L22 12" opacity="0.7"/>
-                  <circle cx="12" cy="12" r="3" fill="white" stroke="none"/>
-                </svg>
-              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24">
+                <rect x="12.5" y="14" width="7" height="16" rx="1.8" ry="1.1" fill="white"/>
+                <rect x="2" y="5.5" width="28" height="7" rx="2.4" ry="2.2" fill="#4f8cff" transform="rotate(-11, 16, 9)"/>
+              </svg>
               <span className="text-base font-bold text-dark-text-primary tracking-tight">Tunnels</span>
             </div>
             <p className="text-dark-text-secondary text-xs leading-relaxed mb-5 max-w-xs">
