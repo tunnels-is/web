@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const AnonymousLicenseCard = ({ title, description, price, period, url }) => {
+const AnonymousLicenseCard = ({ title, description, price, period, url, buttonText }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
@@ -22,7 +22,7 @@ const AnonymousLicenseCard = ({ title, description, price, period, url }) => {
         rel="noopener noreferrer"
         className="btn-primary w-full text-center py-2 text-sm block"
       >
-        Purchase License Key
+        {buttonText || 'Purchase License Key'}
       </a>
     </motion.div>
   );

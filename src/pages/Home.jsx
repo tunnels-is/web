@@ -30,6 +30,7 @@ const Home = () => {
     hero, topicsSection, featuresSection, features, cta,
     useCaseCards, highlights, environmentHeader,
     illustratedSecurity, illustratedOpenSource, appShowcase,
+    useCaseLearnMore,
   } = homeContent;
 
   const useCaseIcons = [
@@ -151,7 +152,7 @@ const Home = () => {
                     {card.description}
                   </p>
                   <span className="text-dark-accent-primary text-xs font-medium inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">
-                    Learn more
+                    {useCaseLearnMore}
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                       <path d="M9 5l7 7-7 7" />
                     </svg>

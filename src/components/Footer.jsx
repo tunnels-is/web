@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { GitHubIcon, DiscordIcon, TwitterIcon, RedditIcon } from './SocialIcons';
+import { footerContent } from '../content/siteContent';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -58,12 +59,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* CTA Row */}
         <div className="py-6 border-b border-dark-border/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-dark-text-secondary font-medium">Get started with Tunnels</p>
+          <p className="text-sm text-dark-text-secondary font-medium">{footerContent.cta}</p>
           <Link
             to="/download"
             className="bg-dark-accent-primary hover:bg-dark-accent-primary/90 text-white text-sm font-medium py-2 px-5 rounded transition-colors"
           >
-            Download
+            {footerContent.ctaButton}
           </Link>
         </div>
 
@@ -79,7 +80,7 @@ const Footer = () => {
               <span className="text-base font-bold text-dark-text-primary tracking-tight">Tunnels</span>
             </div>
             <p className="text-dark-text-secondary text-xs leading-relaxed mb-5 max-w-xs">
-              Modern networking that connects you to multiple networks at once. VPN, LAN, DNS security, and more.
+              {footerContent.description}
             </p>
             <div className="flex gap-2">
               {socialLinks.map((social) => {

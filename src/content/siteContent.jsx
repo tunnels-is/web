@@ -126,6 +126,8 @@ export const homeContent = {
     { title: 'Encrypted', desc: 'End-to-end encrypted tunnels by default' },
   ],
 
+  useCaseLearnMore: "Learn more",
+
   environmentHeader: {
     title: "Built for Every Environment",
     subtitle: "From personal devices to enterprise infrastructure",
@@ -134,12 +136,12 @@ export const homeContent = {
   illustratedSecurity: {
     subtitle: "End-to-End Security",
     title: "Encrypted by Default",
-    description: "Every connection is protected with modern cryptography. Your data travels through encrypted tunnels with zero-knowledge architecture.",
+    description: "Every connection is protected with modern cryptography. Your data travels through encrypted tunnels — nothing readable in transit.",
     features: [
       "AES-256 and ChaCha20 encryption options",
       "Perfect forward secrecy",
-      "No tracking, no metadata collection",
-      "Audited open-source code",
+      "No activity logging in the public VPN",
+      "Open source and community-reviewable",
     ],
   },
 
@@ -161,9 +163,9 @@ export const homeContent = {
     description: "Every line of code is open for inspection. No hidden backdoors, no proprietary black boxes. You can audit, fork, and self-host with full confidence.",
     features: [
       "Open source — free to self-host",
-      "Active community development",
+      "Community-driven development",
       "Self-host or use managed service",
-      "Regular security reviews",
+      "Community security reviews welcome",
     ],
   },
 };
@@ -313,7 +315,8 @@ export const homelabContent = {
     subtitle: "Built-in DNS server with custom records, blocking, and advanced routing",
     infoBox: {
       title: "Network-Wide Protection",
-      description: "All devices connected through your Tunnels homelab server automatically benefit from DNS blocking and custom DNS records - no per-device configuration needed. Your laptop and desktop get ad-blocking anywhere in the world."
+      description: "All devices connected through your Tunnels homelab server automatically benefit from DNS blocking and custom DNS records - no per-device configuration needed. Your laptop and desktop get ad-blocking anywhere in the world.",
+      button: { text: "Learn about DNS", href: "/dns", primary: true },
     }
   },
 
@@ -634,7 +637,7 @@ export const personalVPNContent = {
         { name: "Custom UDP Protocol", detail: "VPN protocol with X25519 + ML-KEM-1024 key exchange and multiple encryption options (ChaCha20-Poly1305, AES-256-GCM, AES-128-GCM)" },
         { name: "ChaCha20 Encryption", detail: "Modern, strong encryption for all your traffic" },
         { name: "Perfect Forward Secrecy", detail: "Each session has unique keys - past traffic stays secure" },
-        { name: "No Logs, Guaranteed", detail: "Your server doesn't log because you configured it not to" }
+        { name: "You Control the Logs", detail: "Your server, your logging policy — configure what gets logged and what doesn't" }
       ]
     },
     {
@@ -968,6 +971,12 @@ export const personalVPNContent = {
 
   proTipLabel: "Pro Tip:",
 
+  gradientCallout: {
+    title: "Built on Modern Technology",
+    description: "Tunnels uses a custom UDP protocol with post-quantum encryption, delivering both speed and security.",
+    button: { text: "View Technical Details", href: "/technical", primary: true },
+  },
+
   relatedPages: [
     { title: "Public VPN", description: "Access managed VPN servers with no setup required.", path: "/public" },
     { title: "Homelab", description: "Self-host your VPN and access your homelab remotely.", path: "/homelab" },
@@ -1038,8 +1047,8 @@ export const featuresContent = {
         content: "Use our built-in DNS proxy to completely prevent DNS leaks, even without a Tunnels account",
       },
       {
-        title: "IPv6 Blocking",
-        content: "Tunnels can be configured to deny connections if IPv6 is enabled",
+        title: "IPv6 Support",
+        content: "Tunnels supports IPv6 address assignment on the VPN interface when configured",
       },
       {
         title: "DNS Analytics",
@@ -1146,12 +1155,12 @@ export const featuresContent = {
       { type: 'info', text: 'Network: mycompany' },
       { type: 'info', text: 'Peers: 3 connected' },
       { type: 'info', text: 'Latency: 0.8ms avg' },
-      { type: 'output', text: 'DNS: secure (1.2M domains blocked)' },
+      { type: 'output', text: 'DNS: secure (threats blocked)' },
     ],
   },
 
   bentoExtraFeatures: {
-    features: ['Multi-network simultaneous connections', 'Automatic failover', 'Load balancing'],
+    features: ['Multi-network simultaneous connections', 'Manual server switching', 'Configurable routing'],
     highlight: 'Core Feature',
   },
 
@@ -1366,6 +1375,7 @@ export const pricingContent = {
     period: "/month",
     url: "https://tunnels.lemonsqueezy.com/buy/e8cbc47c-c19b-4ef7-9f8a-c8e2b94597dd",
     description: "Top up your account anonymously with license keys",
+    buttonText: "Purchase License Key",
   },
 
   freeFeatures: {
@@ -1683,7 +1693,7 @@ export const dnsContent = {
     image: "https://raw.githubusercontent.com/tunnels-is/media/master/2026/dns-settings-page-with-block-enabled.png",
     features: [
       { title: "10 curated block list categories" },
-      { title: "Over 3.8 million domains covered" },
+      { title: "Millions of domains covered across categories" },
       { title: "Toggle categories on/off instantly" },
       { title: "Custom whitelist support" },
     ],
@@ -1760,7 +1770,7 @@ export const dnsContent = {
     { value: '1M+', label: 'Domains Blocked', description: 'Malicious domains in combined blocklists' },
     { value: '10ms', label: 'Avg Response', description: 'Typical DNS resolution time' },
     { value: 'Daily', label: 'List Updates', description: 'Blocklists refreshed every 24 hours' },
-    { value: '100%', label: 'Private', description: 'Queries never leave your network' },
+    { value: 'Encrypted', label: 'DNS Queries', description: 'DNS queries routed through your encrypted VPN tunnel' },
   ],
 
   serverTerminalLines: [
@@ -1930,7 +1940,7 @@ export const freeOpenSourceContent = {
   illustratedSecurity: {
     subtitle: "Verifiable Security",
     title: "Audit Every Line of Code",
-    description: "Don't trust, verify. Our entire codebase is available for inspection. Security researchers regularly audit our code and report findings publicly.",
+    description: "Don't trust, verify. Our entire codebase is available for inspection. Anyone can review, audit, and report findings — the community helps keep the code honest.",
     features: [
       "Full source on GitHub",
       "Community code reviews welcome",
@@ -2118,7 +2128,7 @@ export const enterpriseContent = {
     { value: '10K+', label: 'Connections', description: 'Concurrent nodes supported' },
     { value: 'Fast', label: 'Latency', description: 'Routing decision time' },
     { value: 'High Uptime', label: 'Uptime', description: 'Architecture designed for reliability' },
-    { value: '0', label: 'Logs', description: 'Zero-knowledge architecture' },
+    { value: 'Admin', label: 'Controlled Logs', description: 'You control what gets logged on your servers' },
   ],
 
   benefitsHeader: {
@@ -2130,7 +2140,7 @@ export const enterpriseContent = {
     {
       title: 'Centralized Dashboard',
       description: 'Manage all nodes, users, and networks from a single control plane.',
-      features: ['Real-time node monitoring', 'Bulk configuration deployment', 'Network topology visualization'],
+      features: ['Real-time node monitoring', 'Configuration file distribution', 'User and group management'],
       highlight: 'Core Feature',
     },
     {
@@ -2142,8 +2152,8 @@ export const enterpriseContent = {
       description: 'Full REST API for automation, integration with your existing infrastructure.',
     },
     {
-      title: 'Audit Trail',
-      description: 'Complete audit logging for compliance requirements and security reviews.',
+      title: 'Server Logging',
+      description: 'Server logs API requests, authentication events, and admin operations to support security reviews.',
     },
   ],
 
@@ -2155,10 +2165,10 @@ export const enterpriseContent = {
   accessControlRows: [
     ['User-based policies', 'Per-user access rules', true],
     ['Group permissions', 'Shared team policies', true],
-    ['Device trust levels', 'Hardware-bound authentication', true],
-    ['Time-based access', 'Schedule-based rules', true],
+    ['Device trust levels', 'Per-device token authentication', true],
+    ['Time-based access', 'Schedule-based rules', false],
     ['Network segmentation', 'Isolated network zones', true],
-    ['Audit logging', 'Full compliance trail', true],
+    ['Audit logging', 'API and authentication event logs', true],
   ],
 
   accessControlTableConfig: {
@@ -2173,8 +2183,8 @@ export const enterpriseContent = {
     features: [
       "Supports 10,000+ concurrent connections",
       "Fast routing decisions",
-      "Horizontal scaling architecture",
-      "High availability architecture"
+      "Horizontal scaling with multiple VPN servers",
+      "Multi-server redundancy"
     ]
   },
 
@@ -2186,7 +2196,8 @@ export const enterpriseContent = {
       "Certificate-based authentication",
       "Network micro-segmentation",
       "Continuous verification"
-    ]
+    ],
+    button: { text: "Learn about Security", href: "/security", primary: true },
   },
 
   illustratedTransparency: {
@@ -2488,9 +2499,9 @@ export const cloudBaremetalContent = {
       "Signature-based auth — no shared secrets",
       "VPN servers never touch the user database",
       "Isolated failure domains prevent lateral movement",
-      "Full audit logging on control and VPN servers"
+      "Server logging on control and VPN servers"
     ],
-    button: { text: "Read Security Docs", href: "https://docs.tunnels.is/docs", primary: false }
+    button: { text: "Learn about Security", href: "/security", primary: true },
   },
 
   ctaSection: {
@@ -2574,8 +2585,8 @@ export const officeNetworksContent = {
     },
     {
       title: "Contractor Access",
-      description: "Provide limited, time-bound access to external contractors without exposing your full network",
-      scenario: "Contractors get access only to their project servers, automatically revoked when contract ends"
+      description: "Provide limited access to external contractors without exposing your full network",
+      scenario: "Contractors get access only to their project servers, revoked by admin when the contract ends"
     },
     {
       title: "BYOD Policy",
@@ -2644,7 +2655,7 @@ export const officeNetworksContent = {
     },
     {
       title: 'Contractor Access',
-      description: 'Provide limited, time-bound access to external contractors without exposing your full network. Scoped to only the project servers they need, revoked when the contract ends.',
+      description: 'Provide limited access to external contractors without exposing your full network. Scoped to only the project servers they need, revoked by admin when the contract ends.',
     },
     {
       title: 'BYOD Policy',
@@ -2694,8 +2705,9 @@ export const officeNetworksContent = {
       'Per-device authentication tokens',
       'User and device management dashboard',
       'Instant revocation when employees leave',
-      'Configurable connection and bandwidth limits',
+      'Configurable simultaneous connection limits per user',
     ],
+    button: { text: "Learn about Security", href: "/security", primary: true },
   },
 
   illustratedSecurity: {
@@ -2769,13 +2781,13 @@ export const iotNetworksContent = {
     },
     {
       title: "Automatic IP Assignment",
-      description: "Built-in DHCP assigns IP addresses automatically. Devices connect and receive configuration without manual setup.",
+      description: "IP addresses are assigned automatically when devices connect. No manual address configuration needed.",
       icon: <SyncIcon />,
       gradient: "from-dark-accent-secondary to-dark-accent-primary"
     },
     {
-      title: "Bandwidth Control",
-      description: "Set per-device bandwidth limits and connection quotas. Prevent any single device from consuming excessive resources.",
+      title: "Connection Monitoring",
+      description: "Track which devices are connected and monitor traffic across your IoT fleet from a central dashboard.",
       icon: <ChartIcon />,
       gradient: "from-dark-accent-tertiary to-dark-accent-secondary"
     }
@@ -2844,8 +2856,8 @@ export const iotNetworksContent = {
       description: "Organize devices into groups with specific access policies. Control which devices can communicate with each other."
     },
     {
-      title: "Per-Device Firewall",
-      description: "Configure firewall rules for each device. Block unwanted traffic and restrict device communication to allowed hosts."
+      title: "Network Isolation",
+      description: "Segment IoT devices into isolated subnets. Control which device groups can communicate with each other."
     }
   ],
 
@@ -2917,8 +2929,8 @@ export const iotNetworksContent = {
       a: "Devices use token-based authentication. You generate a device token from the admin interface, and the device uses that token to authenticate automatically on startup."
     },
     {
-      q: "Can I set bandwidth limits per device?",
-      a: "Yes. You can configure bandwidth limits and connection quotas for individual devices or device groups to prevent any single device from consuming excessive resources."
+      q: "Can I monitor device traffic?",
+      a: "Yes. You can monitor connection status and traffic activity for individual devices and device groups through the admin dashboard."
     },
     {
       q: "Does it work with intermittent connections?",
@@ -2951,7 +2963,7 @@ export const iotNetworksContent = {
       description: "A single server manages your entire IoT fleet — handling authentication, device registry, IP assignment, and encrypted routing between all connected devices.",
       features: [
         "Runs on any Linux system",
-        "Built-in DHCP for automatic IP assignment",
+        "Automatic IP assignment from a configurable pool",
         "Centralized admin dashboard",
         "Scales to 65,535 concurrent devices",
       ],
@@ -2977,9 +2989,8 @@ export const iotNetworksContent = {
       ["Strong Encryption", "AES-256-GCM with X25519 + ML-KEM hybrid key exchange", true],
       ["Device Authentication", "Token-based headless auth — no interactive login required", true],
       ["Access Control Groups", "Per-group policies controlling which devices can talk to each other", true],
-      ["Per-Device Firewall", "Configurable firewall rules blocking unwanted traffic per device", true],
+      ["Network Isolation", "Traffic isolation between device groups via separate subnets", true],
       ["Perfect Forward Secrecy", "Ephemeral session keys ensure past sessions can't be decrypted", true],
-      ["Network Isolation", "IoT traffic isolated from main network via separate subnets", true],
     ],
     caption: "Security features are available on all deployments. Some features require configuration.",
   },
@@ -2993,6 +3004,7 @@ export const iotNetworksContent = {
       "Perfect forward secrecy",
       "Post-quantum ML-KEM key exchange",
     ],
+    button: { text: "Learn about Security", href: "/security", primary: true },
   },
 
   finalCTA: {
@@ -3514,7 +3526,7 @@ export const securityContent = {
     },
     {
       title: "No Logging",
-      description: "Tunnels doesn't log connection data. Since you control the server, you control what's logged.",
+      description: "Since you control the server, you control what's logged. No third parties have access to your data.",
       icon: <EyeShieldIcon />,
       color: "tertiary"
     }
@@ -3610,7 +3622,7 @@ export const securityContent = {
     { value: '256-bit', label: 'Key strength', description: 'Maximum symmetric key size' },
     { value: 'PQ-safe', label: 'Key exchange', description: 'ML-KEM-1024 hybrid handshake' },
     { value: '100%', label: 'Open source', description: 'Every line publicly auditable' },
-    { value: 'Zero', label: 'Logging', description: 'No connection data retained' },
+    { value: 'Admin', label: 'Controlled Logs', description: 'You control what gets logged on your servers' },
   ],
 
   illustratedDefense: {
@@ -3628,7 +3640,7 @@ export const securityContent = {
   openSourceCalloutFeatures: [
     'Full source code available on GitHub',
     'No hidden code, no backdoors, no black boxes',
-    'No hidden code, no secret backdoors, no trust required. Verify everything yourself.',
+    'Verify everything yourself — no trust required',
     'Community security reviews welcome',
   ],
 
@@ -3659,6 +3671,17 @@ export const securityContent = {
     { title: "Features", description: "See the full feature overview.", path: "/features" },
     { title: "DNS Protection", description: "Block threats at the DNS level with curated block lists.", path: "/dns" },
   ],
+};
+
+// ============================================================================
+// FOOTER CONTENT
+// ============================================================================
+
+export const footerContent = {
+  cta: "Get started with Tunnels",
+  description: "Modern networking that connects you to multiple networks at once. VPN, LAN, DNS security, and more.",
+  ctaButton: "Download",
+  copyright: "All rights reserved.",
 };
 
 // Export all content as default for convenient importing

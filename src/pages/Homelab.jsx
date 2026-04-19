@@ -141,7 +141,7 @@ const Homelab = () => {
             icon={<LightbulbIcon />}
             title={dnsSection.infoBox.title}
             description={dnsSection.infoBox.description}
-            button={{ text: "Learn about DNS", href: "/dns", primary: true }}
+            button={dnsSection.infoBox.button}
           />
         </div>
       </ContentSection>

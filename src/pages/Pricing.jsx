@@ -40,6 +40,7 @@ const Pricing = () => {
           price={anonymousKey.price}
           period={anonymousKey.period}
           url={anonymousKey.url}
+          buttonText={anonymousKey.buttonText}
         />
       </ContentSection>
 

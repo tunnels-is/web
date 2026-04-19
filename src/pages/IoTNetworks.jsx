@@ -122,7 +122,7 @@ const IoTNetworks = () => {
             accent="teal"
             title={encryptionCallout.title}
             description={encryptionCallout.description}
-            button={{ text: "Learn about Security", href: "/security", primary: true }}
+            button={encryptionCallout.button}
           />
         </div>
       </ContentSection>

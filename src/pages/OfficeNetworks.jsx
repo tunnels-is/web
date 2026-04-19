@@ -118,7 +118,7 @@ const OfficeNetworks = () => {
             accent="teal"
             title={accessControlCallout.title}
             description={accessControlCallout.description}
-            button={{ text: "Learn about Security", href: "/security", primary: true }}
+            button={accessControlCallout.button}
           />
         </div>
       </ContentSection>

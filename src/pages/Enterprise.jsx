@@ -106,7 +106,7 @@ const Enterprise = () => {
             accent="teal"
             title={zeroTrustCallout.title}
             description={zeroTrustCallout.description}
-            button={{ text: "Learn about Security", href: "/security", primary: true }}
+            button={zeroTrustCallout.button}
           />
         </div>
       </ContentSection>

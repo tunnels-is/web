@@ -24,7 +24,7 @@ const PersonalVPN = () => {
     setupSection, setupSteps,
     comparisonSection, comparison, privacyHighlight,
     faqSection, faqs, finalCTA, ctaCards,
-    illustratedPrivacy, relatedPages,
+    illustratedPrivacy, relatedPages, gradientCallout,
   } = personalVPNContent;
 
 
@@ -98,9 +98,9 @@ const PersonalVPN = () => {
             variant="banner"
             accent="blue"
             icon={<LightbulbIcon />}
-            title="Built on Modern Technology"
-            description="Tunnels uses a custom UDP protocol with post-quantum encryption, delivering both speed and security."
-            button={{ text: "View Technical Details", href: "/technical", primary: true }}
+            title={gradientCallout.title}
+            description={gradientCallout.description}
+            button={gradientCallout.button}
           />
         </div>
       </ContentSection>
